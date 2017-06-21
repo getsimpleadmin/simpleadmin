@@ -1,0 +1,25 @@
+<section class="catalog-page">
+  <table class="table">
+    <thead class="table__header">
+        <tr class="table__row">
+            <% @dashboard.collection_attributes.each do |collection_attribute| %>
+              <th class="table__cell table__cell--id"><%= collection_attribute %></th>
+            <% end %>
+              <th class="table__cell table__cell--id">Actions</th>
+        </tr>
+    </thead>
+    <tbody class="table__body">
+        <% @collection.each do |collection_item| %>
+          <tr class="table__row">
+              <% @dashboard.collection_attributes.each do |collection_attribute| %>
+                <td class="table__cell table__cell--<%= collection_attribute %>">
+                  <span><%= collection_item.public_send(collection_attribute) %></span>
+                </td>
+              <% end %>
+              <td><%= link_to 'Edit', collection_edit_link(collection_item) %></td>
+              <td><%= link_to 'Delete', collection_delete_link(collection_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+</section>

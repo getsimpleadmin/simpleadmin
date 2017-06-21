@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Simple Admin</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'simple_admin/base', media: 'all' %>
+    <%= javascript_include_tag 'simple_admin/base', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <main class="page-content">
+      <%= render "layouts/aside" %>
+
+      <section class="content">
+        <%= yield %>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<div class="item-page__content">
+  <%= form_for resource, url: form_url do |f| %>
+    <section class="field">
+        <div class="field__title">Имя Типа Поля</div>
+        <div class="field__content">
+          <%= f.text_field :name, class: 'input' %>
+        </div>
+    </section>
+
+    <section class="field">
+        <div class="field__title">Шаблон Типа Поля</div>
+        <div class="field__content">
+          <%= f.text_field :template, class: 'input' %>
+        </div>
+    </section>
+
+    <section class="field">
+      <div class="field__title"></div>
+      <div class="field__content">
+        <%= f.submit value: 'Создать', class: 'button button--wide item-page__button' %>
+      </div>
+    </section>
+  <% end %>
+</div>
