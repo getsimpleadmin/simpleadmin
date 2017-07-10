@@ -1,6 +1,6 @@
 module SimpleAdmin
   class DynamicActions
-    MODEL_NAMESPACE = "SimpleAdmin"
+    MODEL_NAMESPACE = :SimpleAdmin
 
     def self.set!(klass_name, collection_name)
       model_klass_name = collection_name.to_s.singularize.camelize

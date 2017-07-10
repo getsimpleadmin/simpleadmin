@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     get 'dashboard' => 'dashboard#index'
 
-    BaseDashboard::INITIALIZED_RESOURCES.each do |collection_name|
+    BaseDashboard::RESOURCES.each do |collection_name|
       resources collection_name
 
       dynamic_controller = SimpleAdmin::DynamicControllers.new(collection_name)

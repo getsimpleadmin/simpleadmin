@@ -1,3 +1,6 @@
-class BaseDashboard
-  INITIALIZED_RESOURCES = [:posts, :categories]
+class BaseDashboard < SimpleAdmin::Dashboards::Engine
+  RESOURCES = [
+    :posts,
+    :categories
+  ]
 end
