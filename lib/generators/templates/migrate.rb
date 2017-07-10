@@ -16,5 +16,21 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
 
       t.timestamps null: false
     end
+
+    create_table :simple_admin_posts do |t|
+      t.string :title
+      t.string :description
+
+      t.string :image
+      t.integer :category_id, null: false
+
+      t.timestamps null: false
+    end
+
+    create_table :simple_admin_categories do |t|
+      t.string :title
+
+      t.timestamps null: false
+    end
   end
 end
