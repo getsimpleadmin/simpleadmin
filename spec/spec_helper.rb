@@ -1,5 +1,11 @@
-require "bundler/setup"
-require "simple_admin"
+require 'bundler/setup'
+require 'pry'
+
+require 'action_controller'
+require 'action_controller/railtie'
+
+require 'active_support/all'
+require 'rspec/rails'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -1,5 +1,4 @@
 require 'simple_admin/version'
-require 'pry'
 
 module SimpleAdmin
   autoload :Engine, 'simple_admin/dashboards/engine'
