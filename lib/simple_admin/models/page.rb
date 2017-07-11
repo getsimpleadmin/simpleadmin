@@ -1,5 +1,5 @@
 module SimpleAdmin
-  class Page < ApplicationRecord
+  class Page < Base
     has_many :widgets
   end
 end

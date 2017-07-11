@@ -887,3 +887,8 @@ input {
 .header__exitIcon path:nth-child(2) {
   stroke: #e3e5e6;
 }
+
+/* CUSTOM CSS */
+.collection-item {
+  color: #000;
+}

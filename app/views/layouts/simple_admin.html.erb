@@ -10,8 +10,10 @@
     <%= render "layouts/header" %>
     <main class="page-content">
       <%= render "layouts/aside" %>
-      <section class="content"></section>
+
+      <section class="content">
+        <%= yield %>
+      </section>
     </main>
-    <%= yield %>
   </body>
 </html>
