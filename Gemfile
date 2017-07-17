@@ -4,6 +4,7 @@ source "https://rubygems.org"
 gemspec
 
 gem 'pry'
+gem 'jquery-rails'
 
 group :test do
   gem 'rspec-rails'

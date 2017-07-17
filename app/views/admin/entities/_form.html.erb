@@ -1,0 +1,43 @@
+    <header class="item-page__header">
+        <h3 class="item-page__title">Редактировать поля</h3>
+    </header>
+    <h5 class="item-page__description"><%= entity.name %></h5>
+
+    <div class="item-page__content">
+      <%= form_for entity, url: admin_entity_path(entity) do |f| %>
+        <section class="field">
+            <div class="field__title">Имя Модели</div>
+            <div class="field__content">
+                <div class="select__wrapper">
+                    <%= f.select :name, ApplicationRecord.descendants.map { |model_name| [model_name, model_name] }, {}, { class: 'select' } %>
+                </div>
+            </div>
+        </section>
+
+        <%= fields_for :entity_field, entity.entity_fields.build do |entity_field| %>
+          <%= render 'admin/entities/entity_fields', entity: entity, f: entity_field %>
+        <% end %>
+
+        <section class="field">
+          <div class="field__title"></div>
+          <div class="field__content">
+            <%= f.submit value: 'Сохранить', class: 'button button--wide item-page__button' %>
+          </div>
+        </section>
+      <% end %>
+
+      <% entity.entity_fields.each do |entity_field| %>
+        <% next if entity_field.id.blank? %>
+
+        <%= form_for entity_field, url: admin_entity_field_path(entity_field), remote: true do |f| %>
+          <%= render 'admin/entities/entity_fields', entity: entity, f: f %>
+
+          <section class="field">
+            <div class="field__title"></div>
+            <div class="field__content">
+              <%= f.submit value: 'Обновить', class: 'button button--wide item-page__button' %>
+            </div>
+          </section>
+        <% end %>
+      <% end %>
+    </div>

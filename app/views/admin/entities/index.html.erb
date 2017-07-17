@@ -1,0 +1,21 @@
+<section class="catalog-page">
+  <table class="table">
+    <thead class="table__header">
+        <tr class="table__row">
+            <th class="table__cell">id</th>
+            <th class="table__cell">Имя</th>
+        </tr>
+    </thead>
+    <tbody class="table__body">
+        <% @entities.each do |entity| %>
+          <tr class="table__row">
+              <td class="table__cell"><span><%= entity.id %></span>
+              </td>
+              <td class="table__cell">
+                <%= link_to entity.name, edit_admin_entity_path(entity), class: 'table__link' %>
+              </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+</section>

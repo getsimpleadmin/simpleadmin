@@ -1,0 +1,29 @@
+<section class="field">
+  <div class="field__title">Имя Поля</div>
+
+  <div class="field__content">
+    <div class="select__wrapper">
+      <%= f.select :name, entity.name.constantize.column_names.map { |cn| [cn, cn] }, {}, { class: 'select' } %>
+    </div>
+  </div>
+</section>
+
+<section class="field">
+  <div class="field__title">Тип Поля</div>
+
+  <div class="field__content">
+    <div class="select__wrapper">
+      <%= f.select :name, SimpleAdmin::EntityFieldType.all.collect { |ft| [ft.name, ft.id] }, {}, { class: 'select' } %>
+    </div>
+  </div>
+</section>
+
+<section class="field">
+  <div class="field__title">Отображение Поля</div>
+
+  <div class="field__content">
+    <div class="select__wrapper">
+      <%= f.select :name, SimpleAdmin::EntityField.displays, {}, { class: 'select' } %>
+    </div>
+  </div>
+</section>
