@@ -1,0 +1,6 @@
+ru:
+  admin:
+    create_button: 'Создать'
+    entity_field_types:
+      index:
+        title: 'Типы полей'

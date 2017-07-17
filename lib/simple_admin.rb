@@ -10,6 +10,8 @@ module SimpleAdmin
   autoload :EntityField, 'simple_admin/models/entity_field'
   autoload :EntityFieldType, 'simple_admin/models/entity_field_type'
 
+  autoload :Setting, 'simple_admin/models/setting'
+
   autoload :Widget, 'simple_admin/widget'
   autoload :Views, 'simple_admin/views'
 

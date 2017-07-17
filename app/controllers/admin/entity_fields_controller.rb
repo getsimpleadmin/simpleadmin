@@ -1,14 +1,36 @@
 module Admin
   class EntityFieldsController < BaseController
     def create
+      @entity_field = SimpleAdmin::EntityField.new(entity_field_params)
+      @entity_field.save
+
+      respond_to do |format|
+        format.js { render layout: false }
+      end
     end
 
     def update
+      @entity_field = SimpleAdmin::EntityField.find(params[:id])
+      @entity_field.update(entity_field_params)
+
+      respond_to do |format|
+        format.js { render layout: false }
+      end
+    end
+
+    def destroy
+      @entity_field = SimpleAdmin::EntityField.find(params[:id])
+      @entity_field.destroy
+
+      respond_to do |format|
+        format.js { render layout: false }
+      end
     end
 
     private
 
-    def entity_fields_params
+    def entity_field_params
+      params.require(:simple_admin_entity_field).permit(:name, :field_type_id, :entity_id, :display)
     end
   end
 end

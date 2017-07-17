@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     get 'dashboard' => 'dashboard#index'
 
     resources :entities
-    resources :entity_fields, only: [:create, :update]
+    resources :entity_fields, only: [:create, :update, :destroy]
+    resources :entity_field_types
 
     %w(posts categories).each do |collection_name|
       resources collection_name
