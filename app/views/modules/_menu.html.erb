@@ -11,8 +11,10 @@
     </div>
   </div>
 
-  <!-- <div class="nav-group">
-    <div class="nav-group__item nav-group__title">Страницы</div>
-    <a class="nav-group__item" href="/#">Тест</a>
-  </div> -->
+
+  <div class="nav-group">
+    <div class="nav-group__item nav-group__title">Настройки</div>
+    <%= link_to 'Типы полей', admin_entity_field_types_path, class: 'nav-group__item' %>
+    <%= link_to 'Поля', admin_entities_path, class: 'nav-group__item' %>
+  </div>
 </div>

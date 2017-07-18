@@ -1,0 +1,9 @@
+<thead class="table__header">
+    <tr class="table__row">
+        <% resource_settings.collection.each do |field_name| %>
+          <th class="table__cell"><%= field_name %></th>
+        <% end %>
+        <th class="table__cell"><%= t('admin.actions') %></th>
+        <th class="table__cell"></th>
+    </tr>
+</thead>

@@ -8,15 +8,35 @@ module SimpleAdmin
 
       klass_name.class_eval do
         define_method :index do
-          instance_variable_set(:@collection, model_klass.all)
+          @collection = model_klass.all
 
           render 'admin/collection/index'
         end
 
         define_method :show do
-          instance_variable_set(:@resource, model_klass.find(params[:id]))
+          @resource = model_klass.find(params[:id])
 
           render 'admin/collection/show'
+        end
+
+        define_method :new do
+        end
+
+        define_method :create do
+        end
+
+        define_method :edit do
+          @resource = model_klass.find(params[:id])
+
+          render 'admin/collection/edit'
+        end
+
+        define_method :update do
+        end
+
+        define_method :destroy do
+          @resource = model_klass.find(params[:id])
+          @resource.destroy
         end
       end
     end

@@ -1,3 +1,4 @@
+require 'rails/generators/base'
 require 'rails/generators/active_record'
 
 module SimpleAdmin
@@ -14,6 +15,14 @@ module SimpleAdmin
 
       def copy_simple_admin_migration
         migration_template "migrate.rb", "db/migrate/create_simple_admin_migrations.rb"
+      end
+
+      def copy_locale
+        copy_file "../../../config/locales/ru.yml", "config/locales/simple_admin.ru.yml"
+      end
+
+      def copy_config
+        copy_file "../../../config/simple_admin_settings.yml", "config/simple_admin_settings.yml"
       end
 
       def create_assets

@@ -1,0 +1,63 @@
+<%= form_for resource, url: admin_post_path(resource) do |f| %>
+    <header class="item-page__header">
+        <h3 class="item-page__title">Главный заголовок</h3>
+        <button class="button item-page__submit">Создать</button>
+    </header>
+    <h5 class="item-page__description">Описание</h5>
+    <div class="item-page__content">
+        <section class="field">
+            <div class="field__title">описание</div>
+            <div class="field__content">
+                <input class="input" type="text" name="test input" placeholder="placeholder">
+            </div>
+        </section>
+        <section class="field">
+            <div class="field__title">описание</div>
+            <div class="field__content">
+                <div class="select__wrapper">
+                    <select class="select" name="test select">
+                        <option value="1">text1</option>
+                        <option value="2">text2</option>
+                        <option value="3">text3</option>
+                        <option value="4">text4</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section class="field">
+            <div class="field__title">описание</div>
+            <div class="field__content">
+                <textarea class="textarea" name="test textarea" placeholder="placeholder"></textarea>
+            </div>
+        </section>
+        <section class="field">
+            <div class="field__title">описание</div>
+            <div class="field__content">
+                <label class="image__label">
+                    <input class="image" type="file" name="test image" accept="image/*">
+                </label>
+                <label class="image__label">
+                    <input class="image" type="file" name="test image 2" accept="image/*">
+                </label>
+                <label class="image__label">
+                    <input class="image" type="file" name="test image 3" accept="image/*">
+                </label>
+            </div>
+        </section>
+        <section class="field">
+            <div class="field__title">описание</div>
+            <div class="field__content">
+                <input class="input" type="text" name="test input 2" placeholder="">
+            </div>
+        </section>
+        <section class="field">
+            <div class="field__title">описание</div>
+            <div class="field__content">
+                <div class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="test checkbox">
+                    <label class="checkbox__label" for="test checkbox">Текст</label>
+                </div>
+            </div>
+        </section>
+    </div>
+<% end %>
