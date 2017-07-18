@@ -42,8 +42,8 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
     create_table :simple_admin_entity_fields do |t|
       t.string :name
 
-      t.integer :field_type_id, null: false
-      t.integer :entity_id,     null: false
+      t.integer :entity_field_type_id, null: false
+      t.integer :entity_id, null: false
 
       t.integer :display
 
@@ -52,6 +52,8 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
 
     create_table :simple_admin_entity_field_types do |t|
       t.string :name
+      t.string :template
+
       t.boolean :inbuilt, default: false
 
       t.timestamps null: false

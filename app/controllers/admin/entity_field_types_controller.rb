@@ -10,6 +10,10 @@ module Admin
       @entity_field_type = SimpleAdmin::EntityFieldType.new
     end
 
+    def edit
+      @entity_field_type = SimpleAdmin::EntityFieldType.find(params[:id])
+    end
+
     def create
       @entity_field_type = SimpleAdmin::EntityFieldType.new(entity_field_type_params)
 

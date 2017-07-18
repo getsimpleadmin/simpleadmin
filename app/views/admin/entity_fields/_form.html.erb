@@ -1,5 +1,5 @@
 <%= form_for entity_field, url: admin_entity_field_path(entity_field), html: { 'data-entity-field-item-id' => entity_field.id }, remote: true do |f| %>
-  <%= render 'admin/entities/entity_fields', entity: entity, f: f %>
+  <%= render 'admin/entities/entity_field_attributes', entity: entity, f: f %>
 
   <section class="field">
     <div class="field__title"></div>

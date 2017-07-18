@@ -30,7 +30,7 @@ module Admin
     private
 
     def entity_field_params
-      params.require(:simple_admin_entity_field).permit(:name, :field_type_id, :entity_id, :display)
+      params.require(:simple_admin_entity_field).permit(:name, :entity_field_type_id, :entity_id, :display)
     end
   end
 end

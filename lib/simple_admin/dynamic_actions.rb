@@ -8,7 +8,8 @@ module SimpleAdmin
 
       klass_name.class_eval do
         define_method :index do
-          @collection = model_klass.all
+          @resources = model_klass.all
+          @model_instance = model_klass.new
 
           render 'admin/collection/index'
         end
@@ -20,9 +21,19 @@ module SimpleAdmin
         end
 
         define_method :new do
+          @resource = model_klass.new
+
+          render 'admin/collection/new'
         end
 
         define_method :create do
+          @resource = model_klass.new(resource_params)
+
+          if @resource.save
+            redirect_to "admin_#{collection_name}_path"
+          else
+            render :new
+          end
         end
 
         define_method :edit do
@@ -32,11 +43,22 @@ module SimpleAdmin
         end
 
         define_method :update do
+          @resource = model_klass.find(params[:id])
+
+          if @resource.update(resource_params)
+            redirect_to "admin_#{collection_name}_path"
+          else
+            render :edit
+          end
         end
 
         define_method :destroy do
           @resource = model_klass.find(params[:id])
           @resource.destroy
+        end
+
+        define_method :resource_params do
+          
         end
       end
     end

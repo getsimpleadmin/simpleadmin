@@ -3,6 +3,10 @@ module SimpleAdminHelper
     model_klass_name = resource.class.name.demodulize.underscore
 
     case method
+    when :create
+      model_klass_name = model_klass_name.pluralize
+    when :new
+      prefix = :new
     when :edit
       prefix = :edit
     end
