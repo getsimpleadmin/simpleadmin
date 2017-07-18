@@ -2,8 +2,9 @@
   <table class="table">
     <thead class="table__header">
         <tr class="table__row">
-            <th class="table__cell">id</th>
-            <th class="table__cell">Имя</th>
+          <% @resource_settings.collection.each do |field_name| %>
+            <th class="table__cell"><%= field_name %></th>
+          <% end %>
         </tr>
     </thead>
     <tbody class="table__body">

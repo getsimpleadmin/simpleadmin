@@ -5,29 +5,7 @@
   </header>
 
   <table class="table">
-    <thead class="table__header">
-        <tr class="table__row">
-            <th class="table__cell">id</th>
-            <th class="table__cell">Имя</th>
-            <th class="table__cell">Действия</th>
-            <th class="table__cell"></th>
-        </tr>
-    </thead>
-    <tbody class="table__body">
-        <% @entity_field_types.each do |entity_field_type| %>
-          <tr class="table__row">
-              <td class="table__cell">
-                <span><%= entity_field_type.id %></span>
-              </td>
-
-              <td class="table__cell">
-                <%= link_to entity_field_type.name, edit_admin_entity_field_type_path(entity_field_type), class: 'table__link' %>
-              </td>
-
-              <td class="table__cell"><%= link_to 'Редактировать', '#', class: 'table__link' %></td>
-              <td class="table__cell"><%= link_to 'Удалить', admin_entity_field_type_path(entity_field_type), class: 'table__link', method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-          </tr>
-        <% end %>
-    </tbody>
+    <%= render 'admin/shared/table_header', resource_settings: @resource_settings %>
+    <%= render 'admin/shared/table_body', resources: @entity_field_types %>
   </table>
 </section>

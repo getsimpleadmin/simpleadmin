@@ -1,8 +1,8 @@
 entity_field_types:
   collection:
     - id
-    - name
+    - имя
 entities:
   collection:
     - id
-    - name
+    - имя

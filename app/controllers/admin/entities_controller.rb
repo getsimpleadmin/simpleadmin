@@ -1,5 +1,7 @@
 module Admin
   class EntitiesController < BaseController
+    include SimpleAdmin::InbuiltControllerSettings
+
     def index
       @entities = SimpleAdmin::Entity.all
     end

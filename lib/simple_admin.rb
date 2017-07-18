@@ -15,6 +15,9 @@ module SimpleAdmin
   autoload :Widget, 'simple_admin/widget'
   autoload :Views, 'simple_admin/views'
 
+  autoload :EntityControllerSetter, 'simple_admin/support/entity_controller_setter'
+  autoload :InbuiltControllerSettings, 'simple_admin/support/inbuilt_controller_settings'
+
   class << self
   end
 end

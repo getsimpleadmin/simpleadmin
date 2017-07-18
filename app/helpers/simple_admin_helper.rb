@@ -1,15 +1,15 @@
 module SimpleAdminHelper
-  def collection_edit_link(collection_item)
-    model_name = collection_item.class.name.demodulize.downcase
-    link = "edit_admin_#{model_name}_path"
+  def resource_link(resource, method, prefix = nil, namespace = :admin)
+    model_klass_name = resource.class.name.demodulize.underscore
 
-    public_send(link, collection_item)
-  end
+    case method
+    when :edit
+      prefix = :edit
+    end
 
-  def collection_delete_link(collection_item)
-    model_name = collection_item.class.name.demodulize.downcase
-    link = "admin_#{model_name}_path"
+    resource_path = "#{namespace}_#{model_klass_name}_path"
+    resource_path = "#{prefix}_#{resource_path}" if prefix.present?
 
-    public_send(link, collection_item)
+    public_send(resource_path, resource)
   end
 end

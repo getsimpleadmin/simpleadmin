@@ -1,6 +1,10 @@
 ru:
   admin:
-    create_button: 'Создать'
+    actions: 'Действия'
+    edit: 'Редактировать'
+    create: 'Создать'
+    destroy: 'Удалить'
+    confirm_destroy: 'Вы уверены?'
     entity_field_types:
       index:
         title: 'Типы полей'
