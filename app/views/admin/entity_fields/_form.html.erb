@@ -1,5 +1,9 @@
 <%= form_for entity_field, url: admin_entity_field_path(entity_field), html: { 'data-entity-field-item-id' => entity_field.id }, remote: true do |f| %>
-  <%= render 'admin/entities/entity_fields', entity: entity, f: f %>
+  <%= render 'admin/entities/entity_field_attributes', entity: entity, f: f %>
+
+  <% if entity_field.entity_field_setting.present? %>
+    <%= render 'admin/entity_fields/setting_fields', field_settings: entity_field.entity_field_setting.data, f: f %>\
+  <% end %>
 
   <section class="field">
     <div class="field__title"></div>

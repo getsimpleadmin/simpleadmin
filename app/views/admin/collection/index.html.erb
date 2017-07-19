@@ -1,64 +1,11 @@
 <section class="catalog-page">
+  <header class="item-page__header">
+    <h3 class="item-page__title"><%= t("admin.#{@collection_name}.index.title") %></h3>
+    <%= link_to t('admin.create'), resource_link(@model_instance, :new), class: 'button item-page__submit' %>
+  </header>
+
   <table class="table">
-    <thead class="table__header">
-        <tr class="table__row">
-            <th class="table__cell">id</th>
-            <th class="table__cell">Заголовок</th>
-            <th class="table__cell">Категория</th>
-            <th class="table__cell">Дата</th>
-        </tr>
-    </thead>
-    <tbody class="table__body">
-        <tr class="table__row">
-            <td class="table__cell"><span>706</span>
-            </td>
-            <td class="table__cell"><a class="table__link" href="news/706">Суд оштрафовал семерых участников акции дальнобойщиков в Химках</a>
-            </td>
-            <td class="table__cell"><span>Новости</span>
-            </td>
-            <td class="table__cell"><span>20.08.2016</span>
-            </td>
-        </tr>
-        <tr class="table__row">
-            <td class="table__cell"><span>706</span>
-            </td>
-            <td class="table__cell"><a class="table__link" href="news/706">Суд оштрафовал семерых участников акции дальнобойщиков</a>
-            </td>
-            <td class="table__cell"><span>Новости</span>
-            </td>
-            <td class="table__cell"><span>20.08.2016</span>
-            </td>
-        </tr>
-        <tr class="table__row">
-            <td class="table__cell"><span>706</span>
-            </td>
-            <td class="table__cell"><a class="table__link" href="news/706">Суд оштрафовал семерых участников акции дальнобойщиков</a>
-            </td>
-            <td class="table__cell"><span>Новости</span>
-            </td>
-            <td class="table__cell"><span>20.08.2016</span>
-            </td>
-        </tr>
-        <tr class="table__row">
-            <td class="table__cell"><span>706</span>
-            </td>
-            <td class="table__cell"><a class="table__link" href="news/706">Суд оштрафовал семерых участников акции дальнобойщиков</a>
-            </td>
-            <td class="table__cell"><span>Новости</span>
-            </td>
-            <td class="table__cell"><span>20.08.2016</span>
-            </td>
-        </tr>
-        <tr class="table__row">
-            <td class="table__cell"><span>706</span>
-            </td>
-            <td class="table__cell"><a class="table__link" href="news/706">Суд оштрафовал семерых участников акции дальнобойщиков</a>
-            </td>
-            <td class="table__cell"><span>Новости</span>
-            </td>
-            <td class="table__cell"><span>20.08.2016</span>
-            </td>
-        </tr>
-    </tbody>
+    <%= render 'admin/shared/table_header', field_names: @resource_fields.pluck(:name) %>
+    <%= render 'admin/shared/table_body', resources: @resources, resource_fields: @resource_fields %>
   </table>
 </section>

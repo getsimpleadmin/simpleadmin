@@ -2,8 +2,16 @@ module Admin
   class EntitiesController < BaseController
     include SimpleAdmin::InbuiltControllerSettings
 
+    before_action only: [:new, :edit] do
+      Rails.application.eager_load!
+    end
+
     def index
       @entities = SimpleAdmin::Entity.all
+    end
+
+    def new
+      @entity = SimpleAdmin::Entity.new
     end
 
     def edit

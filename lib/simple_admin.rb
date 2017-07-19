@@ -8,15 +8,20 @@ module SimpleAdmin
 
   autoload :Entity, 'simple_admin/models/entity'
   autoload :EntityField, 'simple_admin/models/entity_field'
+
   autoload :EntityFieldType, 'simple_admin/models/entity_field_type'
+  autoload :EntityFieldSetting, 'simple_admin/models/entity_field_setting'
 
   autoload :Setting, 'simple_admin/models/setting'
+  autoload :FieldSetting, 'simple_admin/models/field_setting'
 
   autoload :Widget, 'simple_admin/widget'
   autoload :Views, 'simple_admin/views'
 
   autoload :EntityControllerSetter, 'simple_admin/support/entity_controller_setter'
   autoload :InbuiltControllerSettings, 'simple_admin/support/inbuilt_controller_settings'
+
+  autoload :EntityFieldSettingDataSerializer, 'simple_admin/serializers/entity_field_setting_data_serializer'
 
   class << self
   end

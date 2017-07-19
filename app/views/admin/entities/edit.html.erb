@@ -1,3 +1,8 @@
 <section class="item-page">
-  <%= render 'admin/entities/form', entity: @entity %>
+  <header class="item-page__header">
+      <h3 class="item-page__title">Редактировать поле</h3>
+  </header>
+  <h5 class="item-page__description"><%= @entity.name %></h5>
+
+  <%= render 'admin/entities/form', entity: @entity, form_url: edit_admin_entity_path(@entity) %>
 </section>

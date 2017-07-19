@@ -13,6 +13,9 @@ module Admin
       @entity_field = SimpleAdmin::EntityField.find(params[:id])
       @entity_field.update(entity_field_params)
 
+      # TODO Dirty trick for demo
+      update_setting_field(@entity_field)
+
       respond_to do |format|
         format.js { render layout: false }
       end
@@ -29,8 +32,21 @@ module Admin
 
     private
 
+    def update_setting_field(entity_field)
+      setting = entity_field.entity_field_setting
+
+      setting_name = params.dig(:simple_admin_entity_field, :field_setting, :name).keys.first
+      setting_value = params.dig(:simple_admin_entity_field, :field_setting, :name).values.first
+
+      setting.data.find do |field_setting|
+        field_setting.value = setting_value if field_setting.name == setting_name
+      end
+      
+      setting.save
+    end
+
     def entity_field_params
-      params.require(:simple_admin_entity_field).permit(:name, :field_type_id, :entity_id, :display)
+      params.require(:simple_admin_entity_field).permit(:name, :entity_field_type_id, :entity_id, :display)
     end
   end
 end

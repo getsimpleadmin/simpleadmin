@@ -13,7 +13,7 @@
 
   <div class="field__content">
     <div class="select__wrapper">
-      <%= f.select :field_type_id, SimpleAdmin::EntityFieldType.all.collect { |ft| [ft.name, ft.id] }, {}, { class: 'select' } %>
+      <%= f.select :entity_field_type_id, SimpleAdmin::EntityFieldType.all.collect { |ft| [ft.name, ft.id] }, {}, { class: 'select' } %>
     </div>
   </div>
 </section>

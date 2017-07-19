@@ -1,0 +1,9 @@
+<section class="field">
+    <div class="field__title"><%= field.name %></div>
+    <div class="field__content">
+        <div class="select__wrapper">
+            <!-- TODO Hardcoded value and dirty method -->
+            <%= f.select field.name, str_to_collection(field.entity_field_setting.select_field.value).pluck(:title, :id), {}, { class: 'select' } %>
+        </div>
+    </div>
+</section>

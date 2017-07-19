@@ -5,6 +5,12 @@ ru:
     create: 'Создать'
     destroy: 'Удалить'
     confirm_destroy: 'Вы уверены?'
+    categories:
+      index:
+        title: 'Категории'
+    posts:
+      index:
+        title: 'Записи'
     entity_field_types:
       index:
         title: 'Типы полей'
