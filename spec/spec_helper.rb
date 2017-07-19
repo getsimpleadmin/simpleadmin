@@ -4,6 +4,8 @@ require 'pry'
 require 'action_controller'
 require 'action_controller/railtie'
 
+require File.expand_path("../../spec/example_app/config/environment", __FILE__)
+
 require 'active_support/all'
 require 'rspec/rails'
 

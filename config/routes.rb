@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'dashboard' => 'dashboard#index'
 
     resources :entities
+    resources :languages
     resources :entity_fields, only: [:create, :update, :destroy]
     resources :entity_field_types
 

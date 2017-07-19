@@ -1,34 +1,20 @@
 module Admin
   class EntityFieldTypesController < BaseController
     include SimpleAdmin::InbuiltControllerSettings
+    include SimpleAdmin::CrudControllerHelper
 
-    def index
-      @entity_field_types = SimpleAdmin::EntityFieldType.all
+    def model_klass
+      SimpleAdmin::EntityFieldType
     end
 
-    def new
-      @entity_field_type = SimpleAdmin::EntityFieldType.new
+    def redirect_path
+      admin_entity_field_types_path
     end
 
-    def edit
-      @entity_field_type = SimpleAdmin::EntityFieldType.find(params[:id])
-    end
+    private
 
-    def create
-      @entity_field_type = SimpleAdmin::EntityFieldType.new(entity_field_type_params)
-
-      if @entity_field_type.save
-        redirect_to admin_entity_field_types_path
-      else
-        render :new
-      end
-    end
-
-    def destroy
-      @entity_field_type = SimpleAdmin::EntityFieldType.find(params[:id])
-      @entity_field_type.destroy
-
-      redirect_to admin_entity_field_types_path
+    def resource_params
+      params.require(:simple_admin_entity_field_type).permit(:name, :template)
     end
   end
 end

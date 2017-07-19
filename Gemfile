@@ -3,9 +3,10 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in simple_admin.gemspec
 gemspec
 
-gem 'pry'
+gem 'pg'
 gem 'jquery-rails'
 
-group :test do
+group :development, :test do
+  gem 'pry-rails'
   gem 'rspec-rails'
 end
