@@ -11,6 +11,8 @@ module SimpleAdmin
           @resources = model_klass.all
           @model_instance = model_klass.new
 
+          @collection_name = collection_name
+
           render 'admin/collection/index'
         end
 
@@ -30,7 +32,7 @@ module SimpleAdmin
           @resource = model_klass.new(resource_params)
 
           if @resource.save
-            redirect_to "admin_#{collection_name}_path"
+            redirect_to public_send("admin_#{collection_name}_path")
           else
             render :new
           end
@@ -46,7 +48,7 @@ module SimpleAdmin
           @resource = model_klass.find(params[:id])
 
           if @resource.update(resource_params)
-            redirect_to "admin_#{collection_name}_path"
+            redirect_to public_send("admin_#{collection_name}_path")
           else
             render :edit
           end
@@ -58,7 +60,10 @@ module SimpleAdmin
         end
 
         define_method :resource_params do
-          
+          params_name = model_klass.to_s.underscore.gsub('/', '_')
+          attributes = SimpleAdmin::Entity.find_by(name: model_klass.to_s).entity_fields.form.pluck(:name)
+
+          params.require(params_name).permit(attributes)
         end
       end
     end

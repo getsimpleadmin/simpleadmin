@@ -16,4 +16,15 @@ module SimpleAdminHelper
 
     public_send(resource_path, resource)
   end
+
+  def str_to_collection(string)
+    arr = string.split('.')
+    object = arr[0].constantize
+
+    arr[1..arr.size].each do |method|
+      object = object.public_send(method)
+    end
+
+    object
+  end
 end
