@@ -23,6 +23,8 @@ module SimpleAdmin
 
   autoload :EntityFieldSettingDataSerializer, 'simple_admin/serializers/entity_field_setting_data_serializer'
 
+  autoload :Overrides, 'simple_admin/core_ext/overrides'
+
   class << self
   end
 end

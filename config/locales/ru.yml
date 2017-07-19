@@ -11,6 +11,9 @@ ru:
     posts:
       index:
         title: 'Записи'
+    entities:
+      index:
+        title: 'Модели'
     entity_field_types:
       index:
         title: 'Типы полей'

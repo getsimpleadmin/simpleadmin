@@ -2,6 +2,7 @@ entity_field_types:
   collection:
     - id
     - имя
+    - шаблон
 entities:
   collection:
     - id
