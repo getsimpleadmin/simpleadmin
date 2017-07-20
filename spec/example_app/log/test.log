@@ -1,0 +1,965 @@
+  [1m[35m (1157.0ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (342.6ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+Processing by Admin::EntitiesController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+Processing by Admin::EntitiesController#index as HTML
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 83ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 21ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 20ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (102.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (42.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSimpleAdminMigrations (20170719132103)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE TABLE "simple_admin_entities" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170719132103"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:14:00.316582"], ["updated_at", "2017-07-20 11:14:00.316582"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (42.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "International Research Director"], ["created_at", "2017-07-20 11:14:49.996174"], ["updated_at", "2017-07-20 11:14:49.996174"]]
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Global Optimization Agent"], ["created_at", "2017-07-20 11:16:18.269521"], ["updated_at", "2017-07-20 11:16:18.269521"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Forward Web Facilitator"], ["created_at", "2017-07-20 11:16:18.271781"], ["updated_at", "2017-07-20 11:16:18.271781"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Direct Communications Director"], ["created_at", "2017-07-20 11:16:18.273209"], ["updated_at", "2017-07-20 11:16:18.273209"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "National Accounts Consultant"], ["created_at", "2017-07-20 11:16:18.275019"], ["updated_at", "2017-07-20 11:16:18.275019"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dynamic Factors Facilitator"], ["created_at", "2017-07-20 11:16:18.277646"], ["updated_at", "2017-07-20 11:16:18.277646"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Regional Directives Associate"], ["created_at", "2017-07-20 11:16:53.915104"], ["updated_at", "2017-07-20 11:16:53.915104"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Direct Intranet Administrator"], ["created_at", "2017-07-20 11:16:53.917972"], ["updated_at", "2017-07-20 11:16:53.917972"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Product Communications Planner"], ["created_at", "2017-07-20 11:16:53.919685"], ["updated_at", "2017-07-20 11:16:53.919685"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Customer Brand Technician"], ["created_at", "2017-07-20 11:16:53.924471"], ["updated_at", "2017-07-20 11:16:53.924471"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lead Configuration Planner"], ["created_at", "2017-07-20 11:16:53.926269"], ["updated_at", "2017-07-20 11:16:53.926269"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSimpleAdmin::Entity Load (0.5ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (62.7ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (5.1ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "International Division Officer"], ["created_at", "2017-07-20 11:18:56.302910"], ["updated_at", "2017-07-20 11:18:56.302910"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Investor Optimization Representative"], ["created_at", "2017-07-20 11:18:56.305250"], ["updated_at", "2017-07-20 11:18:56.305250"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Corporate Creative Strategist"], ["created_at", "2017-07-20 11:18:56.306583"], ["updated_at", "2017-07-20 11:18:56.306583"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "National Branding Supervisor"], ["created_at", "2017-07-20 11:18:56.308067"], ["updated_at", "2017-07-20 11:18:56.308067"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Chief Functionality Executive"], ["created_at", "2017-07-20 11:18:56.309417"], ["updated_at", "2017-07-20 11:18:56.309417"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[36mSimpleAdmin::Entity Load (0.4ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:20:03.380173"], ["updated_at", "2017-07-20 11:20:03.380173"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.4ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Future Creative Representative"], ["created_at", "2017-07-20 11:20:03.833259"], ["updated_at", "2017-07-20 11:20:03.833259"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Direct Paradigm Consultant"], ["created_at", "2017-07-20 11:20:03.835367"], ["updated_at", "2017-07-20 11:20:03.835367"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "National Operations Technician"], ["created_at", "2017-07-20 11:20:03.836641"], ["updated_at", "2017-07-20 11:20:03.836641"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Central Assurance Associate"], ["created_at", "2017-07-20 11:20:03.837837"], ["updated_at", "2017-07-20 11:20:03.837837"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "International Mobility Executive"], ["created_at", "2017-07-20 11:20:03.839070"], ["updated_at", "2017-07-20 11:20:03.839070"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:22:25.519387"], ["updated_at", "2017-07-20 11:22:25.519387"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.6ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dynamic Brand Assistant"], ["created_at", "2017-07-20 11:22:25.977110"], ["updated_at", "2017-07-20 11:22:25.977110"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Corporate Data Coordinator"], ["created_at", "2017-07-20 11:22:25.979345"], ["updated_at", "2017-07-20 11:22:25.979345"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Central Integration Analyst"], ["created_at", "2017-07-20 11:22:25.980703"], ["updated_at", "2017-07-20 11:22:25.980703"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "International Division Administrator"], ["created_at", "2017-07-20 11:22:25.982038"], ["updated_at", "2017-07-20 11:22:25.982038"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Global Division Technician"], ["created_at", "2017-07-20 11:22:25.983275"], ["updated_at", "2017-07-20 11:22:25.983275"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:24:10.525329"], ["updated_at", "2017-07-20 11:24:10.525329"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Global Optimization Manager"], ["created_at", "2017-07-20 11:24:10.974604"], ["updated_at", "2017-07-20 11:24:10.974604"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Global Data Specialist"], ["created_at", "2017-07-20 11:24:10.976780"], ["updated_at", "2017-07-20 11:24:10.976780"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Direct Optimization Developer"], ["created_at", "2017-07-20 11:24:10.978040"], ["updated_at", "2017-07-20 11:24:10.978040"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Customer Branding Architect"], ["created_at", "2017-07-20 11:24:10.979295"], ["updated_at", "2017-07-20 11:24:10.979295"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "District Solutions Director"], ["created_at", "2017-07-20 11:24:10.980656"], ["updated_at", "2017-07-20 11:24:10.980656"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Regional Quality Assistant"], ["created_at", "2017-07-20 11:24:11.000923"], ["updated_at", "2017-07-20 11:24:11.000923"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:24:25.485524"], ["updated_at", "2017-07-20 11:24:25.485524"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.0ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "District Accounts Facilitator"], ["created_at", "2017-07-20 11:24:25.936497"], ["updated_at", "2017-07-20 11:24:25.936497"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Corporate Paradigm Designer"], ["created_at", "2017-07-20 11:24:25.938785"], ["updated_at", "2017-07-20 11:24:25.938785"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Future Quality Director"], ["created_at", "2017-07-20 11:24:25.940162"], ["updated_at", "2017-07-20 11:24:25.940162"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dynamic Infrastructure Administrator"], ["created_at", "2017-07-20 11:24:25.941456"], ["updated_at", "2017-07-20 11:24:25.941456"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Central Response Developer"], ["created_at", "2017-07-20 11:24:25.942813"], ["updated_at", "2017-07-20 11:24:25.942813"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Direct Creative Supervisor"], ["created_at", "2017-07-20 11:24:25.962347"], ["updated_at", "2017-07-20 11:24:25.962347"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/edit.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/edit.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 39ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:25:31.785304"], ["updated_at", "2017-07-20 11:25:31.785304"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (5.0ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Forward Communications Liaison"], ["created_at", "2017-07-20 11:25:32.244108"], ["updated_at", "2017-07-20 11:25:32.244108"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Forward Intranet Representative"], ["created_at", "2017-07-20 11:25:32.246116"], ["updated_at", "2017-07-20 11:25:32.246116"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "District Usability Associate"], ["created_at", "2017-07-20 11:25:32.247427"], ["updated_at", "2017-07-20 11:25:32.247427"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Forward Integration Director"], ["created_at", "2017-07-20 11:25:32.248805"], ["updated_at", "2017-07-20 11:25:32.248805"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Legacy Operations Agent"], ["created_at", "2017-07-20 11:25:32.250166"], ["updated_at", "2017-07-20 11:25:32.250166"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:30:05.365195"], ["updated_at", "2017-07-20 11:30:05.365195"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (5.0ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Posts"], ["created_at", "2017-07-20 11:30:05.446854"], ["updated_at", "2017-07-20 11:30:05.446854"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#update as HTML
+  Parameters: {"simple_admin_entity"=>{"name"=>"Test"}, "id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "simple_admin_entities" SET "name" = $1, "updated_at" = $2 WHERE "simple_admin_entities"."id" = $3[0m  [["name", "Test"], ["updated_at", "2017-07-20 11:30:05.470001"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:30:26.014173"], ["updated_at", "2017-07-20 11:30:26.014173"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.7ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Posts"], ["created_at", "2017-07-20 11:30:26.096446"], ["updated_at", "2017-07-20 11:30:26.096446"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#update as HTML
+  Parameters: {"simple_admin_entity"=>{"name"=>"Test"}, "id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "simple_admin_entities" SET "name" = $1, "updated_at" = $2 WHERE "simple_admin_entities"."id" = $3[0m  [["name", "Test"], ["updated_at", "2017-07-20 11:30:26.109088"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:30:45.197449"], ["updated_at", "2017-07-20 11:30:45.197449"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Posts"], ["created_at", "2017-07-20 11:30:45.276125"], ["updated_at", "2017-07-20 11:30:45.276125"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#update as HTML
+  Parameters: {"simple_admin_entity"=>{"name"=>"Test"}, "id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "simple_admin_entities" SET "name" = $1, "updated_at" = $2 WHERE "simple_admin_entities"."id" = $3[0m  [["name", "Test"], ["updated_at", "2017-07-20 11:30:45.288120"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:32:57.239973"], ["updated_at", "2017-07-20 11:32:57.239973"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.5ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Customer Communications Representative"], ["created_at", "2017-07-20 11:32:57.702202"], ["updated_at", "2017-07-20 11:32:57.702202"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:34:01.168948"], ["updated_at", "2017-07-20 11:34:01.168948"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.7ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.4ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Customer Assurance Designer"], ["created_at", "2017-07-20 11:34:01.643813"], ["updated_at", "2017-07-20 11:34:01.643813"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:34:12.761633"], ["updated_at", "2017-07-20 11:34:12.761633"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.2ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Forward Communications Coordinator"], ["created_at", "2017-07-20 11:34:13.249030"], ["updated_at", "2017-07-20 11:34:13.249030"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:34:27.852419"], ["updated_at", "2017-07-20 11:34:27.852419"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.8ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "District Accounts Representative"], ["created_at", "2017-07-20 11:34:28.317845"], ["updated_at", "2017-07-20 11:34:28.317845"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:35:15.387789"], ["updated_at", "2017-07-20 11:35:15.387789"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.9ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dynamic Security Supervisor"], ["created_at", "2017-07-20 11:35:15.860056"], ["updated_at", "2017-07-20 11:35:15.860056"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+Processing by Admin::EntitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.3ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:35:23.967262"], ["updated_at", "2017-07-20 11:35:23.967262"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (5.2ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Chief Assurance Strategist"], ["created_at", "2017-07-20 11:35:24.437758"], ["updated_at", "2017-07-20 11:35:24.437758"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+Processing by Admin::EntitiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:37:29.130604"], ["updated_at", "2017-07-20 11:37:29.130604"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (4.7ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+Processing by Admin::EntitiesController#create as HTML
+  Parameters: {"simple_admin_entity"=>{"name"=>"Post"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Post"], ["created_at", "2017-07-20 11:37:29.226366"], ["updated_at", "2017-07-20 11:37:29.226366"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_development" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "simpleadmin_prototype_test" ENCODING = 'utf8'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3967864204581360090);[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-07-20 11:39:28.436493"], ["updated_at", "2017-07-20 11:39:28.436493"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3967864204581360090)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'simpleadmin_prototype_test'[0m
+  [1m[35m (5.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."ar_internal_metadata", "public"."simple_admin_entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "simple_admin_entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Investor Directives Assistant"], ["created_at", "2017-07-20 11:39:28.937065"], ["updated_at", "2017-07-20 11:39:28.937065"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dynamic Optimization Strategist"], ["created_at", "2017-07-20 11:39:28.939326"], ["updated_at", "2017-07-20 11:39:28.939326"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Senior Configuration Assistant"], ["created_at", "2017-07-20 11:39:28.940707"], ["updated_at", "2017-07-20 11:39:28.940707"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Chief Markets Administrator"], ["created_at", "2017-07-20 11:39:28.941997"], ["updated_at", "2017-07-20 11:39:28.941997"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lead Usability Specialist"], ["created_at", "2017-07-20 11:39:28.943264"], ["updated_at", "2017-07-20 11:39:28.943264"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#index as HTML
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/index.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+  [1m[36mSimpleAdmin::Entity Load (0.4ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Regional Creative Facilitator"], ["created_at", "2017-07-20 11:39:28.962648"], ["updated_at", "2017-07-20 11:39:28.962648"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/edit.html.erb within layouts/simple_admin
+  Rendered /Users/dmitriy/Projects/simpleadmin/app/views/admin/entities/edit.html.erb within layouts/simple_admin (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Posts"], ["created_at", "2017-07-20 11:39:28.974645"], ["updated_at", "2017-07-20 11:39:28.974645"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Admin::EntitiesController#update as HTML
+  Parameters: {"simple_admin_entity"=>{"name"=>"Test"}, "id"=>"7"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "simple_admin_entities" SET "name" = $1, "updated_at" = $2 WHERE "simple_admin_entities"."id" = $3[0m  [["name", "Test"], ["updated_at", "2017-07-20 11:39:28.981822"], ["id", 7]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+Processing by Admin::EntitiesController#create as HTML
+  Parameters: {"simple_admin_entity"=>{"name"=>"Post"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Post"], ["created_at", "2017-07-20 11:39:28.991598"], ["updated_at", "2017-07-20 11:39:28.991598"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "simple_admin_entities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Future Operations Producer"], ["created_at", "2017-07-20 11:39:28.996776"], ["updated_at", "2017-07-20 11:39:28.996776"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+Processing by Admin::EntitiesController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSimpleAdmin::Entity Load (0.2ms)[0m  [1m[34mSELECT  "simple_admin_entities".* FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "simple_admin_entities" WHERE "simple_admin_entities"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/entities
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "simple_admin_entities"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

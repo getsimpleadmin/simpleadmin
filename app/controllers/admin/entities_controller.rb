@@ -1,37 +1,24 @@
 module Admin
   class EntitiesController < BaseController
     include SimpleAdmin::InbuiltControllerSettings
+    include SimpleAdmin::CrudControllerHelper
 
     before_action only: [:new, :edit] do
       Rails.application.eager_load!
     end
 
-    def index
-      @entities = SimpleAdmin::Entity.all
+    def model_klass
+      SimpleAdmin::Entity
     end
 
-    def new
-      @entity = SimpleAdmin::Entity.new
-    end
-
-    def edit
-      @entity = SimpleAdmin::Entity.find(params[:id])
-    end
-
-    def update
-      @entity = SimpleAdmin::Entity.find(params[:id])
-
-      if @entity.update(entity_params)
-        redirect_to admin_entities_path
-      else
-        render :edit
-      end
+    def redirect_path
+      admin_entities_path
     end
 
     private
 
-    def entity_params
-      params.require(:name)
+    def resource_params
+      params.require(:simple_admin_entity).permit(:name)
     end
   end
 end

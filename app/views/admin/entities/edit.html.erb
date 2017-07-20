@@ -2,7 +2,7 @@
   <header class="item-page__header">
       <h3 class="item-page__title">Редактировать поле</h3>
   </header>
-  <h5 class="item-page__description"><%= @entity.name %></h5>
+  <h5 class="item-page__description"><%= @resource.name %></h5>
 
-  <%= render 'admin/entities/form', entity: @entity, form_url: edit_admin_entity_path(@entity) %>
+  <%= render 'admin/entities/form', resource: @resource, form_url: edit_admin_entity_path(@resource) %>
 </section>

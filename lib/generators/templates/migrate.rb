@@ -18,9 +18,6 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
     end
 
     create_table :simple_admin_posts do |t|
-      t.string :title
-      t.string :description
-
       t.string :image
       t.integer :category_id, null: false
 
@@ -28,8 +25,6 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
     end
 
     create_table :simple_admin_categories do |t|
-      t.string :title
-
       t.timestamps null: false
     end
 
@@ -65,12 +60,14 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
 
       t.timestamps null: false
     end
+
+    create_table :simple_admin_languages do |t|
+      t.string :name
+      t.string :code
+
+      t.boolean :status
+
+      t.timestamps null: false
+    end
   end
 end
-
-# {
-#   settings: {
-#     enabled: { label: 'Field Enabled', value: false },
-#     select_collection: { label: 'Field Collection', value: 'Category.all' }
-#   }
-# }

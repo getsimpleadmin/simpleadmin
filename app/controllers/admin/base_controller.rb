@@ -29,7 +29,8 @@ module Admin
       {
         Admin::PostsController => SimpleAdmin::Post.to_s,
         Admin::CategoriesController => SimpleAdmin::Category.to_s,
-        Admin::EntityFieldTypesController => SimpleAdmin::EntityFieldType.to_s
+        Admin::EntityFieldTypesController => SimpleAdmin::EntityFieldType.to_s,
+        Admin::LanguagesController => SimpleAdmin::Language.to_s
       }
     end
   end
