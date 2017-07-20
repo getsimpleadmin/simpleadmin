@@ -1,0 +1,23 @@
+ru:
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"
+  admin:
+    actions: 'Actions'
+    edit: 'Edit'
+    create: 'Create'
+    destroy: 'Delete'
+    confirm_destroy: 'Are you sure?'
+    categories:
+      index:
+        title: 'Categories'
+    posts:
+      index:
+        title: 'Posts'
+    entities:
+      index:
+        title: 'Models'
+    entity_field_types:
+      index:
+        title: 'Field Types'

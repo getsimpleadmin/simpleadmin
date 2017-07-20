@@ -1,7 +1,8 @@
 module SimpleAdmin
-  class Setting
-    include ActiveModel::Model
+  class Setting < Base
 
-    attr_accessor :collection
+    def self.default_language
+      find_by(name: :default_language).value
+    end
   end
 end

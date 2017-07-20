@@ -1,7 +1,7 @@
 <section class="catalog-page">
   <header class="item-page__header">
     <h3 class="item-page__title"><%= t('.title') %></h3>
-    <%= link_to t('admin.create'), new_admin_language_path, class: 'button item-page__submit' %>
+    <%= link_to t('admin.create'), new_admin_language_path(locale: I18n.locale), class: 'button item-page__submit' %>
   </header>
 
   <table class="table">

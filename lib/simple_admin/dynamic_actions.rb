@@ -32,7 +32,7 @@ module SimpleAdmin
           @resource = model_klass.new(resource_params)
 
           if @resource.save
-            redirect_to public_send("admin_#{collection_name}_path")
+            redirect_to public_send("admin_#{collection_name}_path", locale: I18n.locale)
           else
             render :new
           end
@@ -48,7 +48,7 @@ module SimpleAdmin
           @resource = model_klass.find(params[:id])
 
           if @resource.update(resource_params)
-            redirect_to public_send("admin_#{collection_name}_path")
+            redirect_to public_send("admin_#{collection_name}_path", locale: I18n.locale)
           else
             render :edit
           end
@@ -57,6 +57,8 @@ module SimpleAdmin
         define_method :destroy do
           @resource = model_klass.find(params[:id])
           @resource.destroy
+
+          redirect_to public_send("admin_#{collection_name}_path", locale: I18n.locale)
         end
 
         define_method :resource_params do

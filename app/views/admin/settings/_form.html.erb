@@ -1,13 +1,12 @@
 <div class="item-page__content">
   <%= form_for resource, url: form_url do |f| %>
     <section class="field">
-        <div class="field__title">Имя Модели</div>
+        <div class="field__title"><%= resource.label %></div>
         <div class="field__content">
-            <div class="select__wrapper">
-                <%= f.select :name, ApplicationRecord.descendants.map { |model| [model.name, model.name] }, {}, { class: 'select' } %>
-            </div>
+          <%= f.text_field :value, class: 'input' %>
         </div>
     </section>
+
 
     <section class="field">
       <div class="field__title"></div>
@@ -15,9 +14,5 @@
         <%= f.submit value: 'Сохранить', class: 'button button--wide item-page__button' %>
       </div>
     </section>
-  <% end %>
-
-  <% if resource.persisted? %>
-    <%= render 'admin/entities/entity_field_form', entity: resource %>
   <% end %>
 </div>

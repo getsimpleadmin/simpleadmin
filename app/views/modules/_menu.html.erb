@@ -1,21 +1,22 @@
 <div class="aside__container">
   <div class="nav-group">
     <div class="nav-group__item nav-group__title">
-      <%= link_to 'Записи', admin_posts_path %>
+      <%= link_to 'Записи', admin_posts_path(locale: I18n.locale) %>
     </div>
   </div>
 
   <div class="nav-group">
     <div class="nav-group__item nav-group__title">
-      <%= link_to 'Категории', admin_categories_path %>
+      <%= link_to 'Категории', admin_categories_path(locale: I18n.locale) %>
     </div>
   </div>
 
 
   <div class="nav-group">
-    <div class="nav-group__item nav-group__title">Настройки</div>
-    <%= link_to 'Типы полей', admin_entity_field_types_path, class: 'nav-group__item' %>
-    <%= link_to 'Языки', admin_languages_path, class: 'nav-group__item' %>
-    <%= link_to 'Модели', admin_entities_path, class: 'nav-group__item' %>
+    <div class="nav-group__item nav-group__title">Система</div>
+    <%= link_to 'Настройки', admin_settings_path(locale: I18n.locale), class: 'nav-group__item' %>
+    <%= link_to 'Языки', admin_languages_path(locale: I18n.locale), class: 'nav-group__item' %>
+    <%= link_to 'Модели', admin_entities_path(locale: I18n.locale), class: 'nav-group__item' %>
+    <%= link_to 'Типы полей', admin_entity_field_types_path(locale: I18n.locale), class: 'nav-group__item' %>
   </div>
 </div>
