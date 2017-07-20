@@ -4,9 +4,19 @@ source "https://rubygems.org"
 gemspec
 
 gem 'pg'
+
+gem 'faker'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'pry-rails'
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
