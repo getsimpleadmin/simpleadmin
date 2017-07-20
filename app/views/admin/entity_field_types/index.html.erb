@@ -5,7 +5,7 @@
   </header>
 
   <table class="table">
-    <%= render 'admin/shared/table_header', field_names: @resource_settings.collection %>
+    <%= render 'admin/shared/table_header', field_names: [:id, :name, :template] %>
     <%= render 'admin/shared/table_body', resources: @resources, resource_fields: @resource_fields %>
   </table>
 </section>

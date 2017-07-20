@@ -1,6 +1,5 @@
 module Admin
   class EntityFieldTypesController < BaseController
-    include SimpleAdmin::InbuiltControllerSettings
     include SimpleAdmin::CrudControllerHelper
 
     def model_klass

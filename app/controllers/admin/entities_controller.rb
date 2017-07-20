@@ -1,6 +1,5 @@
 module Admin
   class EntitiesController < BaseController
-    include SimpleAdmin::InbuiltControllerSettings
     include SimpleAdmin::CrudControllerHelper
 
     before_action only: [:new, :edit] do

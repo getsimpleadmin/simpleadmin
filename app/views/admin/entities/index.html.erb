@@ -5,24 +5,24 @@
   </header>
 
   <table class="table">
-    <%= render 'admin/shared/table_header', field_names: @resource_settings.collection %>
+    <%= render 'admin/shared/table_header', field_names: [:id, :name] %>
 
     <tbody class="table__body">
-        <% @entities.each do |entity| %>
+        <% @resources.each do |resource| %>
           <tr class="table__row">
             <td class="table__cell">
               <span>
-                <%= entity.id %>
+                <%= resource.id %>
               </span>
             </td>
 
             <td class="table__cell">
               <span>
-                <%= entity.name %>
+                <%= resource.name %>
               </span>
             </td>
 
-            <%= render 'admin/shared/collection_actions', resource: entity %>
+            <%= render 'admin/shared/collection_actions', resource: resource %>
           </tr>
         <% end %>
     </tbody>
