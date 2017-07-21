@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
 
-    scope "/:locale", locale: SimpleAdmin::Language.language_codes do # locale: 'en|ru'
+    scope "/:locale", locale: 'en|ru' do #locale: SimpleAdmin::Language.language_codes do
       get 'dashboard' => 'dashboard#index'
 
       resources :entities,  except: :show

@@ -4,15 +4,18 @@ require 'bundler/setup'
 require 'pry'
 
 require 'action_controller'
+require 'active_record'
 require 'action_controller/railtie'
-
-require File.expand_path("../../spec/example_app/config/environment", __FILE__)
 
 require 'active_support/all'
 require 'rspec/rails'
 
-Dir[Rails.root.join("../../spec/support/**/*.rb")].each { |file| require file }
-Dir[Rails.root.join("../../spec/factories/**/*.rb")].each { |file| require file }
+root = Pathname.new(Dir.pwd)
+
+require File.expand_path("../../spec/example_app/config/environment", __FILE__)
+
+Dir[root.join("spec/support/**/*.rb")].each { |file| require file }
+Dir[root.join("spec/factories/**/*.rb")].each { |file| require file }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -26,6 +29,4 @@ RSpec.configure do |config|
   end
 end
 
-ActiveRecord::Tasks::DatabaseTasks.create_all
-ActiveRecord::Tasks::DatabaseTasks.migrate
-# ActiveRecord::Migration.maintain_test_schema!
+ActiveRecord::Migration.maintain_test_schema!

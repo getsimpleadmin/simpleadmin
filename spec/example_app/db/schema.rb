@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719132105) do
+ActiveRecord::Schema.define(version: 20170721151710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,4 +20,29 @@ ActiveRecord::Schema.define(version: 20170719132105) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "simple_admin_entity_field_types", force: :cascade do |t|
+    t.string "name"
+    t.string "template"
+    t.boolean "inbuilt", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_languages", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_settings", force: :cascade do |t|
+    t.string "name"
+    t.string "value"
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
