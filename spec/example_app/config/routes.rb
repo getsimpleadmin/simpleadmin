@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :languages, except: :show
     resources :entity_field_types, except: :show
 
+    resources :posts
     resources :settings, only: [:index, :update]
   end
 end

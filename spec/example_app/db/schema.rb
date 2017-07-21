@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721151710) do
+ActiveRecord::Schema.define(version: 20170721161721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "simple_admin_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_category_translations", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["category_id"], name: "index_69912e5010380b695944c6a92f5558b8d3b295b9"
+    t.index ["locale"], name: "index_simple_admin_category_translations_on_locale"
+  end
 
   create_table "simple_admin_entities", force: :cascade do |t|
     t.string "name"
@@ -33,6 +48,24 @@ ActiveRecord::Schema.define(version: 20170721151710) do
     t.string "name"
     t.string "code"
     t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_post_translations", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "description"
+    t.index ["locale"], name: "index_simple_admin_post_translations_on_locale"
+    t.index ["post_id"], name: "index_simple_admin_post_translations_on_simple_admin_post_id"
+  end
+
+  create_table "simple_admin_posts", force: :cascade do |t|
+    t.string "image"
+    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
