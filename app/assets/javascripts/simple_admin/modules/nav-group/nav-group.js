@@ -46,7 +46,7 @@
 
 	instance.getChildrenHeight = function(node, onlyFirst) {
 		var height = 0;
-		var selector = onlyFirst ? $(node).find(':first-child') : $(node).children();
+		var selector = onlyFirst ? $(node).children().first() : $(node).children();
 		selector.each(function() {
 			height += $(this).outerHeight();
 		});

@@ -3,8 +3,8 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <title>Simple Admin</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
     <%= stylesheet_link_tag 'simple_admin/base', media: 'all' %>
-    <%= javascript_include_tag 'simple_admin/base', 'data-turbolinks-track' => true %>
   </head>
   <body>
     <%= render "layouts/header" %>
@@ -15,5 +15,6 @@
         <%= yield %>
       </section>
     </main>
+    <%= javascript_include_tag 'simple_admin/base', 'data-turbolinks-track' => true %>
   </body>
 </html>

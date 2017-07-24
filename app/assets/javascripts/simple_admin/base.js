@@ -1,4 +1,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require simple_admin/vendor/jquery_simple_admin
+//= require simple_admin/vendor/jquery.tablesorter.min
 //= require simple_admin/modules/nav-group/nav-group
+//= require simple_admin/modules/form/form
+//= require simple_admin/modules/image/image
+//= require simple_admin/modules/input/input
+//= require simple_admin/modules/table/table
+//= require simple_admin/modules/textarea/textarea
