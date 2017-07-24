@@ -1,5 +1,5 @@
 <div class="item-page__content">
-  <%= form_for resource, url: form_url, remote: true do |f| %>
+  <%= form_for resource, url: form_url do |f| %>
     <%= render resource.presentation, f: f, label: resource.label %>
 
     <section class="field">

@@ -32,7 +32,12 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    SimpleAdmin::Setting.find_or_create_by(name: :default_language, value: :ru)
+    SimpleAdmin::Setting.find_or_create_by(name: :default_language, label: 'Язык по умолчанию',
+                                                 value: :ru, presentation: 'fields/settings/select_form')
+    SimpleAdmin::Setting.find_or_create_by(name: :site_url_staging, label: 'Адрес сайта (staging)',
+                      value: 'http://staging.warrobots.net/', presentation: 'fields/settings/string_form')
+    SimpleAdmin::Setting.find_or_create_by(name: :site_url_production, label: 'Адрес сайта (production)',
+                          value: 'http://faq.wwr.mobi/hc/ru', presentation: 'fields/settings/string_form')
   end
 
   config.include ControllerHelpers, type: :controller
