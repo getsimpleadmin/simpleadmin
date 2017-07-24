@@ -7,14 +7,20 @@ module Admin
     before_action :set_entity_fields!
     before_action :respond_with_locale
 
+    def current_locale
+      @current_locale ||= { locale: SimpleAdmin::Setting.default_language }
+    end
+
+    helper_method :current_locale
+
     private
 
     def respond_with_locale
-      I18n.locale = params[:locale] || I18n.default_locale
+      I18n.locale = params[:locale]
     end
 
     def set_entity_fields!
-      return if self.class == Admin::EntitiesController || self.class == Admin::EntityFieldsController || self.class == Admin::DashboardController
+      return if self.class == Admin::System::EntitiesController || self.class == Admin::EntityFieldsController || self.class == Admin::DashboardController
 
       case params[:action]
       when 'index'
@@ -36,8 +42,8 @@ module Admin
       {
         # Admin::PostsController => SimpleAdmin::Post.to_s,
         # Admin::CategoriesController => SimpleAdmin::Category.to_s,
-        Admin::EntityFieldTypesController => SimpleAdmin::EntityFieldType.to_s,
-        Admin::LanguagesController => SimpleAdmin::Language.to_s
+        Admin::System::EntityFieldTypesController => SimpleAdmin::EntityFieldType.to_s,
+        Admin::System::LanguagesController => SimpleAdmin::Language.to_s
       }
     end
   end

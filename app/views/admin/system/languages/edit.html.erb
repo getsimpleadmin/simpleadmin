@@ -4,5 +4,5 @@
   </header>
   <h5 class="item-page__description"><%= @resource.name %></h5>
 
-  <%= render 'admin/languages/form', resource: @resource, form_url: admin_language_path(@resource, locale: I18n.locale) %>
+  <%= render 'admin/system/languages/form', resource: @resource, form_url: admin_system_language_path(@resource, current_locale) %>
 </section>

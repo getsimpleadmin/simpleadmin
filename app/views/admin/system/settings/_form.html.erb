@@ -3,7 +3,7 @@
     <section class="field">
         <div class="field__title"><%= resource.label %></div>
         <div class="field__content">
-          <%= f.text_field :value, class: 'input' %>
+          <%= f.select :value, SimpleAdmin::Language.enabled.collect { |ft| [ft.code, ft.code] }, {}, { class: 'input' } %>
         </div>
     </section>
 

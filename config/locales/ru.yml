@@ -9,9 +9,16 @@ ru:
     create: 'Создать'
     destroy: 'Удалить'
     confirm_destroy: 'Вы уверены?'
+    system: 'Система'
+    settings:
+      index:
+        title: 'Настройки'
     categories:
       index:
         title: 'Категории'
+    languages:
+      index:
+        title: 'Языки'
     posts:
       index:
         title: 'Записи'

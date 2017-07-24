@@ -8,12 +8,14 @@ Rails.application.routes.draw do
     scope "/:locale", locale: 'en|ru' do #locale: SimpleAdmin::Language.language_codes do
       get 'dashboard' => 'dashboard#index'
 
-      resources :entities,  except: :show
-      resources :languages, except: :show
-      resources :entity_field_types, except: :show
+      namespace :system do
+        resources :settings, only: [:index, :update]
+        resources :languages, except: :show
+        resources :entities,  except: :show
+        resources :entity_field_types, except: :show
+      end
 
       resources :entity_fields, only: [:create, :update, :destroy]
-      resources :settings, only: [:index, :update]
 
       # %w(posts categories).each do |collection_name|
       #   resources collection_name

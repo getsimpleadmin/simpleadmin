@@ -1,5 +1,5 @@
 module SimpleAdminHelper
-  def resource_link(resource, method, prefix = nil, namespace = :admin)
+  def resource_link(resource, method, prefix = nil, namespace = 'admin_system')
     model_klass_name = resource.class.name.demodulize.underscore
 
     case method
@@ -14,7 +14,7 @@ module SimpleAdminHelper
     resource_path = "#{namespace}_#{model_klass_name}_path"
     resource_path = "#{prefix}_#{resource_path}" if prefix.present?
 
-    public_send(resource_path, resource, locale: I18n.locale)
+    public_send(resource_path, resource, current_locale)
   end
 
   def str_to_method(string)

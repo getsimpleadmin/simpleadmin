@@ -9,12 +9,19 @@ en:
     create: 'Create'
     destroy: 'Delete'
     confirm_destroy: 'Are you sure?'
+    system: 'System'
+    settings:
+      index:
+        title: 'Settings'
     categories:
       index:
         title: 'Categories'
     posts:
       index:
         title: 'Posts'
+    languages:
+      index:
+        title: 'Languages'
     entities:
       index:
         title: 'Models'
