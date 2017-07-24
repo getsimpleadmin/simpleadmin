@@ -2,7 +2,7 @@
     <% resources.each do |resource| %>
       <tr class="table__row">
         <% resource_fields.each do |field| %>
-          <%= render "#{field.entity_field_type.template}/#{field.display}", field: field, resource: resource %>
+          <%= render field.template_path, field: field, resource: resource %>
         <% end %>
 
         <%= render 'admin/shared/collection_actions', resource: resource %>

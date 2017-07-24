@@ -1,17 +1,11 @@
 <div class="item-page__content">
-  <%= form_for resource, url: form_url do |f| %>
-    <section class="field">
-        <div class="field__title"><%= resource.label %></div>
-        <div class="field__content">
-          <%= f.select :value, SimpleAdmin::Language.enabled.collect { |ft| [ft.code, ft.code] }, {}, { class: 'input' } %>
-        </div>
-    </section>
-
+  <%= form_for resource, url: form_url, remote: true do |f| %>
+    <%= render resource.presentation, f: f, label: resource.label %>
 
     <section class="field">
       <div class="field__title"></div>
       <div class="field__content">
-        <%= f.submit value: 'Сохранить', class: 'button button--wide item-page__button' %>
+        <%= f.submit value: 'Обновить', class: 'button button--wide item-page__button' %>
       </div>
     </section>
   <% end %>

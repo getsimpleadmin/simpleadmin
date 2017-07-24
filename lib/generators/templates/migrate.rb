@@ -75,6 +75,7 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
       t.string :value
 
       t.string :label
+      t.string :presentation
 
       t.timestamps null: false
     end

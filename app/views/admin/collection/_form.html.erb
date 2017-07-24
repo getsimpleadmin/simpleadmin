@@ -2,7 +2,7 @@
   <%= form_for resource, url: form_url do |f| %>
 
     <% resource_fields.each do |field| %>
-      <%= render "#{field.entity_field_type.template}/#{field.display}", f: f, field: field %>
+      <%= render field.template_path, f: f, field: field %>
     <% end %>
 
     <section class="field">
