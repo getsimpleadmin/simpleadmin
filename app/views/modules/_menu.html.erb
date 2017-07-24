@@ -1,9 +1,9 @@
 <div class="aside__container">
   <div class="nav-group">
-    <div class="nav-group__item nav-group__title">Система</div>
-    <%= link_to 'Настройки', admin_settings_path(locale: SimpleAdmin::Setting.default_language), class: 'nav-group__item' %>
-    <%= link_to 'Языки', admin_languages_path(locale: SimpleAdmin::Setting.default_language), class: 'nav-group__item' %>
-    <%= link_to 'Модели', admin_entities_path(locale: SimpleAdmin::Setting.default_language), class: 'nav-group__item' %>
-    <%= link_to 'Типы полей', admin_entity_field_types_path(locale: SimpleAdmin::Setting.default_language), class: 'nav-group__item' %>
+    <div class="nav-group__item nav-group__title"><%= t('admin.system') %></div>
+    <%= link_to t('admin.settings.index.title'), admin_system_settings_path(locale: current_locale), class: 'nav-group__item' %>
+    <%= link_to t('admin.languages.index.title'), admin_system_languages_path(locale: current_locale), class: 'nav-group__item' %>
+    <%= link_to t('admin.entities.index.title'), admin_system_entities_path(locale: current_locale), class: 'nav-group__item' %>
+    <%= link_to t('admin.entity_field_types.index.title'), admin_system_entity_field_types_path(locale: current_locale), class: 'nav-group__item' %>
   </div>
 </div>

@@ -4,6 +4,6 @@
   </header>
 
   <% @settings.each do |setting| %>
-    <%= render 'admin/settings/form', resource: setting, form_url: admin_setting_path(setting, locale: I18n.locale) %>
+    <%= render 'admin/system/settings/form', resource: setting, form_url: admin_system_setting_path(setting, locale: current_locale) %>
   <% end %>
 </section>

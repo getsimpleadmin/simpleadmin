@@ -14,12 +14,12 @@ RSpec.describe Admin::SettingsController, type: :controller do
   end
 
   describe '#update' do
-    let(:setting) { create :setting }
+    let(:setting) { create :setting, name: :default_language, value: :en }
     let(:params) do
       {
         id: setting.id,
         simple_admin_setting: {
-          value: 'test'
+          value: :ru
         }
       }
     end
