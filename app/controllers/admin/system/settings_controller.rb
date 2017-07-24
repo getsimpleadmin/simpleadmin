@@ -10,7 +10,7 @@ module Admin
         @setting = SimpleAdmin::Setting.find(params[:id])
         @setting.update(resource_params)
 
-        redirect_to admin_system_settings_path(locale: current_locale)
+        redirect_to admin_system_settings_path(current_locale)
       end
 
       private

@@ -35,6 +35,7 @@ RSpec.configure do |config|
     SimpleAdmin::Setting.find_or_create_by(name: :default_language, value: :ru)
   end
 
+  config.include ControllerHelpers, type: :controller
   config.include FeatureHelpers, type: :feature
 end
 

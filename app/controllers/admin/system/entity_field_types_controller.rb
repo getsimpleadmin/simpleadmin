@@ -10,7 +10,7 @@ module Admin
       end
 
       def redirect_path
-        admin_system_entity_field_types_path(locale: current_locale)
+        admin_system_entity_field_types_path(current_locale)
       end
 
       private

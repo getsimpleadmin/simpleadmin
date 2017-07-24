@@ -24,7 +24,7 @@ RSpec.describe Admin::System::SettingsController, type: :controller do
     subject { patch :update, params: params }
 
     it 'update resource' do
-      expect(subject).to redirect_to admin_system_settings_path(locale: SimpleAdmin::Setting.default_language)
+      expect(subject).to redirect_to admin_system_settings_path(current_locale)
 
       expect(setting.reload.value).to eq 'en'
     end

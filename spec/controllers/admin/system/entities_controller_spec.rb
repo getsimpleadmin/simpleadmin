@@ -4,7 +4,7 @@ RSpec.describe Admin::System::EntitiesController, type: :controller do
   let(:resource) { create :entity }
   let(:resources) { create_list :entity, 1 }
 
-  let(:resource_path) { admin_system_entities_path(locale: SimpleAdmin::Setting.default_language) }
+  let(:resource_path) { admin_system_entities_path(current_locale) }
   let(:resource_attributes) do
     {
       name: :name,

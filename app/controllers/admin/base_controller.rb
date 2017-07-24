@@ -8,7 +8,7 @@ module Admin
     before_action :respond_with_locale
 
     def current_locale
-      @current_locale ||= SimpleAdmin::Setting.default_language
+      @current_locale ||= { locale: SimpleAdmin::Setting.default_language }
     end
 
     helper_method :current_locale

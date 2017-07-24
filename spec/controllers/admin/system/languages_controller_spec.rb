@@ -4,7 +4,7 @@ RSpec.describe Admin::System::LanguagesController, type: :controller do
   let(:resource) { create :language }
   let(:resources) { create_list :language, 1 }
 
-  let(:resource_path) { admin_system_languages_path(locale: SimpleAdmin::Setting.default_language) }
+  let(:resource_path) { admin_system_languages_path(current_locale) }
   let(:resource_attributes) do
     {
       name: :name,

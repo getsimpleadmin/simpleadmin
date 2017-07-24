@@ -4,7 +4,7 @@ RSpec.describe Admin::System::EntityFieldTypesController, type: :controller do
   let(:resource) { create :entity_field_type }
   let(:resources) { create_list :entity_field_type, 1 }
 
-  let(:resource_path) { admin_system_entity_field_types_path(locale: SimpleAdmin::Setting.default_language) }
+  let(:resource_path) { admin_system_entity_field_types_path(current_locale) }
   let(:resource_attributes) do
     {
       name: :name,

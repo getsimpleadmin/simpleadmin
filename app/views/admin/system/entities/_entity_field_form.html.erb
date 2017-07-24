@@ -1,6 +1,6 @@
 <h5 class="item-page__description">Создать поле</h5>
 
-<%= form_for entity.entity_fields.build, url: admin_entity_fields_path(locale: current_locale), remote: true do |f| %>
+<%= form_for entity.entity_fields.build, url: admin_entity_fields_path(current_locale), remote: true do |f| %>
   <%= render 'admin/entities/entity_field_attributes', entity: entity, f: f %>
 
   <section class="field">
