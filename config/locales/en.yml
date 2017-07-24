@@ -9,7 +9,8 @@ en:
     create: 'Create'
     destroy: 'Delete'
     confirm_destroy: 'Are you sure?'
-    system: 'System'
+    system:
+      title: 'System'
     settings:
       index:
         title: 'Settings'

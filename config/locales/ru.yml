@@ -9,7 +9,8 @@ ru:
     create: 'Создать'
     destroy: 'Удалить'
     confirm_destroy: 'Вы уверены?'
-    system: 'Система'
+    system:
+      title: 'Система'
     settings:
       index:
         title: 'Настройки'
