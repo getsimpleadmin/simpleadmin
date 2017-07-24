@@ -2,9 +2,8 @@ module SimpleAdmin
   class DynamicActions
     MODEL_NAMESPACE = :SimpleAdmin
 
-    def self.set!(klass_name, collection_name)
-      model_klass_name = collection_name.to_s.singularize.camelize
-      model_klass = "#{MODEL_NAMESPACE}::#{model_klass_name}".constantize
+    def self.set!(klass_name, model_name, collection_name)
+      model_klass = model_name.constantize
 
       klass_name.class_eval do
         define_method :index do

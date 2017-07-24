@@ -17,14 +17,14 @@ Rails.application.routes.draw do
 
       resources :entity_fields, only: [:create, :update, :destroy]
 
-      # %w(posts categories).each do |collection_name|
-      #   resources collection_name
-      #
-      #   dynamic_controller = SimpleAdmin::DynamicControllers.new(collection_name)
-      #   dynamic_controller.set!
-      #
-      #   SimpleAdmin::DynamicActions.set!(dynamic_controller.get_klass_name, collection_name)
-      # end
+      SimpleAdmin::Entity.collection_names.each do |model_name, collection_name|
+        resources collection_name
+
+        dynamic_controller = SimpleAdmin::DynamicControllers.new(collection_name)
+        dynamic_controller.set!
+
+        SimpleAdmin::DynamicActions.set!(dynamic_controller.get_klass_name, model_name, collection_name)
+      end
     end
   end
 end

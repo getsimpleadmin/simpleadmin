@@ -1,5 +1,5 @@
 module SimpleAdminHelper
-  def resource_link(resource, method, prefix = nil, namespace = 'admin_system')
+  def resource_link(resource, method, prefix = nil, namespace = nil)
     model_klass_name = resource.class.name.demodulize.underscore
 
     case method

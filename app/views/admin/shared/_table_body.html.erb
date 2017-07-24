@@ -5,7 +5,7 @@
           <%= render field.template_path, field: field, resource: resource %>
         <% end %>
 
-        <%= render 'admin/shared/collection_actions', resource: resource %>
+        <%= render 'admin/shared/collection_actions', resource: resource, namespace: namespace %>
       </tr>
     <% end %>
 </tbody>
