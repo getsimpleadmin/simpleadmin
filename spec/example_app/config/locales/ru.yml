@@ -1,0 +1,31 @@
+ru:
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+  admin:
+    actions: 'Действия'
+    edit: 'Редактировать'
+    create: 'Создать'
+    destroy: 'Удалить'
+    confirm_destroy: 'Вы уверены?'
+    system:
+      title: 'Система'
+      settings:
+        index:
+          title: 'Настройки'
+      categories:
+        index:
+          title: 'Категории'
+      languages:
+        index:
+          title: 'Языки'
+      posts:
+        index:
+          title: 'Записи'
+      entities:
+        index:
+          title: 'Модели'
+      entity_field_types:
+        index:
+          title: 'Типы полей'

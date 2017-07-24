@@ -8,7 +8,7 @@ module Admin
     before_action :respond_with_locale
 
     def current_locale
-      SimpleAdmin::Setting.default_language
+      @current_locale ||= SimpleAdmin::Setting.default_language
     end
 
     helper_method :current_locale
@@ -16,7 +16,7 @@ module Admin
     private
 
     def respond_with_locale
-      I18n.locale = params[:locale] || I18n.default_locale
+      I18n.locale = params[:locale]
     end
 
     def set_entity_fields!

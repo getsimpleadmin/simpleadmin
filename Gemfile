@@ -20,5 +20,6 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'capybara-screenshot'
   gem 'capybara-webkit'
 end

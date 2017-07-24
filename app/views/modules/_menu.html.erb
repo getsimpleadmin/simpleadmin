@@ -1,6 +1,6 @@
 <div class="aside__container">
   <div class="nav-group">
-    <div class="nav-group__item nav-group__title"><%= t('admin.system') %></div>
+    <div class="nav-group__item nav-group__title"><%= t('admin.system.title') %></div>
     <%= link_to t('admin.settings.index.title'), admin_system_settings_path(locale: current_locale), class: 'nav-group__item' %>
     <%= link_to t('admin.languages.index.title'), admin_system_languages_path(locale: current_locale), class: 'nav-group__item' %>
     <%= link_to t('admin.entities.index.title'), admin_system_entities_path(locale: current_locale), class: 'nav-group__item' %>
