@@ -17,7 +17,7 @@
     </section>
   <% end %>
 
-  <% if entity.persisted? %>
-    <%= render 'admin/entities/entity_field_form', entity: entity %>
+  <% if resource.persisted? %>
+    <%= render 'admin/entities/entity_field_form', entity: resource %>
   <% end %>
 </div>

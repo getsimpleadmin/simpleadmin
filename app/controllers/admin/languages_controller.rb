@@ -7,7 +7,7 @@ module Admin
     end
 
     def redirect_path
-      admin_languages_path
+      admin_languages_path(locale: I18n.locale)
     end
 
     private

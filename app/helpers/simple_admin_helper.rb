@@ -14,17 +14,10 @@ module SimpleAdminHelper
     resource_path = "#{namespace}_#{model_klass_name}_path"
     resource_path = "#{prefix}_#{resource_path}" if prefix.present?
 
-    public_send(resource_path, resource)
+    public_send(resource_path, resource, locale: I18n.locale)
   end
 
-  def str_to_collection(string)
-    arr = string.split('.')
-    object = arr[0].constantize
-
-    arr[1..arr.size].each do |method|
-      object = object.public_send(method)
-    end
-
-    object
+  def str_to_method(string)
+    eval(string)
   end
 end
