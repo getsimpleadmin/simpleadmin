@@ -1,7 +1,7 @@
 <div class="aside__container">
   <% SimpleAdmin::Entity.all.each do |entity| %>
     <div class="nav-group">
-      <%= link_to t("admin.#{entity.collection_name}.index.title"), public_send("admin_#{entity.collection_name}_path", current_locale), class: 'nav-group__item nav-group__title' %>
+      <%= link_to t(resource_collection_title(entity)), resource_collection_link(entity, current_locale), class: 'nav-group__item nav-group__title' %>
     </div>
   <% end %>
 

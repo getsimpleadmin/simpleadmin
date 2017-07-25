@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
       if ActiveRecord::Base.connection.table_exists?('simple_admin_entities')
         SimpleAdmin::Entity.collection_names.each do |model_name, collection_name|
-          resources collection_name
+          resources collection_name, except: :show
 
           dynamic_controller = SimpleAdmin::DynamicControllers.new(collection_name)
           dynamic_controller.set!

@@ -9,9 +9,6 @@ ru:
     create: 'Создать'
     destroy: 'Удалить'
     confirm_destroy: 'Вы уверены?'
-    comments:
-      index:
-        title: 'Комментарии'
     categories:
       index:
         title: 'Категории'

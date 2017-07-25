@@ -27,7 +27,10 @@ module SimpleAdmin
       end
 
       def model_name
-        DEFAULT_MODELS[self.class.name] || controller_entity_name.singularize.classify
+        model_klass_name = controller_entity_name.split('_')
+        model_klass_name = model_klass_name.map(&:camelize).map(&:singularize).join('::')
+
+        DEFAULT_MODELS[self.class.name] || model_klass_name
       end
 
       def field_display

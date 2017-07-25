@@ -1,0 +1,7 @@
+<td class="table__cell">
+  <span>
+    <% if resource.get_field(field.name).present? %>
+      <%= image_tag resource.get_image_field(field.name) %>
+    <% end %>
+  </span>
+</td>

@@ -39,6 +39,13 @@ module SimpleAdmin
         Admin::DashboardController
       ]
     end
+
+    def core_models
+      {
+        SimpleAdmin::Post => :posts,
+        SimpleAdmin::Category => :categories
+      }
+    end
   end
 end
 
