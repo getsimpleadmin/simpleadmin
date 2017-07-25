@@ -1,9 +1,15 @@
 <div class="aside__container">
+  <% SimpleAdmin::Entity.all.each do |entity| %>
+    <div class="nav-group">
+      <%= link_to t("admin.#{entity.collection_name}.index.title"), public_send("admin_#{entity.collection_name}_path", current_locale), class: 'nav-group__item nav-group__title' %>
+    </div>
+  <% end %>
+
   <div class="nav-group">
     <div class="nav-group__item nav-group__title"><%= t('admin.system.title') %></div>
-    <%= link_to t('admin.settings.index.title'), admin_system_settings_path(current_locale), class: 'nav-group__item' %>
-    <%= link_to t('admin.languages.index.title'), admin_system_languages_path(current_locale), class: 'nav-group__item' %>
-    <%= link_to t('admin.entities.index.title'), admin_system_entities_path(current_locale), class: 'nav-group__item' %>
-    <%= link_to t('admin.entity_field_types.index.title'), admin_system_entity_field_types_path(current_locale), class: 'nav-group__item' %>
+    <%= link_to t('admin.system.settings.index.title'), admin_system_settings_path(current_locale), class: 'nav-group__item' %>
+    <%= link_to t('admin.system.languages.index.title'), admin_system_languages_path(current_locale), class: 'nav-group__item' %>
+    <%= link_to t('admin.system.entities.index.title'), admin_system_entities_path(current_locale), class: 'nav-group__item' %>
+    <%= link_to t('admin.system.entity_field_types.index.title'), admin_system_entity_field_types_path(current_locale), class: 'nav-group__item' %>
   </div>
 </div>

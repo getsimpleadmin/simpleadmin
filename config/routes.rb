@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
 
-    scope "/:locale", locale: 'en|ru' do #locale: SimpleAdmin::Language.language_codes do
+    scope "/:locale", locale: 'en|ru' do
       get 'dashboard' => 'dashboard#index'
 
       namespace :system do
@@ -17,14 +17,17 @@ Rails.application.routes.draw do
 
       resources :entity_fields, only: [:create, :update, :destroy]
 
-      # %w(posts categories).each do |collection_name|
-      #   resources collection_name
-      #
-      #   dynamic_controller = SimpleAdmin::DynamicControllers.new(collection_name)
-      #   dynamic_controller.set!
-      #
-      #   SimpleAdmin::DynamicActions.set!(dynamic_controller.get_klass_name, collection_name)
-      # end
+      if ActiveRecord::Base.connection.table_exists?('simple_admin_entities')
+        SimpleAdmin::Entity.collection_names.each do |model_name, collection_name|
+          resources collection_name
+
+          dynamic_controller = SimpleAdmin::DynamicControllers.new(collection_name)
+          dynamic_controller.set!
+
+          SimpleAdmin::DynamicActions.set!(dynamic_controller.get_klass_name, model_name, collection_name)
+        end
+      end
+
     end
   end
 end

@@ -1,4 +1,4 @@
-<%= form_for entity_field, url: admin_entity_field_path(entity_field), html: { 'data-entity-field-item-id' => entity_field.id }, remote: true do |f| %>
+<%= form_for entity_field, url: admin_entity_field_path(entity_field, current_locale), html: { 'data-entity-field-item-id' => entity_field.id }, remote: true do |f| %>
   <%= render 'admin/system/entities/entity_field_attributes', entity: entity, f: f %>
 
   <% if entity_field.entity_field_setting.present? %>

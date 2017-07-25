@@ -1,6 +1,6 @@
 module SimpleAdminHelper
-  def resource_link(resource, method, prefix = nil, namespace = 'admin_system')
-    model_klass_name = resource.class.name.demodulize.underscore
+  def resource_link(resource, method, prefix = nil, namespace = nil)
+    model_klass_name = resource.model_name.element
 
     case method
     when :create

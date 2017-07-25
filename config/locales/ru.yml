@@ -9,23 +9,26 @@ ru:
     create: 'Создать'
     destroy: 'Удалить'
     confirm_destroy: 'Вы уверены?'
-    system:
-      title: 'Система'
-    settings:
+    comments:
       index:
-        title: 'Настройки'
+        title: 'Комментарии'
     categories:
       index:
         title: 'Категории'
-    languages:
-      index:
-        title: 'Языки'
     posts:
       index:
         title: 'Записи'
-    entities:
-      index:
-        title: 'Модели'
-    entity_field_types:
-      index:
-        title: 'Типы полей'
+    system:
+      title: 'Система'
+      settings:
+        index:
+          title: 'Настройки'
+      languages:
+        index:
+          title: 'Языки'
+      entities:
+        index:
+          title: 'Модели'
+      entity_field_types:
+        index:
+          title: 'Типы полей'

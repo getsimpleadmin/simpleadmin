@@ -20,6 +20,7 @@ module SimpleAdmin
   autoload :Views, 'simple_admin/views'
 
   autoload :EntityControllerSetter, 'simple_admin/support/entity_controller_setter'
+  autoload :ResourceFieldsControllerSetter, 'simple_admin/support/resource_fields_controller_setter'
   autoload :InbuiltControllerSettings, 'simple_admin/support/inbuilt_controller_settings'
   autoload :CrudControllerHelper, 'simple_admin/support/crud_controller_helper'
 
@@ -28,6 +29,16 @@ module SimpleAdmin
   autoload :Overrides, 'simple_admin/core_ext/overrides'
 
   class << self
+    def core_controllers
+      [
+        Admin::System::EntitiesController,
+        Admin::System::EntityFieldTypesController,
+        Admin::System::LanguagesController,
+        Admin::System::SettingsController,
+        Admin::EntityFieldsController,
+        Admin::DashboardController
+      ]
+    end
   end
 end
 

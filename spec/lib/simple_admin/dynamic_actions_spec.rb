@@ -11,7 +11,7 @@ RSpec.describe SimpleAdmin::DynamicActions do
     before { Admin.const_set('ExamplesController', Class.new(Admin::BaseController)) }
     before { SimpleAdmin.const_set('Example', Class.new) }
 
-    subject { described_class.set!(klass_name, collection_name) }
+    subject { described_class.set!(klass_name, 'SimpleAdmin::Post', collection_name) }
 
     it 'generate controller with actions' do
       subject
