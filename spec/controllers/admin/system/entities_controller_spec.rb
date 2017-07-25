@@ -7,7 +7,7 @@ RSpec.describe Admin::System::EntitiesController, type: :controller do
   let(:resource_path) { admin_system_entities_path(current_locale) }
   let(:resource_attributes) do
     {
-      name: :name,
+      name: :model_klass_name,
       value: 'SimpleAdmin::Category'
     }
   end
@@ -15,7 +15,7 @@ RSpec.describe Admin::System::EntitiesController, type: :controller do
   let(:resource_params) do
     {
       id: resource.id,
-      simple_admin_entity: { name: resource_attributes[:value] }
+      simple_admin_entity: { model_klass_name: resource_attributes[:value] }
     }
   end
 

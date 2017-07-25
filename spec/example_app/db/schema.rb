@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(version: 20170724141511) do
   end
 
   create_table "simple_admin_entities", force: :cascade do |t|
-    t.string "name"
+    t.string "model_klass_name"
+    t.string "model_plural_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
