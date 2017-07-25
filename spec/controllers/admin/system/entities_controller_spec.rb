@@ -8,7 +8,7 @@ RSpec.describe Admin::System::EntitiesController, type: :controller do
   let(:resource_attributes) do
     {
       name: :name,
-      value: 'Test'
+      value: 'SimpleAdmin::Category'
     }
   end
 
