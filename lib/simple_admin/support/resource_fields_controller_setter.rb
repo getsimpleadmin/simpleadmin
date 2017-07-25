@@ -14,7 +14,6 @@ module SimpleAdmin
       DEFAULT_MODELS = {
         'Admin::PostsController'      => 'SimpleAdmin::Post',
         'Admin::CategoriesController' => 'SimpleAdmin::Category',
-        'Admin::CommentsController'   => 'Comment'
       }
 
       private
@@ -23,8 +22,12 @@ module SimpleAdmin
         return if SimpleAdmin.core_controllers.include?(self.class)
 
         @resource_fields = SimpleAdmin::Entity.find_by(
-          name: DEFAULT_MODELS[self.class.name]
+          name: model_name
         ).entity_fields.where(display: field_display)
+      end
+
+      def model_name
+        DEFAULT_MODELS[self.class.name] || controller_entity_name.singularize.classify
       end
 
       def field_display
