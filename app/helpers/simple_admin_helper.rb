@@ -1,11 +1,13 @@
 module SimpleAdminHelper
   def resource_link(resource, method, prefix = nil, namespace = nil)
+    # TODO Hardcoded values
     default_models = {
       SimpleAdmin::Post => {
         index:   :admin_posts_path,
         new:     :new_admin_post_path,
         create:  :admin_posts_path,
         edit:    :edit_admin_post_path,
+        update:  :admin_post_path,
         destroy: :admin_post_path
       },
       SimpleAdmin::Category => {
@@ -13,6 +15,7 @@ module SimpleAdminHelper
         new:     :new_admin_category_path,
         create:  :admin_categories_path,
         edit:    :edit_admin_category_path,
+        update:  :admin_category_path,
         destroy: :admin_category_path
       },
       SimpleAdmin::Entity => {
@@ -20,6 +23,7 @@ module SimpleAdminHelper
         new:     :new_admin_system_entity_path,
         create:  :admin_entities_path,
         edit:    :edit_admin_system_entity_path,
+        update:  :admin_entity_path,
         destroy: :admin_system_entity_path
       },
       SimpleAdmin::EntityFieldType => {
@@ -27,6 +31,7 @@ module SimpleAdminHelper
         new:     :new_admin_system_entity_field_type_path,
         create:  :admin_system_entity_field_types_path,
         edit:    :edit_admin_system_entity_field_type_path,
+        update:  :admin_entity_field_type_path,
         destroy: :admin_system_entity_field_type_path
       },
       SimpleAdmin::Language => {
@@ -34,6 +39,7 @@ module SimpleAdminHelper
         new:     :new_admin_system_language_path,
         create:  :admin_languages_path,
         edit:    :edit_admin_system_language_path,
+        update:  :admin_language_path,
         destroy: :admin_system_language_path
       }
     }
@@ -66,14 +72,15 @@ module SimpleAdminHelper
   end
 
   def resource_collection_title(resource)
-    "admin.#{resource.collection_name}.index.title"
+    "admin.#{resource.model_plural_name}.index.title"
   end
 
   def resource_collection_link(resource, current_locale)
-    public_send("admin_#{resource.collection_name}_path", current_locale)
+    public_send("admin_#{resource.model_plural_name}_path", current_locale)
   end
 
   def str_to_method(string)
+    # TODO Eval not recommended to use, think about another way
     eval(string)
   end
 end

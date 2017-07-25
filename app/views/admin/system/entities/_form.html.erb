@@ -4,7 +4,7 @@
         <div class="field__title">Имя Модели</div>
         <div class="field__content">
             <div class="select__wrapper">
-                <%= f.select :name, ApplicationRecord.descendants.map { |model| [model.name, model.name] }, {}, { class: 'select' } %>
+                <%= f.select :model_klass_name, ApplicationRecord.descendants.map { |model| [model.name, model.name] }, {}, { class: 'select' } %>
             </div>
         </div>
     </section>
