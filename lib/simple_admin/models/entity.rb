@@ -11,7 +11,8 @@ module SimpleAdmin
     end
 
     def collection_name
-      name.demodulize.downcase.pluralize
+      model_klass = name.constantize
+      SimpleAdmin.core_models[model_klass] || model_klass.model_name.plural
     end
 
     private

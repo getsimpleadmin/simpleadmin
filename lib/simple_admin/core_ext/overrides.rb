@@ -5,6 +5,10 @@ module SimpleAdmin
         def get_field(field_name)
           public_send(field_name)
         end
+
+        def get_image_field(field_name)
+          public_send("#{field_name}_url", :admin_thumb)
+        end
       end
 
       TrueClass.class_eval do
