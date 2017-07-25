@@ -62,7 +62,7 @@ module SimpleAdmin
 
         define_method :resource_params do
           params_name = model_klass.to_s.underscore.gsub('/', '_')
-          attributes = SimpleAdmin::Entity.find_by(name: model_klass.to_s).entity_fields.form.pluck(:name)
+          attributes = SimpleAdmin::Entity.find_by(model_klass_name: model_klass.to_s).entity_fields.form.pluck(:name)
 
           params.require(params_name).permit(attributes)
         end

@@ -18,7 +18,7 @@ module Admin
       private
 
       def resource_params
-        params.require(:simple_admin_entity).permit(:name)
+        params.require(:simple_admin_entity).permit(:model_klass_name)
       end
     end
   end

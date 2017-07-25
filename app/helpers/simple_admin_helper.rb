@@ -1,5 +1,6 @@
 module SimpleAdminHelper
   def resource_link(resource, method, prefix = nil, namespace = nil)
+    # TODO Hardcoded values
     default_models = {
       SimpleAdmin::Post => {
         index:   :admin_posts_path,
@@ -66,14 +67,15 @@ module SimpleAdminHelper
   end
 
   def resource_collection_title(resource)
-    "admin.#{resource.collection_name}.index.title"
+    "admin.#{resource.model_plural_name}.index.title"
   end
 
   def resource_collection_link(resource, current_locale)
-    public_send("admin_#{resource.collection_name}_path", current_locale)
+    public_send("admin_#{resource.model_plural_name}_path", current_locale)
   end
 
   def str_to_method(string)
+    # TODO Eval not recommended to use, think about another way
     eval(string)
   end
 end

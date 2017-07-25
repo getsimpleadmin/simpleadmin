@@ -3,7 +3,7 @@
 
   <div class="field__content">
     <div class="select__wrapper">
-      <%= f.select :name, entity.name.constantize.column_names.map { |cn| [cn, cn] }, {}, { class: 'select' } %>
+      <%= f.select :name, entity.model_klass_name.constantize.column_names.map { |cn| [cn, cn] }, {}, { class: 'select' } %>
     </div>
   </div>
 </section>
