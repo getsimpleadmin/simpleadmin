@@ -7,6 +7,7 @@
   <table class="table">
     <%= render 'admin/shared/table_header', field_names: [:id, :name, :template] %>
     <tbody class="table__body">
+      <% if @resources.present? %>
         <% @resources.each do |resource| %>
           <tr class="table__row">
             <td class="table__cell">
@@ -30,6 +31,9 @@
             <%= render 'admin/shared/collection_actions', resource: resource, namespace: :admin_system %>
           </tr>
         <% end %>
+      <% else %>
+        <p>Not found</p>
+      <% end %>
     </tbody>
   </table>
 </section>

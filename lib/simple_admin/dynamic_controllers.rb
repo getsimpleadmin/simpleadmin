@@ -11,6 +11,8 @@ module SimpleAdmin
     end
 
     def set!
+      return if ADMIN_NAMESPACE.const_defined?(controller_name)
+
       ADMIN_NAMESPACE.const_set(controller_name, Class.new(BASE_KLASS))
     end
 

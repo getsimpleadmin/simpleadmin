@@ -23,9 +23,21 @@ ru:
       languages:
         index:
           title: 'Языки'
+        new:
+          title: 'Создать язык'
+        edit:
+          title: 'Редактировать язык'
       entities:
         index:
           title: 'Модели'
+        new:
+          title: 'Создать новую модель'
+        edit:
+          title: 'Редактировать модель'
       entity_field_types:
         index:
           title: 'Типы полей'
+        new:
+          title: 'Создать новый тип поля'
+        edit:
+          title: 'Редактировать тип поле'

@@ -831,3 +831,5 @@ Migrating to CreateSimpleAdminEntityFields (20170724141511)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSimpleAdmin::Entity Load (35.4ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
+  [1m[36mSimpleAdmin::Entity Load (0.5ms)[0m  [1m[34mSELECT "simple_admin_entities".* FROM "simple_admin_entities"[0m
