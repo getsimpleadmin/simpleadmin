@@ -4,6 +4,7 @@ module Admin
 
     include SimpleAdmin::EntityControllerSetter
     include SimpleAdmin::ResourceFieldsControllerSetter
+    include SimpleAdmin::CrudControllerHelper
 
     before_action :respond_with_locale
 

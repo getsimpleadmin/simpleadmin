@@ -1,8 +1,6 @@
 module Admin
   module System
     class LanguagesController < BaseController
-      include SimpleAdmin::CrudControllerHelper
-
       def model_klass
         SimpleAdmin::Language
       end

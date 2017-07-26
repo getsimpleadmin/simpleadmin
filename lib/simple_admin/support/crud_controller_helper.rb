@@ -5,14 +5,20 @@ module SimpleAdmin
     included do
       def index
         @resources = model_klass.all
+
+        render template_path
       end
 
       def new
         @resource = model_klass.new
+
+        render template_path
       end
 
       def edit
         @resource = model_klass.find(params[:id])
+
+        render template_path
       end
 
       def update
@@ -40,6 +46,16 @@ module SimpleAdmin
         @resource.destroy
 
         redirect_to redirect_path
+      end
+
+      private
+
+      def resource_params
+        params.require(resource_name).permit(resource_attributes)
+      end
+
+      def template_path
+        "#{params[:controller]}/#{params[:action]}"
       end
     end
   end
