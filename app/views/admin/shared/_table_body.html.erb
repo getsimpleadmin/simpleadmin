@@ -1,8 +1,8 @@
 <tbody class="table__body">
     <% resources.each do |resource| %>
       <tr class="table__row">
-        <% resource_fields.each do |field| %>
-          <%= render field.template_path, field: field, resource: resource %>
+        <% entity_fields.each do |entity_field| %>
+          <%= render entity_field.template_path, field: entity_field, resource: resource %>
         <% end %>
 
         <%= render 'admin/shared/collection_actions', resource: resource, namespace: namespace %>

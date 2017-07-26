@@ -4,14 +4,18 @@ module SimpleAdmin
   autoload :ResourceActions, 'simple_admin/resource_actions'
   autoload :ResourceController, 'simple_admin/resource_controller'
 
-  autoload :EntityControllerSetter, 'simple_admin/support/entity_controller_setter'
-  autoload :ResourceFieldsControllerSetter, 'simple_admin/support/resource_fields_controller_setter'
-  autoload :InbuiltControllerSettings, 'simple_admin/support/inbuilt_controller_settings'
-  autoload :CrudControllerHelper, 'simple_admin/support/crud_controller_helper'
-
-  autoload :Overrides, 'simple_admin/core_ext/overrides'
+  autoload :ApplicationRecordExt, 'simple_admin/extensions/application_record_ext'
+  autoload :TrueExt, 'simple_admin/extensions/boolean/true_ext'
+  autoload :FalseExt, 'simple_admin/extensions/boolean/false_ext'
 
   class << self
+    def setup!
+      ApplicationRecord.class_eval { include SimpleAdmin::ApplicationRecordExt }
+
+      TrueClass.class_eval  { include SimpleAdmin::TrueExt }
+      FalseClass.class_eval { include SimpleAdmin::FalseExt }
+    end
+
     def core_controllers
       [
         Admin::System::EntitiesController,
