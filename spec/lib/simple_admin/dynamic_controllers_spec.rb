@@ -7,12 +7,16 @@ RSpec.describe SimpleAdmin::DynamicControllers do
   let(:instance) { described_class.new(collection_name) }
 
   describe '#set!' do
-    let(:collection_name) { :posts }
+    let(:collection_name) { :tests }
 
     subject { instance.set! }
 
-    it { expect(subject).to eq Admin::PostsController }
-    it { expect(subject.superclass).to eq Admin::BaseController }
+    specify do
+      klass = subject
+
+      expect(klass).to eq Admin::TestsController
+      expect(klass.superclass).to eq Admin::BaseController
+    end
   end
 
   describe '#get_klass_name' do

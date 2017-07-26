@@ -8,22 +8,26 @@
     <%= render 'admin/shared/table_header', field_names: [:id, :name] %>
 
     <tbody class="table__body">
-        <% @resources.each do |resource| %>
-          <tr class="table__row">
-            <td class="table__cell">
-              <span>
-                <%= resource.id %>
-              </span>
-            </td>
+        <% if @resources.present? %>
+          <% @resources.each do |resource| %>
+            <tr class="table__row">
+              <td class="table__cell">
+                <span>
+                  <%= resource.id %>
+                </span>
+              </td>
 
-            <td class="table__cell">
-              <span>
-                <%= resource.model_klass_name %>
-              </span>
-            </td>
+              <td class="table__cell">
+                <span>
+                  <%= resource.model_klass_name %>
+                </span>
+              </td>
 
-            <%= render 'admin/shared/collection_actions', resource: resource, namespace: :admin_system %>
-          </tr>
+              <%= render 'admin/shared/collection_actions', resource: resource, namespace: :admin_system %>
+            </tr>
+          <% end %>
+        <% else %>
+          <p>Not found</p>
         <% end %>
     </tbody>
 
