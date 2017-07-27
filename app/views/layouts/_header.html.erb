@@ -10,14 +10,15 @@
 			</a>
 		</div>
 		<div class="header__group">
-			<span class="header__member">starkov@charmerstudio.com</span><a
-				class="header__exitIconContainer" href="/#">
-			<svg class="header__exitIcon" width="14" height="17" viewBox="0 0 14 17" xmlns="http://www.w3.org/2000/svg">
-				<g fill="#858A8C" fill-rule="evenodd">
-					<path d="M7 3c3.87 0 7 3.13 7 7s-3.13 7-7 7-7-3.13-7-7 3.13-7 7-7zm0 2c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5z"></path>
-					<path stroke="#E3E5E6" stroke-width="2" d="M5 1h4v10H5z"></path>
-				</g>
-			</svg>
-		</a></div>
+			<span class="header__member"><%= current_user.email %></span>
+			<%= link_to destroy_user_session_path, class: 'header__exitIconContainer' do %>
+				<svg class="header__exitIcon" width="14" height="17" viewBox="0 0 14 17" xmlns="http://www.w3.org/2000/svg">
+					<g fill="#858A8C" fill-rule="evenodd">
+						<path d="M7 3c3.87 0 7 3.13 7 7s-3.13 7-7 7-7-3.13-7-7 3.13-7 7-7zm0 2c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5z"></path>
+						<path stroke="#E3E5E6" stroke-width="2" d="M5 1h4v10H5z"></path>
+					</g>
+				</svg>
+			<% end %>
+	</div>
 	</div>
 </header>

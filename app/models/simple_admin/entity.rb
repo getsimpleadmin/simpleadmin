@@ -4,8 +4,8 @@ module SimpleAdmin
 
     has_many :entity_fields
 
+    after_save :reload_routes!
     before_save :set_model_plural_name!
-    before_save :reload_routes!
 
     def self.collection_names
       SimpleAdmin::Entity.all.map { |entity| [entity.model_klass_name, entity.model_plural_name] }
