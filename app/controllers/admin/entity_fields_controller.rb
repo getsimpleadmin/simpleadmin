@@ -41,7 +41,7 @@ module Admin
       setting.data.find do |field_setting|
         field_setting.value = setting_value if field_setting.name == setting_name
       end
-      
+
       setting.save
     end
 

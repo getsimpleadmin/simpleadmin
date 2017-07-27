@@ -1,34 +1,21 @@
 require 'simple_admin/version'
 
 module SimpleAdmin
-  autoload :Base, 'simple_admin/models/base'
-  autoload :Page, 'simple_admin/models/page'
-  autoload :Post, 'simple_admin/models/post'
-  autoload :Category, 'simple_admin/models/category'
+  autoload :ResourceActions, 'simple_admin/resource_actions'
+  autoload :ResourceController, 'simple_admin/resource_controller'
 
-  autoload :Entity, 'simple_admin/models/entity'
-  autoload :EntityField, 'simple_admin/models/entity_field'
-
-  autoload :EntityFieldType, 'simple_admin/models/entity_field_type'
-  autoload :EntityFieldSetting, 'simple_admin/models/entity_field_setting'
-
-  autoload :Setting, 'simple_admin/models/setting'
-  autoload :FieldSetting, 'simple_admin/models/field_setting'
-  autoload :Language, 'simple_admin/models/language'
-
-  autoload :Widget, 'simple_admin/widget'
-  autoload :Views, 'simple_admin/views'
-
-  autoload :EntityControllerSetter, 'simple_admin/support/entity_controller_setter'
-  autoload :ResourceFieldsControllerSetter, 'simple_admin/support/resource_fields_controller_setter'
-  autoload :InbuiltControllerSettings, 'simple_admin/support/inbuilt_controller_settings'
-  autoload :CrudControllerHelper, 'simple_admin/support/crud_controller_helper'
-
-  autoload :EntityFieldSettingDataSerializer, 'simple_admin/serializers/entity_field_setting_data_serializer'
-
-  autoload :Overrides, 'simple_admin/core_ext/overrides'
+  autoload :ApplicationRecordExt, 'simple_admin/extensions/application_record_ext'
+  autoload :TrueExt, 'simple_admin/extensions/boolean/true_ext'
+  autoload :FalseExt, 'simple_admin/extensions/boolean/false_ext'
 
   class << self
+    def setup!
+      ApplicationRecord.class_eval { include SimpleAdmin::ApplicationRecordExt }
+
+      TrueClass.class_eval  { include SimpleAdmin::TrueExt }
+      FalseClass.class_eval { include SimpleAdmin::FalseExt }
+    end
+
     def core_controllers
       [
         Admin::System::EntitiesController,

@@ -1,8 +1,6 @@
 module Admin
   module System
     class EntityFieldTypesController < BaseController
-      include SimpleAdmin::CrudControllerHelper
-
       after_action :make_field_type_template!, only: :create
 
       def model_klass

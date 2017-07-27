@@ -11,6 +11,10 @@ module SimpleAdmin
       SimpleAdmin::Entity.all.map { |entity| [entity.model_klass_name, entity.model_plural_name] }
     end
 
+    def self.form_attributes(model_klass)
+      find_by(model_klass_name: model_klass.to_s).entity_fields.form.pluck(:name)
+    end
+
     private
 
     def set_model_plural_name!

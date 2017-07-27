@@ -1,4 +1,4 @@
 module SimpleAdmin
-  class Entity < Base
+  class Widget < Base
   end
 end

@@ -2,8 +2,8 @@ module Admin
   class BaseController < ActionController::Base
     layout 'simple_admin'
 
-    include SimpleAdmin::EntityControllerSetter
-    include SimpleAdmin::ResourceFieldsControllerSetter
+    include SimpleAdmin::ResourceFields
+    include SimpleAdmin::ResourceCrud
 
     before_action :respond_with_locale
 

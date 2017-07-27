@@ -1,6 +1,3 @@
-require 'simple_admin/dynamic_actions'
-require 'simple_admin/dynamic_controllers'
-
 Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
@@ -21,10 +18,10 @@ Rails.application.routes.draw do
         SimpleAdmin::Entity.collection_names.each do |model_name, collection_name|
           resources collection_name, except: :show
 
-          dynamic_controller = SimpleAdmin::DynamicControllers.new(collection_name)
-          dynamic_controller.set!
+          resource_controller = SimpleAdmin::ResourceController.new(collection_name)
+          resource_controller.initialize_controller_klass!
 
-          SimpleAdmin::DynamicActions.set!(dynamic_controller.get_klass_name, model_name, collection_name)
+          SimpleAdmin::ResourceActions.initialize_controller_actions!(resource_controller.controller_klass_name, model_name, collection_name)
         end
       end
 
