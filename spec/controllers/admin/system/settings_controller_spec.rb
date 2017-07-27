@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe Admin::System::SettingsController, type: :controller do
+  before do
+    allow(controller).to receive(:authenticate_user!).and_return(true)
+  end
 
   describe '#index' do
     let(:settings) { SimpleAdmin::Setting.where(name: :default_language) }

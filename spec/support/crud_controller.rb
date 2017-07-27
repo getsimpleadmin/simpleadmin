@@ -1,4 +1,8 @@
 shared_examples :crud_testing do
+  before do
+    allow(controller).to receive(:authenticate_user!).and_return(true)
+  end
+  
   describe '#index' do
     subject { get :index }
 

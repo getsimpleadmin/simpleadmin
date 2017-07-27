@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-require 'app/controllers/admin/base_controller'
 require 'simple_admin/resource_actions'
 
 RSpec.describe SimpleAdmin::ResourceActions do
