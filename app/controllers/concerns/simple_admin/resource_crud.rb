@@ -1,5 +1,5 @@
 module SimpleAdmin
-  module CrudControllerHelper
+  module ResourceCrud
     extend ActiveSupport::Concern
 
     included do

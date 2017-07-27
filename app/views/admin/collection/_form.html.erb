@@ -1,8 +1,8 @@
 <div class="item-page__content">
   <%= form_for resource, url: form_url do |f| %>
 
-    <% resource_fields.each do |field| %>
-      <%= render field.template_path, f: f, field: field %>
+    <% entity_fields.each do |entity_field| %>
+      <%= render entity_field.template_path, f: f, field: entity_field %>
     <% end %>
 
     <section class="field">
