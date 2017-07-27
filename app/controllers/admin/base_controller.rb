@@ -1,17 +1,12 @@
 module Admin
-  class BaseController < ActionController::Base
+  class BaseController < ApplicationController
     layout 'simple_admin'
 
     include SimpleAdmin::ResourceFields
     include SimpleAdmin::ResourceCrud
 
+    before_action :authenticate_user!
     before_action :respond_with_locale
-
-    def current_locale
-      @current_locale ||= { locale: SimpleAdmin::Setting.default_language }
-    end
-
-    helper_method :current_locale
 
     private
 
