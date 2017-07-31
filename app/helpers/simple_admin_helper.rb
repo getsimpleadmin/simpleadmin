@@ -72,7 +72,7 @@ module SimpleAdminHelper
   end
 
   def resource_collection_title(resource)
-    "admin.#{resource.model_plural_name}.index.title"
+    "simple_admin.admin.#{resource.model_plural_name}.index.title"
   end
 
   def resource_collection_link(resource, current_locale)
