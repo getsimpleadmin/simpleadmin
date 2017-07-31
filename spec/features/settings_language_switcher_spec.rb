@@ -15,14 +15,14 @@ RSpec.describe 'Default language switcher in settings', type: :feature, js: true
   let!(:language_ru) { create :language, code: :ru }
 
   let!(:setting_language) { SimpleAdmin::Setting.find_or_create_by(name: :default_language, label: 'Язык по умолчанию',
-                                                                value: :ru, presentation: 'fields/settings/select_form') }
+                                                                value: :ru, presentation: 'simple_admin/fields/settings/select_form') }
   let!(:setting_staging_url) { SimpleAdmin::Setting.find_or_create_by(name: :site_url_staging, label: 'Адрес сайта (staging)',
-                                    value: 'http://staging.warrobots.net/', presentation: 'fields/settings/string_form') }
+                                    value: 'http://staging.warrobots.net/', presentation: 'simple_admin/fields/settings/string_form') }
   let!(:setting_production_url) { SimpleAdmin::Setting.find_or_create_by(name: :site_url_production, label: 'Адрес сайта (production)',
-                                        value: 'http://faq.wwr.mobi/hc/ru', presentation: 'fields/settings/string_form') }
+                                        value: 'http://faq.wwr.mobi/hc/ru', presentation: 'simple_admin/fields/settings/string_form') }
 
   before do
-    allow_any_instance_of(Admin::System::SettingsController).to receive(:authenticate_user!).and_return(true)
+    allow_any_instance_of(SimpleAdmin::Admin::System::SettingsController).to receive(:authenticate_user!).and_return(true)
 
     allow_any_instance_of(ActionView::Base).to receive(:current_user).and_return(user)
     allow_any_instance_of(ActionView::Base).to receive(:destroy_user_session_path).and_return('#')

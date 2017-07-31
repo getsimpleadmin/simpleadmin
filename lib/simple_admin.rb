@@ -16,18 +16,6 @@ module SimpleAdmin
       FalseClass.class_eval { include SimpleAdmin::FalseExt }
     end
 
-    def core_controllers
-      [
-        Admin::System::EntitiesController,
-        Admin::System::EntityFieldTypesController,
-        Admin::System::LanguagesController,
-        Admin::System::SettingsController,
-        Admin::EntityFieldsController,
-        # Admin::GuidesController,
-        Admin::DashboardController
-      ]
-    end
-
     def core_models
       {
         SimpleAdmin::Post => :posts,

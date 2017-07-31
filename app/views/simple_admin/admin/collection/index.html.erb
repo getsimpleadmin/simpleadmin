@@ -1,0 +1,11 @@
+<section class="catalog-page">
+  <header class="item-page__header">
+    <h3 class="item-page__title"><%= t("simple_admin.admin.#{@collection_name}.index.title") %></h3>
+    <%= link_to t('simple_admin.admin.create'), resource_link(@model_instance, :new, nil, :admin), class: 'button item-page__submit' %>
+  </header>
+
+  <table class="table">
+    <%= render 'simple_admin/admin/shared/table_header', field_names: @entity_fields.pluck(:name) %>
+    <%= render 'simple_admin/admin/shared/table_body', resources: @resources, entity_fields: @entity_fields, namespace: :admin %>
+  </table>
+</section>
