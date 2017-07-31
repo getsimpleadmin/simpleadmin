@@ -4,12 +4,12 @@ require 'simple_admin/resource_actions'
 
 RSpec.describe SimpleAdmin::ResourceActions do
   describe '.initialize_controller_actions!' do
-    let(:controller_klass) { Admin::ExamplesController }
+    let(:controller_klass) { SimpleAdmin::Admin::ExamplesController }
     let(:collection_name) { :examples }
 
     let(:controller_instance) { controller_klass.new }
 
-    before { Admin.const_set('ExamplesController', Class.new(Admin::BaseController)) }
+    before { SimpleAdmin::Admin.const_set('ExamplesController', Class.new(SimpleAdmin::Admin::BaseController)) }
     before { SimpleAdmin.const_set('Example', Class.new) }
 
     subject { described_class.initialize_controller_actions!(controller_klass, 'SimpleAdmin::Post', collection_name) }
