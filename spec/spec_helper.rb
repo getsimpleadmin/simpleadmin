@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] = "test"
 
 require 'bundler/setup'
 require 'pry'
+require 'simplecov'
 
 require 'action_controller'
 require 'active_record'
@@ -17,6 +18,8 @@ root = Pathname.new(Dir.pwd)
 
 Dir[root.join("spec/support/**/*.rb")].each { |file| require file }
 Dir[root.join("spec/factories/**/*.rb")].each { |file| require file }
+
+SimpleCov.start
 
 Capybara::Screenshot.autosave_on_failure = true
 
