@@ -3,41 +3,42 @@ ru:
     submit:
       create: "Создать %{model}"
       update: "Обновить %{model}"
-  admin:
-    actions: 'Действия'
-    edit: 'Редактировать'
-    create: 'Создать'
-    destroy: 'Удалить'
-    confirm_destroy: 'Вы уверены?'
-    categories:
-      index:
-        title: 'Категории'
-    posts:
-      index:
-        title: 'Записи'
-    system:
-      title: 'Система'
-      settings:
+  simple_admin:
+    admin:
+      actions: 'Действия'
+      edit: 'Редактировать'
+      create: 'Создать'
+      destroy: 'Удалить'
+      confirm_destroy: 'Вы уверены?'
+      categories:
         index:
-          title: 'Настройки'
-      languages:
+          title: 'Категории'
+      posts:
         index:
-          title: 'Языки'
-        new:
-          title: 'Создать язык'
-        edit:
-          title: 'Редактировать язык'
-      entities:
-        index:
-          title: 'Модели'
-        new:
-          title: 'Создать новую модель'
-        edit:
-          title: 'Редактировать модель'
-      entity_field_types:
-        index:
-          title: 'Типы полей'
-        new:
-          title: 'Создать новый тип поля'
-        edit:
-          title: 'Редактировать тип поле'
+          title: 'Записи'
+      system:
+        title: 'Система'
+        settings:
+          index:
+            title: 'Настройки'
+        languages:
+          index:
+            title: 'Языки'
+          new:
+            title: 'Создать язык'
+          edit:
+            title: 'Редактировать язык'
+        entities:
+          index:
+            title: 'Модели'
+          new:
+            title: 'Создать новую модель'
+          edit:
+            title: 'Редактировать модель'
+        entity_field_types:
+          index:
+            title: 'Типы полей'
+          new:
+            title: 'Создать новый тип поля'
+          edit:
+            title: 'Редактировать тип поле'

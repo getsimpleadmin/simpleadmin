@@ -13,8 +13,8 @@ RSpec.describe SimpleAdmin::ResourceController do
     it 'return initialized controller class' do
       klass = subject
 
-      expect(klass).to eq Admin::TestsController
-      expect(klass.superclass).to eq Admin::BaseController
+      expect(klass).to eq SimpleAdmin::Admin::TestsController
+      expect(klass.superclass).to eq SimpleAdmin::Admin::BaseController
     end
   end
 
@@ -22,13 +22,13 @@ RSpec.describe SimpleAdmin::ResourceController do
     let(:collection_name) { :posts }
 
     before do
-      Admin.const_set('PostsController', Class.new(Admin::BaseController))
+      SimpleAdmin::Admin.const_set('PostsController', Class.new(SimpleAdmin::Admin::BaseController))
     end
 
     subject { instance.controller_klass_name }
 
     it 'return controller class' do
-      expect(subject).to eq Admin::PostsController
+      expect(subject).to eq SimpleAdmin::Admin::PostsController
     end
   end
 end

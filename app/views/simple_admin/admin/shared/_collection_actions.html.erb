@@ -1,0 +1,8 @@
+<td class="table__cell">
+  <%= link_to t('simple_admin.admin.edit'), resource_link(resource, :edit, nil, namespace), class: 'table__link' %>
+</td>
+
+<td class="table__cell">
+  <%= link_to t('simple_admin.admin.destroy'), resource_link(resource, :destroy, nil, namespace), class: 'table__link',
+                                          method: :delete, data: { confirm: t('simple_admin.admin.confirm_destroy') } %>
+</td>

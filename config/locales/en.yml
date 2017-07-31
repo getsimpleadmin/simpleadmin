@@ -3,41 +3,42 @@ en:
     submit:
       create: "Create %{model}"
       update: "Update %{model}"
-  admin:
-    actions: 'Actions'
-    edit: 'Edit'
-    create: 'Create'
-    destroy: 'Delete'
-    confirm_destroy: 'Are you sure?'
-    categories:
-      index:
-        title: 'Categories'
-    posts:
-      index:
-        title: 'Posts'
-    system:
-      title: 'System'
-      settings:
+  simple_admin:
+    admin:
+      actions: 'Actions'
+      edit: 'Edit'
+      create: 'Create'
+      destroy: 'Delete'
+      confirm_destroy: 'Are you sure?'
+      categories:
         index:
-          title: 'Settings'
-      languages:
+          title: 'Categories'
+      posts:
         index:
-          title: 'Languages'
-        new:
-          title: 'Create new language'
-        edit:
-          title: 'Edit language'
-      entities:
-        index:
-          title: 'Models'
-        new:
-          title: 'Create new model'
-        edit:
-          title: 'Edit model'
-      entity_field_types:
-        index:
-          title: 'Field Types'
-        new:
-          title: 'Create new field type'
-        edit:
-          title: 'Edit field type'
+          title: 'Posts'
+      system:
+        title: 'System'
+        settings:
+          index:
+            title: 'Settings'
+        languages:
+          index:
+            title: 'Languages'
+          new:
+            title: 'Create new language'
+          edit:
+            title: 'Edit language'
+        entities:
+          index:
+            title: 'Models'
+          new:
+            title: 'Create new model'
+          edit:
+            title: 'Edit model'
+        entity_field_types:
+          index:
+            title: 'Field Types'
+          new:
+            title: 'Create new field type'
+          edit:
+            title: 'Edit field type'

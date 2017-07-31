@@ -19,12 +19,16 @@ module SimpleAdmin
 
         private
 
+        def enable_entity_fields
+          true
+        end
+
         def redirect_path
           public_send("admin_#{collection_name}_path", current_locale)
         end
 
         def template_path
-          "admin/collection/#{params[:action]}"
+          "simple_admin/admin/collection/#{params[:action]}"
         end
 
         def resource_name
