@@ -1,0 +1,15 @@
+<%= form_for entity_field, url: admin_entity_field_path(entity_field, current_locale), html: { 'data-entity-field-item-id' => entity_field.id }, remote: true do |f| %>
+  <%= render 'simple_admin/admin/system/entities/entity_field_attributes', entity: entity, f: f %>
+
+  <% if entity_field.entity_field_setting.present? %>
+    <%= render 'simple_admin/admin/entity_fields/setting_fields', field_settings: entity_field.entity_field_setting.data, f: f %>\
+  <% end %>
+
+  <section class="field">
+    <div class="field__title"></div>
+    <div class="field__content">
+      <%= f.submit value: 'Обновить', class: 'button button--wide item-page__button' %>
+      <%= link_to 'Удалить', admin_entity_field_path(entity_field, current_locale), class: 'button button--wide button--second-color item-page__button', method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </section>
+<% end %>

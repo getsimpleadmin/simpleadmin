@@ -3,7 +3,7 @@ module SimpleAdmin
     extend ActiveSupport::Concern
 
     included do
-      before_action :initialize_entity_fields, unless: :core_controller?
+      before_action :initialize_entity_fields, if: :enable_entity_fields?
 
       private
 
@@ -29,11 +29,11 @@ module SimpleAdmin
       end
 
       def controller_entity_name
-        self.class.name.gsub(/(^(.+?)::|Controller)/, '').underscore
+        self.class.name.gsub(/(^(.+?)::Admin::|Controller)/, '').underscore
       end
 
-      def core_controller?
-        SimpleAdmin.core_controllers.include?(self.class)
+      def enable_entity_fields?
+        enable_entity_fields
       end
     end
   end
