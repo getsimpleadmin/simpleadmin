@@ -23,7 +23,7 @@ module SimpleAdmin
         Admin::System::LanguagesController,
         Admin::System::SettingsController,
         Admin::EntityFieldsController,
-        Admin::GuidesController,
+        # Admin::GuidesController,
         Admin::DashboardController
       ]
     end

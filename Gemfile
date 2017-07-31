@@ -18,6 +18,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'capybara-screenshot'
