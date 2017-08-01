@@ -7,7 +7,9 @@ Rails.application.routes.draw do
         get 'dashboard' => 'dashboard#index'
 
         namespace :system do
-          resources :settings, only: [:index, :update]
+          resources :settings, only: :index
+          put 'update_settings', to: 'settings#update_settings', as: :update_settings
+
           resources :languages, except: :show
           resources :entities,  except: :show
           resources :entity_field_types, except: :show
