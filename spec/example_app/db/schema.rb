@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170724141511) do
     t.string "value"
     t.string "label"
     t.string "presentation"
+    t.integer "sort_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
