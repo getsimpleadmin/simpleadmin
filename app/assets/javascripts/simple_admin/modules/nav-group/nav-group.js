@@ -55,7 +55,8 @@
 
 	instance.initHeights = function() {
 		$(instance.nodeSelector).each(function() {
-			var titleHeight = instance.getChildrenHeight($(this), true);
+			var alreadyActive = $(this).hasClass(instance.active);
+			var titleHeight = instance.getChildrenHeight($(this), !alreadyActive);
 			$(this).height(titleHeight);
 		});
 	};
