@@ -13,7 +13,7 @@ module SimpleAdminHelper
       if defined?(resource_klass.singular_name)
         resource_klass.singular_name
       else
-        resource.model_name.plural
+        resource.model_name.singular
       end
 
     case method
