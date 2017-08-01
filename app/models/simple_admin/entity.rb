@@ -18,7 +18,14 @@ module SimpleAdmin
     private
 
     def set_model_plural_name!
-      self.model_plural_name = SimpleAdmin.core_models[model_klass_name.constantize] || model_klass_name.constantize.model_name.plural
+      model_klass = model_klass_name.constantize
+
+      self.model_plural_name =
+        if defined?(model_klass.plural_name)
+          model_klass.plural_name
+        else
+          model_klass.model_name.plural
+        end
     end
 
     def reload_routes!

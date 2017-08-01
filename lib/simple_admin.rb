@@ -15,13 +15,6 @@ module SimpleAdmin
       TrueClass.class_eval  { include SimpleAdmin::TrueExt }
       FalseClass.class_eval { include SimpleAdmin::FalseExt }
     end
-
-    def core_models
-      {
-        SimpleAdmin::Post => :posts,
-        SimpleAdmin::Category => :categories
-      }
-    end
   end
 end
 

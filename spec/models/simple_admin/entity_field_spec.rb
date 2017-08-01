@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe SimpleAdmin::EntityField, type: :model do
-
   describe '#template_path' do
     let!(:entity) { create :entity }
 

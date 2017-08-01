@@ -1,68 +1,36 @@
 module SimpleAdminHelper
   def resource_link(resource, method, prefix = nil, namespace = nil)
-    # TODO Hardcoded values
-    default_models = {
-      SimpleAdmin::Post => {
-        index:   :admin_posts_path,
-        new:     :new_admin_post_path,
-        create:  :admin_posts_path,
-        edit:    :edit_admin_post_path,
-        update:  :admin_post_path,
-        destroy: :admin_post_path
-      },
-      SimpleAdmin::Category => {
-        index:   :admin_categories_path,
-        new:     :new_admin_category_path,
-        create:  :admin_categories_path,
-        edit:    :edit_admin_category_path,
-        update:  :admin_category_path,
-        destroy: :admin_category_path
-      },
-      SimpleAdmin::Entity => {
-        index:   :admin_system_entities_path,
-        new:     :new_admin_system_entity_path,
-        create:  :admin_entities_path,
-        edit:    :edit_admin_system_entity_path,
-        update:  :admin_entity_path,
-        destroy: :admin_system_entity_path
-      },
-      SimpleAdmin::EntityFieldType => {
-        index:   :admin_system_entity_field_types_path,
-        new:     :new_admin_system_entity_field_type_path,
-        create:  :admin_system_entity_field_types_path,
-        edit:    :edit_admin_system_entity_field_type_path,
-        update:  :admin_entity_field_type_path,
-        destroy: :admin_system_entity_field_type_path
-      },
-      SimpleAdmin::Language => {
-        index:   :admin_system_languages_path,
-        new:     :new_admin_system_language_path,
-        create:  :admin_languages_path,
-        edit:    :edit_admin_system_language_path,
-        update:  :admin_language_path,
-        destroy: :admin_system_language_path
-      }
-    }
+    resource_klass = resource.class
 
-    if default_models.include?(resource.class)
-      return public_send(default_models[resource.class][method], resource, current_locale)
-    end
+    plural_name =
+      if defined?(resource_klass.plural_name)
+        resource_klass.plural_name
+      else
+        resource.model_name.plural
+      end
+
+    singular_name =
+      if defined?(resource_klass.singular_name)
+        resource_klass.singular_name
+      else
+        resource.model_name.singular
+      end
 
     case method
     when :index
-      resource_name = resource.model_name.plural
+      resource_name = plural_name
     when :new
-      resource_name = resource.model_name.singular
+      resource_name = singular_name
       prefix = :new
     when :create
-      resource_name = resource.model_name.plural
+      resource_name = plural_name
     when :edit
-      resource_name = resource.model_name.singular
+      resource_name = singular_name
       prefix = :edit
     when :update
-      resource_name = resource.model_name.singular
+      resource_name = singular_name
     when :destroy
-      resource_name = resource.model_name.singular
+      resource_name = singular_name
     end
 
     resource_path = "#{namespace}_#{resource_name}_path"

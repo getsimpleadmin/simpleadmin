@@ -23,7 +23,15 @@
                 </span>
               </td>
 
-              <%= render 'simple_admin/admin/shared/collection_actions', resource: resource, namespace: :admin_system %>
+              <td class="table__cell">
+                <%= link_to t('simple_admin.admin.edit'), edit_admin_system_entity_path(resource, current_locale), class: 'table__link' %>
+              </td>
+
+              <td class="table__cell">
+                <%= link_to t('simple_admin.admin.destroy'), admin_system_entity_path(resource, current_locale), class: 'table__link',
+                                                        method: :delete, data: { confirm: t('simple_admin.admin.confirm_destroy') } %>
+              </td>
+
             </tr>
           <% end %>
         <% else %>
