@@ -47,6 +47,14 @@ module SimpleAdminHelper
     public_send("admin_#{resource.model_plural_name}_path", current_locale)
   end
 
+  def resource_active_link(resource_link)
+    url_for == resource_link ? 'nav-group__open' : ''
+  end
+
+  def resource_system_active_link
+    /system/.match?(url_for) ? 'nav-group__open' : ''
+  end
+
   def str_to_method(string)
     # TODO Eval not recommended to use, think about another way
     eval(string)
