@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
         namespace :system do
           resources :settings, only: :index
-          put 'update_settings', to: 'settings#update_settings', as: :update_settings
+
+          match 'update_batch' => 'settings#update_batch', via: :put
 
           resources :languages, except: :show
           resources :entities,  except: :show
