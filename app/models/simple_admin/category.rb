@@ -7,5 +7,9 @@ module SimpleAdmin
     def self.plural_name
       :categories
     end
+
+    def self.singular_name
+      :category
+    end
   end
 end
