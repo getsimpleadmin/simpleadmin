@@ -17,30 +17,6 @@ module SimpleAdminHelper
         edit:    :edit_admin_category_path,
         update:  :admin_category_path,
         destroy: :admin_category_path
-      },
-      SimpleAdmin::Entity => {
-        index:   :admin_system_entities_path,
-        new:     :new_admin_system_entity_path,
-        create:  :admin_entities_path,
-        edit:    :edit_admin_system_entity_path,
-        update:  :admin_entity_path,
-        destroy: :admin_system_entity_path
-      },
-      SimpleAdmin::EntityFieldType => {
-        index:   :admin_system_entity_field_types_path,
-        new:     :new_admin_system_entity_field_type_path,
-        create:  :admin_system_entity_field_types_path,
-        edit:    :edit_admin_system_entity_field_type_path,
-        update:  :admin_entity_field_type_path,
-        destroy: :admin_system_entity_field_type_path
-      },
-      SimpleAdmin::Language => {
-        index:   :admin_system_languages_path,
-        new:     :new_admin_system_language_path,
-        create:  :admin_languages_path,
-        edit:    :edit_admin_system_language_path,
-        update:  :admin_language_path,
-        destroy: :admin_system_language_path
       }
     }
 
