@@ -78,6 +78,8 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
       t.string :label
       t.string :presentation
 
+      t.integer :sort_order
+
       t.timestamps null: false
     end
   end
