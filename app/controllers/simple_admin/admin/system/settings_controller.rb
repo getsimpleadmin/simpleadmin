@@ -7,7 +7,7 @@ module SimpleAdmin
           @resources = SimpleAdmin::Setting.order(sort_order: :asc)
         end
 
-        def update_settings
+        def update_batch
           @settings = SimpleAdmin::Setting.find(params[:setting].keys)
 
           @settings.each do |setting|
@@ -15,12 +15,6 @@ module SimpleAdmin
           end
 
           redirect_to admin_system_settings_path(current_locale)
-        end
-
-        private
-
-        def resource_params
-          params.require(:simple_admin_setting).permit(:value)
         end
       end
     end

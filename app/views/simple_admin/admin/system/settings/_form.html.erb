@@ -1,5 +1,5 @@
 <div class="item-page__content">
-  <%= form_for :setting, url: admin_system_update_settings_path(current_locale), method: :put do |f| %>
+  <%= form_for :setting, url: admin_system_update_batch_path(current_locale), method: :put do |f| %>
 
     <% resources.each do |resource| %>
       <%= render resource.presentation, f: f, resource: resource %>
