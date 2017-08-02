@@ -7,7 +7,10 @@ Rails.application.routes.draw do
         get 'dashboard' => 'dashboard#index'
 
         namespace :system do
-          resources :settings, only: [:index, :update]
+          resources :settings, only: :index
+
+          match 'update_batch' => 'settings#update_batch', via: :put
+
           resources :languages, except: :show
           resources :entities,  except: :show
           resources :entity_field_types, except: :show
