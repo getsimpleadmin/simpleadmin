@@ -5,7 +5,7 @@
   </header>
 
   <table class="table">
-    <%= render 'simple_admin/admin/shared/table_header', field_names: @entity_fields.pluck(:name) %>
+    <%= render 'simple_admin/admin/shared/table_header', field_names: @entity_fields.with_translations(params[:locale]).pluck(:label) %>
     <%= render 'simple_admin/admin/shared/table_body', resources: @resources, entity_fields: @entity_fields, namespace: :admin %>
   </table>
 </section>
