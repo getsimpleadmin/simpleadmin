@@ -1,5 +1,7 @@
 module SimpleAdmin
   class EntityField < Base
+    translates :label
+
     enum display: %i[index form]
 
     belongs_to :entity, optional: true
