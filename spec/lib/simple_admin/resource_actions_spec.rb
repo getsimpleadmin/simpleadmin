@@ -24,5 +24,10 @@ RSpec.describe SimpleAdmin::ResourceActions do
       expect(controller_instance.model_klass).to eq SimpleAdmin::Post
       expect(controller_instance.collection_name).to eq :examples
     end
+
+    it 'returns decorator method output' do
+      subject
+      expect(controller_instance.greet).to eq 'Decorators tested!'
+    end
   end
 end
