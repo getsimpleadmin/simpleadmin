@@ -2,6 +2,8 @@ module SimpleAdmin
   class ResourceActions
     def self.initialize_controller_actions!(controller_klass, model_name, collection_name)
       controller_klass.class_eval do
+        include SimpleAdmin::ResourceDecorator
+        
         before_action :initialize_index_resources, only: :index
 
         define_method :initialize_index_resources do
