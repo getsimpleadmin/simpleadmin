@@ -1,7 +1,9 @@
 <div class="signin">
   <header class="signin__header">
     <h2 class="signin__title">Авторизуйтесь</h2>
-    <p class="signin__error"> Такой логин и/или пароль не существует!</p>
+    <%- flash.each do |_, message| %>
+      <p class="signin__error"><%= message %></p>
+    <% end %>
   </header>
   <div class="signin__form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -33,4 +35,3 @@
 
   <%= render "devise/shared/links" %>
 </div>
-
