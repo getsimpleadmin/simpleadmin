@@ -6,6 +6,12 @@ Rails.application.routes.draw do
       scope "/:locale", locale: 'en|ru' do
         get 'dashboard' => 'dashboard#index'
 
+        resources :widgets, except: :show
+
+        namespace :widgets do
+          resources :text_blocks
+        end
+
         namespace :system do
           resources :settings, only: :index
 
