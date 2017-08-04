@@ -601,18 +601,8 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
+form {
+  margin: 0
 }
 
 .aside {
@@ -633,57 +623,6 @@ button {
   height: calc(100vh - 80px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-}
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
-}
-
-.button {
-  height: 50px;
-  color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 50px;
-  letter-spacing: 0.03em;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  background-color: #26bfb3;
-  padding-right: 37px;
-  padding-left: 37px;
-}
-
-.button--second-color.button {
-  background-color: #292c33;
-}
-
-.button--wide.button {
-  padding-right: 50px;
-  padding-left: 50px;
-}
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
 }
 
 .catalog-page {
@@ -724,33 +663,30 @@ button {
   padding-top: 28px;
   padding-bottom: 2px;
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
+
+.button {
+  height: 50px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 50px;
+  letter-spacing: 0.03em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #26bfb3;
+  padding-right: 37px;
+  padding-left: 37px;
 }
 
+.button--second-color.button {
+  background-color: #292c33;
+}
 
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
+.button--wide.button {
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .checkbox:first-child {
@@ -785,7 +721,7 @@ button {
   position: absolute;
   width: 20px;
   height: 20px;
-  border: 1px solid #d4d7d9;
+  border: 1px solid #D4D7D9;
   background-color: #f7f9fa;
 }
 
@@ -806,19 +742,6 @@ button {
 
 .checkbox__input:checked + .checkbox__label:after {
   display: block;
-}
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
 }
 
 .field {
@@ -853,38 +776,10 @@ button {
   width: -moz-calc(100% - 240px);
   width: calc(100% - 240px);
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
-}
-
-
 
 .form__field--error {
-  background-color: #faf6f5!important;
-  border-color: #cc3314!important;
-}
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
+  background-color: #faf6f5 !important;
+  border-color: #cc3314 !important;
 }
 
 .header {
@@ -1000,49 +895,6 @@ button {
 .header__exitIcon path:nth-child(2) {
   stroke: #e3e5e6;
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
-}
-
-.input {
-  display: block;
-  width: 460px;
-  height: 50px;
-  padding: 0 20px;
-  outline: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  border: 1px solid #d4d7d9;
-  background-color: #f7f9fa;
-  color: #404040;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 50px;
-}
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
-}
 
 .image {
   width: 0.1px;
@@ -1059,7 +911,7 @@ button {
   width: 122px;
   height: 82px;
   position: relative;
-  border: 1px solid #d4d7d9;
+  border: 1px solid #D4D7D9;
   background-color: #f7f9fa;
   font-size: 0;
   cursor: pointer;
@@ -1098,18 +950,30 @@ button {
 .image__selected.image__label:after {
   display: none;
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
+
+.input {
+  display: block;
+  width: 460px;
+  height: 50px;
+  padding: 0 20px;
+  outline: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #D4D7D9;
+  background-color: #f7f9fa;
+  color: #404040;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 50px;
+}
+
+.input--slim {
+  height: 40px;
+}
+
+.input--full-width {
+  width: 100%;
 }
 
 .item-page {
@@ -1174,19 +1038,6 @@ button {
 .item-page__button:not(:first-child) {
   margin-left: 20px;
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
-}
 
 .logo {
   width: 100%;
@@ -1201,75 +1052,6 @@ button {
   line-height: 50px;
   letter-spacing: .03em;
   padding-top: 16px;
-}
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
-}
-
-.radio-button:first-child {
-  margin-top: 10px;
-}
-
-.radio-button__input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.radio-button__label {
-  display: inline-block;
-  color: #404040;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 30px;
-  padding-left: 30px;
-  position: relative;
-  cursor: pointer;
-}
-
-.radio-button__label:before {
-  content: '';
-  display: block;
-  top: 5px;
-  left: 0;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 1px solid #d4d7d9;
-  background-color: #f7f9fa;
-}
-
-.radio-button__input:checked + .radio-button__label:before {
-  border: 7px solid #858a8c;
-}
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
 }
 
 .nav-group {
@@ -1373,18 +1155,48 @@ button {
 .nav-group__open .nav-group__title:before {
   background-color: #fff;
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
+
+.radio-button:first-child {
+  margin-top: 10px;
+}
+
+.radio-button__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.radio-button__label {
+  display: inline-block;
+  color: #404040;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-button__label:before {
+  content: '';
+  display: block;
+  top: 5px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #D4D7D9;
+  background-color: #f7f9fa;
+}
+
+.radio-button__input:checked + .radio-button__label:before {
+  border: 7px solid #858a8c;
 }
 
 .select {
@@ -1396,7 +1208,7 @@ button {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #d4d7d9;
+  border: 1px solid #D4D7D9;
   background-color: #f7f9fa;
   color: #404040;
   font-weight: 400;
@@ -1438,18 +1250,124 @@ button {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIyMCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjODU4QThDIiBkPSJNNSAxLjQ4N2wtNC4yOTYgNC41LS43MTYtLjc1TDUtLjAxMmw1LjAxMiA1LjI1LS43MTYuNzVMNSAxLjQ4OHptMCAxNy4wMjZsNC4yOTYtNC41LjcxNi43NUw1IDIwLjAxMmwtNS4wMTItNS4yNS43MTYtLjc1TDUgMTguNTEyeiIvPjwvc3ZnPg==");
   background-repeat: no-repeat;
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
+
+.signin {
+  display: block;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-190px, -180px);
+  -moz-transform: translate(-190px, -180px);
+  -ms-transform: translate(-190px, -180px);
+  -o-transform: translate(-190px, -180px);
+  transform: translate(-190px, -180px);
+  width: 380px;
+  height: 360px;
+  border: 1px solid #D4D7D9;
+  padding: 17px 20px;
+}
+
+.signin:before {
+  content: '';
+  display: block;
+  top: -5px;
+  right: -1px;
+  left: -1px;
+  position: absolute;
+  height: 5px;
+  background-color: #26bfb3;
+}
+
+.signin__header {
+  padding-bottom: 17px;
+  border-bottom: 1px solid #D4D7D9;
+}
+.signin__title {
+  margin: 0;
+  color: #000;
+  padding-bottom: 8px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+}
+
+.signin__form {
+  margin-top: 30px;
+}
+
+.signin__error {
+  color: #FF8181;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  padding-top: 11px;
+}
+.signin__input--error {
+  border-color: #FF8181;
+}
+
+.signin__input {
+  margin-top: 20px;
+}
+
+.signin__label {
+  position: relative;
+  display: block;
+}
+
+.signin__login-icon {
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  right: 13px;
+  position: absolute;
+}
+
+.signin__password-icon {
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  right: 13px;
+  position: absolute;
+}
+
+.signin__submit {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+
+.signin__forgot {
+  float: right;
+  margin-top: 14px;
+  color: #BFC5C7;
+}
+
+.signin__forgot:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.signin__message-container {
+  position: absolute;
+  width: 275px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.signin__message-container p {
+  color: #BFC5C7;
+  font-weight: 400;
+  text-align: center;
+  font-size: 22px;
+  line-height: 24px;
 }
 
 .table {
@@ -1517,19 +1435,6 @@ button {
 .table__link {
   color: #404040;
 }
-:root {
-  /*commons styles: fonts*/
-  /*container*/
-  /*colors*/
-  /*common*/
-  /*logo colors*/
-  /*header colors*/
-  /*aside colors*/
-  /*content colors*/
-  /*field colors*/
-  /*table*/
-  /*form errors fields*/
-}
 
 .textarea {
   display: block;
@@ -1540,7 +1445,7 @@ button {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #d4d7d9;
+  border: 1px solid #D4D7D9;
   background-color: #f7f9fa;
   color: #404040;
   font-weight: 400;
