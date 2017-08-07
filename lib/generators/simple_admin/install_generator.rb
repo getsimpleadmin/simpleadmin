@@ -15,6 +15,7 @@ module SimpleAdmin
       def copy_simple_admin_migration
         migration_template "migrations/migration.rb", "db/migrate/create_simple_admin_migrations.rb"
         migration_template "migrations/translation_migration.rb", "db/migrate/create_simple_admin_translation_migrations.rb"
+        migration_template "migrations/demo_data_migration.rb", "db/migrate/create_simple_admin_demo_data_migrations.rb"
       end
 
       def copy_locale
