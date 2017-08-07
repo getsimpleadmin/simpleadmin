@@ -10,7 +10,9 @@ module SimpleAdmin
 
   class << self
     def setup!
-      ApplicationRecord.class_eval { include SimpleAdmin::ApplicationRecordExt }
+      if Rails::VERSION::STRING.to_i >= 5
+        ApplicationRecord.class_eval { include SimpleAdmin::ApplicationRecordExt }
+      end
 
       TrueClass.class_eval  { include SimpleAdmin::TrueExt }
       FalseClass.class_eval { include SimpleAdmin::FalseExt }

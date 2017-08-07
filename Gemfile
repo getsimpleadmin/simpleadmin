@@ -6,7 +6,9 @@ gemspec
 gem 'pg'
 
 gem 'faker'
-gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'globalize', '~> 5.0.0'
+
+gem 'devise'
 
 gem 'jquery-rails'
 
