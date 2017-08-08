@@ -12,6 +12,8 @@ module Migrations
 
     SimpleAdmin::User.create(email: "demo@example.com", password: "password")
 
+    SimpleAdmin::Widget.create(name: :featured, label: 'Рекомендуемые')
+
     puts "Demo user: "
     puts "email: demo@example.com"
     puts "password: password"

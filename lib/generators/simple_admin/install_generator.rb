@@ -9,7 +9,8 @@ module SimpleAdmin
 
       def copy_initializer
         template 'initializers/simple_admin.rb.erb', 'config/initializers/simple_admin.rb'
-        template 'initializers/devise.rb.erb', 'config/initializers/devise.rb'
+        template 'initializers/devise.rb.erb',       'config/initializers/devise.rb'
+        template 'initializers/friendly_id.rb.erb',  'config/initializers/friendly_id.rb'
       end
 
       def copy_simple_admin_migration

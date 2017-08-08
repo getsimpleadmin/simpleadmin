@@ -16,6 +16,12 @@ ru:
       posts:
         index:
           title: 'Записи'
+      widgets:
+        index:
+          title: 'Плагины'
+        menu:
+          edit:
+            title: 'Редактировать меню'
       system:
         title: 'Система'
         settings:

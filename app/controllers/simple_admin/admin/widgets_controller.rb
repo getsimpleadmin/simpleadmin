@@ -1,7 +1,16 @@
 module SimpleAdmin
   module Admin
     class WidgetsController < BaseController
-      include ::Widgets::Menu
+
+      def index
+        @resources = model_klass.all.to_a
+
+        render template_path
+      end
+
+      def edit
+        render "simple_admin/admin/widgets/#{params[:id]}/widget"
+      end
 
       def model_klass
         SimpleAdmin::Widget
