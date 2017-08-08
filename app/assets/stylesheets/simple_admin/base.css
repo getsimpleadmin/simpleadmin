@@ -777,6 +777,14 @@ form {
   width: calc(100% - 240px);
 }
 
+.field__content > span {
+  display: block;
+  vertical-align: top;
+  padding-top: 15px;
+  color: #000;
+  font-size: 14px;
+}
+
 .form__field--error {
   background-color: #faf6f5 !important;
   border-color: #cc3314 !important;
@@ -1048,7 +1056,7 @@ form {
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
-  font-size: 28px;
+  font-size: 16px;
   line-height: 50px;
   letter-spacing: .03em;
   padding-top: 16px;

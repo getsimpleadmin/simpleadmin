@@ -1,6 +1,6 @@
 module SimpleAdmin
   class EntityFieldSetting < Base
-    belongs_to :entity_field, optional: true
+    belongs_to :entity_field
 
     serialize :data, EntityFieldSettingDataSerializer.new
 
