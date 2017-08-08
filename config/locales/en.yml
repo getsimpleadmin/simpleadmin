@@ -16,6 +16,12 @@ en:
       posts:
         index:
           title: 'Posts'
+      widgets:
+        index:
+          title: 'Plugins'
+        menu:
+          edit:
+            title: 'Edit menu'
       system:
         title: 'System'
         settings:

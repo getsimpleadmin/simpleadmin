@@ -63,4 +63,11 @@ module SimpleAdminHelper
     # TODO Eval not recommended to use, think about another way
     eval(string)
   end
+
+
+  def render_widget(widget_name, resources, resource_new_path)
+    resource = resources.find { |resource| resource.name == widget_name.to_s }
+
+    render "simple_admin/admin/widgets/list_item", resource: resource, resource_new_path: resource_new_path
+  end
 end
