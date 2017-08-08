@@ -9,6 +9,7 @@ gem 'devise'
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'globalize', git: 'https://github.com/globalize/globalize'
   gem 'pg'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
