@@ -1,6 +1,6 @@
 Devise.setup do |config|
   config.secret_key = '72a81a0d08de64f576519e115bee532ae1687f70a7667da7a68807308a5c4511c957e6972f15d96e8abe8cb0958bf28e1b6e8c7b2bfc9fc5d063db49d939133a'
-  
+
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   require 'devise/orm/active_record'
@@ -24,4 +24,8 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
 
   config.sign_out_via = :delete
+end
+
+Rails.application.config.to_prepare do
+  Devise::SessionsController.layout proc { |controller| 'simple_admin_devise' }
 end

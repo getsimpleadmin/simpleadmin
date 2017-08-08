@@ -1,8 +1,11 @@
 module Migrations
   def change
+    Rails::Generators.invoke('simple_admin:routes')
+    Rails::Generators.invoke('simple_admin:models')
+
     SimpleAdmin::Language.create(name: 'English', code: :en, status: true)
     SimpleAdmin::Language.create(name: 'Русский', code: :ru, status: true)
-    
+
     SimpleAdmin::Setting.create(name: :default_language, label: 'Язык по умолчанию', value: :en, presentation: 'simple_admin/fields/settings/select_form', sort_order: 1)
     SimpleAdmin::Setting.create(name: :site_url_staging, label: 'Адрес сайта (staging)', value: 'http://staging.warrobots.net/', presentation: 'simple_admin/fields/settings/string_form', sort_order: 2)
     SimpleAdmin::Setting.create(name: :site_url_production, label: 'Адрес сайта (production)', value: 'http://faq.wwr.mobi/hc/ru', presentation: 'simple_admin/fields/settings/string_form', sort_order: 3)
