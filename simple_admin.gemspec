@@ -36,9 +36,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 
-  spec.add_dependency "actionpack", ">= 4.2", "< 5.2"
-  spec.add_dependency "actionview", ">= 4.2", "< 5.2"
-  spec.add_dependency "activerecord", ">= 4.2", "< 5.2"
+  spec.add_dependency "actionpack"
+  spec.add_dependency "actionview"
+  spec.add_dependency "activerecord"
 
-  spec.add_dependency "sass-rails", "~> 5.0"
+  spec.add_dependency "sass-rails"
+  spec.add_dependency "devise"
 end
