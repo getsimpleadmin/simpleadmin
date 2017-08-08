@@ -1,4 +1,4 @@
-class CreateSimpleAdminTranslationMigrations < ActiveRecord::Migration[5.1]
+module Migrations
   def change
     reversible do |dir|
       dir.up do
@@ -13,5 +13,15 @@ class CreateSimpleAdminTranslationMigrations < ActiveRecord::Migration[5.1]
         SimpleAdmin::EntityField.drop_translation_table!
       end
     end
+  end
+end
+
+if Rails::VERSION::STRING.to_i < 5
+  CreateSimpleAdminTranslationMigrations = Class.new(ActiveRecord::Migration) do
+    include Migrations
+  end
+else
+  CreateSimpleAdminTranslationMigrations = Class.new(ActiveRecord::Migration[5.1]) do
+    include Migrations
   end
 end

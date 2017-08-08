@@ -1,5 +1,23 @@
-class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
+module Migrations
   def change
+    create_table :simple_admin_users do |t|
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
+
+      t.string   :reset_password_token
+      t.datetime :reset_password_sent_at
+
+      t.datetime :remember_created_at
+
+      t.integer  :sign_in_count, default: 0, null: false
+      t.datetime :current_sign_in_at
+      t.datetime :last_sign_in_at
+      t.inet     :current_sign_in_ip
+      t.inet     :last_sign_in_ip
+
+      t.timestamps null: false
+    end
+
     create_table :simple_admin_pages do |t|
       t.string :name
 
@@ -82,5 +100,17 @@ class CreateSimpleAdminMigrations < ActiveRecord::Migration[5.1]
 
       t.timestamps null: false
     end
+
+    add_index :simple_admin_users, :reset_password_token, unique: true
+  end
+end
+
+if Rails::VERSION::STRING.to_i < 5
+  CreateSimpleAdminMigrations = Class.new(ActiveRecord::Migration) do
+    include Migrations
+  end
+else
+  CreateSimpleAdminMigrations = Class.new(ActiveRecord::Migration[5.1]) do
+    include Migrations
   end
 end
