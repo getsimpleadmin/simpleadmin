@@ -3,7 +3,7 @@ module SimpleAdmin
     class WidgetsController < BaseController
 
       def index
-        @resources = model_klass.all.to_a
+        @widget_types = SimpleAdmin::WidgetType.all
 
         render template_path
       end

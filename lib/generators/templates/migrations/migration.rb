@@ -28,6 +28,15 @@ module Migrations
       t.string :name
       t.string :slug
 
+      t.integer :widget_type_id
+
+      t.timestamps null: false
+    end
+
+    create_table :simple_admin_widget_types do |t|
+      t.string :name
+      t.string :slug
+
       t.boolean :status, default: false
 
       t.timestamps null: false
@@ -91,7 +100,6 @@ module Migrations
       t.string :name
       t.string :value
 
-      t.string :label
       t.string :presentation
 
       t.integer :sort_order

@@ -7,7 +7,59 @@
     <%= render 'simple_admin/admin/shared/table_header', field_names: [:id, :label] %>
 
     <tbody class="table__body">
-      <%= render_widget(:featured, @resources, new_admin_widgets_feature_item_path(current_locale)) %>
+      <% @widget_types.each do |widget_type| %>
+        <% #render_widget(:featured, widget_type, new_admin_widgets_feature_item_path(current_locale)) %>
+        <tr class="table__row">
+          <td class="table__cell">
+            <span>
+              <%= widget_type.id %>
+            </span>
+          </td>
+
+          <td class="table__cell">
+            <span>
+              <%= widget_type.name %>
+            </span>
+          </td>
+
+          <td class="table__cell">
+            <%= link_to 'Добавить', new_admin_widgets_feature_item_path(current_locale), class: 'table__link' %>
+          </td>
+
+          <td class="table__cell">
+            <% if widget_type.enabled? %>
+              <%= link_to 'Отключить', '#', class: 'table__link' %>
+            <% else %>
+              <%= link_to 'Включить', '#', class: 'table__link' %>
+            <% end %>
+          </td>
+        </tr>
+
+
+        <% widget_type.widgets.each do |widget| %>
+          <tr class="table__row">
+            <td class="table__cell">
+              <span>
+                <%= widget.id %>
+              </span>
+            </td>
+
+            <td class="table__cell">
+              <span>
+                <%= widget.label %>
+              </span>
+            </td>
+
+            <td class="table__cell">
+              <%= link_to 'Редактировать', edit_admin_widgets_feature_item_path(widget, current_locale), class: 'table__link' %>
+            </td>
+
+            <td class="table__cell">
+              <%= link_to 'Удалить', '#', class: 'table__link' %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
     </tbody>
   </table>
 </section>
