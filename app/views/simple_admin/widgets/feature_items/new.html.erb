@@ -1,36 +1,7 @@
 <section class="item-page">
   <header class="item-page__header">
-      <h3 class="item-page__title">Featured Items</h3>
+      <h3 class="item-page__title">Create Featured Block</h3>
   </header>
 
-  <div class="item-page__content">
-    <%= form_for @feature_item, url: admin_widgets_feature_items_path do |f| %>
-      <section class="field">
-          <div class="field__title">Новости</div>
-          <div class="field__content">
-            <input class="input autocomplete" type="text" name="feature_items">
-
-            <ul class="dropdown-menu">
-              <li><a href="#">Hello world!</a></li>
-            </ul>
-
-            <div class="featured__news">
-              <!-- <div class="feature__item">
-                <a href="#">Remove</a> |
-                <span>Hello world!!!</span>
-                <input type="hidden" name="post[]">
-              </div> -->
-            </div>
-          </div>
-      </section>
-
-      <section class="field">
-        <div class="field__title"></div>
-        <div class="field__content">
-          <%= f.submit value: 'Создать', class: 'button button--wide item-page__button' %>
-        </div>
-      </section>
-
-    <% end %>
-  </div>
+  <%= render 'simple_admin/widgets/feature_items/form', form_url: admin_widgets_path(current_locale), widget: @widget, feature_items: [] %>
 </section>
