@@ -1,0 +1,7 @@
+<%= render 'simple_admin/admin/widgets/widget_type_item', widget_type: widget_type %>
+
+<% if widget_type.enabled? %>
+  <% widget_type.widgets.each do |widget| %>
+   <%= render 'simple_admin/admin/widgets/widget_item', widget: widget, edit_path: edit_path %>
+  <% end %>
+<% end %>

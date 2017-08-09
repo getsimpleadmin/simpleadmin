@@ -65,9 +65,11 @@ module SimpleAdminHelper
   end
 
 
-  def render_widget(widget_name, resources, resource_new_path)
-    resource = resources.find { |resource| resource.name == widget_name.to_s }
+  def render_widget(widget_name, widget_types, edit_path)
+    widget_type = widget_types.find do |widget_type_tmp|
+      widget_type_tmp.name == widget_name.to_s
+    end
 
-    render "simple_admin/admin/widgets/list_item", resource: resource, resource_new_path: resource_new_path
+    render "simple_admin/admin/widgets/widget_list", widget_type: widget_type, edit_path: edit_path
   end
 end

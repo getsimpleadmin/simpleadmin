@@ -6,13 +6,14 @@ Rails.application.routes.draw do
       scope "/:locale", locale: 'en|ru' do
         get 'dashboard' => 'dashboard#index'
 
-        resources :widgets, only: [:index, :edit]
+        resources :widgets, only: [:index, :edit, :update, :create, :destroy]
+        resources :widget_types, only: :update
 
         namespace :widgets do
           scope :featured do
             get 'autocomplete' => 'feature_items#autocomplete'
-            
-            resources :feature_items, except: :show
+
+            resources :feature_items, only: [:new, :edit]
           end
         end
 
