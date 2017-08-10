@@ -5,7 +5,7 @@ module SimpleAdmin
     end
 
     def get_association_field(field_name)
-      # TODO Hardcoded value
+      # TODO: Hardcoded value
       get_field(field_name.gsub(/_id/, '')).name
     end
 

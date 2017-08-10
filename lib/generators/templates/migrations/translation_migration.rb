@@ -22,12 +22,12 @@ module Migrations
   end
 end
 
-if Rails::VERSION::STRING.to_i < 5
-  CreateSimpleAdminTranslationMigrations = Class.new(ActiveRecord::Migration) do
-    include Migrations
-  end
-else
-  CreateSimpleAdminTranslationMigrations = Class.new(ActiveRecord::Migration[5.1]) do
-    include Migrations
-  end
-end
+CreateSimpleAdminTranslationMigrations = if Rails::VERSION::STRING.to_i < 5
+                                           Class.new(ActiveRecord::Migration) do
+                                             include Migrations
+                                           end
+                                         else
+                                           Class.new(ActiveRecord::Migration[5.1]) do
+                                             include Migrations
+                                           end
+                                         end

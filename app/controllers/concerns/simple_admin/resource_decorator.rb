@@ -8,10 +8,12 @@ module SimpleAdmin
       end
 
       def self.decorator_class
-        "#{controller_name}Decorator".constantize rescue nil
+        "#{controller_name}Decorator".constantize
+      rescue
+        nil
       end
 
-      include decorator_class if self.decorator_class.present?
+      include decorator_class if decorator_class.present?
     end
   end
 end
