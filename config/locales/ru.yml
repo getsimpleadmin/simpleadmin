@@ -4,6 +4,20 @@ ru:
       create: "Создать %{model}"
       update: "Обновить %{model}"
   simple_admin:
+    widgets:
+      feature_items:
+        form:
+          name: 'Имя модуля'
+          label: 'Заголовок модуля'
+        post_search:
+          title: 'Новости'
+        post_item:
+          actions:
+            remove: 'Remove'
+        edit:
+          title: 'Редактировать Блок Рекомендуемые'
+        new:
+          title: 'Создать Блок Рекомендуемые'
     admin:
       actions: 'Действия'
       edit: 'Редактировать'
@@ -17,8 +31,13 @@ ru:
         index:
           title: 'Записи'
       widgets:
+        widget_type_item:
+          actions:
+            add: 'Добавить'
+            disable: 'Отключить'
+            enable: 'Включить'
         index:
-          title: 'Плагины'
+          title: 'Плагины / Расширения'
         menu:
           edit:
             title: 'Редактировать меню'

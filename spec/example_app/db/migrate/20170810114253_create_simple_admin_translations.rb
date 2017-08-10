@@ -6,6 +6,7 @@ class CreateSimpleAdminTranslations < ActiveRecord::Migration[5.1]
         SimpleAdmin::Category.create_translation_table! title: :string
         SimpleAdmin::EntityField.create_translation_table! label: :string
 
+        SimpleAdmin::Widget.create_translation_table! label: :string
         SimpleAdmin::Setting.create_translation_table! label: :string
       end
 
@@ -14,6 +15,7 @@ class CreateSimpleAdminTranslations < ActiveRecord::Migration[5.1]
         SimpleAdmin::Category.drop_translation_table!
         SimpleAdmin::EntityField.drop_translation_table!
 
+        SimpleAdmin::Widget.drop_translation_table!
         SimpleAdmin::Setting.drop_translation_table!
       end
     end

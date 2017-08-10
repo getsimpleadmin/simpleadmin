@@ -4,6 +4,20 @@ en:
       create: "Create %{model}"
       update: "Update %{model}"
   simple_admin:
+    widgets:
+      feature_items:
+        form:
+          name: 'Module name'
+          label: 'Module title'
+        post_search:
+          title: 'Posts'
+        post_item:
+          actions:
+            remove: 'Remove'
+        edit:
+          title: 'Edit Featured Block'
+        new:
+          title: 'Create Featured Block'
     admin:
       actions: 'Actions'
       edit: 'Edit'
@@ -17,8 +31,13 @@ en:
         index:
           title: 'Posts'
       widgets:
+        widget_type_item:
+          actions:
+            add: 'Add'
+            disable: 'Disable'
+            enable: 'Enable'
         index:
-          title: 'Plugins'
+          title: 'Plugins / Extensions'
         menu:
           edit:
             title: 'Edit menu'

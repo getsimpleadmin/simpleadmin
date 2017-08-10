@@ -62,11 +62,11 @@ module SimpleAdmin
       end
 
       def after_update_callbacks
-        raise NotImplemented
+        raise NotImplementedError
       end
 
       def after_create_callbacks
-        raise NotImplemented
+        raise NotImplementedError
       end
 
       def enable_entity_fields
