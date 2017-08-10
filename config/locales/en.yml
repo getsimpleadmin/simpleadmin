@@ -38,14 +38,24 @@ en:
             enable: 'Enable'
         index:
           title: 'Plugins / Extensions'
+        update:
+          success: 'Widget has been successfully updated!'
+        create:
+          success: 'Widget has been successfully created!'
+        destroy:
+          success: 'Widget has been successfully destroyed!'
         menu:
           edit:
             title: 'Edit menu'
+      widget_types:
+        update: 'Widget status has been updated!'
       system:
         title: 'System'
         settings:
           index:
             title: 'Settings'
+          update_batch:
+            success: 'Settings has been successfully updated!'
         languages:
           index:
             title: 'Languages'
@@ -53,6 +63,12 @@ en:
             title: 'Create new language'
           edit:
             title: 'Edit language'
+          update:
+            success: 'Language has been successfully updated!'
+          create:
+            success: 'Language has been successfully created!'
+          destroy:
+            success: 'Language has been successfully destroyed!'
         entities:
           index:
             title: 'Models'
@@ -60,6 +76,12 @@ en:
             title: 'Create new model'
           edit:
             title: 'Edit model'
+          update:
+            success: 'Entity has been successfully updated!'
+          create:
+            success: 'Entity has been successfully created!'
+          destroy:
+            success: 'Entity has been successfully destroyed!'
         entity_field_types:
           index:
             title: 'Field Types'
@@ -67,3 +89,9 @@ en:
             title: 'Create new field type'
           edit:
             title: 'Edit field type'
+          update:
+            success: 'Field Type has been successfully updated!'
+          create:
+            success: 'Field Type has been successfully created!'
+          destroy:
+            success: 'Field Type has been successfully destroyed!'

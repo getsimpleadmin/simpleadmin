@@ -13,7 +13,7 @@ module SimpleAdmin
             setting.update(value: params[:setting][setting.to_param])
           end
 
-          redirect_to admin_system_settings_path(current_locale)
+          redirect_to admin_system_settings_path(current_locale), notice: t('.success')
         end
       end
     end

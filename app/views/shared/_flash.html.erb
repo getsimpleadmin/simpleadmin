@@ -1,0 +1,12 @@
+<% flash.each do |name, message| %>
+  <section class="notify <%= name %>">
+    <span class="notify__text"><%= message %></span>
+    <span class="notify__close">
+      <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g transform="translate(-5.000000, -5.000000)">
+          <polygon id="Shape" fill="#BFC5C7" fill-rule="nonzero" points="19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12"/>
+        </g>
+      </svg>
+    </span>
+  </section>
+<% end %>
