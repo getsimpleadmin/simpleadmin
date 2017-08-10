@@ -7,7 +7,7 @@ module SimpleAdmin
         @widget_type.status = !@widget_type.status
         @widget_type.save
 
-        redirect_to admin_widgets_path(current_locale)
+        redirect_to admin_widgets_path(current_locale), notice: t('.success')
       end
 
       private

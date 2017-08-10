@@ -25,7 +25,7 @@ module SimpleAdmin
         @resource = model_klass.find(params[:id])
 
         if @resource.update(resource_params)
-          redirect_to redirect_path
+          redirect_to redirect_path, notice: t('.success')
         else
           render :edit
         end
@@ -35,7 +35,7 @@ module SimpleAdmin
         @resource = model_klass.new(resource_params)
 
         if @resource.save
-          redirect_to redirect_path
+          redirect_to redirect_path, notice: t('.success')
         else
           render :new
         end
@@ -45,7 +45,7 @@ module SimpleAdmin
         @resource = model_klass.find(params[:id])
         @resource.destroy
 
-        redirect_to redirect_path
+        redirect_to redirect_path, notice: t('.success')
       end
 
       private
