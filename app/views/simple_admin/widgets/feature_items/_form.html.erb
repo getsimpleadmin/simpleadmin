@@ -1,14 +1,14 @@
 <div class="item-page__content">
   <%= form_for widget, url: form_url do |f| %>
     <section class="field">
-        <div class="field__title">Имя модуля</div>
+        <div class="field__title"><%= t('.name') %></div>
         <div class="field__content">
           <%= f.text_field :name, class: 'input' %>
         </div>
     </section>
 
     <section class="field">
-        <div class="field__title">Заголовок модуля</div>
+        <div class="field__title"><%= t('.label') %></div>
         <div class="field__content">
           <%= f.text_field :label, class: 'input' %>
         </div>
