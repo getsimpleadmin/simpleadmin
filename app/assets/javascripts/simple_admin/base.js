@@ -8,4 +8,6 @@
 //= require simple_admin/modules/input/input
 //= require simple_admin/modules/table/table
 //= require simple_admin/modules/textarea/textarea
+//= require simple_admin/modules/aside/aside
+//= require simple_admin/modules/notify/notify
 //= require simple_admin/widgets/featured

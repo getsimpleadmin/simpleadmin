@@ -7,14 +7,15 @@
     <%= stylesheet_link_tag 'simple_admin/base', media: 'all' %>
   </head>
   <body>
+    <%= render "layouts/notify" %>
     <%= render "layouts/header" %>
-    <main class="page-content">
+    <div class="page-content__wrapper">
       <%= render "layouts/aside" %>
 
-      <section class="content">
+      <section class="page-content">
         <%= yield %>
       </section>
-    </main>
+    </div>
     <%= javascript_include_tag 'simple_admin/base', 'data-turbolinks-track' => true %>
   </body>
 </html>
