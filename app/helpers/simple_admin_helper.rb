@@ -39,16 +39,16 @@ module SimpleAdminHelper
     public_send(resource_path, resource, current_locale)
   end
 
-  def resource_collection_title(resource)
-    "simple_admin.admin.#{resource.model_plural_name}.index.title"
+  def resource_collection_title(entity)
+    "simple_admin.admin.#{entity.model_plural_name}.index.title"
   end
 
   def resource_select_enum_collection(entity, field_name)
     entity.model_klass_name.constantize.public_send(field_name.pluralize).keys
   end
 
-  def resource_collection_link(resource, current_locale)
-    public_send("admin_#{resource.model_plural_name}_path", current_locale)
+  def resource_collection_link(entity, current_locale)
+    public_send("admin_#{entity.model_plural_name}_path", current_locale)
   end
 
   def resource_active_link(resource_link)
