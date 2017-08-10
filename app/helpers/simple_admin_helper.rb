@@ -1,5 +1,5 @@
 module SimpleAdminHelper
-  def resource_link(resource, method, prefix = nil, namespace = nil)
+  def resource_link(resource, method, prefix=nil, namespace=nil)
     resource_klass = resource.class
 
     plural_name =
@@ -39,16 +39,16 @@ module SimpleAdminHelper
     public_send(resource_path, resource, current_locale)
   end
 
-  def resource_collection_title(resource)
-    "simple_admin.admin.#{resource.model_plural_name}.index.title"
+  def resource_collection_title(entity)
+    "simple_admin.admin.#{entity.model_plural_name}.index.title"
   end
 
   def resource_select_enum_collection(entity, field_name)
     entity.model_klass_name.constantize.public_send(field_name.pluralize).keys
   end
 
-  def resource_collection_link(resource, current_locale)
-    public_send("admin_#{resource.model_plural_name}_path", current_locale)
+  def resource_collection_link(entity, current_locale)
+    public_send("admin_#{entity.model_plural_name}_path", current_locale)
   end
 
   def resource_active_link(resource_link)
@@ -60,7 +60,15 @@ module SimpleAdminHelper
   end
 
   def str_to_method(string)
-    # TODO Eval not recommended to use, think about another way
+    # TODO: Eval not recommended to use, think about another way
     eval(string)
+  end
+
+  def render_widget(widget_name, widget_types, edit_path)
+    widget_type = widget_types.find do |widget_type_tmp|
+      widget_type_tmp.name == widget_name.to_s
+    end
+
+    render 'simple_admin/admin/widgets/widget_list', widget_type: widget_type, edit_path: edit_path
   end
 end

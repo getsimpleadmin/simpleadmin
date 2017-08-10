@@ -14,12 +14,18 @@ RSpec.describe 'Default language switcher in settings', type: :feature, js: true
   let!(:language_en) { create :language, code: :en }
   let!(:language_ru) { create :language, code: :ru }
 
-  let!(:setting_language) { SimpleAdmin::Setting.find_or_create_by(name: :default_language, label: 'Язык по умолчанию',
-                                                                value: :ru, presentation: 'simple_admin/fields/settings/select_form') }
-  let!(:setting_staging_url) { SimpleAdmin::Setting.find_or_create_by(name: :site_url_staging, label: 'Адрес сайта (staging)',
-                                    value: 'http://staging.warrobots.net/', presentation: 'simple_admin/fields/settings/string_form') }
-  let!(:setting_production_url) { SimpleAdmin::Setting.find_or_create_by(name: :site_url_production, label: 'Адрес сайта (production)',
-                                        value: 'http://faq.wwr.mobi/hc/ru', presentation: 'simple_admin/fields/settings/string_form') }
+  let!(:setting_language) do
+    SimpleAdmin::Setting.find_or_create_by(name: :default_language, label: 'Язык по умолчанию',
+                                           value: :ru, presentation: 'simple_admin/fields/settings/select_form')
+  end
+  let!(:setting_staging_url) do
+    SimpleAdmin::Setting.find_or_create_by(name: :site_url, label: 'Адрес сайта (staging)',
+                                           value: 'http://staging.warrobots.net/', presentation: 'simple_admin/fields/settings/string_form')
+  end
+  let!(:setting_production_url) do
+    SimpleAdmin::Setting.find_or_create_by(name: :site_url_production, label: 'Адрес сайта (production)',
+                                           value: 'http://faq.wwr.mobi/hc/ru', presentation: 'simple_admin/fields/settings/string_form')
+  end
 
   before do
     allow_any_instance_of(SimpleAdmin::Admin::System::SettingsController).to receive(:authenticate_user!).and_return(true)

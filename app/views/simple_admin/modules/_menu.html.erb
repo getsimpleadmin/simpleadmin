@@ -5,6 +5,10 @@
     </div>
   <% end %>
 
+  <div class="nav-group">
+    <%= link_to  t('simple_admin.admin.widgets.index.title'), admin_widgets_path(current_locale), class: 'nav-group__item nav-group__title' %>
+  </div>
+
   <div class="nav-group <%= resource_system_active_link %>">
     <div class="nav-group__item nav-group__title"><%= t('simple_admin.admin.system.title') %></div>
     <%= link_to t('simple_admin.admin.system.settings.index.title'), admin_system_settings_path(current_locale), class: 'nav-group__item' %>

@@ -5,30 +5,27 @@ module SimpleAdmin
   module Generators
     class InstallGenerator < ActiveRecord::Generators::Base
       argument :name, default: 'simple_admin'
-      source_root File.expand_path("../../templates", __FILE__)
+      source_root File.expand_path('../../templates', __FILE__)
 
       def copy_initializer
-        @underscored_user_name = name.underscore.gsub('/', '_')
-        @use_authentication_method = options[:users].present?
-        template 'simple_admin.rb.erb', 'config/initializers/simple_admin.rb'
+        template 'initializers/simple_admin.rb.erb', 'config/initializers/simple_admin.rb'
+        template 'initializers/devise.rb.erb',       'config/initializers/devise.rb'
+        template 'initializers/friendly_id.rb.erb',  'config/initializers/friendly_id.rb'
       end
 
       def copy_simple_admin_migration
-        migration_template "migrate.rb", "db/migrate/create_simple_admin_migrations.rb"
-        migration_template "translation_migrate.rb", "db/migrate/create_simple_admin_translation_migrations.rb"
+        migration_template 'migrations/migration.rb', 'db/migrate/create_simple_admin_migrations.rb'
+        migration_template 'migrations/translation_migration.rb', 'db/migrate/create_simple_admin_translation_migrations.rb'
+        migration_template 'migrations/demo_data_migration.rb', 'db/migrate/create_simple_admin_demo_data_migrations.rb'
       end
 
       def copy_locale
-        copy_file "../../../config/locales/ru.yml", "config/locales/simple_admin.ru.yml"
-        copy_file "../../../config/locales/en.yml", "config/locales/simple_admin.en.yml"
-      end
-
-      def copy_config
-        copy_file "../../../config/simple_admin_settings.yml", "config/simple_admin_settings.yml"
+        copy_file '../../../config/locales/ru.yml', 'config/locales/simple_admin.ru.yml'
+        copy_file '../../../config/locales/en.yml', 'config/locales/simple_admin.en.yml'
       end
 
       def create_assets
-        generate "simple_admin:assets"
+        generate 'simple_admin:assets'
       end
     end
   end

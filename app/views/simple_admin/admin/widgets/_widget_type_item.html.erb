@@ -1,0 +1,25 @@
+<tr class="table__row">
+  <td class="table__cell">
+    <span>
+      <%= widget_type.id %>
+    </span>
+  </td>
+
+  <td class="table__cell">
+    <span>
+      <%= widget_type.name %>
+    </span>
+  </td>
+
+  <td class="table__cell">
+    <%= link_to t('.actions.add'), new_admin_widgets_feature_item_path(current_locale), class: 'table__link' %>
+  </td>
+
+  <td class="table__cell">
+    <% if widget_type.enabled? %>
+      <%= link_to t('.actions.disable'), admin_widget_type_path(widget_type, current_locale), method: :put, class: 'table__link' %>
+    <% else %>
+      <%= link_to t('.actions.enable'), admin_widget_type_path(widget_type, current_locale), method: :put, class: 'table__link' %>
+    <% end %>
+  </td>
+</tr>

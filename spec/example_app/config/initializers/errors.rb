@@ -1,4 +1,4 @@
-require "net/http"
+require 'net/http'
 
 # Example:
 #   begin
@@ -15,4 +15,4 @@ HTTP_ERRORS = [
   Net::HTTPHeaderSyntaxError,
   Net::ProtocolError,
   Timeout::Error
-]
+].freeze

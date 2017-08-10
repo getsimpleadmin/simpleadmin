@@ -4,7 +4,7 @@ RSpec.describe 'simple_admin/admin/collection/edit.html.erb', type: :view do
   let(:locale) { { locale: :en } }
   let(:entity) { create :entity }
 
-  let(:resource) { create :post, category_id: 999 }
+  let(:resource) { create :post }
   let(:resource_title) { 'Редактировать' }
 
   let!(:entity_fields) do
@@ -29,7 +29,6 @@ RSpec.describe 'simple_admin/admin/collection/edit.html.erb', type: :view do
 
     assign(:resource, resource)
   end
-
 
   it_behaves_like :crud_view_form
 

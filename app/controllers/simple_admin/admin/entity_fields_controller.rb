@@ -14,7 +14,7 @@ module SimpleAdmin
         @entity_field = SimpleAdmin::EntityField.find(params[:id])
         @entity_field.update(entity_field_params)
 
-        # TODO Dirty trick for demo
+        # TODO: Dirty trick for demo
         update_setting_field(@entity_field)
 
         respond_to do |format|
@@ -30,7 +30,6 @@ module SimpleAdmin
           format.js { render layout: false }
         end
       end
-
 
       private
 
