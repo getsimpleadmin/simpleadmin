@@ -1,5 +1,5 @@
 module SimpleAdminHelper
-  def resource_link(resource, method, prefix = nil, namespace = nil)
+  def resource_link(resource, method, prefix=nil, namespace=nil)
     resource_klass = resource.class
 
     plural_name =
@@ -60,16 +60,15 @@ module SimpleAdminHelper
   end
 
   def str_to_method(string)
-    # TODO Eval not recommended to use, think about another way
+    # TODO: Eval not recommended to use, think about another way
     eval(string)
   end
-
 
   def render_widget(widget_name, widget_types, edit_path)
     widget_type = widget_types.find do |widget_type_tmp|
       widget_type_tmp.name == widget_name.to_s
     end
 
-    render "simple_admin/admin/widgets/widget_list", widget_type: widget_type, edit_path: edit_path
+    render 'simple_admin/admin/widgets/widget_list', widget_type: widget_type, edit_path: edit_path
   end
 end

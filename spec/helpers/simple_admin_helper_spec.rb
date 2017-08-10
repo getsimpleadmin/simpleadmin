@@ -13,13 +13,13 @@ RSpec.describe SimpleAdminHelper, type: :helper do
         let(:resource_created) { create :post }
 
         it 'return resource paths' do
-          expect(resource_link(resource_builded, :index,  nil, namespace)).to eq "/admin/posts?locale=ru"
-          expect(resource_link(resource_builded, :new,    nil, namespace)).to eq "/admin/posts/new?locale=ru"
-          expect(resource_link(resource_builded, :create, nil, namespace)).to eq "/admin/posts?locale=ru"
+          expect(resource_link(resource_builded, :index,  nil, namespace)).to eq '/admin/posts?locale=ru'
+          expect(resource_link(resource_builded, :new,    nil, namespace)).to eq '/admin/posts/new?locale=ru'
+          expect(resource_link(resource_builded, :create, nil, namespace)).to eq '/admin/posts?locale=ru'
 
-          expect(resource_link(resource_created, :edit,    nil, namespace)).to eq "/admin/posts/1/edit?locale=ru"
-          expect(resource_link(resource_created, :update,  nil, namespace)).to eq "/admin/posts/1?locale=ru"
-          expect(resource_link(resource_created, :destroy, nil, namespace)).to eq "/admin/posts/1?locale=ru"
+          expect(resource_link(resource_created, :edit,    nil, namespace)).to eq '/admin/posts/1/edit?locale=ru'
+          expect(resource_link(resource_created, :update,  nil, namespace)).to eq '/admin/posts/1?locale=ru'
+          expect(resource_link(resource_created, :destroy, nil, namespace)).to eq '/admin/posts/1?locale=ru'
         end
       end
 
@@ -28,13 +28,13 @@ RSpec.describe SimpleAdminHelper, type: :helper do
         let(:resource_created) { create :category }
 
         it 'return resource paths' do
-          expect(resource_link(resource_builded, :index,  nil, namespace)).to eq "/admin/categories?locale=ru"
-          expect(resource_link(resource_builded, :new,    nil, namespace)).to eq "/admin/categories/new?locale=ru"
-          expect(resource_link(resource_builded, :create, nil, namespace)).to eq "/admin/categories?locale=ru"
+          expect(resource_link(resource_builded, :index,  nil, namespace)).to eq '/admin/categories?locale=ru'
+          expect(resource_link(resource_builded, :new,    nil, namespace)).to eq '/admin/categories/new?locale=ru'
+          expect(resource_link(resource_builded, :create, nil, namespace)).to eq '/admin/categories?locale=ru'
 
-          expect(resource_link(resource_created, :edit,    nil, namespace)).to eq "/admin/categories/1/edit?locale=ru"
-          expect(resource_link(resource_created, :update,  nil, namespace)).to eq "/admin/categories/1?locale=ru"
-          expect(resource_link(resource_created, :destroy, nil, namespace)).to eq "/admin/categories/1?locale=ru"
+          expect(resource_link(resource_created, :edit,    nil, namespace)).to eq '/admin/categories/1/edit?locale=ru'
+          expect(resource_link(resource_created, :update,  nil, namespace)).to eq '/admin/categories/1?locale=ru'
+          expect(resource_link(resource_created, :destroy, nil, namespace)).to eq '/admin/categories/1?locale=ru'
         end
       end
     end

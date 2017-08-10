@@ -12,7 +12,7 @@ module SimpleAdmin
       end
 
       def autocomplete
-        @posts = SimpleAdmin::Post.with_translations(params[:locale]).where("title LIKE ?", "%#{params[:title]}%")
+        @posts = SimpleAdmin::Post.with_translations(params[:locale]).where('title LIKE ?', "%#{params[:title]}%")
 
         render json: @posts
       end

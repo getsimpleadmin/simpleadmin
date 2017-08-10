@@ -2,7 +2,7 @@ module SimpleAdmin
   module Admin
     module System
       class EntitiesController < SystemController
-        before_action only: [:new, :edit] do
+        before_action only: %i[new edit] do
           Rails.application.eager_load!
         end
 

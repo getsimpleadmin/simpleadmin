@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope module: 'simple_admin' do
     namespace :admin do
-      resources :widgets, only: [:index, :edit, :update, :create, :destroy]
+      resources :widgets, only: %i[index edit update create destroy]
       resources :widget_types, only: :update
 
       namespace :system do

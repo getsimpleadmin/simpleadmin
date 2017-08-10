@@ -2,7 +2,6 @@ module SimpleAdmin
   module Admin
     module System
       class SettingsController < SystemController
-
         def index
           @resources = SimpleAdmin::Setting.order(sort_order: :asc)
         end
