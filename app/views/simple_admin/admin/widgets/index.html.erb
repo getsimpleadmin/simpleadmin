@@ -1,0 +1,13 @@
+<section class="catalog-page">
+  <header class="item-page__header">
+    <h3 class="item-page__title"><%= t('.title') %></h3>
+  </header>
+
+  <table class="table">
+    <%= render 'simple_admin/admin/shared/table_header', field_names: [:id, :label] %>
+
+    <tbody class="table__body">
+      <%= render_widget(:featured, @widget_types, :edit_admin_widgets_feature_item_path) %>
+    </tbody>
+  </table>
+</section>

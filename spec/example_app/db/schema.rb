@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721161721) do
+ActiveRecord::Schema.define(version: 20170810123740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,12 +90,55 @@ ActiveRecord::Schema.define(version: 20170721161721) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "simple_admin_setting_translations", force: :cascade do |t|
+    t.integer "setting_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "label"
+    t.index ["locale"], name: "index_simple_admin_setting_translations_on_locale"
+    t.index ["setting_id"], name: "index_4595a94dac4f0729f9b4b64558d27f5b2cca99c5"
+  end
+
   create_table "simple_admin_settings", force: :cascade do |t|
     t.string "name"
     t.string "value"
-    t.string "label"
     t.string "presentation"
     t.integer "sort_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_widget_feature_items", force: :cascade do |t|
+    t.string "object_type"
+    t.integer "object_id"
+    t.integer "widget_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_widget_translations", force: :cascade do |t|
+    t.integer "widget_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "label"
+    t.index ["locale"], name: "index_simple_admin_widget_translations_on_locale"
+    t.index ["widget_id"], name: "index_104c1ff078fe6019fa12306c4fe20d8220c85f53"
+  end
+
+  create_table "simple_admin_widget_types", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.boolean "status", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_widgets", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.integer "widget_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

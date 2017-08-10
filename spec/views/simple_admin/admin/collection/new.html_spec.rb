@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe 'simple_admin/admin/collection/new.html.erb', type: :view do
   let(:entity) { create :entity }
 
-  let(:resource) { build :post, category_id: 999 }
+  let(:resource) { build :post }
   let(:resource_title) { 'Создать' }
 
   let!(:entity_fields) do

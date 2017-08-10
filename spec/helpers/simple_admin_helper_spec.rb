@@ -10,7 +10,7 @@ RSpec.describe SimpleAdminHelper, type: :helper do
     context 'when core resource' do
       context 'when post resource' do
         let(:resource_builded) { build :post }
-        let(:resource_created) { create :post, category_id: 999 }
+        let(:resource_created) { create :post }
 
         it 'return resource paths' do
           expect(resource_link(resource_builded, :index,  nil, namespace)).to eq "/admin/posts?locale=ru"

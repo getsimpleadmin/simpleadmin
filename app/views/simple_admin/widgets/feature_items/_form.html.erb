@@ -1,0 +1,28 @@
+<div class="item-page__content">
+  <%= form_for widget, url: form_url do |f| %>
+    <section class="field">
+        <div class="field__title"><%= t('.name') %></div>
+        <div class="field__content">
+          <%= f.text_field :name, class: 'input' %>
+        </div>
+    </section>
+
+    <section class="field">
+        <div class="field__title"><%= t('.label') %></div>
+        <div class="field__content">
+          <%= f.text_field :label, class: 'input' %>
+        </div>
+    </section>
+
+    <%= f.hidden_field :widget_type_id, value: widget.widget_type_id %>
+
+    <%= render 'simple_admin/widgets/feature_items/post_search', feature_items: feature_items %>
+
+    <section class="field">
+      <div class="field__title"></div>
+      <div class="field__content">
+        <%= f.submit value: 'Обновить', class: 'button button--wide item-page__button' %>
+      </div>
+    </section>
+  <% end %>
+</div>

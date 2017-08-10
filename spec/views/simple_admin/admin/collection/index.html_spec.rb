@@ -4,7 +4,7 @@ RSpec.describe 'simple_admin/admin/collection/index.html.erb', type: :view do
   let(:locale) { { locale: :en } }
   let!(:entity) { create :entity }
 
-  let!(:resources) { create_list :post, 1, category_id: 999 }
+  let!(:resources) { create_list :post, 1 }
   let!(:resource_title) { I18n.t('simple_admin.admin.posts.index.title') }
 
   let!(:entity_fields) do

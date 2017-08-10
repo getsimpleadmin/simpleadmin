@@ -1,0 +1,21 @@
+<tr class="table__row">
+  <td class="table__cell">
+    <span>
+      <%= widget.id %>
+    </span>
+  </td>
+
+  <td class="table__cell">
+    <span>
+      <%= widget.label %>
+    </span>
+  </td>
+
+  <td class="table__cell">
+    <%= link_to 'Редактировать', public_send(edit_path, widget, current_locale), class: 'table__link' %>
+  </td>
+
+  <td class="table__cell">
+    <%= link_to 'Удалить', admin_widget_path(widget, current_locale), class: 'table__link', method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
