@@ -38,14 +38,24 @@ ru:
             enable: 'Включить'
         index:
           title: 'Плагины / Расширения'
+        update:
+          success: 'Виджет был успешно обновлен!'
+        create:
+          success: 'Виджет был успешно создан!'
+        destroy:
+          success: 'Виджет был успешно удален!'
         menu:
           edit:
             title: 'Редактировать меню'
+      widget_types:
+        update: 'Статус виджета был изменен!'
       system:
         title: 'Система'
         settings:
           index:
             title: 'Настройки'
+          update_batch:
+            success: 'Настройки были успешно обновлены!'
         languages:
           index:
             title: 'Языки'
@@ -53,6 +63,12 @@ ru:
             title: 'Создать язык'
           edit:
             title: 'Редактировать язык'
+          update:
+            success: 'Язык был успешно обновлен!'
+          create:
+            success: 'Язык был успешно создан!'
+          destroy:
+            success: 'Язык был успешно удален!'
         entities:
           index:
             title: 'Модели'
@@ -60,6 +76,12 @@ ru:
             title: 'Создать новую модель'
           edit:
             title: 'Редактировать модель'
+          update:
+            success: 'Модель была успешно обновлена!'
+          create:
+            success: 'Модель была успешно создана!'
+          destroy:
+            success: 'Модель была успешно удалена!'
         entity_field_types:
           index:
             title: 'Типы полей'
@@ -67,3 +89,9 @@ ru:
             title: 'Создать новый тип поля'
           edit:
             title: 'Редактировать тип поле'
+          update:
+            success: 'Тип поля был успешно обновлен!'
+          create:
+            success: 'Тип поля был успешно создан!'
+          destroy:
+            success: 'Тип поля был успешно удален!'

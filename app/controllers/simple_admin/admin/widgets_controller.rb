@@ -14,9 +14,9 @@ module SimpleAdmin
           initialize_widget!
           after_create_callbacks
 
-          redirect_to redirect_path
+          redirect_to redirect_path, notice: t('.success')
         else
-          raise NotImplemented
+          render :new
         end
       end
 
@@ -27,9 +27,9 @@ module SimpleAdmin
           initialize_widget!
           after_update_callbacks
 
-          redirect_to redirect_path
+          redirect_to redirect_path, notice: t('.success')
         else
-          raise NotImplemented
+          render :edit
         end
       end
 
@@ -37,7 +37,7 @@ module SimpleAdmin
         @widget = SimpleAdmin::Widget.find_by(name: params[:id])
         @widget.destroy
 
-        redirect_to redirect_path
+        redirect_to redirect_path, notice: t('.success')
       end
 
       def edit
