@@ -18,6 +18,15 @@ module Migrations
       t.timestamps null: false
     end
 
+    create_table :simple_admin_profiles do |t|
+      t.integer :user_id, null: false
+      t.string  :avatar
+      t.string  :first_name
+      t.string  :last_name
+
+      t.timestamps null: false
+    end
+
     create_table :simple_admin_pages do |t|
       t.string :name
 
@@ -44,7 +53,7 @@ module Migrations
 
     create_table :simple_admin_posts do |t|
       t.string :image
-      t.integer :category_id, null: false
+      t.integer :category_id
 
       t.timestamps null: false
     end
