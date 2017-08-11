@@ -35,6 +35,7 @@ RSpec.describe SimpleAdmin::Admin::WidgetsController, type: :controller do
 
       it 'create feature items' do
         expect { subject }.to change { SimpleAdmin::WidgetFeatureItem.count }.by(2)
+        expect(flash[:notice]).to eq I18n.t('simple_admin.admin.widgets.create.success')
       end
     end
   end
@@ -62,6 +63,8 @@ RSpec.describe SimpleAdmin::Admin::WidgetsController, type: :controller do
 
       expect(widget.reload.name).to eq 'example_home'
       expect(widget.label).to eq 'Example Home'
+
+      expect(flash[:notice]).to eq I18n.t('simple_admin.admin.widgets.update.success')
     end
   end
 
@@ -81,6 +84,8 @@ RSpec.describe SimpleAdmin::Admin::WidgetsController, type: :controller do
 
       expect(SimpleAdmin::Widget.count).to eq 0
       expect(subject).to redirect_to admin_widgets_path(current_locale)
+
+      expect(flash[:notice]).to eq I18n.t('simple_admin.admin.widgets.destroy.success')
     end
   end
 end
