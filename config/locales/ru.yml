@@ -56,6 +56,15 @@ ru:
             title: 'Настройки'
           update_batch:
             success: 'Настройки были успешно обновлены!'
+        users:
+          index:
+            title: 'Пользователи'
+          update:
+            success: 'Пользователь был успешно обновлен!'
+          create:
+            success: 'Пользователь был успешно создан!'
+          destroy:
+            success: 'Пользователь был успешно удален!'
         languages:
           index:
             title: 'Языки'

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
           match 'update_batch' => 'settings#update_batch', via: :put
 
+          resources :users, except: :show
           resources :languages, except: :show
           resources :entities,  except: :show
           resources :entity_field_types, except: :show
