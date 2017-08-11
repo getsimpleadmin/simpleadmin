@@ -1,0 +1,33 @@
+<div class="item-page__content">
+  <%= form_for resource, url: form_url do |f| %>
+    <section class="field">
+        <div class="field__title">Email</div>
+        <div class="field__content">
+          <%= f.text_field :email, class: 'input' %>
+        </div>
+    </section>
+
+    <%= f.fields_for :profile do |pf| %>
+      <section class="field">
+          <div class="field__title">Имя</div>
+          <div class="field__content">
+            <%= pf.text_field :first_name, value: f.object.first_name, class: 'input' %>
+          </div>
+      </section>
+
+      <section class="field">
+          <div class="field__title">Фамилия</div>
+          <div class="field__content">
+            <%= pf.text_field :last_name, value: f.object.last_name, class: 'input' %>
+          </div>
+      </section>
+    <% end %>
+
+    <section class="field">
+      <div class="field__title"></div>
+      <div class="field__content">
+        <%= f.submit class: 'button button--wide item-page__button' %>
+      </div>
+    </section>
+  <% end %>
+</div>

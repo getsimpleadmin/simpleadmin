@@ -56,6 +56,15 @@ en:
             title: 'Settings'
           update_batch:
             success: 'Settings has been successfully updated!'
+        users:
+          index:
+            title: 'Users'
+          update:
+            success: 'User has been successfully updated!'
+          create:
+            success: 'User has been successfully created!'
+          destroy:
+            success: 'User has been successfully destroyed!'
         languages:
           index:
             title: 'Languages'
