@@ -893,6 +893,15 @@ input {
   width: -moz-calc(100% - 240px);
   width: calc(100% - 240px);
 }
+
+.field__content > span {
+  display: block;
+  vertical-align: top;
+  padding-top: 15px;
+  color: #000;
+  font-size: 14px;
+}
+
 :root {
   /*commons styles: fonts*/
   /*container*/

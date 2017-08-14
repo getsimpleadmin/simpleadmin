@@ -1,16 +1,17 @@
 $(document).ready(function() {
-  $('main').click(function() {
+  $('body').click(function() {
     $('.dropdown-menu').hide();
   });
 
   $('.autocomplete').keyup(function() {
-    var inputValue = this.value;
+    var inputValue = this.value,
+        currentLocale = $(this).data('locale');
 
     $('.dropdown-menu').show();
 
     $.ajax({
       type:'GET',
-      url:'/admin/en/widgets/featured/autocomplete',
+      url:'/admin/' + currentLocale +'/widgets/featured/autocomplete',
       data: {
         title: inputValue
       },
