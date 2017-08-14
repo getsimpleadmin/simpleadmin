@@ -5,7 +5,7 @@ module SimpleAdmin
     end
 
     def initialize_controller_klass!
-      unless SimpleAdmin::Admin.const_defined?(controller_name)
+      unless SimpleAdmin::Admin.const_defined?(controller_name.to_sym)
         Admin.const_set(controller_name, Class.new(SimpleAdmin::Admin::BaseController))
       end
     end

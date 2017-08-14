@@ -1,5 +1,6 @@
 require 'devise'
 require 'friendly_id'
+require 'mini_magick'
 require 'carrierwave'
 
 module SimpleAdmin
