@@ -8,7 +8,7 @@ RSpec.describe SimpleAdmin::Admin::WidgetsController, type: :controller do
   describe '#index' do
     subject { get :index }
 
-    it { expect(subject.status).to eq 200 }
+    it { is_expected.to have_http_status(200) }
   end
 
   describe '#create' do

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       resources :widgets, only: %i[index edit update create destroy]
       resources :widget_types, only: :update
 
+      resources :profiles, only: [:edit, :update]
+
       namespace :system do
         resources :settings, only: :index
 
