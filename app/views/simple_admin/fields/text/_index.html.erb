@@ -1,5 +1,5 @@
 <td class="table__cell">
   <span>
-    <%= resource.get_field(field.name).html_safe %>
+    <%= truncate(resource.get_field(field.name), length: 224, escape: false) %>
   </span>
 </td>
