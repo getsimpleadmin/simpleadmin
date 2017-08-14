@@ -10,7 +10,7 @@ module SimpleAdmin
     end
 
     def get_image_field(field_name)
-      public_send("#{field_name}_url", :admin_thumb)
+      public_send("#{field_name}_url", :thumb)
     end
   end
 end
