@@ -30,6 +30,9 @@ ru:
       posts:
         index:
           title: 'Записи'
+      profiles:
+        update:
+          success: 'Профиль успешно обновлен!'
       widgets:
         widget_type_item:
           actions:
