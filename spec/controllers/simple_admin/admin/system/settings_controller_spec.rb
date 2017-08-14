@@ -28,6 +28,8 @@ RSpec.describe SimpleAdmin::Admin::System::SettingsController, type: :controller
     it 'return updated resource' do
       expect(subject).to redirect_to admin_system_settings_path(current_locale)
       expect(setting.reload.value).to eq 'en'
+
+      expect(flash[:notice]).to eq I18n.t('simple_admin.admin.system.settings.update_batch.success')
     end
   end
 end
