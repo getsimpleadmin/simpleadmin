@@ -22,6 +22,8 @@ module SimpleAdmin
       def copy_locale
         copy_file '../../../config/locales/ru.yml', 'config/locales/simple_admin.ru.yml'
         copy_file '../../../config/locales/en.yml', 'config/locales/simple_admin.en.yml'
+
+        copy_file '../../../config/locales/devise.ru.yml', 'config/locales/devise.ru.yml'
       end
 
       def create_assets

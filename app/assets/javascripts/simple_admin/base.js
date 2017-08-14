@@ -11,3 +11,5 @@
 //= require simple_admin/modules/aside/aside
 //= require simple_admin/modules/notify/notify
 //= require simple_admin/widgets/featured
+//= require simple_admin/modules/tagsinput/jquery.tagsinput
+//= require simple_admin/init_plugins
