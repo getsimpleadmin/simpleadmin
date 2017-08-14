@@ -24,7 +24,7 @@ module Migrations
       t.string :avatar
       t.string :first_name
       t.string :last_name
-      
+
       t.string :twitter_nickname
 
       t.timestamps null: false
@@ -59,6 +59,7 @@ module Migrations
       t.string :tags
 
       t.integer :category_id
+      t.integer :user_id, null: false
 
       t.timestamps null: false
     end

@@ -2,6 +2,8 @@ module SimpleAdmin
   class Post < Base
     translates :title, :description
 
+    belongs_to :user, optional: true
+
     has_many :categories
 
     mount_uploader :image, ResourceImageUploader
