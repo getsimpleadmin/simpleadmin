@@ -16,7 +16,7 @@ module SimpleAdmin
       private
 
       def resource_params
-        params.require(:simple_admin_user).permit(:email, profile_attributes: [:first_name, :last_name, :twitter_nickname])
+        params.require(:simple_admin_user).permit(:email, profile_attributes: [:avatar, :first_name, :last_name, :twitter_nickname])
       end
 
       def enable_entity_fields
