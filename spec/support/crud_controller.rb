@@ -8,10 +8,7 @@ shared_examples :crud_testing do
   describe '#index' do
     subject { get :index }
 
-    it 'render resources' do
-      expect(subject.status).to eq 200
-      expect(assigns(:resources)).to eq resources
-    end
+    it { is_expected.to have_http_status(200) }
   end
 
   describe '#edit' do
@@ -23,10 +20,7 @@ shared_examples :crud_testing do
 
     subject { get :edit, params: params }
 
-    it 'render resource' do
-      expect(subject.status).to eq 200
-      expect(assigns(:resource)).to eq resource
-    end
+    it { is_expected.to have_http_status(200) }
   end
 
   describe '#update' do
@@ -64,7 +58,7 @@ shared_examples :crud_testing do
     it 'delete resource' do
       expect { subject }.to change { resource.class.count }.by(-1)
       expect(flash[:notice]).to eq I18n.t(flash_message)
-      
+
       expect(subject).to redirect_to resource_path
     end
   end
