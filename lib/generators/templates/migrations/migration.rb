@@ -20,9 +20,12 @@ module Migrations
 
     create_table :simple_admin_profiles do |t|
       t.integer :user_id, null: false
-      t.string  :avatar
-      t.string  :first_name
-      t.string  :last_name
+
+      t.string :avatar
+      t.string :first_name
+      t.string :last_name
+      
+      t.string :twitter_nickname
 
       t.timestamps null: false
     end
@@ -54,7 +57,7 @@ module Migrations
     create_table :simple_admin_posts do |t|
       t.string :image
       t.string :tags
-      
+
       t.integer :category_id
 
       t.timestamps null: false

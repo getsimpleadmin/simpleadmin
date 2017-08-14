@@ -17,6 +17,8 @@ Rails.application.routes.draw do
           end
         end
 
+        resources :profiles, only: [:edit, :update]
+
         namespace :system do
           resources :settings, only: :index
 
