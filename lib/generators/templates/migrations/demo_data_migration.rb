@@ -24,6 +24,7 @@ module Migrations
     SimpleAdmin::EntityField.create(name: :description, label: 'Описание', entity_field_type_id: field_text_type.id, entity_id: post_entity.id, display: :form)
     SimpleAdmin::EntityField.create(name: :image, label: 'Изображение', entity_field_type_id: field_image_type.id, entity_id: post_entity.id, display: :form)
     post_select_field = SimpleAdmin::EntityField.create(name: :category_id, label: 'Категория', entity_field_type_id: field_select_type.id, entity_id: post_entity.id, display: :form)
+    SimpleAdmin::EntityField.create(name: :tags, label: 'Теги', entity_field_type_id: field_string_type.id, entity_id: post_entity.id, display: :form)
 
     SimpleAdmin::EntityFieldSetting.create(entity_field_id: post_select_field.id, data: [{name: :select_collection, label: "Field Collection", value: "SimpleAdmin::Category.all.with_translations(params[:locale]).pluck(:title, :id)"}])
 
