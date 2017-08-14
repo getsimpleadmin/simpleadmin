@@ -30,6 +30,24 @@ ru:
       posts:
         index:
           title: 'Записи'
+      profiles:
+        edit:
+          title: 'Редактировать профиль'
+          social:
+            title: 'Социальные сети'
+          form:
+            email:
+              label: 'Email'
+            first_name:
+              label: 'Имя'
+            last_name:
+              label: 'Фамилия'
+            avatar:
+              label: 'Аватар'
+            twitter_nickname:
+              label: 'Twitter'
+        update:
+          success: 'Профиль успешно обновлен!'
       widgets:
         widget_type_item:
           actions:

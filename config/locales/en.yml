@@ -30,6 +30,24 @@ en:
       posts:
         index:
           title: 'Posts'
+      profiles:
+        edit:
+          title: 'Edit profile'
+          social:
+            title: 'Social networks'
+          form:
+            email:
+              label: 'Email'
+            first_name:
+              label: 'First name'
+            last_name:
+              label: 'Last name'
+            avatar:
+              label: 'Avatar'
+            twitter_nickname:
+              label: 'Twitter'
+        update:
+          success: 'Profile has been successfully updated!'
       widgets:
         widget_type_item:
           actions:

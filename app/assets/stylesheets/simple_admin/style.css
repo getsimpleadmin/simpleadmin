@@ -964,7 +964,7 @@ input {
   padding-bottom: 15px;
 }
 
-.header__linkToSite {
+.header__linkToSite, .header__linkToProfile {
   color: #858a8c;
   font-weight: 500;
   text-transform: uppercase;

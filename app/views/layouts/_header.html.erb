@@ -10,7 +10,9 @@
 			</a>
 		</div>
 		<div class="header__group">
-			<span class="header__member"><%= current_user.email %></span>
+			<span class="header__member">
+				<%= link_to current_user.email, edit_admin_profile_path(current_user, current_locale), class: 'header__linkToProfile' %>
+			</span>
 			<%= link_to destroy_user_session_path, class: 'header__exitIconContainer' do %>
 				<svg class="header__exitIcon" width="14" height="17" viewBox="0 0 14 17" xmlns="http://www.w3.org/2000/svg">
 					<g fill="#858A8C" fill-rule="evenodd">
