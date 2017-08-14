@@ -29,7 +29,8 @@ RSpec.describe SimpleAdmin::Admin::ProfilesController, type: :controller do
           profile_attributes: {
             first_name: 'Alex',
             last_name: 'Doe',
-            twitter_nickname: '@alexdoe'
+            twitter_nickname: '@alexdoe',
+            avatar: Rack::Test::UploadedFile.new(File.open('spec/fixtures/avatar.png'), 'image/png')
           }
         }
       }
@@ -44,6 +45,7 @@ RSpec.describe SimpleAdmin::Admin::ProfilesController, type: :controller do
       expect(user.reload.first_name).to eq 'Alex'
       expect(user.last_name).to eq 'Doe'
       expect(user.twitter_nickname).to eq '@alexdoe'
+      expect(user.avatar.present?).to be true
     end
   end
 end
