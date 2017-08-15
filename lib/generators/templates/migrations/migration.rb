@@ -68,6 +68,13 @@ module Migrations
       t.timestamps null: false
     end
 
+    create_table :simple_admin_categories_posts do |t|
+      t.integer :post_id
+      t.integer :category_id
+
+      t.timestamps null: false
+    end
+
     create_table :simple_admin_entities do |t|
       t.string :model_klass_name
       t.string :model_plural_name
