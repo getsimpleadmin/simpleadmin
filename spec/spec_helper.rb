@@ -35,6 +35,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     SimpleAdmin::EntityFieldType.create(name: :number, template: 'simple_admin/fields/number')
+    SimpleAdmin::EntityFieldType.create(name: :string, template: 'simple_admin/fields/string')
   end
 
   config.include Devise::Test::ControllerHelpers, type: :controller
