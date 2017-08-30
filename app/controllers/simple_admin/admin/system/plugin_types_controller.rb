@@ -15,7 +15,7 @@ module SimpleAdmin
             @resource.activate!
           end
 
-          redirect_to admin_system_plugin_typess_path, notice: t('.success')
+          redirect_to admin_system_plugin_types_path, notice: t('.success')
         end
       end
     end
