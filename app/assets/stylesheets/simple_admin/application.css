@@ -1,8 +1,4 @@
 /*
-  *= require simple_admin/bootstrap
-  *= require simple_admin/fonts
-  *= require simple_admin/tags
-  *= require simple_admin/overrides
-  *= require simple_admin/oneui
-  *= require simple_admin/notify
+*= require simple_admin/core
+*= require simple_admin/modules/jquery.tagsinput
 */
