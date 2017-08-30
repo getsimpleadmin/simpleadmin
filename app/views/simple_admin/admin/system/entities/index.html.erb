@@ -37,10 +37,12 @@
             <%= link_to 'Edit', edit_admin_system_entity_path(resource), class: 'table__link' %>
           </td>
 
-          <td class="table__cell">
-            <%= link_to 'Delete', admin_system_entity_path(resource), class: 'table__link',
-                                                    method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
+          <% unless resource.inbuilt %>
+            <td class="table__cell">
+              <%= link_to 'Delete', admin_system_entity_path(resource), class: 'table__link',
+                                                      method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

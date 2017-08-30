@@ -1,3 +1,5 @@
 <td>
-  <%= resource.public_send(field.name.remove('_id')).public_send(field.value) %>
+  <% if resource.public_send(field.name.remove('_id')).present? %>
+    <%= resource.public_send(field.name.remove('_id')).public_send(field.value) %>
+  <% end %>
 </td>
