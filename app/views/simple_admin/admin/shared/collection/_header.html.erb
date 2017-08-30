@@ -1,12 +1,4 @@
-<div class="content bg-gray-lighter">
-    <div class="row items-push">
-        <div class="col-sm-7">
-            <h1 class="page-heading">
-              Posts
-            </h1>
-        </div>
-        <div class="col-sm-5 text-right hidden-xs">
-          <%= link_to 'Create Post', resource_link(entity.model_klass.new, :new), class: 'btn btn-minw btn-success' %>
-        </div>
-    </div>
-</div>
+<header class="item-page__header">
+  <h3 class="item-page__title">Posts</h3>
+  <%= link_to 'New Post', resource_link(entity.model_klass.new, :new), class: 'button item-page__submit' %>
+</header>

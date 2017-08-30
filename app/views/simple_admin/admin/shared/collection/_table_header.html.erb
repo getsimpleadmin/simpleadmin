@@ -1,9 +1,9 @@
-<thead>
-    <tr>
+<thead class="table__header">
+    <tr class="table__row">
         <% column_names.each do |column_name| %>
-          <th><%= column_name %></th>
+          <th class="table__cell"><%= column_name %></th>
         <% end %>
-
-        <th class="text-center">Actions</th>
+        <th class="table__cell">Actions</th>
+        <th class="table__cell"></th>
     </tr>
 </thead>
