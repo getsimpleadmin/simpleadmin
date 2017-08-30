@@ -38,7 +38,10 @@ class CreateSimpleAdminCoreDataMigration < ActiveRecord::Migration[5.1]
     category_entity = SimpleAdmin::Entity.create(model_klass_name: SimpleAdmin::Category.to_s, label: 'Categories', status: true, inbuilt: true)
 
     SimpleAdmin::EntityField.create_string_field(name: :title, entity: category_entity, sort_order: 1, presentation: :collection)
-    SimpleAdmin::EntityField.create_string_field(name: :title, entity: category_entity, sort_order: 2, presentation: :form)
+    SimpleAdmin::EntityField.create_image_field(name:  :image, entity: category_entity, sort_order: 2, presentation: :collection)
+
+    SimpleAdmin::EntityField.create_string_field(name: :title, entity: category_entity, sort_order: 1, presentation: :form)
+    SimpleAdmin::EntityField.create_image_field(name: :image, entity: category_entity, sort_order: 2, presentation: :form)
 
     featured_widget = SimpleAdmin::PluginType.create(name: :featured)
 

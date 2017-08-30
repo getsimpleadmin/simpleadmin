@@ -19,6 +19,12 @@ module SimpleAdmin
       def model_klass
         SimpleAdmin::Post
       end
+
+      private
+
+        def action_resource_modificator
+          current_user.posts
+        end
     end
   end
 end

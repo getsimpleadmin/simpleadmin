@@ -32,7 +32,12 @@ module SimpleAdmin
       end
 
       def create
-        @resource = model_klass.new(resource_params)
+        @resource =
+          if respond_to?(:action_resource_modificator)
+            action_resource_modificator.build(resource_params)
+          else
+            model_klass.new(resource_params)
+          end
 
         if @resource.save
           redirect_to after_create_path, notice: t('.success')
@@ -50,13 +55,13 @@ module SimpleAdmin
 
       private
 
-      def resource_params
-        params.require(resource_name).permit(resource_attributes)
-      end
+        def resource_params
+          params.require(resource_name).permit(resource_attributes)
+        end
 
-      def template_path(controller_action=nil)
-        "simple_admin/admin/resource/#{controller_action || params[:action]}"
-      end
+        def template_path(controller_action=nil)
+          "simple_admin/admin/resource/#{controller_action || params[:action]}"
+        end
     end
   end
 end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         end
 
         resources :users
+        resources :profiles, only: [:edit, :update]
 
         resources :entities
         resources :entity_field_types

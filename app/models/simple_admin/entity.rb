@@ -25,7 +25,7 @@ module SimpleAdmin
     private
 
     def create_default_fields!
-      SimpleAdmin::EntityField.create_number_field(name: :id, label: '#', entity: self, presentation: :collection)
+      SimpleAdmin::EntityField.create_number_field(name: :id, label: 'ID', entity: self, presentation: :collection)
     end
   end
 end
