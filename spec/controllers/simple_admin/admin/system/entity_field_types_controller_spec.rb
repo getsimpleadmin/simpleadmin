@@ -4,7 +4,10 @@ RSpec.describe SimpleAdmin::Admin::System::EntityFieldTypesController, type: :co
   let(:resource) { create :entity_field_type }
   let(:resources) { create_list :entity_field_type, 1 }
 
-  let(:resource_path) { admin_system_entity_field_types_path(current_locale) }
+  let(:after_create_path) { admin_system_entity_field_types_path }
+  let(:after_update_path) { admin_system_entity_field_types_path  }
+  let(:after_destroy_path) { admin_system_entity_field_types_path }
+
   let(:resource_attributes) do
     {
       name: :name,
@@ -19,5 +22,5 @@ RSpec.describe SimpleAdmin::Admin::System::EntityFieldTypesController, type: :co
     }
   end
 
-  it_behaves_like :crud_testing
+  it_behaves_like :controller_crud
 end

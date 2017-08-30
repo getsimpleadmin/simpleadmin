@@ -1,12 +1,7 @@
 module SimpleAdmin
   module Admin
     class DashboardController < BaseController
-      def index; end
-
-      private
-
-      def enable_entity_fields
-        false
+      def index
       end
     end
   end

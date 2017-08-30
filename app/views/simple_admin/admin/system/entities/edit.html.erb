@@ -1,8 +1,27 @@
-<section class="item-page">
-  <header class="item-page__header">
-      <h3 class="item-page__title"><%= t('.title') %></h3>
-  </header>
-  <h5 class="item-page__description"><%= @resource.model_klass_name %></h5>
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+              Edit Entity
+            </h1>
+        </div>
+    </div>
+</div>
 
-  <%= render 'simple_admin/admin/system/entities/form', resource: @resource, form_url: edit_admin_system_entity_path(@resource, current_locale) %>
-</section>
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="block">
+          <div class="block-header">
+              <h3 class="block-title"><%= @resource.model_klass_name %></h3>
+          </div>
+            <div class="block-content block-content-narrow">
+              <%= render 'form', resource: @resource, form_url: admin_system_entity_path(@resource) %>
+            </div>
+        </div>
+    </div>
+  </div>
+
+ <%= render template: 'simple_admin/admin/system/entities/entity_fields/new' %>
+ <%= render template: 'simple_admin/admin/system/entities/entity_fields/index' %>
+</div>

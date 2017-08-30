@@ -25,9 +25,9 @@ module SimpleAdmin
         @resource = model_klass.find(params[:id])
 
         if @resource.update(resource_params)
-          redirect_to redirect_path, notice: t('.success')
+          redirect_to after_update_path, notice: t('.success')
         else
-          render :edit
+          render template: template_path(:edit)
         end
       end
 
@@ -35,9 +35,9 @@ module SimpleAdmin
         @resource = model_klass.new(resource_params)
 
         if @resource.save
-          redirect_to redirect_path, notice: t('.success')
+          redirect_to after_create_path, notice: t('.success')
         else
-          render :new
+          render template: template_path(:new)
         end
       end
 
@@ -45,7 +45,7 @@ module SimpleAdmin
         @resource = model_klass.find(params[:id])
         @resource.destroy
 
-        redirect_to redirect_path, notice: t('.success')
+        redirect_to after_destroy_path, notice: t('.success')
       end
 
       private
@@ -54,8 +54,8 @@ module SimpleAdmin
         params.require(resource_name).permit(resource_attributes)
       end
 
-      def template_path
-        "#{params[:controller]}/#{params[:action]}"
+      def template_path(controller_action=nil)
+        "simple_admin/admin/resource/#{controller_action || params[:action]}"
       end
     end
   end

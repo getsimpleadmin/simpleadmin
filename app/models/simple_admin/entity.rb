@@ -1,14 +1,21 @@
 module SimpleAdmin
   class Entity < Base
-    attr_accessor :collection_name
+    using Refinements::Boolean
 
     has_many :entity_fields
 
-    after_save :reload_routes!
-    before_save :set_model_plural_name!
+    after_create :create_default_fields!
 
-    def self.collection_names
-      SimpleAdmin::Entity.all.map { |entity| [entity.model_klass_name, entity.model_plural_name] }
+    def model_klass
+      model_klass_name.constantize
+    end
+
+    def status_humanized
+      status.humanize
+    end
+
+    def inbuilt_humanized
+      inbuilt.humanize
     end
 
     def self.form_attributes(model_klass)
@@ -17,19 +24,8 @@ module SimpleAdmin
 
     private
 
-    def set_model_plural_name!
-      model_klass = model_klass_name.constantize
-
-      self.model_plural_name =
-        if defined?(model_klass.plural_name)
-          model_klass.plural_name
-        else
-          model_klass.model_name.plural
-        end
-    end
-
-    def reload_routes!
-      Rails.application.routes_reloader.reload!
+    def create_default_fields!
+      SimpleAdmin::EntityField.create_number_field(name: :id, label: '#', entity: self, presentation: :collection)
     end
   end
 end

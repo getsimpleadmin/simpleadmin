@@ -1,8 +1,0 @@
-<section class="field">
-    <div class="field__title"><%= label %></div>
-    <div class="field__content">
-        <div class="select__wrapper">
-            <%= f.select :value, SimpleAdmin::Language.enabled.collect { |language| [language.code, language.code] }, {}, { class: 'select' } %>
-        </div>
-    </div>
-</section>

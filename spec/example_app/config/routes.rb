@@ -1,23 +1,26 @@
 Rails.application.routes.draw do
-  scope module: 'simple_admin' do
+  devise_for :users, class_name: 'SimpleAdmin::User', controllers: { sessions: 'simple_admin/sessions' }
+  
+  scope module: :simple_admin do
     namespace :admin do
-      resources :widgets, only: %i[index edit update create destroy]
-      resources :widget_types, only: :update
-
-      resources :profiles, only: [:edit, :update]
-
-      namespace :system do
-        resources :settings, only: :index
-
-        match 'update_batch' => 'settings#update_batch', via: :put
-
-        resources :languages, except: :show
-        resources :entities,  except: :show
-        resources :entity_field_types, except: :show
-      end
+      root 'dashboard#index'
 
       resources :posts
       resources :categories
+
+      namespace :system do
+        resources :settings, only: [:index, :update]
+
+        resources :plugin_types, only: [:index, :update] do
+          resources :plugins
+        end
+
+        resources :users
+
+        resources :entities
+        resources :entity_field_types
+        resources :entity_fields, only: [:create, :update, :destroy]
+      end
     end
   end
 end

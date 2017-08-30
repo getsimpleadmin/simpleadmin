@@ -1,15 +1,7 @@
 module SimpleAdmin
   class Category < Base
-    translates :title
+    has_many :posts
 
-    belongs_to :post, optional: true
-
-    def self.plural_name
-      :categories
-    end
-
-    def self.singular_name
-      :category
-    end
+    mount_uploader :image, ResourceImageUploader
   end
 end

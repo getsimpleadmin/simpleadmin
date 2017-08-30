@@ -9,10 +9,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'simple_admin'
   spec.version       = SimpleAdmin::VERSION
   spec.authors       = ['Dmitriy Strukov']
-  spec.email         = ['strukov@charmerstudio.com']
+  spec.email         = ['dmitriy.strukov@outlook.com']
 
-  spec.summary       = 'Simple admin'
-  spec.description   = 'Simple admin'
+  spec.summary       = 'Simple Admin'
+  spec.description   = 'Simple Admin'
   spec.homepage      = 'http://simpleadmin.com'
   spec.license       = 'MIT'
 
@@ -31,20 +31,21 @@ Gem::Specification.new do |spec|
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['app/dashboards', 'lib']
+  spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
 
-  spec.add_dependency 'actionpack'
-  spec.add_dependency 'actionview'
-  spec.add_dependency 'activerecord'
+  spec.add_development_dependency 'actionpack'
+  spec.add_development_dependency 'actionview'
+  spec.add_development_dependency 'activerecord'
 
-  spec.add_dependency 'sass-rails'
   spec.add_dependency 'devise'
-  spec.add_dependency 'friendly_id'
+  spec.add_dependency 'rolify'
+  spec.add_dependency 'cancancan'
+  spec.add_dependency 'aasm'
+  spec.add_dependency 'best_in_place'
 
-  spec.add_dependency 'carrierwave'
-  spec.add_dependency 'mini_magick'
+  spec.add_dependency 'jquery-rails'
 end

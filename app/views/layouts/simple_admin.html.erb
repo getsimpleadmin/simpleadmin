@@ -3,19 +3,20 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <title>Simple Admin</title>
     <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
-    <%= stylesheet_link_tag 'simple_admin/base', media: 'all' %>
+    <%= stylesheet_link_tag 'simple_admin/application', media: 'all' %>
   </head>
   <body>
-    <%= render "shared/flash" %>
-    <%= render "layouts/header" %>
-    <div class="page-content__wrapper">
-      <%= render "layouts/aside" %>
+    <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+      <%= render 'simple_admin/admin/shared/aside' %>
+      <%= render 'simple_admin/admin/shared/header' %>
 
-      <section class="page-content">
+      <main id="main-container">
         <%= yield %>
-      </section>
+      </main>
+
+      <%= render 'simple_admin/admin/shared/footer' %>
     </div>
-    <%= javascript_include_tag 'simple_admin/base', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag 'simple_admin/application', 'data-turbolinks-track' => true %>
   </body>
 </html>

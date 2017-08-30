@@ -1,13 +1,13 @@
 module SimpleAdmin
   class Setting < Base
-    translates :label
+    class << self
+      def default_language
+        find_by(name: :default_language)
+      end
 
-    def self.default_language
-      find_by(name: :default_language).value
-    end
-
-    def self.site_url
-      find_by(name: :site_url).value
+      def site_url
+        find_by(name: :site_url)
+      end
     end
   end
 end

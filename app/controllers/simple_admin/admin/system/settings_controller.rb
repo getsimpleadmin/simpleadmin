@@ -1,19 +1,30 @@
 module SimpleAdmin
   module Admin
     module System
-      class SettingsController < SystemController
+      class SettingsController < BaseController
         def index
-          @resources = SimpleAdmin::Setting.order(sort_order: :asc)
+          @setting_default_language = SimpleAdmin::Setting.default_language
+          @setting_site_url = SimpleAdmin::Setting.site_url
         end
 
-        def update_batch
-          @settings = SimpleAdmin::Setting.find(params[:setting].keys)
+        def update
+          @resource = SimpleAdmin::Setting.find(params[:id])
 
-          @settings.each do |setting|
-            setting.update(value: params[:setting][setting.to_param])
+          respond_to do |format|
+            if @resource.update_attributes(resource_params)
+              format.html { redirect_to(@resource, notice: 'Setting was successfully updated.') }
+              format.json { respond_with_bip(@resource) }
+            else
+              format.html { render action: :index }
+              format.json { respond_with_bip(@resource) }
+            end
           end
+        end
 
-          redirect_to admin_system_settings_path(current_locale), notice: t('.success')
+        private
+
+        def resource_params
+          params.require(:simple_admin_setting).permit(:value)
         end
       end
     end

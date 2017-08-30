@@ -1,24 +1,21 @@
-<div class="item-page__content">
-  <%= form_for resource, url: form_url do |f| %>
-    <section class="field">
-        <div class="field__title">Имя Типа Поля</div>
-        <div class="field__content">
-          <%= f.text_field :name, class: 'input' %>
+<%= form_for resource, url: form_url, html: { class: 'form-horizontal' } do |f| %>
+    <div class="form-group">
+        <label class="col-xs-12" for="example-text-input">Name</label>
+        <div class="col-sm-9">
+            <%= f.text_field :name, class: 'form-control' %>
         </div>
-    </section>
+    </div>
 
-    <section class="field">
-        <div class="field__title">Шаблон Типа Поля</div>
-        <div class="field__content">
-          <%= f.text_field :template, class: 'input' %>
+    <div class="form-group">
+        <label class="col-xs-12" for="example-text-input">Template</label>
+        <div class="col-sm-9">
+            <%= f.text_field :template, class: 'form-control' %>
         </div>
-    </section>
+    </div>
 
-    <section class="field">
-      <div class="field__title"></div>
-      <div class="field__content">
-        <%= f.submit value: 'Создать', class: 'button button--wide item-page__button' %>
-      </div>
-    </section>
-  <% end %>
-</div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <%= f.submit class: 'btn btn-sm btn-primary' %>
+        </div>
+    </div>
+<% end %>
