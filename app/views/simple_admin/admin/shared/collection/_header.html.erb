@@ -1,4 +1,4 @@
 <header class="item-page__header">
-  <h3 class="item-page__title">Posts</h3>
-  <%= link_to 'New Post', resource_link(entity.model_klass.new, :new), class: 'button item-page__submit' %>
+  <h3 class="item-page__title"><%= t('simple_admin.resource.index.title', model_name: resource_singular_name.pluralize) %></h3>
+  <%= link_to t('simple_admin.resource.new.title', model_name: resource_singular_name), resource_link(entity.model_klass.new, :new), class: 'button item-page__submit' %>
 </header>

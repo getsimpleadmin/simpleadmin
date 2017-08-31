@@ -3,7 +3,6 @@ module SimpleAdmin
     module System
       class SettingsController < BaseController
         def index
-          @setting_default_language = SimpleAdmin::Setting.default_language
           @setting_site_url = SimpleAdmin::Setting.site_url
         end
 

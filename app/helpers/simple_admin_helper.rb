@@ -21,7 +21,7 @@ module SimpleAdminHelper
     public_send(resource_path, resource)
   end
 
-  def render_plugin_actions(plugin)
-    render "simple_admin/plugins/#{plugin.name}/actions", plugin: plugin
+  def render_plugin_actions(plugin_type)
+    render "simple_admin/plugins/#{plugin_type.name}/actions", plugin_type: plugin_type
   end
 end

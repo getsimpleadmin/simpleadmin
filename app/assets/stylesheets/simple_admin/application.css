@@ -1,5 +1,6 @@
 /*
 *= require simple_admin/core
 *= require simple_admin/modules/jquery.tagsinput
+*= require simple_admin/plugins/featured
 *= require simple_admin/overrides
 */
