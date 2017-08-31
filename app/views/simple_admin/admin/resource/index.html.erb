@@ -1,5 +1,5 @@
 <section class="catalog-page">
-  <%= render 'simple_admin/admin/shared/collection/header', entity: @entity %>
+  <%= render 'simple_admin/admin/shared/collection/header', entity: @entity, resource_singular_name: @resource_singular_name %>
 
   <table class="table">
     <%= render 'simple_admin/admin/shared/collection/table_header', column_names: @entity_fields.labels %>

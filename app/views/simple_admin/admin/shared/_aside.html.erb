@@ -20,8 +20,14 @@
       <%= link_to 'Plugins', admin_system_plugin_types_path, class: 'nav-group__item' %>
       <%= link_to 'Languages', admin_system_languages_path, class: 'nav-group__item' %>
       <%= link_to 'Users', admin_system_users_path, class: 'nav-group__item' %>
-      <%= link_to 'Entities', admin_system_entities_path, class: 'nav-group__item' %>
-      <%= link_to 'Field Types', admin_system_entity_field_types_path, class: 'nav-group__item' %>
+
+      <% if can? :read, SimpleAdmin::Entity %>
+        <%= link_to 'Entities', admin_system_entities_path, class: 'nav-group__item' %>
+      <% end %>
+
+      <% if can? :read, SimpleAdmin::EntityFieldType %>
+        <%= link_to 'Field Types', admin_system_entity_field_types_path, class: 'nav-group__item' %>
+      <% end %>
     </div>
   </div>
 </aside>

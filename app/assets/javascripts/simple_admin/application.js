@@ -12,5 +12,6 @@
 //= require simple_admin/modules/notify/notify
 //= require simple_admin/modules/tagsinput/jquery.tagsinput
 //= require simple_admin/change-password
+//= require simple_admin/plugins/featured
 //= require simple_admin/core
 //= require best_in_place

@@ -7,6 +7,12 @@
     <%= stylesheet_link_tag 'simple_admin/application', media: 'all' %>
   </head>
   <body>
+    <%= render "simple_admin/admin/shared/flash" %>
+
+    <% if @resource.present? %>
+      <%= render 'simple_admin/admin/shared/errors', resource: @resource %>
+    <% end %>
+
     <%= render "simple_admin/admin/shared/header" %>
     <div class="page-content__wrapper">
       <%= render "simple_admin/admin/shared/aside" %>

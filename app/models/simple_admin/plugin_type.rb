@@ -2,6 +2,8 @@ module SimpleAdmin
   class PluginType < Base
     include AASM
 
+    has_many :plugins
+
     def status_humanized
       if active?
         :Disable
