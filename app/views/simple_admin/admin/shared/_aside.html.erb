@@ -2,19 +2,19 @@
   <div class="logo">Simple Admin</div>
 
   <div class="aside__container">
-    <div class="nav-group">
+    <div class="nav-group <%= resource_active_link(admin_root_path) %>">
       <%= link_to  'Dashboard', admin_root_path, class: 'nav-group__item nav-group__title' %>
     </div>
 
-    <div class="nav-group">
+    <div class="nav-group <%= resource_active_link(admin_posts_path) %>">
       <%= link_to  'Posts', admin_posts_path, class: 'nav-group__item nav-group__title' %>
     </div>
 
-    <div class="nav-group">
+    <div class="nav-group <%= resource_active_link(admin_categories_path) %>">
       <%= link_to  'Categories', admin_categories_path, class: 'nav-group__item nav-group__title' %>
     </div>
 
-    <div class="nav-group">
+    <div class="nav-group <%= resource_system_active_link %>">
       <div class="nav-group__item nav-group__title">System</div>
       <%= link_to 'Settings', admin_system_settings_path, class: 'nav-group__item' %>
       <%= link_to 'Plugins', admin_system_plugin_types_path, class: 'nav-group__item' %>
