@@ -24,6 +24,10 @@ module SimpleAdmin
       inbuilt
     end
 
+    def enum_field_keys(field_name)
+      model_klass_name.constantize.public_send(field_name.pluralize).keys
+    end
+
     def self.form_attributes(model_klass)
       find_by(model_klass_name: model_klass.to_s).entity_fields.form.pluck(:name)
     end
