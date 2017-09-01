@@ -700,6 +700,10 @@ input {
   padding-left: 37px;
 }
 
+.button:disabled {
+  background-color: rgba(38, 191, 179, .8);
+}
+
 .button--second-color.button {
   background-color: #292c33;
 }
