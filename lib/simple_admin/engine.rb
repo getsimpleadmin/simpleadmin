@@ -1,6 +1,8 @@
 require 'jquery-rails'
+require 'sass-rails'
 
 require 'devise'
+require 'kaminari'
 require 'rolify'
 require 'cancancan'
 require 'aasm'

@@ -42,10 +42,13 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'activerecord'
 
   spec.add_dependency 'devise'
+  spec.add_dependency 'kaminari'
   spec.add_dependency 'rolify'
   spec.add_dependency 'cancancan'
   spec.add_dependency 'aasm'
-  spec.add_dependency 'best_in_place'
 
   spec.add_dependency 'jquery-rails'
+  spec.add_dependency 'sass-rails'
+  spec.add_dependency 'best_in_place'
+
 end
