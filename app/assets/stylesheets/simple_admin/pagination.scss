@@ -1,0 +1,99 @@
+.pagination {
+  position: relative;
+  height: 79px;
+  width: 100%;
+  line-height: 79px;
+  text-align: center;
+  overflow: hidden;
+  font-size: 12px;
+
+  a {
+    color: #292c33;
+    text-decoration: none;
+    -webkit-transition: opacity .3s ease 0s;
+    -moz-transition: opacity .3s ease 0s;
+    -o-transition: opacity .3s ease 0s;
+    transition: opacity .3s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .first, .last {
+    display: none;
+  }
+
+  .page {
+    padding: 5px;
+    a {
+      padding: 5px;
+    }
+
+    &.current {
+      padding: 10px;
+      color: #808080;
+    }
+  }
+
+  .next, .prev {
+    a {
+      width: 21px;
+      height: 12px;
+      margin-right: 10px;
+      margin-left: 10px;
+      display: inline-block;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDMwIDE4Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjODA4MDgwOwogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNzA3LDkuNjkzbC04LjMxNCw4LjAyNGExLjA0MywxLjA0MywwLDAsMS0xLjQzOCwwLDAuOTU3LDAuOTU3LDAsMCwxLDAtMS4zODhMMjYuNTEzLDEwSDEuMDM1YTEsMSwwLDEsMSwwLTJIMjYuNTEzTDE5Ljk1NiwxLjY3MWEwLjk1NywwLjk1NywwLDAsMSwwLTEuMzg4LDEuMDQzLDEuMDQzLDAsMCwxLDEuNDM4LDBsOC4zMTQsOC4wMjNBMC45NTksMC45NTksMCwwLDEsMjkuNzA3LDkuNjkzWiIvPgo8L3N2Zz4K);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  .prev {
+    a {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .pagination {
+    height: 59px;
+    width: 100%;
+    line-height: 59px;
+
+    .next, .prev {
+      a {
+        top: 20px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+  .pagination {
+    .next, .prev {
+      a {
+        top: 25px;
+        width: 15px;
+        height: 9px;
+      }
+    }
+
+    .page {
+      padding: 5px;
+      a {
+        padding: 5px;
+      }
+
+      &.current {
+        padding: 10px;
+        color: #808080;
+      }
+    }
+  }
+}

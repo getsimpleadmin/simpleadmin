@@ -5,4 +5,6 @@
     <%= render 'simple_admin/admin/shared/collection/table_header', column_names: @entity_fields.labels %>
     <%= render 'simple_admin/admin/shared/collection/table_body', resources: @resources, entity_fields: @entity_fields %>
   </table>
+
+  <%= paginate @resources %>
 </section>
