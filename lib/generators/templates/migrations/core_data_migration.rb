@@ -9,6 +9,7 @@ class CreateSimpleAdminCoreDataMigration < ActiveRecord::Migration[5.1]
     SimpleAdmin::EntityFieldType.create(name: :image,   template: 'simple_admin/fields/image')
     SimpleAdmin::EntityFieldType.create(name: :tags,    template: 'simple_admin/fields/tags')
     SimpleAdmin::EntityFieldType.create(name: :relation, template: 'simple_admin/fields/relation')
+    SimpleAdmin::EntityFieldType.create(name: :enum, template: 'simple_admin/fields/enum')
 
     admin_user  = SimpleAdmin::User.create(email: 'admin@example.com', password: 'example')
     editor_user = SimpleAdmin::User.create(email: 'editor@example.com', password: 'example')
