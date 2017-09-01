@@ -3,8 +3,10 @@ module SimpleAdmin
     extend ActiveSupport::Concern
 
     included do
+      PER_PAGE = 9
+
       def index
-        @resources = model_klass.all
+        @resources = model_klass.page(params[:page]).per(per_page)
         @resource_singular_name = resource_singular_name
 
         render template_path
@@ -66,6 +68,10 @@ module SimpleAdmin
 
         def resource_singular_name
           model_klass.model_name.element.capitalize
+        end
+
+        def per_page
+          PER_PAGE
         end
     end
   end
