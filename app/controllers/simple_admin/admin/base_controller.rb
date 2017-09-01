@@ -1,18 +1,12 @@
 module SimpleAdmin
   module Admin
-    class BaseController < ApplicationController
-      include ResourceFields
-      include ResourceCrud
-
+    class BaseController < ActionController::Base
       layout 'simple_admin'
 
       before_action :authenticate_user!
-      before_action :respond_with_locale
 
-      private
-
-      def respond_with_locale
-        I18n.locale = params[:locale]
+      def current_ability
+        SimpleAdmin::Ability.new(current_user)
       end
     end
   end

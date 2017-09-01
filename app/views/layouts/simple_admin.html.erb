@@ -4,18 +4,23 @@
     <title>Simple Admin</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
-    <%= stylesheet_link_tag 'simple_admin/base', media: 'all' %>
+    <%= stylesheet_link_tag 'simple_admin/application', media: 'all' %>
   </head>
   <body>
-    <%= render "shared/flash" %>
-    <%= render "layouts/header" %>
+    <%= render "simple_admin/admin/shared/flash" %>
+
+    <% if @resource.present? %>
+      <%= render 'simple_admin/admin/shared/errors', resource: @resource %>
+    <% end %>
+
+    <%= render "simple_admin/admin/shared/header" %>
     <div class="page-content__wrapper">
-      <%= render "layouts/aside" %>
+      <%= render "simple_admin/admin/shared/aside" %>
 
       <section class="page-content">
         <%= yield %>
       </section>
     </div>
-    <%= javascript_include_tag 'simple_admin/base', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'simple_admin/application', 'data-turbolinks-track' => true %>
   </body>
 </html>

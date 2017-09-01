@@ -1,0 +1,26 @@
+<header class="header">
+	<div class="header__content">
+		<div class="header__linkToSiteContainer">
+			<a class="header__linkToSite" href="<%= SimpleAdmin::Setting.site_url.value %>" target="_blank">
+				<span>Go to the site</span>
+				<svg class="header__toSiteIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+					<path fill-rule="evenodd" fill="#858A8C"
+						  d="M12 6V3.43L6.43 9 5 7.56 10.58 2H8V0h6v6h-2zM2 12h8V8h2v6H0V2h6v2H2v8z"></path>
+				</svg>
+			</a>
+		</div>
+		<div class="header__group">
+			<span class="header__member">
+				<%= link_to current_user.email, edit_admin_system_profile_path(current_user), class: 'header__linkToProfile' %>
+			</span>
+			<%= link_to destroy_user_session_path, class: 'header__exitIconContainer' do %>
+				<svg class="header__exitIcon" width="14" height="17" viewBox="0 0 14 17" xmlns="http://www.w3.org/2000/svg">
+					<g fill="#858A8C" fill-rule="evenodd">
+						<path d="M7 3c3.87 0 7 3.13 7 7s-3.13 7-7 7-7-3.13-7-7 3.13-7 7-7zm0 2c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5z"></path>
+						<path stroke="#E3E5E6" stroke-width="2" d="M5 1h4v10H5z"></path>
+					</g>
+				</svg>
+			<% end %>
+	</div>
+	</div>
+</header>

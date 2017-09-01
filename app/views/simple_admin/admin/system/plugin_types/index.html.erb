@@ -1,0 +1,57 @@
+<section class="catalog-page">
+  <header class="item-page__header">
+    <h3 class="item-page__title">Plugins</h3>
+  </header>
+
+  <table class="table">
+    <%= render 'simple_admin/admin/shared/collection/table_header', column_names: ['#', 'Name', 'Status'] %>
+
+    <tbody class="table__body">
+      <% @resources.each do |resource| %>
+        <tr class="table__row">
+          <td class="table__cell"><%= resource.id %></td>
+
+          <td class="table__cell">
+            <%= resource.name %>
+          </td>
+
+          <td>
+            <%= link_to resource.status_humanized, admin_system_plugin_type_path(resource), method: :put, class: 'table__link' %>
+          </td>
+
+           <% if resource.active? %>
+              <%= render_plugin_actions(resource) %>
+           <% else %>
+             <td></td>  
+           <% end %>
+        </tr>
+
+        <% if resource.active? %>
+          <% resource.plugins.each do |plugin| %>
+            <tr class="table__row">
+              <td class="table__cell">
+                <span>
+                  <%= plugin.id %>
+                </span>
+              </td>
+
+              <td class="table__cell">
+                <span>
+                  <%= plugin.label %>
+                </span>
+              </td>
+
+              <td class="table__cell">
+                <%= link_to 'Редактировать', edit_admin_system_plugin_type_plugin_path(resource, plugin), class: 'table__link' %>
+              </td>
+
+              <td class="table__cell">
+                <%= link_to 'Удалить', admin_system_plugin_type_plugin_path(resource, plugin), class: 'table__link', method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</section>

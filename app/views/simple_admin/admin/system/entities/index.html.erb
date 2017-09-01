@@ -1,43 +1,50 @@
 <section class="catalog-page">
   <header class="item-page__header">
-    <h3 class="item-page__title"><%= t('.title') %></h3>
-    <%= link_to t('simple_admin.admin.create'), new_admin_system_entity_path(current_locale), class: 'button item-page__submit' %>
+    <h3 class="item-page__title">Entities</h3>
+    <%= link_to 'New Entity', new_admin_system_entity_path, class: 'button item-page__submit' %>
   </header>
 
+
   <table class="table">
-    <%= render 'simple_admin/admin/shared/table_header', field_names: [:id, :name] %>
+    <%= render 'simple_admin/admin/shared/collection/table_header', column_names: ['#', 'Model Class Name', 'Model Plural Name', 'Label', 'Status', 'Inbuilt'] %>
 
     <tbody class="table__body">
-        <% if @resources.present? %>
-          <% @resources.each do |resource| %>
-            <tr class="table__row">
-              <td class="table__cell">
-                <span>
-                  <%= resource.id %>
-                </span>
-              </td>
+      <% @resources.each do |resource| %>
+        <tr class="table__row">
+          <td class="table__cell"><%= resource.id %></td>
 
-              <td class="table__cell">
-                <span>
-                  <%= resource.model_klass_name %>
-                </span>
-              </td>
+          <td class="table__cell">
+            <%= resource.model_klass_name %>
+          </td>
 
-              <td class="table__cell">
-                <%= link_to t('simple_admin.admin.edit'), edit_admin_system_entity_path(resource, current_locale), class: 'table__link' %>
-              </td>
+          <td class="table__cell">
+            <%= resource.model_plural_name %>
+          </td>
 
-              <td class="table__cell">
-                <%= link_to t('simple_admin.admin.destroy'), admin_system_entity_path(resource, current_locale), class: 'table__link',
-                                                        method: :delete, data: { confirm: t('simple_admin.admin.confirm_destroy') } %>
-              </td>
+          <td class="table__cell">
+            <%= resource.label %>
+          </td>
 
-            </tr>
+          <td class="table__cell">
+            <%= resource.status_humanized %>
+          </td>
+
+          <td class="table__cell">
+            <%= resource.inbuilt_humanized %>
+          </td>
+
+          <td class="table__cell">
+            <%= link_to 'Edit', edit_admin_system_entity_path(resource), class: 'table__link' %>
+          </td>
+
+          <% unless resource.inbuilt %>
+            <td class="table__cell">
+              <%= link_to 'Delete', admin_system_entity_path(resource), class: 'table__link',
+                                                      method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
           <% end %>
-        <% else %>
-          <p>Not found</p>
-        <% end %>
+        </tr>
+      <% end %>
     </tbody>
-
   </table>
 </section>

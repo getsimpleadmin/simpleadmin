@@ -1,0 +1,19 @@
+<tbody class="table__body">
+  <% resources.each do |resource| %>
+    <tr class="table__row">
+      <% entity_fields.latest.each do |entity_field| %>
+        <%= render entity_field.template_path, field: entity_field, resource: resource %>
+      <% end %>
+
+
+      <td class="table__cell">
+        <%= link_to 'Edit', resource_link(resource, :edit), class: 'table__link' %>
+      </td>
+
+      <td class="table__cell">
+        <%= link_to 'Delete', resource_link(resource, :destroy), class: 'table__link',
+                                                method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>

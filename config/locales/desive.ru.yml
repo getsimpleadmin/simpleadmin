@@ -1,9 +1,0 @@
-ru:
-  devise:
-    sessions:
-      user:
-        signed_in: 'Вы успешно вошли в систему!'
-    failure:
-      user:
-        not_found_in_database: 'Такой логин и/или пароль не существует!'
-        unauthenticated: 'Вам необходимо войти или зарегистрироваться прежде чем продолжить!'

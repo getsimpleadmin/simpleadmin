@@ -1,124 +1,15 @@
 en:
-  helpers:
-    submit:
-      create: "Create %{model}"
-      update: "Update %{model}"
   simple_admin:
-    widgets:
-      feature_items:
-        form:
-          name: 'Module name'
-          label: 'Module title'
-        post_search:
-          title: 'Posts'
-        post_item:
-          actions:
-            remove: 'Remove'
-        edit:
-          title: 'Edit Featured Block'
-        new:
-          title: 'Create Featured Block'
-    admin:
-      actions: 'Actions'
-      edit: 'Edit'
-      create: 'Create'
-      destroy: 'Delete'
-      confirm_destroy: 'Are you sure?'
-      categories:
-        index:
-          title: 'Categories'
-      posts:
-        index:
-          title: 'Posts'
-      profiles:
-        edit:
-          title: 'Edit profile'
-          social:
-            title: 'Social networks'
-          form:
-            email:
-              label: 'Email'
-            first_name:
-              label: 'First name'
-            last_name:
-              label: 'Last name'
-            avatar:
-              label: 'Avatar'
-            twitter_nickname:
-              label: 'Twitter'
-        update:
-          success: 'Profile has been successfully updated!'
-      widgets:
-        widget_type_item:
-          actions:
-            add: 'Add'
-            disable: 'Disable'
-            enable: 'Enable'
-        index:
-          title: 'Plugins / Extensions'
-        update:
-          success: 'Widget has been successfully updated!'
-        create:
-          success: 'Widget has been successfully created!'
-        destroy:
-          success: 'Widget has been successfully destroyed!'
-        menu:
-          edit:
-            title: 'Edit menu'
-      widget_types:
-        update: 'Widget status has been updated!'
-      system:
-        title: 'System'
-        settings:
-          index:
-            title: 'Settings'
-          update_batch:
-            success: 'Settings has been successfully updated!'
-        users:
-          index:
-            title: 'Users'
-          update:
-            success: 'User has been successfully updated!'
-          create:
-            success: 'User has been successfully created!'
-          destroy:
-            success: 'User has been successfully destroyed!'
-        languages:
-          index:
-            title: 'Languages'
-          new:
-            title: 'Create new language'
-          edit:
-            title: 'Edit language'
-          update:
-            success: 'Language has been successfully updated!'
-          create:
-            success: 'Language has been successfully created!'
-          destroy:
-            success: 'Language has been successfully destroyed!'
-        entities:
-          index:
-            title: 'Models'
-          new:
-            title: 'Create new model'
-          edit:
-            title: 'Edit model'
-          update:
-            success: 'Entity has been successfully updated!'
-          create:
-            success: 'Entity has been successfully created!'
-          destroy:
-            success: 'Entity has been successfully destroyed!'
-        entity_field_types:
-          index:
-            title: 'Field Types'
-          new:
-            title: 'Create new field type'
-          edit:
-            title: 'Edit field type'
-          update:
-            success: 'Field Type has been successfully updated!'
-          create:
-            success: 'Field Type has been successfully created!'
-          destroy:
-            success: 'Field Type has been successfully destroyed!'
+    resource:
+      index:
+        title: '%{model_name}'
+      new:
+        title: 'New %{model_name}'
+      edit:
+        title: 'Edit %{model_name}'
+      update:
+        success: '%{model_name} has been successfully updated!'
+      create:
+        success: '%{model_name} has been successfully created!'
+      destroy:
+        success: '%{model_name} has been successfully destroyed!'

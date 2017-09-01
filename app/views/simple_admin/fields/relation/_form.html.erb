@@ -1,0 +1,8 @@
+<section class="field">
+    <div class="field__title"><%= field.label %></div>
+    <div class="field__content">
+        <div class="select__wrapper">
+            <%= f.select field.name, field.association_klass.all.collect { |record| [record.title, record.id] }, {}, { class: 'select' } %>
+        </div>
+    </div>
+</section>

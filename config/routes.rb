@@ -1,48 +1,30 @@
 Rails.application.routes.draw do
-  scope module: 'simple_admin' do
+  scope module: :simple_admin do
     namespace :admin do
       root 'dashboard#index'
 
-      scope "/:locale", locale: 'en|ru' do
-        get 'dashboard' => 'dashboard#index'
+      resources :posts
+      resources :categories
 
-        resources :widgets, only: [:index, :edit, :update, :create, :destroy]
-        resources :widget_types, only: :update
+      namespace :plugins do
+        namespace :featured do
+          get 'autocomplete' => 'feature_items#autocomplete'
+        end
+      end
 
-        namespace :widgets do
-          scope :featured do
-            get 'autocomplete' => 'feature_items#autocomplete'
+      namespace :system do
+        resources :settings, only: [:index, :update]
 
-            resources :feature_items, only: [:new, :edit]
-          end
+        resources :plugin_types, only: [:index, :update] do
+          resources :plugins
         end
 
+        resources :users
         resources :profiles, only: [:edit, :update]
 
-        namespace :system do
-          resources :settings, only: :index
-
-          match 'update_batch' => 'settings#update_batch', via: :put
-
-          resources :users, except: :show
-          resources :languages, except: :show
-          resources :entities,  except: :show
-          resources :entity_field_types, except: :show
-        end
-
+        resources :entities
+        resources :entity_field_types
         resources :entity_fields, only: [:create, :update, :destroy]
-
-        if ActiveRecord::Base.connection.table_exists?('simple_admin_entities')
-          SimpleAdmin::Entity.collection_names.each do |model_name, collection_name|
-            resources collection_name, except: :show
-
-            resource_controller = SimpleAdmin::ResourceController.new(collection_name)
-            resource_controller.initialize_controller_klass!
-
-            SimpleAdmin::ResourceActions.initialize_controller_actions!(resource_controller.controller_klass_name, model_name, collection_name)
-          end
-        end
-
       end
     end
   end

@@ -3,37 +3,34 @@ module SimpleAdmin
     extend ActiveSupport::Concern
 
     included do
-      before_action :initialize_entity_fields, if: :enable_entity_fields?
+      before_action :initialize_fields_entities!
 
-      private
-
-      def initialize_entity_fields
-        @entity_fields = entity.entity_fields.where(display: entity_field_display)
+      def initialize_fields_entities!
+        @entity = SimpleAdmin::Entity.find_by(model_klass_name: model_klass.to_s)
+        @entity_fields = @entity.entity_fields.where(presentation: field_presentation)
       end
 
       private
 
-      def entity
-        @entity ||= SimpleAdmin::Entity.find_by(model_plural_name: controller_entity_name)
-      end
-
-      def entity_field_display
+      def field_presentation
         case params[:action]
         when 'index'
-          :index
+          :collection
         when 'new'
+          :form
+        when 'create'
           :form
         when 'edit'
           :form
         end
       end
 
-      def controller_entity_name
-        self.class.name.gsub(/(^(.+?)::Admin::|Controller)/, '').underscore
+      def resource_name
+        model_klass.model_name.singular
       end
 
-      def enable_entity_fields?
-        enable_entity_fields
+      def resource_attributes
+        SimpleAdmin::Entity.form_attributes(model_klass)
       end
     end
   end

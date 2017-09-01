@@ -2,9 +2,9 @@ require 'spec_helper'
 
 RSpec.describe SimpleAdmin::Admin::System::EntityFieldTypesController, type: :controller do
   let(:resource) { create :entity_field_type }
-  let(:resources) { create_list :entity_field_type, 1 }
 
-  let(:resource_path) { admin_system_entity_field_types_path(current_locale) }
+  let(:redirect_path) { admin_system_entity_field_types_path }
+
   let(:resource_attributes) do
     {
       name: :name,
@@ -19,5 +19,5 @@ RSpec.describe SimpleAdmin::Admin::System::EntityFieldTypesController, type: :co
     }
   end
 
-  it_behaves_like :crud_testing
+  it_behaves_like :controller_crud
 end

@@ -3,5 +3,6 @@ FactoryGirl.define do
     title { Faker::Name.title }
     description { 'example' }
     category_id { 999 }
+    user_id { 999 }
   end
 end

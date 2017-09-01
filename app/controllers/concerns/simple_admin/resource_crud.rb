@@ -5,6 +5,7 @@ module SimpleAdmin
     included do
       def index
         @resources = model_klass.all
+        @resource_singular_name = resource_singular_name
 
         render template_path
       end
@@ -25,19 +26,24 @@ module SimpleAdmin
         @resource = model_klass.find(params[:id])
 
         if @resource.update(resource_params)
-          redirect_to redirect_path, notice: t('.success')
+          redirect_to after_update_path, notice: t('simple_admin.resource.update.success', model_name: resource_singular_name)
         else
-          render :edit
+          render template: template_path(:edit)
         end
       end
 
       def create
-        @resource = model_klass.new(resource_params)
+        @resource =
+          if respond_to?(:action_resource_modificator)
+            action_resource_modificator.build(resource_params)
+          else
+            model_klass.new(resource_params)
+          end
 
         if @resource.save
-          redirect_to redirect_path, notice: t('.success')
+          redirect_to after_create_path, notice: t('simple_admin.resource.create.success', model_name: resource_singular_name)
         else
-          render :new
+          render template: template_path(:new)
         end
       end
 
@@ -45,18 +51,22 @@ module SimpleAdmin
         @resource = model_klass.find(params[:id])
         @resource.destroy
 
-        redirect_to redirect_path, notice: t('.success')
+        redirect_to after_destroy_path, notice: t('simple_admin.resource.destroy.success', model_name: resource_singular_name)
       end
 
       private
 
-      def resource_params
-        params.require(resource_name).permit(resource_attributes)
-      end
+        def resource_params
+          params.require(resource_name).permit(resource_attributes)
+        end
 
-      def template_path
-        "#{params[:controller]}/#{params[:action]}"
-      end
+        def template_path(controller_action=nil)
+          "simple_admin/admin/resource/#{controller_action || params[:action]}"
+        end
+
+        def resource_singular_name
+          model_klass.model_name.element.capitalize
+        end
     end
   end
 end

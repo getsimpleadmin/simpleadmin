@@ -1,0 +1,9 @@
+<h5 class="item-page__description"></h5>
+
+<div class="entity-field-list">
+  <% @resource.entity_fields.each do |entity_field| %>
+    <% if entity_field.persisted? %>
+      <%= render template: 'simple_admin/admin/system/entities/entity_fields/edit', locals: { entity_field: entity_field } %>
+    <% end %>
+  <% end %>
+</div>

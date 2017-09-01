@@ -1,0 +1,7 @@
+<section class="item-page">
+  <header class="item-page__header">
+      <h3 class="item-page__title">Edit Post</h3>
+  </header>
+
+  <%= render 'simple_admin/admin/resource/form', resource: @resource, entity: @entity, entity_fields: @entity_fields, form_url: resource_link(@resource, :update) %>
+</section>

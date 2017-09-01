@@ -1,0 +1,28 @@
+<% if @entity_field.errors.present? %>
+  $.notify(
+    'Something went wrong!',
+    'error',
+    { autoHideDelay: 3000, position: 'right' }
+  );
+<% else %>
+  var formContent = "<%= j render template: 'simple_admin/admin/system/entities/entity_fields/edit', locals: { entity_field: @entity_field } %>";
+  var fieldPresentation = '<%= @entity_field.presentation %>';
+
+  if(fieldPresentation == 'collection') {
+    $('#index-fields .content').remove();
+
+    $('#index-fields').append(formContent);
+    $( "#tabs" ).tabs( "option", "active", 0);
+  } else if (fieldPresentation == 'form') {
+    $('#form-fields .content').remove();
+
+    $('#form-fields').append(formContent);
+    $( "#tabs" ).tabs( "option", "active", 1);
+  }
+
+  $.notify(
+    fieldPresentation + ' field successfully created!',
+    'success',
+    { autoHideDelay: 3000, position: 'right' }
+  );
+<% end %>

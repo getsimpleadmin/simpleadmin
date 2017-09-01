@@ -1,5 +1,4 @@
-<div class="item-page__content">
-  <%= form_for resource, url: form_url do |f| %>
+<%= form_for resource, url: form_url, html: { class: 'form-horizontal' } do |f| %>
     <section class="field">
         <div class="field__title">Email</div>
         <div class="field__content">
@@ -9,18 +8,25 @@
 
     <%= f.fields_for :profile do |pf| %>
       <section class="field">
-          <div class="field__title">Имя</div>
+          <div class="field__title">First Name</div>
           <div class="field__content">
-            <%= pf.text_field :first_name, value: f.object.first_name, class: 'input' %>
+            <%= pf.text_field :first_name, class: 'input' %>
           </div>
       </section>
 
       <section class="field">
-          <div class="field__title">Фамилия</div>
+          <div class="field__title">Last Name</div>
           <div class="field__content">
-            <%= pf.text_field :last_name, value: f.object.last_name, class: 'input' %>
+            <%= pf.text_field :last_name, class: 'input' %>
           </div>
       </section>
+    <% end %>
+
+    <% if resource.persisted? %>
+      <%= render 'change_password', f: f %>
+    <% else %>
+      <input type="hidden" name="password_change" value="true">
+      <%= render 'password_fields', f: f %>
     <% end %>
 
     <section class="field">
@@ -29,5 +35,4 @@
         <%= f.submit class: 'button button--wide item-page__button' %>
       </div>
     </section>
-  <% end %>
-</div>
+<% end %>

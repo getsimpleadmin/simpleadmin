@@ -1,8 +1,11 @@
 <section class="item-page">
   <header class="item-page__header">
-      <h3 class="item-page__title"><%= t('.title') %></h3>
+      <h3 class="item-page__title">Edit Entity</h3>
   </header>
   <h5 class="item-page__description"><%= @resource.model_klass_name %></h5>
 
-  <%= render 'simple_admin/admin/system/entities/form', resource: @resource, form_url: edit_admin_system_entity_path(@resource, current_locale) %>
+  <%= render 'simple_admin/admin/system/entities/form', resource: @resource, form_url: admin_system_entity_path(@resource) %>
+
+  <%= render template: 'simple_admin/admin/system/entities/entity_fields/new' %>
+  <%= render template: 'simple_admin/admin/system/entities/entity_fields/index' %>
 </section>
