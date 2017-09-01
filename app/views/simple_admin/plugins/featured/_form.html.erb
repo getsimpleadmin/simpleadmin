@@ -1,3 +1,45 @@
 <%= form_for resource, url: form_url, html: { class: 'form-horizontal' } do |f| %>
-  <p>On development stage...</p>
+  <section class="field">
+      <div class="field__title">Name</div>
+      <div class="field__content">
+        <%= f.text_field :name, class: 'input' %>
+      </div>
+  </section>
+
+  <section class="field">
+      <div class="field__title">Label</div>
+      <div class="field__content">
+        <%= f.text_field :label, class: 'input' %>
+      </div>
+  </section>
+
+  <%= f.hidden_field :plugin_type_id, value: params[:plugin_type_id] %>
+
+  <section class="field">
+      <div class="field__title">Posts</div>
+      <div class="field__content">
+        <input class="input autocomplete" type="text">
+
+        <ul class="dropdown-menu" style="display: none;"></ul>
+
+        <div class="featured__news">
+            <% resource.feature_items.each do |feature_item| %>
+              <% if feature_item.persisted? %>
+                <div class="feature__item">
+                  <a class="remove__post_item" href="#">Remove</a> |
+                  <span><%= feature_item.object.title %></span>
+                  <input type="hidden" value="<%= feature_item.object.id %>" name="post_ids[]">
+                </div>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+  </section>
+
+  <section class="field">
+    <div class="field__title"></div>
+    <div class="field__content">
+      <%= f.submit class: 'button button--wide item-page__button' %>
+    </div>
+  </section>
 <% end %>

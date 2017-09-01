@@ -2,7 +2,6 @@ require 'spec_helper'
 
 RSpec.describe SimpleAdmin::Admin::System::EntitiesController, type: :controller do
   let(:resource) { create :entity }
-  let(:resources) { create_list :entity, 1 }
 
   let(:after_create_path) { edit_admin_system_entity_path(resource.class.last) }
   let(:after_update_path) { admin_system_entities_path  }

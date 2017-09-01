@@ -25,7 +25,12 @@ shared_examples :controller_crud do
     subject { patch :update, params: resource_params }
 
     it 'update resource' do
-      expect(subject).to redirect_to after_update_path
+      if respond_to?(:redirect_path)
+        expect(subject).to redirect_to redirect_path
+      else
+        expect(subject).to redirect_to after_update_path
+      end
+
       expect(assigns(:resource)).to eq resource
 
       expect(resource.reload.public_send(resource_attributes[:name])).to eq resource_attributes[:value]
@@ -38,7 +43,11 @@ shared_examples :controller_crud do
     it 'create resource' do
       expect { subject }.to change { resource.class.count }.by(1)
 
-      expect(subject).to redirect_to after_create_path
+      if respond_to?(:redirect_path)
+        expect(subject).to redirect_to redirect_path
+      else
+        expect(subject).to redirect_to after_create_path
+      end
     end
   end
 
@@ -54,7 +63,11 @@ shared_examples :controller_crud do
     it 'delete resource' do
       expect { subject }.to change { resource.class.count }.by(-1)
 
-      expect(subject).to redirect_to after_destroy_path
+      if respond_to?(:redirect_path)
+        expect(subject).to redirect_to redirect_path
+      else
+        expect(subject).to redirect_to after_destroy_path
+      end
     end
   end
 end

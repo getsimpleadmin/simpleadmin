@@ -2,11 +2,8 @@ require 'spec_helper'
 
 RSpec.describe SimpleAdmin::Admin::System::EntityFieldTypesController, type: :controller do
   let(:resource) { create :entity_field_type }
-  let(:resources) { create_list :entity_field_type, 1 }
 
-  let(:after_create_path) { admin_system_entity_field_types_path }
-  let(:after_update_path) { admin_system_entity_field_types_path  }
-  let(:after_destroy_path) { admin_system_entity_field_types_path }
+  let(:redirect_path) { admin_system_entity_field_types_path }
 
   let(:resource_attributes) do
     {

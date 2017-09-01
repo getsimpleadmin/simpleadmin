@@ -6,6 +6,12 @@ Rails.application.routes.draw do
       resources :posts
       resources :categories
 
+      namespace :plugins do
+        namespace :featured do
+          get 'autocomplete' => 'feature_items#autocomplete'
+        end
+      end
+
       namespace :system do
         resources :settings, only: [:index, :update]
 
@@ -14,6 +20,7 @@ Rails.application.routes.draw do
         end
 
         resources :users
+        resources :profiles, only: [:edit, :update]
 
         resources :entities
         resources :entity_field_types

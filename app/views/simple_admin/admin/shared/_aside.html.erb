@@ -1,89 +1,33 @@
-<nav id="sidebar">
-    <div id="sidebar-scroll">
-        <div class="sidebar-content">
-            <div class="side-header side-content bg-white-op">
-                <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
-                    <i class="fa fa-times"></i>
-                </button>
-                <a class="h5 text-white" href="index.php">
-                    <i class="fa fa-circle-o-notch text-primary"></i> <span class="h4 font-w600 sidebar-mini-hide">ne</span>
-                </a>
-            </div>
-            <div class="side-content side-content-full">
-                <ul class="nav-main">
-                    <li>
-                        <%= link_to admin_root_path do %>
-                          <i class="si si-speedometer"></i>
-                          <span class="sidebar-mini-hide">Dashboard</span>
-                        <% end %>
-                    </li>
+<aside class="aside">
+  <div class="logo">Simple Admin</div>
 
-                    <li>
-                      <%= link_to admin_posts_path do %>
-                        <i class="si si-docs"></i>
-                        <span class="sidebar-mini-hide">Posts</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_categories_path do %>
-                        <i class="si si-folder"></i>
-                        <span class="sidebar-mini-hide">Categories</span>
-                      <% end %>
-                    </li>
-
-                    <li class="nav-main-heading">
-                      <span class="sidebar-mini-hide">System</span>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_system_settings_path do %>
-                        <i class="si si-settings"></i>
-                        <span class="sidebar-mini-hide">Settings</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_system_plugin_types_path do %>
-                        <i class="si si-wrench"></i>
-                        <span class="sidebar-mini-hide">Plugins</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_system_languages_path do %>
-                        <i class="si si-globe"></i>
-                        <span class="sidebar-mini-hide">Languages</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_system_users_path do %>
-                        <i class="si si-users"></i>
-                        <span class="sidebar-mini-hide">Users</span>
-                      <% end %>
-                    </li>
-
-                    <% if can? :read, SimpleAdmin::Entity %>
-                      <li>
-                        <%= link_to admin_system_entities_path do %>
-                          <i class="si si-docs"></i>
-                          <span class="sidebar-mini-hide">Entities</span>
-                        <% end %>
-                      </li>
-                    <% end %>
-
-                    <% if can? :read, SimpleAdmin::EntityFieldType %>
-                      <li>
-                        <%= link_to admin_system_entity_field_types_path do %>
-                          <i class="si si-drawer"></i>
-                          <span class="sidebar-mini-hide">Field Types</span>
-                        <% end %>
-                      </li>
-                    <% end %>
-
-                </ul>
-            </div>
-        </div>
+  <div class="aside__container">
+    <div class="nav-group">
+      <%= link_to  'Dashboard', admin_root_path, class: 'nav-group__item nav-group__title' %>
     </div>
-</nav>
+
+    <div class="nav-group">
+      <%= link_to  'Posts', admin_posts_path, class: 'nav-group__item nav-group__title' %>
+    </div>
+
+    <div class="nav-group">
+      <%= link_to  'Categories', admin_categories_path, class: 'nav-group__item nav-group__title' %>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group__item nav-group__title">System</div>
+      <%= link_to 'Settings', admin_system_settings_path, class: 'nav-group__item' %>
+      <%= link_to 'Plugins', admin_system_plugin_types_path, class: 'nav-group__item' %>
+      <%= link_to 'Languages', admin_system_languages_path, class: 'nav-group__item' %>
+      <%= link_to 'Users', admin_system_users_path, class: 'nav-group__item' %>
+
+      <% if can? :read, SimpleAdmin::Entity %>
+        <%= link_to 'Entities', admin_system_entities_path, class: 'nav-group__item' %>
+      <% end %>
+
+      <% if can? :read, SimpleAdmin::EntityFieldType %>
+        <%= link_to 'Field Types', admin_system_entity_field_types_path, class: 'nav-group__item' %>
+      <% end %>
+    </div>
+  </div>
+</aside>

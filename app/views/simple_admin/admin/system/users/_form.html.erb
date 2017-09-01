@@ -1,25 +1,25 @@
 <%= form_for resource, url: form_url, html: { class: 'form-horizontal' } do |f| %>
-    <div class="form-group">
-        <label class="col-xs-12" for="example-text-input">Email</label>
-        <div class="col-sm-9">
-            <%= f.text_field :email, class: 'form-control' %>
+    <section class="field">
+        <div class="field__title">Email</div>
+        <div class="field__content">
+          <%= f.text_field :email, class: 'input' %>
         </div>
-    </div>
+    </section>
 
     <%= f.fields_for :profile do |pf| %>
-      <div class="form-group">
-          <label class="col-xs-12" for="example-text-input">First name</label>
-          <div class="col-sm-9">
-              <%= pf.text_field :first_name, class: 'form-control' %>
+      <section class="field">
+          <div class="field__title">First Name</div>
+          <div class="field__content">
+            <%= pf.text_field :first_name, class: 'input' %>
           </div>
-      </div>
+      </section>
 
-      <div class="form-group">
-          <label class="col-xs-12" for="example-text-input">Last name</label>
-          <div class="col-sm-9">
-              <%= pf.text_field :last_name, class: 'form-control' %>
+      <section class="field">
+          <div class="field__title">Last Name</div>
+          <div class="field__content">
+            <%= pf.text_field :last_name, class: 'input' %>
           </div>
-      </div>
+      </section>
     <% end %>
 
     <% if resource.persisted? %>
@@ -29,9 +29,10 @@
       <%= render 'password_fields', f: f %>
     <% end %>
 
-    <div class="form-group">
-        <div class="col-xs-12">
-            <%= f.submit class: 'btn btn-sm btn-primary' %>
-        </div>
-    </div>
+    <section class="field">
+      <div class="field__title"></div>
+      <div class="field__content">
+        <%= f.submit class: 'button button--wide item-page__button' %>
+      </div>
+    </section>
 <% end %>

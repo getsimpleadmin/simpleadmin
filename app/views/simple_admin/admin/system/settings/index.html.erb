@@ -1,46 +1,38 @@
-<div class="content bg-gray-lighter">
-    <div class="row items-push">
-        <div class="col-sm-7">
-            <h1 class="page-heading">
-              Edit Settings
-            </h1>
-        </div>
-    </div>
-</div>
+<section class="item-page">
+  <header class="item-page__header">
+      <h3 class="item-page__title">Settings</h3>
+  </header>
 
-<div class="content">
-  <div class="row">
-    <div class="col-lg-12">
-        <div class="block">
-            <div class="block-content">
-              <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                  <div class="row">
-                      <div class="col-sm-12">
-                          <table class="table table-bordered table-striped js-dataTable-simple dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
-                              <thead>
-                                  <tr role="row">
-                                      <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 362px;">Name</th>
-                                      <th class="hidden-xs" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 532px;">Value</th>
+  <table class="table">
+    <thead class="table__header">
+        <tr class="table__row">
+            <th class="table__cell">Name</th>
+            <th class="table__cell">Value</th>
+        </tr>
+    </thead>
 
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                <tr role="row" class="odd">
-                                    <td class="font-w600"><%= @setting_site_url.label %></td>
-                                    <td class="hidden-xs"><%= best_in_place @setting_site_url, :value, url: admin_system_setting_path(@setting_site_url) %></td>
-                                </tr>
+    <tbody class="table__body">
+        <tr class="table__row">
+          <td class="table__cell">
+            <%= @setting_site_url.label %>
+          </td>
 
-                                  <tr role="row" class="odd">
-                                      <td class="font-w600"><%= @setting_default_language.label %></td>
-                                      <td class="hidden-xs"><%= best_in_place @setting_default_language, :value, as: :select, collection: SimpleAdmin::Language.enabled.collect { |language| [language.code, language.code] }, url: admin_system_setting_path(@setting_default_language) %></td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
+          <td class="table__cell">
+            <%= best_in_place @setting_site_url, :value, url: admin_system_setting_path(@setting_site_url) %>
+          </td>
+        </tr>
+
+        <!-- <tr class="table__row">
+          <td class="table__cell">
+            <% #@setting_default_language.label %>
+          </td>
+
+          <td class="table__cell">
+            <% #best_in_place @setting_default_language, :value, as: :select, collection: SimpleAdmin::Language.enabled.collect { |language| [language.code, language.code] }, url: admin_system_setting_path(@setting_default_language) %>
+          </td>
+        </tr> -->
+    </tbody>
+
+
+  </table>
+</section>
