@@ -3,7 +3,11 @@
     <div class="field__title">Model Class Name</div>
     <div class="field__content">
         <div class="select__wrapper">
-          <%= f.select :model_klass_name, ApplicationRecord.descendants.map { |model| [model.name, model.name] }, {}, { class: 'select' } %>
+          <% if application_model_names.present? %>
+            <%= f.select :model_klass_name, application_model_names, {}, { class: 'select' } %>
+          <% else %>
+            <%= f.select :model_klass_name, application_model_names, { include_blank: "Application don't have any models" }, { class: 'select', disabled: true } %>
+          <% end %>
         </div>
     </div>
   </section>
@@ -32,7 +36,7 @@
   <section class="field">
     <div class="field__title"></div>
     <div class="field__content">
-      <%= f.submit class: 'button button--wide item-page__button' %>
+      <%= f.submit class: 'button button--wide item-page__button', disabled: application_model_names.blank? %>
     </div>
   </section>
 <% end %>
