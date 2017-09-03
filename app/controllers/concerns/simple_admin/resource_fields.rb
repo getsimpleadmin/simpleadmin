@@ -1,10 +1,24 @@
 module SimpleAdmin
   module ResourceFields
+    # Concern that include methods for getting entity and entity fields
+    # Working together with ResourceCrud
+    # @example PostsController with ResourceCrud and ResourceFields
+    #  class PostsController
+    #    include SimpleAdmin::ResourceCrud
+    #    include SimpleAdmin::ResourceFields
+    #
+    #    ...
+    #  end
+    # @since 0.2.0
+
     extend ActiveSupport::Concern
 
     included do
       before_action :initialize_fields_entities!
 
+      # Receives entity and entity fields by model class and field_presentation
+      #
+      # @since 0.2.0
       def initialize_fields_entities!
         @entity = SimpleAdmin::Entity.find_by(model_klass_name: model_klass.to_s)
         @entity_fields = @entity.entity_fields.where(presentation: field_presentation)
