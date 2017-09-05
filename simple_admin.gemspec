@@ -43,6 +43,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'devise'
   spec.add_dependency 'kaminari'
+  spec.add_dependency 'acts-as-taggable-on'
+
   spec.add_dependency 'rolify'
   spec.add_dependency 'cancancan'
   spec.add_dependency 'aasm'
@@ -50,5 +52,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'best_in_place'
-
 end
