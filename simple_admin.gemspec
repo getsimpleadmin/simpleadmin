@@ -43,7 +43,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'devise'
   spec.add_dependency 'kaminari'
+
   spec.add_dependency 'acts-as-taggable-on'
+  spec.add_dependency 'friendly_id'
 
   spec.add_dependency 'rolify'
   spec.add_dependency 'cancancan'
