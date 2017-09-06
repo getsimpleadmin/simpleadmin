@@ -12,6 +12,11 @@ Rails.application.routes.draw do
         end
       end
 
+      namespace :design do
+        resources :layouts
+        resources :layout_plugins, only: [:create, :update, :destroy]
+      end
+
       namespace :system do
         resources :settings, only: [:index, :update]
 

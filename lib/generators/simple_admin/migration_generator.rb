@@ -19,6 +19,9 @@ module SimpleAdmin
         migration_template 'migrations/core_migrations/entity_field_types_migration.rb', 'db/migrate/create_simple_admin_entity_field_types_migration.rb'
         migration_template 'migrations/core_migrations/entity_field_settings_migration.rb', 'db/migrate/create_simple_admin_entity_field_settings_migration.rb'
 
+        migration_template 'migrations/core_migrations/layouts_migration.rb', 'db/migrate/create_simple_admin_layouts_migration.rb'
+        migration_template 'migrations/core_migrations/layout_plugins_migration.rb', 'db/migrate/create_simple_admin_layout_plugins_migration.rb'
+
         migration_template 'migrations/core_migrations/posts_migration.rb', 'db/migrate/create_simple_admin_posts_migration.rb'
         migration_template 'migrations/core_migrations/categories_migration.rb', 'db/migrate/create_simple_admin_categories_migration.rb'
         migration_template 'migrations/core_migrations/plugins_migration.rb', 'db/migrate/create_simple_admin_plugins_migration.rb'

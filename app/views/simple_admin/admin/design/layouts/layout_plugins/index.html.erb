@@ -1,0 +1,9 @@
+<h5 class="item-page__description"></h5>
+
+<div class="layout-plugin-list">
+  <% @resource.layout_plugins.each do |layout_plugin| %>
+    <% if layout_plugin.persisted? %>
+      <%= render template: 'simple_admin/admin/design/layouts/layout_plugins/edit', locals: { layout_plugin: layout_plugin } %>
+    <% end %>
+  <% end %>
+</div>
