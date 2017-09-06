@@ -11,6 +11,14 @@ module SimpleAdmin
         migration_template 'migrations/devise_migration.rb', 'db/migrate/create_simple_admin_devise_migration.rb'
         migration_template 'migrations/core_migrations/profiles_migration.rb', 'db/migrate/create_simple_admin_profiles_migration.rb'
 
+        # ACTS_AS_TAGGABLE
+        migration_template 'migrations/acts_as_taggable_on/acts_as_taggable_on_migration.acts_as_taggable_on_engine.rb', 'db/migrate/acts_as_taggable_on_migration.acts_as_taggable_on_engine.rb'
+        migration_template 'migrations/add_missing_unique_indices.acts_as_taggable_on_engine.rb', 'db/migrate/add_missing_unique_indices.acts_as_taggable_on_engine.rb'
+        migration_template 'migrations/add_taggings_counter_cache_to_tags.acts_as_taggable_on_engine.rb', 'db/migrate/add_taggings_counter_cache_to_tags.acts_as_taggable_on_engine'
+        migration_template 'migrations/add_missing_taggable_index.acts_as_taggable_on_engine.rb', 'db/migrate/add_missing_taggable_index.acts_as_taggable_on_engine.rb'
+        migration_template 'migrations/change_collation_for_tag_names.acts_as_taggable_on_engine.rb', 'db/migrate/change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
+        migration_template 'migrations/add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb', 'db/migrate/add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+
         migration_template 'migrations/rolify_migration.rb', 'db/migrate/create_simple_admin_rolify_migration.rb'
 
         migration_template 'migrations/core_migrations/entities_migration.rb', 'db/migrate/create_simple_admin_entities_migration.rb'
