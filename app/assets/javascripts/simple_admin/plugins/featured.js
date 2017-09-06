@@ -17,9 +17,9 @@ $(document).ready(function() {
       success: function(posts) {
         $( "ul.dropdown-menu > li" ).remove();
 
-        if(posts.length > 0) {
-          posts.forEach(function(post) {
-           $('.dropdown-menu').append("<li><a href='#' data-id=" + post.id + ">" + post.title + "</a></li>");
+        if(posts.data.length > 0) {
+          posts.data.forEach(function(post) {
+           $('.dropdown-menu').append("<li><a href='#' data-id=" + post.id + ">" + post.attributes.title + "</a></li>");
           });
         } else {
           $('.dropdown-menu').append("<li><a>Nothing found</a></li>");
