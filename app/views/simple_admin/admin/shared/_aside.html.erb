@@ -14,6 +14,11 @@
       <%= link_to  'Categories', admin_categories_path, class: 'nav-group__item nav-group__title' %>
     </div>
 
+    <div class="nav-group">
+      <div class="nav-group__item nav-group__title">Design</div>
+      <%= link_to 'Layouts', admin_design_layouts_path, class: 'nav-group__item' %>
+    </div>
+
     <div class="nav-group <%= resource_system_active_link %>">
       <div class="nav-group__item nav-group__title">System</div>
       <%= link_to 'Settings', admin_system_settings_path, class: 'nav-group__item' %>
