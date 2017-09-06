@@ -11,9 +11,9 @@ RSpec.describe SimpleAdminHelper, type: :helper do
           expect(resource_link(resource_builded, :new)).to eq '/admin/posts/new'
           expect(resource_link(resource_builded, :create)).to eq '/admin/posts'
 
-          expect(resource_link(resource_created, :edit)).to eq "/admin/posts/#{resource_created.to_param}/edit"
-          expect(resource_link(resource_created, :update)).to eq "/admin/posts/#{resource_created.to_param}"
-          expect(resource_link(resource_created, :destroy)).to eq "/admin/posts/#{resource_created.to_param}"
+          expect(resource_link(resource_created, :edit)).to eq "/admin/posts/#{resource_created.id}/edit"
+          expect(resource_link(resource_created, :update)).to eq "/admin/posts/#{resource_created.id}"
+          expect(resource_link(resource_created, :destroy)).to eq "/admin/posts/#{resource_created.id}"
         end
       end
 
@@ -25,9 +25,9 @@ RSpec.describe SimpleAdminHelper, type: :helper do
           expect(resource_link(resource_builded, :new)).to eq '/admin/categories/new'
           expect(resource_link(resource_builded, :create)).to eq '/admin/categories'
 
-          expect(resource_link(resource_created, :edit)).to eq "/admin/categories/#{resource_created.to_param}/edit"
-          expect(resource_link(resource_created, :update)).to eq "/admin/categories/#{resource_created.to_param}"
-          expect(resource_link(resource_created, :destroy)).to eq "/admin/categories/#{resource_created.to_param}"
+          expect(resource_link(resource_created, :edit)).to eq "/admin/categories/#{resource_created.id}/edit"
+          expect(resource_link(resource_created, :update)).to eq "/admin/categories/#{resource_created.id}"
+          expect(resource_link(resource_created, :destroy)).to eq "/admin/categories/#{resource_created.id}"
         end
       end
     end
