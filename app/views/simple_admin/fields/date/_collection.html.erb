@@ -1,5 +1,7 @@
 <td class="table__cell">
   <span>
-    <%= resource.public_send(field.name).strftime("%Y-%m-%d") %>
+    <% if resource.public_send(field.name).present? %>
+      <%= resource.public_send(field.name).strftime("%Y-%m-%d") %>
+    <% end %>
   </span>
 </td>
