@@ -4,13 +4,6 @@ module SimpleAdmin
       class LayoutsController < BaseController
         include SimpleAdmin::ResourceCrud
 
-        # def edit
-        #   @resource = model_klass.find(params[:id])
-        #   @resource.layout_plugins.new
-        #
-        #   render template_path
-        # end
-
         def model_klass
           SimpleAdmin::Layout
         end

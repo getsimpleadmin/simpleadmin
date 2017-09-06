@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810123744) do
+ActiveRecord::Schema.define(version: 20170810123746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,23 @@ ActiveRecord::Schema.define(version: 20170810123744) do
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_layout_plugins", force: :cascade do |t|
+    t.integer "layout_id", null: false
+    t.integer "plugin_id", null: false
+    t.integer "sort_order", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_layouts", force: :cascade do |t|
+    t.string "name"
+    t.string "path"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_simple_admin_layouts_on_slug", unique: true
   end
 
   create_table "simple_admin_plugin_types", force: :cascade do |t|
