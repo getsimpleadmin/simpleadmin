@@ -18,7 +18,7 @@ module SimpleAdminHelper
       resource_path = "#{namespace}_#{singular_name}_#{postfix}"
     end
 
-    public_send(resource_path, resource)
+    public_send(resource_path, resource.id)
   end
 
   def render_plugin_actions(plugin_type)
