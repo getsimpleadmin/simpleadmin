@@ -1,5 +1,35 @@
 module SimpleAdmin
   module ResourceCrud
+    # Concern that include all CRUD methods
+    # @example PostsController with ResourceCrud concern
+    #  class PostsController
+    #    include SimpleAdmin::ResourceCrud
+    #
+    #    def model_klass
+    #      SimpleAdmin::Post
+    #    end
+    #
+    #    def after_create_path
+    #      admin_posts_path
+    #    end
+    #
+    #    def after_update_path
+    #      admin_posts_path
+    #    end
+    #
+    #    def after_destroy_path
+    #      admin_posts_path
+    #    end
+    #
+    #    private
+    #
+    #    def resource_params
+    #      params.require(:simple_admin_entity).permit(:model_klass_name, :model_plural_name)
+    #    end
+    #  end
+    #
+    # @since 0.2.0
+    
     extend ActiveSupport::Concern
 
     included do
