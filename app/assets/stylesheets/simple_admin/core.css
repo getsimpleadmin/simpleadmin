@@ -1758,6 +1758,10 @@ input {
   /*notify*/
 }
 
+td > img {
+  padding: 10px 0;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
