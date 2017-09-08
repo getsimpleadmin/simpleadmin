@@ -4,7 +4,9 @@ module SimpleAdmin
 
     after_create :initialize_helper_methods!
 
-    private
+    def self.reload_helper_methods!
+      new.initialize_helper_methods!
+    end
 
     # Define entity fields model methods to simplify creation.
     # You not need to define entity_field_type directly

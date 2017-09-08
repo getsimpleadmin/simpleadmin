@@ -6,6 +6,12 @@
       <%= link_to  'Dashboard', admin_root_path, class: 'nav-group__item nav-group__title' %>
     </div>
 
+    <% SimpleAdmin::Entity.custom_enabled.each do |entity| %>
+      <div class="nav-group <%= resource_active_link(resource_link entity.model_klass.new, :index) %>">
+        <%= link_to entity.label, resource_link(entity.model_klass.new, :index), class: 'nav-group__item nav-group__title' %>
+      </div>
+    <% end %>
+
     <div class="nav-group <%= resource_active_link(admin_posts_path) %>">
       <%= link_to  'Posts', admin_posts_path, class: 'nav-group__item nav-group__title' %>
     </div>

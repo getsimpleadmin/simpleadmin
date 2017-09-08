@@ -6,6 +6,8 @@ module SimpleAdmin
 
         authorize_resource class: SimpleAdmin::Entity
 
+        before_action :reload_models!, only: [:new, :edit]
+
         def model_klass
           SimpleAdmin::Entity
         end
@@ -25,7 +27,11 @@ module SimpleAdmin
         private
 
         def resource_params
-          params.require(:simple_admin_entity).permit(:model_klass_name, :model_plural_name)
+          params.require(:simple_admin_entity).permit(:model_klass_name, :model_plural_name, :label, :status)
+        end
+
+        def reload_models!
+          Rails.application.eager_load!
         end
 
         def template_path(controller_action=nil)

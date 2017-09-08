@@ -6,6 +6,9 @@ module SimpleAdmin
 
     validate :inbuilt_protection, on: :destroy
 
+    scope :custom_enabled, -> { where(inbuilt: false, status: true) }
+
+    after_save :reload_routes!
     after_create :create_default_fields!
 
     def model_klass
@@ -41,7 +44,12 @@ module SimpleAdmin
       end
 
       def create_default_fields!
+        SimpleAdmin::EntityFieldType.reload_helper_methods!
         SimpleAdmin::EntityField.create_number_field(name: :id, label: 'ID', entity: self, presentation: :collection)
+      end
+
+      def reload_routes!
+        Rails.application.routes_reloader.reload!
       end
   end
 end
