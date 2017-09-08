@@ -6,6 +6,19 @@ Rails.application.routes.draw do
       resources :posts
       resources :categories
 
+      if ActiveRecord::Base.connection.table_exists?('simple_admin_entities')
+        SimpleAdmin::Entity.custom_enabled.each do |entity|
+          collection_name = entity.model_klass.model_name.collection
+
+          resources collection_name
+
+          resource_controller = SimpleAdmin::ResourceController.new(collection_name)
+          resource_controller.initialize_controller_klass!
+
+          SimpleAdmin::ResourceControllerActions.initialize_actions!(resource_controller.controller_klass, entity.model_klass_name, collection_name)
+        end
+      end
+
       namespace :plugins do
         namespace :featured do
           get 'autocomplete' => 'feature_items#autocomplete'

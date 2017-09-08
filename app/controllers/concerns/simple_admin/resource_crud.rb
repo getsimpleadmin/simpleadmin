@@ -44,12 +44,14 @@ module SimpleAdmin
 
       def new
         @resource = model_klass.new
+        @resource_singular_name = resource_singular_name
 
         render template_path
       end
 
       def edit
         @resource = model_klass.find(params[:id])
+        @resource_singular_name = resource_singular_name
 
         render template_path
       end
