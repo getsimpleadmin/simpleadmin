@@ -1,0 +1,17 @@
+<% if @related_item.errors.present? %>
+  $.notify(
+    'Something went wrong!',
+    'error',
+    { autoHideDelay: 3000, position: 'right' }
+  );
+<% else %>
+  var formContent = "<%= j render template: 'simple_admin/admin/related_items/edit', locals: { related_item: @related_item } %>";
+
+  $('.related-items-list').append(formContent);
+
+  $.notify(
+    'Related item successfully created!',
+    'success',
+    { autoHideDelay: 3000, position: 'right' }
+  );
+<% end %>

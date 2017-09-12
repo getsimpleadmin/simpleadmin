@@ -1,0 +1,19 @@
+<%= form_for f.object.related_items.build, url: admin_related_items_path, html: { class: 'form-horizontal' } do |rif| %>
+  <%= rif.hidden_field :object_type, value: SimpleAdmin::Post.to_s %>
+  <%= rif.hidden_field :object_id, value: f.object.id %>
+
+  <section class="field">
+    <div class="field__title">New Related Post</div>
+    <div class="field__content">
+      <%= rif.hidden_field :related_object_type, value: SimpleAdmin::Post.to_s %>
+      <%= rif.select :related_object_id, SimpleAdmin::Post.all.collect { |record| [record.title, record.id] }, { include_blank: '-- Select --' }, { class: 'select' } %>
+    </div>
+  </section>
+
+  <section class="field">
+    <div class="field__title"></div>
+    <div class="field__content">
+      <%= rif.submit class: 'button button--wide item-page__button' %>
+    </div>
+  </section>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="row" data-related-item-id="<%= related_item.to_param %>">
+  <div class="col-md-12">
+      <div class="block">
+          <div class="block-content block-content-narrow">
+            <%= render 'simple_admin/admin/related_items/form', resource: @resource, form_resource: related_item, form_url: admin_related_item_path(related_item) %>
+          </div>
+      </div>
+  </div>
+</div>

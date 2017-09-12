@@ -1,8 +1,25 @@
 <section class="field">
-    <div class="field__title"><%= field.label %></div>
-    <div class="field__content">
-        <label class="image__label">
+      <% if f.object.image.present? %>
+        <div class="field__title">Current Image</div>
+
+        <div class="field__content">
+          <%= image_tag f.object.image.url(:admin_collection_thumb) %>
+        </div>
+
+        <div class="field__title"><%= field.label %></div>
+
+        <div class="field__content">
+          <label class="image__label">
             <%= f.file_field field.name, class: 'image' %>
-        </label>
-    </div>
+          </label>
+        </div>
+      <% else %>
+        <div class="field__title"><%= field.label %></div>
+        
+        <div class="field__content">
+          <label class="image__label">
+            <%= f.file_field field.name, class: 'image' %>
+          </label>
+        </div>
+      <% end %>
 </section>
