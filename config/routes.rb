@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :posts
       resources :categories
 
+      resources :related_items, only: [:create, :update, :destroy]
+
       if ActiveRecord::Base.connection.table_exists?('simple_admin_entities')
         SimpleAdmin::Entity.custom_enabled.each do |entity|
           collection_name = entity.model_klass.model_name.collection

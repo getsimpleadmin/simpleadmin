@@ -1,0 +1,9 @@
+<h5 class="item-page__description"></h5>
+
+<div class="related-items-list">
+  <% @resource.related_items.each do |related_item| %>
+    <% if related_item.persisted? %>
+      <%= render template: 'simple_admin/admin/related_items/edit', locals: { related_item: related_item } %>
+    <% end %>
+  <% end %>
+</div>
