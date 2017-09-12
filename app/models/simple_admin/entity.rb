@@ -8,8 +8,11 @@ module SimpleAdmin
 
     scope :custom_enabled, -> { where(inbuilt: false, status: true) }
 
-    after_save :reload_routes!
     after_create :create_default_fields!
+
+    unless Rails.env.test?
+      after_save :reload_routes!
+    end
 
     def model_klass
       model_klass_name.constantize
