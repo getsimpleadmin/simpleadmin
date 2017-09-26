@@ -1,8 +1,6 @@
-<section class="field">
-    <div class="field__title"><%= field.label %></div>
-    <div class="field__content">
-        <div class="select__wrapper">
-            <%= f.select field.name, field.association_klass.all.collect { |record| [record.public_send(field.entity_field_setting.value), record.id] }, { include_blank: '-- Select --' }, { class: 'select' } %>
-        </div>
+<div class="form-group">
+    <label class="col-xs-12" for="example-text-input"><%= field.label %></label>
+    <div class="col-sm-9">
+        <%= f.select field.name, field.association_klass.all.collect { |record| [record.public_send(field.entity_field_setting.value), record.id] }, {}, { class: 'form-control' } %>
     </div>
-</section>
+</div>

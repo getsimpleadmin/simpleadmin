@@ -1,10 +1,13 @@
-<section class="catalog-page">
-  <%= render 'simple_admin/admin/shared/collection/header', entity: @entity, resource_singular_name: @resource_singular_name %>
+<%= render 'simple_admin/admin/shared/collection/header', entity: @entity, resource_name: @resource_name %>
 
-  <table class="table">
-    <%= render 'simple_admin/admin/shared/collection/table_header', column_names: @entity_fields.labels %>
-    <%= render 'simple_admin/admin/shared/collection/table_body', resources: @resources, entity_fields: @entity_fields %>
-  </table>
-
-  <%= paginate @resources %>
-</section>
+<div class="content">
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="block">
+            <div class="block-content">
+                <%= render 'simple_admin/admin/shared/collection/table_body', resources: @resources, entity_fields: @entity_fields %>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

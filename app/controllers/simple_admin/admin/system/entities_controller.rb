@@ -2,7 +2,7 @@ module SimpleAdmin
   module Admin
     module System
       class EntitiesController < BaseController
-        include SimpleAdmin::ResourceCrud
+        include ResourceController::Crudify
 
         authorize_resource class: SimpleAdmin::Entity
 
@@ -26,17 +26,13 @@ module SimpleAdmin
 
         private
 
-        def resource_params
-          params.require(:simple_admin_entity).permit(:model_klass_name, :model_plural_name, :label, :status)
-        end
+          def resource_params
+            params.require(:simple_admin_entity).permit(:model_klass_name, :model_plural_name, :label, :status)
+          end
 
-        def reload_models!
-          Rails.application.eager_load!
-        end
-
-        def template_path(controller_action=nil)
-          "#{params[:controller]}/#{params[:action]}"
-        end
+          def reload_models!
+            Rails.application.eager_load!
+          end
       end
     end
   end

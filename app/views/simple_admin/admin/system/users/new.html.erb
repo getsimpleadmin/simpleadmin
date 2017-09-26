@@ -1,7 +1,21 @@
-<section class="item-page">
-  <header class="item-page__header">
-      <h3 class="item-page__title">New User</h3>
-  </header>
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+              New User
+            </h1>
+        </div>
+    </div>
+</div>
 
-  <%= render 'form', resource: @resource, form_url: admin_system_users_path %>
-</section>
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="block">
+            <div class="block-content block-content-narrow">
+              <%= render 'form', resource: @resource, form_url: admin_system_users_path %>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

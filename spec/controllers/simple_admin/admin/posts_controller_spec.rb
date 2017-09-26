@@ -4,7 +4,9 @@ RSpec.describe SimpleAdmin::Admin::PostsController, type: :controller do
   let(:user) { create :user }
   let(:resource) { create :post, user: user }
 
-  let(:redirect_path) { admin_posts_path }
+  let(:after_update_path) { admin_posts_path }
+  let(:after_create_path) { admin_posts_path }
+  let(:after_destroy_path) { admin_posts_path }
 
   let(:resource_attributes) do
     {
@@ -16,7 +18,7 @@ RSpec.describe SimpleAdmin::Admin::PostsController, type: :controller do
   let(:resource_params) do
     {
       id: resource.id,
-      simple_admin_post: { title: resource_attributes[:value], user_id: user.to_param }
+      simple_admin_post: { title: resource_attributes[:value], description: 'some description', user_id: user.id }
     }
   end
 
@@ -24,7 +26,8 @@ RSpec.describe SimpleAdmin::Admin::PostsController, type: :controller do
     post_entity = SimpleAdmin::Entity.create(model_klass_name: SimpleAdmin::Post.to_s, label: 'Posts', status: true)
 
     SimpleAdmin::EntityField.create_string_field(name: :title, entity: post_entity, sort_order: 1, presentation: :form)
-    SimpleAdmin::EntityField.create_number_field(name: :user_id, entity: post_entity, sort_order: 1, presentation: :form)
+    SimpleAdmin::EntityField.create_string_field(name: :description, entity: post_entity, sort_order: 2, presentation: :form)
+    SimpleAdmin::EntityField.create_number_field(name: :user_id, entity: post_entity, sort_order: 3, presentation: :form)
   end
 
   it_behaves_like :controller_crud

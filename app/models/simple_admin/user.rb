@@ -8,6 +8,7 @@ module SimpleAdmin
      has_one :profile, dependent: :destroy
 
      has_many :posts
+     has_many :comments
 
      accepts_nested_attributes_for :profile, update_only: true
      delegate :avatar, :first_name, :last_name, to: :profile, allow_nil: true

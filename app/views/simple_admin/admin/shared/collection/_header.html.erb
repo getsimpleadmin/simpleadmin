@@ -1,4 +1,12 @@
-<header class="item-page__header">
-  <h3 class="item-page__title"><%= t('simple_admin.resource.index.title', model_name: resource_singular_name.pluralize) %></h3>
-  <%= link_to t('simple_admin.resource.new.title', model_name: resource_singular_name), resource_link(entity.model_klass.new, :new), class: 'button item-page__submit' %>
-</header>
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+              <%= t('simple_admin.resource.index.title', resource_name: resource_name.pluralize) %>
+            </h1>
+        </div>
+        <div class="col-sm-5 text-right hidden-xs">
+          <%= link_to t('simple_admin.resource.new.title', resource_name: resource_name), resource_link(entity.model_klass.new, :new), class: 'btn btn-minw btn-success' %>
+        </div>
+    </div>
+</div>

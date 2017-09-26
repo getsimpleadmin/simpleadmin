@@ -1,9 +1,11 @@
-<thead class="table__header">
-    <tr class="table__row">
+<thead>
+    <tr>
         <% column_names.each do |column_name| %>
-          <th class="table__cell"><%= column_name %></th>
+          <th class="<%= 'text-center' if column_names.first == column_name %>">
+            <%= column_name %>
+          </th>
         <% end %>
-        <th class="table__cell">Actions</th>
-        <th class="table__cell"></th>
+
+        <th class="text-center">Actions</th>
     </tr>
 </thead>

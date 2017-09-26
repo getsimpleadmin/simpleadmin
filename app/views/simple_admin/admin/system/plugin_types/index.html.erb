@@ -1,57 +1,48 @@
-<section class="catalog-page">
-  <header class="item-page__header">
-    <h3 class="item-page__title">Plugins</h3>
-  </header>
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+              Plugins
+            </h1>
+        </div>
+    </div>
+</div>
 
-  <table class="table">
-    <%= render 'simple_admin/admin/shared/collection/table_header', column_names: ['#', 'Name', 'Status'] %>
 
-    <tbody class="table__body">
-      <% @resources.each do |resource| %>
-        <tr class="table__row">
-          <td class="table__cell"><%= resource.id %></td>
+<div class="content">
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="block">
+            <div class="block-content">
+              <table class="table table-responsive table-striped table-borderless table-header-bg">
+                  <%= render 'simple_admin/admin/shared/collection/table_header', column_names: ['#', 'Name', 'Status'] %>
 
-          <td class="table__cell">
-            <%= resource.name %>
-          </td>
+                  <tbody>
+                      <% @resources.each do |resource| %>
+                        <tr>
+                            <td class="text-center"><%= resource.id %></td>
 
-          <td>
-            <%= link_to resource.status_humanized, admin_system_plugin_type_path(resource), method: :put, class: 'table__link' %>
-          </td>
+                            <td>
+                              <%= resource.name %>
+                            </td>
 
-           <% if resource.active? %>
-              <%= render_plugin_actions(resource) %>
-           <% else %>
-             <td></td>  
-           <% end %>
-        </tr>
+                            <% if resource.active? %>
+                              <td class="hidden-xs">
+                                <span class="label label-danger"><%= resource.status_humanized %></span>
+                              </td>
+                            <% else %>
+                              <td class="hidden-xs">
+                                <span class="label label-success"><%= resource.status_humanized %></span>
+                              </td>
+                            <% end %>
 
-        <% if resource.active? %>
-          <% resource.plugins.each do |plugin| %>
-            <tr class="table__row">
-              <td class="table__cell">
-                <span>
-                  <%= plugin.id %>
-                </span>
-              </td>
-
-              <td class="table__cell">
-                <span>
-                  <%= plugin.label %>
-                </span>
-              </td>
-
-              <td class="table__cell">
-                <%= link_to 'Редактировать', edit_admin_system_plugin_type_plugin_path(resource, plugin), class: 'table__link' %>
-              </td>
-
-              <td class="table__cell">
-                <%= link_to 'Удалить', admin_system_plugin_type_plugin_path(resource, plugin), class: 'table__link', method: :delete, data: { confirm: 'Are you sure?' } %>
-              </td>
-            </tr>
-          <% end %>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
-</section>
+                            <%= render_plugin_actions(resource) %>
+                        </tr>
+                      <% end %>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

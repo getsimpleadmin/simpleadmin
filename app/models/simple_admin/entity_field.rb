@@ -13,6 +13,7 @@ module SimpleAdmin
     validate :name_presentation_uniqueness, on: :create
 
     scope :latest, -> { order(created_at: :asc) }
+    scope :search_indexable_columns, -> { collection.where(search_indexable: true).pluck(:name) }
 
     before_create :set_label_default_value!
 
@@ -24,6 +25,25 @@ module SimpleAdmin
       name == 'id'
     end
 
+    # Entity association class for field
+    # @example SimpleAdmin::Post
+    #   module SimpleAdmin
+    #     class Post < Base
+    #       belongs_to :category, optional: true
+    #     end
+    #   end
+    #
+    #   entity = SimpleAdmin::Entity.create(model_klass_name: SimpleAdmin::Post.to_s)
+    #   entity_field_type = SimpleAdmin::EntityFieldType.create(name: :relation, template: 'simple_admin/fields/relation')
+    #
+    #   entity_field = SimpleAdmin::EntityField.new(name: :category_id, label: 'Category', entity_field_type: entity_field_type, entity: entity)
+    #   entity_field.association_klass
+    #
+    #   SimpleAdmin::Category
+    #
+    # @return [ActiveRecord Class]
+    #
+    # @since 0.2.0
     def association_klass
       model_instance = entity.model_klass.new
       association_name = name.remove('_id')
@@ -31,25 +51,30 @@ module SimpleAdmin
       model_instance.public_send("build_#{association_name}").class
     end
 
+    # Template path for field
+    #
+    # @return [String]
+    #
+    # @since 0.2.0
     def template_path
       "#{entity_field_type.template}/#{presentation}"
     end
 
-    private
-
-    def set_label_default_value!
-      return if id_field? || label.present?
-      self.label = name.camelize
-    end
-
-    def name_presentation_uniqueness
-      if field_already_exists?
-        errors.add(:name, 'already exists')
-      end
-    end
-
-    def field_already_exists?
+    def already_exists?
       self.class.where(name: name, presentation: presentation, entity: entity).any?
     end
+
+    private
+
+      def set_label_default_value!
+        return if id_field? || label.present?
+        self.label = name.camelize
+      end
+
+      def name_presentation_uniqueness
+        if already_exists?
+          errors.add(:name, 'already exists')
+        end
+      end
   end
 end

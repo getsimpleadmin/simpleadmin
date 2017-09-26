@@ -1,8 +1,8 @@
 module SimpleAdmin
   module Admin
     class PostsController < BaseController
-      include ResourceFields
-      include ResourceCrud
+      include ResourceController::DynamicFields
+      include ResourceController::Crudify
 
       def after_create_path
         admin_posts_path
@@ -22,7 +22,11 @@ module SimpleAdmin
 
       private
 
-        def action_resource_modificator
+        def template_path(controller_action=nil)
+          "simple_admin/admin/resource/#{controller_action || params[:action]}"
+        end
+
+        def resource_modificator
           current_user.posts
         end
     end

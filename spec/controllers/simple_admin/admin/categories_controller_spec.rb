@@ -3,7 +3,9 @@ require 'spec_helper'
 RSpec.describe SimpleAdmin::Admin::CategoriesController, type: :controller do
   let(:resource) { create :category }
 
-  let(:redirect_path) { admin_categories_path }
+  let(:after_update_path) { admin_categories_path }
+  let(:after_create_path) { admin_categories_path }
+  let(:after_destroy_path) { admin_categories_path }
 
   let(:resource_attributes) do
     {

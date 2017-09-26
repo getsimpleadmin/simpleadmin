@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in simple_admin.gemspec
 gemspec
 
+gem 'rdoc'
+
 gem 'devise'
 gem 'faker'
 gem 'carrierwave'
@@ -19,6 +21,8 @@ group :test do
   gem 'rails-controller-testing'
   gem 'factory_girl_rails'
   gem 'sprockets-rails', require: 'sprockets/railtie'
+
+  gem 'shoulda-matchers'
 
   gem 'capybara'
   gem 'capybara-screenshot'

@@ -1,12 +1,8 @@
-<% flash.each do |name, message| %>
-  <section class="notify <%= name %>">
-    <span class="notify__text"><%= message %></span>
-    <span class="notify__close">
-      <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <g transform="translate(-5.000000, -5.000000)">
-          <polygon id="Shape" fill="#BFC5C7" fill-rule="nonzero" points="19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12"/>
-        </g>
-      </svg>
-    </span>
-  </section>
+<% flash.each do |_, message| %>
+  <div class="notify">
+    <div data-notify="container" class="col-xs-11 col-sm-4 alert alert-success animated fadeIn" role="alert" data-notify-position="top-right" style="display: inline-block; margin: 0px auto; position: fixed; transition: all 0.5s ease-in-out; z-index: 1033; top: 20px; right: 20px; animation-iteration-count: 1;">
+        <button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button><span data-notify="icon" class="fa fa-check"></span> <span data-notify="title"></span> <span data-notify="message"><%= message %></span>
+        <a href="#" target="_blank" data-notify="url"></a>
+    </div>
+  </div>
 <% end %>

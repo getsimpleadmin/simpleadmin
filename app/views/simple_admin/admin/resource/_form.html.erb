@@ -3,10 +3,9 @@
     <%= render entity_field.template_path, field: entity_field, f: f %>
   <% end %>
 
-  <section class="field">
-    <div class="field__title"></div>
-    <div class="field__content">
-      <%= f.submit class: 'button button--wide item-page__button' %>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <%= f.submit class: 'btn btn-sm btn-primary' %>
+        </div>
     </div>
-  </section>
 <% end %>

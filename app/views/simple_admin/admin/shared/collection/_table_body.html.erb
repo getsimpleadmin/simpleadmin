@@ -1,19 +1,29 @@
-<tbody class="table__body">
-  <% resources.each do |resource| %>
-    <tr class="table__row">
-      <% entity_fields.latest.each do |entity_field| %>
-        <%= render entity_field.template_path, field: entity_field, resource: resource %>
-      <% end %>
+<div class="row">
+  <table class="table table-responsive table-striped table-borderless table-header-bg">
+      <%= render 'simple_admin/admin/shared/collection/table_header', column_names: entity_fields.labels %>
 
+      <tbody>
+          <% resources.each do |resource| %>
+            <tr>
+                <% entity_fields.latest.each do |entity_field| %>
+                  <%= render entity_field.template_path, field: entity_field, resource: resource %>
+                <% end %>
 
-      <td class="table__cell">
-        <%= link_to 'Edit', resource_link(resource, :edit), class: 'table__link' %>
-      </td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <%= link_to resource_link(resource, :edit), class: 'btn btn-xs btn-default' do %>
+                          <i class="fa fa-pencil"></i>
+                        <% end %>
 
-      <td class="table__cell">
-        <%= link_to 'Delete', resource_link(resource, :destroy), class: 'table__link',
-                                                method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-  <% end %>
-</tbody>
+                        <%= link_to resource_link(resource, :destroy), class: 'btn btn-xs btn-default', method: :delete, data: { confirm: 'Are you sure?' } do %>
+                          <i class="fa fa-times"></i>
+                        <% end %>
+                    </div>
+                </td>
+            </tr>
+          <% end %>
+      </tbody>
+  </table>
+</div>
+
+<%= paginate @resources, total_resources: @resources.total_count %>

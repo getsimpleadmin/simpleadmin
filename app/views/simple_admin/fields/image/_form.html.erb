@@ -1,25 +1,6 @@
-<section class="field">
-      <% if f.object.image.present? %>
-        <div class="field__title">Current Image</div>
-
-        <div class="field__content">
-          <%= image_tag f.object.image.url(:admin_collection_thumb) %>
-        </div>
-
-        <div class="field__title"><%= field.label %></div>
-
-        <div class="field__content">
-          <label class="image__label">
-            <%= f.file_field field.name, class: 'image' %>
-          </label>
-        </div>
-      <% else %>
-        <div class="field__title"><%= field.label %></div>
-        
-        <div class="field__content">
-          <label class="image__label">
-            <%= f.file_field field.name, class: 'image' %>
-          </label>
-        </div>
-      <% end %>
-</section>
+<div class="form-group">
+    <label class="col-xs-12" for="example-text-input"><%= field.label %></label>
+    <div class="col-xs-12">
+        <%= f.file_field field.name, class: 'image' %>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-class CreateSimpleAdminEntitiesMigration < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminEntities < ActiveRecord::Migration[5.1]
   def change
     create_table :simple_admin_entities do |t|
       t.string :model_klass_name, null: false

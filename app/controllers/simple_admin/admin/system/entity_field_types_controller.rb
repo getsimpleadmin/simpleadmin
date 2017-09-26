@@ -2,7 +2,7 @@ module SimpleAdmin
   module Admin
     module System
       class EntityFieldTypesController < BaseController
-        include SimpleAdmin::ResourceCrud
+        include ResourceController::Crudify
 
         authorize_resource class: SimpleAdmin::Entity
 
@@ -24,13 +24,9 @@ module SimpleAdmin
 
         private
 
-        def resource_params
-          params.require(:simple_admin_entity_field_type).permit(:name, :template)
-        end
-
-        def template_path(controller_action=nil)
-          "#{params[:controller]}/#{params[:action]}"
-        end
+          def resource_params
+            params.require(:simple_admin_entity_field_type).permit(:name, :template)
+          end
       end
     end
   end
