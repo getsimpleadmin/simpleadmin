@@ -1,38 +1,55 @@
-<section class="catalog-page">
-  <header class="item-page__header">
-    <h3 class="item-page__title">Field Types</h3>
-    <%= link_to 'New Field Type', new_admin_system_entity_field_type_path, class: 'button item-page__submit' %>
-  </header>
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+              Field Types
+            </h1>
+        </div>
+        <div class="col-sm-5 text-right hidden-xs">
+          <%= link_to 'New Field Type', new_admin_system_entity_field_type_path, class: 'btn btn-minw btn-success' %>
+        </div>
+    </div>
+</div>
 
 
-  <table class="table">
-    <%= render 'simple_admin/admin/shared/collection/table_header', column_names: ['#', 'Name', 'Template'] %>
+<div class="content">
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="block">
+            <div class="block-content">
+              <table class="table table-responsive table-striped table-borderless table-header-bg">
+                  <%= render 'simple_admin/admin/shared/collection/table_header', column_names: ['#', 'Name', 'Template'] %>
 
-    <tbody class="table__body">
-      <% @resources.each do |resource| %>
-        <tr class="table__row">
-          <td class="table__cell"><%= resource.id %></td>
+                  <tbody>
+                      <% @resources.each do |resource| %>
+                        <tr>
+                            <td class="text-center"><%= resource.id %></td>
 
-          <td class="table__cell">
-            <%= resource.name %>
-          </td>
+                            <td>
+                              <%= resource.name %>
+                            </td>
 
-          <td class="table__cell">
-            <%= resource.template %>
-          </td>
+                            <td>
+                              <%= resource.template %>
+                            </td>
 
-          <td class="table__cell">
-            <%= link_to 'Edit', edit_admin_system_entity_field_type_path(resource), class: 'table__link' %>
-          </td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <%= link_to edit_admin_system_entity_field_type_path(resource), class: 'btn btn-xs btn-default' do %>
+                                      <i class="fa fa-pencil"></i>
+                                    <% end %>
 
-          <td class="table__cell">
-            <%= link_to 'Delete', admin_system_entity_field_type_path(resource), class: 'table__link',
-                                                    method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <%= paginate @resources %>
-</section>
+                                    <%= link_to admin_system_entity_field_type_path(resource), class: 'btn btn-xs btn-default', method: :delete, data: { confirm: 'Are you sure?' } do %>
+                                      <i class="fa fa-times"></i>
+                                    <% end %>
+                                </div>
+                            </td>
+                        </tr>
+                      <% end %>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

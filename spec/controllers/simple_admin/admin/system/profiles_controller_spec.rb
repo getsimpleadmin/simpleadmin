@@ -30,7 +30,7 @@ RSpec.describe SimpleAdmin::Admin::System::ProfilesController, type: :controller
     subject { patch :update, params: params }
 
     it 'update profile' do
-      expect(subject).to redirect_to admin_root_path
+      expect(subject).to redirect_to admin_posts_path
       expect(user.reload.email).to eq 'johndoe@example.com'
     end
   end

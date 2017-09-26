@@ -22,9 +22,9 @@ module SimpleAdmin
 
         private
 
-        def resource_params
-          params.require(:simple_admin_setting).permit(:value)
-        end
+          def resource_params
+            params.require(:simple_admin_setting).permit(:value)
+          end
       end
     end
   end

@@ -1,4 +1,4 @@
-class CreateSimpleAdminPostsMigration < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminPosts < ActiveRecord::Migration[5.1]
   def change
     create_table :simple_admin_posts do |t|
       t.string :title

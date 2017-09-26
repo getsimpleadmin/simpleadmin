@@ -4,8 +4,6 @@ class CreateSimpleAdminCategories < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :image
 
-      t.string :slug
-
       t.timestamps null: false
     end
   end

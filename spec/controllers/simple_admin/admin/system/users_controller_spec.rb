@@ -3,7 +3,9 @@ require 'spec_helper'
 RSpec.describe SimpleAdmin::Admin::System::UsersController, type: :controller do
   let(:resource) { create :user, email: 'example@example.com' }
 
-  let(:redirect_path) { admin_system_users_path }
+  let(:after_update_path) { admin_system_users_path }
+  let(:after_create_path) { admin_system_users_path }
+  let(:after_destroy_path) { admin_system_users_path }
 
   let(:resource_attributes) do
     {

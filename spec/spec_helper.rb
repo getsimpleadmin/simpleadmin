@@ -38,8 +38,11 @@ RSpec.configure do |config|
     SimpleAdmin::EntityFieldType.create(name: :string, template: 'simple_admin/fields/string')
   end
 
+  config.include(Shoulda::Matchers::ActiveModel,  type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include ControllerHelpers, type: :controller
+
   config.include FeatureHelpers, type: :feature
 end
 

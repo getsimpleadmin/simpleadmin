@@ -1,4 +1,4 @@
-class CreateSimpleAdminPluginsMigration < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminPlugins < ActiveRecord::Migration[5.1]
   def change
     create_table :simple_admin_plugins do |t|
       t.string :name

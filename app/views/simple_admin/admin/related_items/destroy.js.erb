@@ -1,9 +1,0 @@
-var resourceId = "<%= @related_item.to_param %>";
-
-$('*[data-related-item-id="' + resourceId + '"]').remove();
-
-$.notify(
-  'Related item successfully deleted!',
-  'success',
-  { autoHideDelay: 3000, position: 'right' }
-);

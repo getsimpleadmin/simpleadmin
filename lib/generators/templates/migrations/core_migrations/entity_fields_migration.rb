@@ -1,4 +1,4 @@
-class CreateSimpleAdminEntityFieldsMigration < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminEntityFields < ActiveRecord::Migration[5.1]
   def change
     create_table :simple_admin_entity_fields do |t|
       t.string :name
@@ -9,6 +9,8 @@ class CreateSimpleAdminEntityFieldsMigration < ActiveRecord::Migration[5.1]
 
       t.integer :presentation
       t.integer :sort_order, default: 0
+
+      t.boolean :search_indexable, default: false
 
       t.timestamps null: false
     end

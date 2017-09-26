@@ -1,8 +1,8 @@
 module SimpleAdmin
   module Admin
     class CategoriesController < BaseController
-      include ResourceFields
-      include ResourceCrud
+      include ResourceController::DynamicFields
+      include ResourceController::Crudify
 
       def after_create_path
         admin_categories_path
@@ -19,6 +19,12 @@ module SimpleAdmin
       def model_klass
         SimpleAdmin::Category
       end
+
+      private
+
+        def template_path(controller_action=nil)
+          "simple_admin/admin/resource/#{controller_action || params[:action]}"
+        end
     end
   end
 end

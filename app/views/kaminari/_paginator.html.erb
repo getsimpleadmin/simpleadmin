@@ -1,17 +1,26 @@
 <%= paginator.render do -%>
-  <nav class="pagination" role="navigation" aria-label="pager">
-    <%= first_page_tag unless current_page.first? %>
-    <%= prev_page_tag unless current_page.first? %>
-    <% each_page do |page| -%>
-      <% if page.display_tag? -%>
-        <%= page_tag page %>
-      <% elsif !page.was_truncated? -%>
-        <%= gap_tag %>
-      <% end -%>
-    <% end -%>
-    <% unless current_page.out_of_range? %>
-      <%= next_page_tag unless current_page.last? %>
-      <%= last_page_tag unless current_page.last? %>
-    <% end %>
-  </nav>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="dataTables_info" id="DataTables_Table_1_info" role="status" aria-live="polite">
+        Showing <strong><%= resources_pagination_start(per_page, current_page) %></strong>-<strong><%= resources_pagination_end(per_page, current_page) %></strong> of
+        <strong><%= total_resources %></strong>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_1_paginate">
+        <ul class="pagination">
+          <%= prev_page_tag %>
+          <% each_page do |page| -%>
+            <% if page.display_tag? -%>
+              <%= page_tag page %>
+            <% elsif !page.was_truncated? -%>
+              <%= gap_tag %>
+            <% end -%>
+          <% end -%>
+            <%= next_page_tag  %>
+        </ul>
+      </div>
+    </div>
+  </div>
 <% end -%>

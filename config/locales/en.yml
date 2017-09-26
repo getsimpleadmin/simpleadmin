@@ -2,14 +2,14 @@ en:
   simple_admin:
     resource:
       index:
-        title: '%{model_name}'
+        title: '%{resource_name}'
       new:
-        title: 'New %{model_name}'
+        title: 'New %{resource_name}'
       edit:
-        title: 'Edit %{model_name}'
+        title: 'Edit %{resource_name}'
       update:
-        success: '%{model_name} has been successfully updated!'
+        success: '%{resource_name} has been successfully updated!'
       create:
-        success: '%{model_name} has been successfully created!'
+        success: '%{resource_name} has been successfully created!'
       destroy:
-        success: '%{model_name} has been successfully destroyed!'
+        success: '%{resource_name} has been successfully destroyed!'
