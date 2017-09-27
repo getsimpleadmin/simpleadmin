@@ -3,7 +3,7 @@ require 'simple_admin/engine'
 
 module SimpleAdmin
   PER_PAGE = 10
-  
+
   module Refinements
     autoload :Boolean, 'simple_admin/refinements/boolean'
   end
@@ -54,6 +54,10 @@ module SimpleAdmin
       controller_builder.build!
 
       SimpleAdmin::ResourceController::ActionsBuilder.initialize_actions!(controller_builder.controller_klass, model_klass_name)
+    end
+
+    def core_path
+      Gem.loaded_specs['simple_admin'].full_gem_path
     end
   end
 end
