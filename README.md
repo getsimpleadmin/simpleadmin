@@ -1,6 +1,16 @@
 # SimpleAdmin
 
 ## Installation
+Simple Admin works with rails 5.1.3. Add it to your Gemfile:
+
+```ruby
+gem 'simple_admin', path: 'gemfiles/simple_admin'
+
+gem 'mini_magick'
+gem 'carrierwave'
+```
+
+## Getting started
 
 ```ruby
 rails generate simple_admin:install
