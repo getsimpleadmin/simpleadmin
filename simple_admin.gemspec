@@ -46,7 +46,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rolify'
   spec.add_dependency 'cancancan'
-  spec.add_dependency 'aasm'
 
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'coffee-rails'
