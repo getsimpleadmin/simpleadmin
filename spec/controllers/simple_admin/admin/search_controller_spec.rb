@@ -7,12 +7,13 @@ RSpec.describe SimpleAdmin::Admin::SearchController, type: :controller do
 
   describe '#index' do
     let(:params) { {} }
+
     subject { get :index, params: params }
 
-    it { is_expected.to have_http_status(404) }
+    it { expect { subject }.to raise_error(ActiveRecord::RecordNotFound) }
 
     context 'when posts searching' do
-      let!(:post) { Post.create(title: 'Hello world!') }
+      let!(:post) { create :post, title: 'Hello world!', user: user }
 
       let(:params) do
         {
