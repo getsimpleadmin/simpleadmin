@@ -1,4 +1,6 @@
 require 'jquery-rails'
+require 'sass-rails'
+require 'bootstrap-sass'
 require 'coffee-rails'
 require 'best_in_place'
 
