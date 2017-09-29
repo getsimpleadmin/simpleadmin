@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import 'simple_admin/fonts';
+@import 'simple_admin/tags';
+@import 'simple_admin/change-password';
+@import 'simple_admin/core';
+@import 'simple_admin/notify';
+@import 'simple_admin/errors';
+
+@import 'simple_admin/jquery.dataTables';
