@@ -13,8 +13,8 @@
 //= require rails-ujs
 //= require jquery
 //= require best_in_place
-//= require simple_admin/tabs
-//= require simple_admin/notify
-//= require simple_admin/tags
+//= require notifyjs
+//= require jquery-tags-input
+//= require jquery-ui/widgets/tabs
 //= require simple_admin/change-password
 //= require simple_admin/core
