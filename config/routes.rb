@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :admin do
       root 'system/users#index'
 
-      get 'search' => 'search#index'
+      get :search, to: 'search#index'
 
       if ActiveRecord::Base.connection.table_exists?(:simple_admin_entities)
         SimpleAdmin::Entity.resource_attributes.each do |resource_name, model_klass_name|
@@ -15,10 +15,6 @@ Rails.application.routes.draw do
 
       namespace :system do
         resources :settings, only: [:index, :update]
-
-        resources :plugin_types, only: [:index, :update] do
-          resources :plugins
-        end
 
         resources :users
         resources :profiles, only: [:edit, :update]
