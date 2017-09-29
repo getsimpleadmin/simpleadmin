@@ -10,6 +10,11 @@ gem 'faker'
 gem 'carrierwave'
 gem 'mini_magick'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-notifyjs'
+  gem 'rails-assets-jquery-tags-input'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'

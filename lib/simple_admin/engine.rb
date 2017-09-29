@@ -1,12 +1,17 @@
 require 'jquery-rails'
+require 'jquery-ui-rails'
+
+require 'rails-assets-notifyjs'
+require 'rails-assets-jquery-tags-input'
+
 require 'sass-rails'
 require 'bootstrap-sass'
+
 require 'coffee-rails'
 require 'best_in_place'
 
 require 'devise'
 require 'kaminari'
-
 require 'rolify'
 require 'cancancan'
 
