@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/dmitriy-strukov/simple_admin.svg?branch=master)](https://travis-ci.org/dmitriy-strukov/simple_admin)
-
+[![Code Climate](https://codeclimate.com/github/dmitriy-strukov/simple_admin/badges/gpa.svg)](https://codeclimate.com/github/dmitriy-strukov/simple_admin)
 # SimpleAdmin
 
 ## Installation
