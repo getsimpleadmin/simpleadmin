@@ -7,7 +7,7 @@ module SimpleAdmin
 
         def update
           if current_user.update(resource_params)
-            redirect_to admin_posts_path
+            redirect_to admin_root_path
           else
             render :edit
           end

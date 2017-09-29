@@ -1,7 +1,7 @@
 <header id="header-navbar" class="content-mini content-mini-full">
   <ul class="nav-header pull-left">
     <li>
-      <%= link_to 'Preview Site', SimpleAdmin::Setting.site_url.value, class: 'btn btn-default pull-right', target: '_blank' %>
+      <%= link_to 'Preview Site', SimpleAdmin::Setting.site_url, class: 'btn btn-default pull-right', target: '_blank' %>
     </li>
 
     <% if entity.present? %>

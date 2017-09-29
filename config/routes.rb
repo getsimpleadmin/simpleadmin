@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   scope module: :simple_admin do
     namespace :admin do
-      get 'search' => 'search#index'
+      root 'system/users#index'
 
-      resources :posts
-      resources :comments
-      resources :categories
+      get 'search' => 'search#index'
 
       if ActiveRecord::Base.connection.table_exists?(:simple_admin_entities)
         SimpleAdmin::Entity.resource_attributes.each do |resource_name, model_klass_name|
           resources resource_name
+
           SimpleAdmin.setup_controller!(resource_name, model_klass_name)
         end
       end

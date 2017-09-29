@@ -1,4 +1,4 @@
-<% SimpleAdmin::Entity.custom_enabled.each do |entity| %>
+<% SimpleAdmin::Entity.enabled.each do |entity| %>
   <li>
     <%= link_to resource_link(entity.model_klass.new, :index) do %>
       <i class="si si-docs"></i>

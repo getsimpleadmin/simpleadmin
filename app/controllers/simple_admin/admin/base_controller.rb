@@ -5,20 +5,15 @@ module SimpleAdmin
 
       before_action :authenticate_user!
 
-      rescue_from ActiveRecord::RecordNotFound, with: :resource_not_found
-
       def current_ability
         SimpleAdmin::Ability.new(current_user)
       end
 
-      def resource_not_found
-        respond_to do |format|
-          format.html { render file: "#{Rails.root}/public/404", layout: false, status: :not_found }
+      protected
 
-          format.xml { head :not_found }
-          format.any { head :not_found }
+        def after_sign_in_path_for(resource)
+          admin_system_entities_path
         end
-      end
     end
   end
 end

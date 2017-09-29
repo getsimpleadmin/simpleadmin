@@ -5,34 +5,13 @@
                 <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
                     <i class="fa fa-times"></i>
                 </button>
-                <%= link_to admin_posts_path, class: 'h5 text-white' do %>
+                <%= link_to admin_root_path, class: 'h5 text-white' do %>
                   <span class="h4 font-w600 sidebar-mini-hide">simpleadmin</span>
                 <% end %>
             </div>
             <div class="side-content side-content-full">
                 <ul class="nav-main">
                     <%= render 'simple_admin/admin/shared/dynamic_resources' %>
-
-                    <li>
-                      <%= link_to admin_posts_path do %>
-                        <i class="si si-docs"></i>
-                        <span class="sidebar-mini-hide">Posts</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_comments_path do %>
-                        <i class="si si-docs"></i>
-                        <span class="sidebar-mini-hide">Comments</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_categories_path do %>
-                        <i class="si si-folder"></i>
-                        <span class="sidebar-mini-hide">Categories</span>
-                      <% end %>
-                    </li>
 
                     <li class="nav-main-heading">
                       <span class="sidebar-mini-hide">System</span>

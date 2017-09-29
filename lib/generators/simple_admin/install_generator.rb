@@ -8,8 +8,6 @@ module SimpleAdmin
       def copy_initializer
         template 'initializers/devise.rb.erb', 'config/initializers/devise.rb'
         template 'initializers/rolify.rb.erb', 'config/initializers/rolify.rb'
-
-        template 'initializers/simple_admin.rb.erb', 'config/initializers/simple_admin.rb'
       end
     end
   end
