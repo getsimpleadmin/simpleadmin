@@ -1,23 +1,23 @@
 module SimpleAdmin
   module Admin
-    class CategoriesController < BaseController
+    class PostsController < BaseController
       include ResourceController::DynamicFields
       include ResourceController::Crudify
 
       def after_create_path
-        admin_categories_path
+        admin_posts_path
       end
 
       def after_update_path
-        admin_categories_path
+        admin_posts_path
       end
 
       def after_destroy_path
-        admin_categories_path
+        admin_posts_path
       end
 
       def model_klass
-        SimpleAdmin::Category
+        Post
       end
 
       private

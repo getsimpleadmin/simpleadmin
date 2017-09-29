@@ -10,20 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810123745) do
+ActiveRecord::Schema.define(version: 20170810123744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "simple_admin_categories", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "simple_admin_comments", force: :cascade do |t|
-    t.string "message"
+    t.string "description"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170810123745) do
     t.string "model_plural_name"
     t.string "label"
     t.boolean "status", default: true
-    t.boolean "inbuilt", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,17 +55,6 @@ ActiveRecord::Schema.define(version: 20170810123745) do
   create_table "simple_admin_plugin_types", force: :cascade do |t|
     t.string "name"
     t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "simple_admin_posts", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "image"
-    t.string "tags"
-    t.integer "category_id"
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

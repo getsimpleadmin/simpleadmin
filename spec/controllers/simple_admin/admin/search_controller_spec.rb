@@ -7,22 +7,23 @@ RSpec.describe SimpleAdmin::Admin::SearchController, type: :controller do
 
   describe '#index' do
     let(:params) { {} }
+
     subject { get :index, params: params }
 
-    it { is_expected.to have_http_status(404) }
+    it { expect { subject }.to raise_error(ActiveRecord::RecordNotFound) }
 
     context 'when posts searching' do
-      let!(:post) { create :post, title: 'Hello world!' }
+      let!(:post) { create :post, title: 'Hello world!', user: user }
 
       let(:params) do
         {
           query: 'Hell',
-          resource_klass: 'SimpleAdmin::Post'
+          resource_klass: 'Post'
         }
       end
 
       before do
-        post_entity = SimpleAdmin::Entity.create(model_klass_name: SimpleAdmin::Post.to_s, label: 'Posts', status: true)
+        post_entity = SimpleAdmin::Entity.create(model_klass_name: Post.to_s, label: 'Posts', status: true)
 
         SimpleAdmin::EntityField.create_string_field(name: :title, entity: post_entity, sort_order: 1, presentation: :collection, search_indexable: true)
         SimpleAdmin::EntityField.create_string_field(name: :description, entity: post_entity, sort_order: 2, presentation: :collection)

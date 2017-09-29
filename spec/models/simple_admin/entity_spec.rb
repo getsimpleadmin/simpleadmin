@@ -13,15 +13,4 @@ RSpec.describe SimpleAdmin::Entity, type: :model do
       expect(entity.entity_fields.first.name).to eq 'id'
     end
   end
-
-  describe '#validate_inbuilt' do
-    let!(:entity) { create :entity, inbuilt: true }
-
-    subject { entity.destroy }
-
-    it 'return error' do
-      expect(subject).to eq false
-      expect(entity.errors.messages[:base]).to eq ['Can not delete system entity']
-    end
-  end
 end

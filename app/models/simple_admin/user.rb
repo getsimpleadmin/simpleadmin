@@ -21,9 +21,9 @@ module SimpleAdmin
 
      private
 
-     def create_profile!
-       profile = self.build_profile
-       profile.save
-     end
+       def create_profile!
+         profile = self.build_profile
+         profile.save
+       end
   end
 end

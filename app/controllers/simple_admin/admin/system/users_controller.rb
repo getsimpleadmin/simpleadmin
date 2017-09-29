@@ -4,13 +4,6 @@ module SimpleAdmin
       class UsersController < BaseController
         include ResourceController::Crudify
 
-        def new
-          @resource = model_klass.new
-          @resource.build_profile
-
-          render template_path
-        end
-
         def update
           @resource = model_klass.find(params[:id])
 
