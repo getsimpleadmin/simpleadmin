@@ -2,15 +2,13 @@ module SimpleAdmin
   class Entity < Base
     include Helpers::BooleanHelper
 
-    boolean_fields :status, :inbuilt
+    boolean_fields :status
 
     has_many :entity_fields
 
-    scope :custom_enabled, -> { where(inbuilt: false, status: true) }
+    scope :enabled, -> { where(status: true) }
 
     validates :model_klass_name, presence: true
-
-    before_destroy :validate_inbuilt
 
     after_create :create_default_fields!
 
@@ -24,7 +22,7 @@ module SimpleAdmin
       end
 
       def resource_attributes
-        custom_enabled.map do |entity|
+        enabled.map do |entity|
           [entity.model_klass.model_name.collection, entity.model_klass_name]
         end
       end
@@ -43,12 +41,6 @@ module SimpleAdmin
       def create_default_fields!
         SimpleAdmin::EntityFieldType.reload_helper_methods!
         SimpleAdmin::EntityField.create_number_field(name: :id, label: '#', entity: self, presentation: :collection)
-      end
-
-      def validate_inbuilt
-        if inbuilt?
-          errors.add(:base, 'Can not delete system entity') and throw :abort
-        end
       end
   end
 end

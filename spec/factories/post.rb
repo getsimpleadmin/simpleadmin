@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :post, class: SimpleAdmin::Post do
+  factory :post, class: Post do
     title { Faker::Name.title }
     description { 'example' }
-    category_id { 999 }
-    user_id { 999 }
+
+    user_id { double }
   end
 end

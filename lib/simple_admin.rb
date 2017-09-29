@@ -21,7 +21,6 @@ module SimpleAdmin
     autoload :BooleanHelper, 'simple_admin/helpers/boolean_helper'
   end
 
-  autoload :SessionsController, 'simple_admin/sessions_controller'
   autoload :Search, 'simple_admin/search'
 
   class << self
