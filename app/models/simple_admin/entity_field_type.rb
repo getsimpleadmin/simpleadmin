@@ -19,7 +19,7 @@ module SimpleAdmin
       #
       # @since 0.2.0
       def build_helper_methods!
-        self.pluck(:name).each do |field_type_name|
+        pluck(:name).each do |field_type_name|
           SimpleAdmin::EntityField.define_singleton_method("create_#{field_type_name}_field") do |params|
             params[:entity_field_type_id] = SimpleAdmin::EntityFieldType.find_by(name: field_type_name).to_param
 

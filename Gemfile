@@ -5,26 +5,26 @@ gemspec
 
 gem 'rdoc'
 
+gem 'carrierwave'
 gem 'devise'
 gem 'faker'
-gem 'carrierwave'
 gem 'mini_magick'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-notifyjs'
   gem 'rails-assets-jquery-tags-input'
+  gem 'rails-assets-notifyjs'
 end
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
 group :test do
   gem 'pg'
 
-  gem 'rails-controller-testing'
   gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
   gem 'sprockets-rails', require: 'sprockets/railtie'
 
   gem 'shoulda-matchers'

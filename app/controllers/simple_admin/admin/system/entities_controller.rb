@@ -6,7 +6,7 @@ module SimpleAdmin
 
         authorize_resource class: SimpleAdmin::Entity
 
-        before_action :reload_models!, only: [:new, :edit]
+        before_action :reload_models!, only: %i[new edit]
 
         def model_klass
           SimpleAdmin::Entity

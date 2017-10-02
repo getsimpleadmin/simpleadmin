@@ -2,8 +2,7 @@ module SimpleAdmin
   module Admin
     module System
       class ProfilesController < BaseController
-        def edit
-        end
+        def edit; end
 
         def update
           if current_user.update(resource_params)
@@ -16,7 +15,7 @@ module SimpleAdmin
         private
 
         def resource_params
-          params.require(:simple_admin_user).permit(:email, profile_attributes: [:first_name, :last_name, :avatar])
+          params.require(:simple_admin_user).permit(:email, profile_attributes: %i[first_name last_name avatar])
         end
       end
     end

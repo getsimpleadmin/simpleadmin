@@ -3,7 +3,7 @@ module SimpleAdmin
     rolify role_cname: 'SimpleAdmin::Role'
 
     devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :trackable, :validatable
+           :recoverable, :rememberable, :trackable, :validatable
 
     has_one :profile, dependent: :destroy
 
@@ -31,7 +31,7 @@ module SimpleAdmin
     private
 
       def create_profile!
-        profile = self.build_profile
+        profile = build_profile
         profile.save
       end
   end

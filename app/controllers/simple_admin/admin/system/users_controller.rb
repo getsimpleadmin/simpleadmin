@@ -48,7 +48,8 @@ module SimpleAdmin
         private
 
           def resource_params
-            params.require(:simple_admin_user).permit(:email, :password, :password_confirmation, profile_attributes: [:first_name, :last_name])
+            params.require(:simple_admin_user).permit(:email, :password, :password_confirmation,
+                                                      profile_attributes: %i[first_name last_name])
           end
 
           def update_resource_by_password(resource)

@@ -36,7 +36,8 @@ module SimpleAdmin
     #   entity = SimpleAdmin::Entity.create(model_klass_name: SimpleAdmin::Post.to_s)
     #   entity_field_type = SimpleAdmin::EntityFieldType.create(name: :relation, template: 'simple_admin/fields/relation')
     #
-    #   entity_field = SimpleAdmin::EntityField.new(name: :category_id, label: 'Category', entity_field_type: entity_field_type, entity: entity)
+    #   entity_field = SimpleAdmin::EntityField.new(name: :category_id, label: 'Category',
+    #                                                                   entity_field_type: entity_field_type, entity: entity)
     #   entity_field.association_klass
     #
     #   SimpleAdmin::Category
@@ -72,9 +73,7 @@ module SimpleAdmin
       end
 
       def name_presentation_uniqueness
-        if already_exists?
-          errors.add(:name, 'already exists')
-        end
+        errors.add(:name, 'already exists') if already_exists?
       end
   end
 end

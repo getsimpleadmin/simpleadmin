@@ -19,8 +19,10 @@ RSpec.describe SimpleAdmin::Search do
     let(:entity) { create :entity, model_klass_name: Post.to_s }
 
     before do
-      SimpleAdmin::EntityField.create_string_field(name: :title, entity: entity, sort_order: 1, presentation: :collection, search_indexable: true)
-      SimpleAdmin::EntityField.create_string_field(name: :description, entity: entity, sort_order: 2, presentation: :collection, search_indexable: true)
+      SimpleAdmin::EntityField.create_string_field(name: :title, entity: entity, sort_order: 1, presentation: :collection,
+                                                   search_indexable: true)
+      SimpleAdmin::EntityField.create_string_field(name: :description, entity: entity, sort_order: 2, presentation: :collection,
+                                                   search_indexable: true)
     end
 
     it 'return searchable resource' do
