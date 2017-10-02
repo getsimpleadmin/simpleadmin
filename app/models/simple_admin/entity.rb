@@ -12,9 +12,7 @@ module SimpleAdmin
 
     after_create :create_default_fields!
 
-    unless Rails.env.test?
-      after_save :reload_routes!
-    end
+    after_save :reload_routes! unless Rails.env.test?
 
     class << self
       def form_attributes(model_klass)
