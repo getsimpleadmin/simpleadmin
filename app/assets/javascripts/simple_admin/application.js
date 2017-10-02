@@ -16,5 +16,4 @@
 //= require notifyjs
 //= require jquery-tags-input
 //= require jquery-ui/widgets/tabs
-//= require simple_admin/change-password
 //= require simple_admin/core
