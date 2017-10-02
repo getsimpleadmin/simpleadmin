@@ -22,9 +22,6 @@ module SimpleAdmin
         migration_template 'migrations/core_migrations/settings_migration.rb', 'db/migrate/create_simple_admin_settings.rb'
 
         migration_template 'migrations/core_data_migration.rb', 'db/migrate/create_simple_admin_core_data_migration.rb'
-
-        # PLUGINS #
-        migration_template 'migrations/plugins/featured_migration.rb', 'db/migrate/create_simple_admin_featured_plugin_migration.rb'
       end
     end
   end
