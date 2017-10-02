@@ -20,10 +20,10 @@ class CreateSimpleAdminCoreDataMigration < ActiveRecord::Migration[5.1]
     admin_role = SimpleAdmin::Role.find_by(name: :admin)
     editor_role = SimpleAdmin::Role.find_by(name: :editor)
 
-    SimpleAdmin::UserPermission.create(action: :can, action_modificator: :manage, model_klass_name: :all, role: :admin)
+    SimpleAdmin::UserPermission.create(action: :can, action_modificator: :manage, model_klass_name: :all, role: admin_role)
 
-    SimpleAdmin::UserPermission.create(action: :can, action_modificator: :manage, model_klass_name: :all, role: :editor)
-    SimpleAdmin::UserPermission.create(action: :cannot, action_modificator: :manage, model_klass_name: SimpleAdmin::Entity.to_s, role: :editor)
-    SimpleAdmin::UserPermission.create(action: :cannot, action_modificator: :manage, model_klass_name: SimpleAdmin::EntityFieldType.to_s, role: :editor)
+    SimpleAdmin::UserPermission.create(action: :can, action_modificator: :manage, model_klass_name: :all, role: editor_role)
+    SimpleAdmin::UserPermission.create(action: :cannot, action_modificator: :manage, model_klass_name: SimpleAdmin::Entity.to_s, role: editor_role)
+    SimpleAdmin::UserPermission.create(action: :cannot, action_modificator: :manage, model_klass_name: SimpleAdmin::EntityFieldType.to_s, role: editor_role)
   end
 end

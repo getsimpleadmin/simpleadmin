@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810123744) do
+ActiveRecord::Schema.define(version: 20170810123745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,13 +52,6 @@ ActiveRecord::Schema.define(version: 20170810123744) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "simple_admin_plugin_types", force: :cascade do |t|
-    t.string "name"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "simple_admin_profiles", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "avatar"
@@ -83,6 +76,15 @@ ActiveRecord::Schema.define(version: 20170810123744) do
     t.string "value"
     t.string "presentation"
     t.integer "sort_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_user_permissions", force: :cascade do |t|
+    t.string "action"
+    t.string "action_modificator"
+    t.string "model_klass_name"
+    t.integer "role_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
