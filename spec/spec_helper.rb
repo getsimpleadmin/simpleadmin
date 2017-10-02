@@ -36,6 +36,9 @@ RSpec.configure do |config|
   config.before(:each) do
     SimpleAdmin::EntityFieldType.create(name: :number, template: 'simple_admin/fields/number')
     SimpleAdmin::EntityFieldType.create(name: :string, template: 'simple_admin/fields/string')
+
+    admin_role = SimpleAdmin::Role.find_or_create_by(name: :admin)
+    SimpleAdmin::UserPermission.create(action: :can, action_modificator: :manage, model_klass_name: :all, role_id: admin_role.to_param)
   end
 
   config.include(Shoulda::Matchers::ActiveModel,  type: :model)
