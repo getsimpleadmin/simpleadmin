@@ -44,5 +44,11 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 130
 
+Metrics/MethodLength:
+  Max: 25
+
+Style/IndentationConsistency:
+  Enabled: false
+
 Style/ClassAndModuleChildren:
   Enabled: false

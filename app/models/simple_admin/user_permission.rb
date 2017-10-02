@@ -1,6 +1,5 @@
 module SimpleAdmin
   class UserPermission < Base
-
     belongs_to :role
 
     def model_klass
