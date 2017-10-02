@@ -10,11 +10,5 @@ module SimpleAdmin
         end.compact
       end
     end
-
-    def self.application_model_names(namespace='SimpleAdmin')
-      ApplicationRecord.descendants.map do |model|
-        [model.name, model.name] unless model.name.include?(namespace)
-      end.compact
-    end
   end
 end
