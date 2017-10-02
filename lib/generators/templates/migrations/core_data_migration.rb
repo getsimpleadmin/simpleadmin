@@ -16,5 +16,16 @@ class CreateSimpleAdminCoreDataMigration < ActiveRecord::Migration[5.1]
     editor_user.add_role(:editor)
 
     SimpleAdmin::Setting.create(label: 'Site address', name: :site_url, value: 'http://localhost:3000/')
+
+    admin_role = SimpleAdmin::Role.find_by(name: :admin)
+    editor_role = SimpleAdmin::Role.find_by(name: :editor)
+
+    SimpleAdmin::UserPermission.create(action: :can, action_modificator: :manage, model_klass_name: :all, role: admin_role)
+
+    SimpleAdmin::UserPermission.create(action: :can, action_modificator: :manage, model_klass_name: :all, role: editor_role)
+    SimpleAdmin::UserPermission.create(action: :cannot, action_modificator: :manage,
+                                       model_klass_name: SimpleAdmin::Entity.to_s, role: editor_role)
+    SimpleAdmin::UserPermission.create(action: :cannot, action_modificator: :manage,
+                                       model_klass_name: SimpleAdmin::EntityFieldType.to_s, role: editor_role)
   end
 end

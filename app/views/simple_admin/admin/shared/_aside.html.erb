@@ -31,6 +31,13 @@
                       <% end %>
                     </li>
 
+                    <li>
+                      <%= link_to admin_system_user_roles_path do %>
+                        <i class="si si-user-follow"></i>
+                        <span class="sidebar-mini-hide">User Roles</span>
+                      <% end %>
+                    </li>
+
                     <% if can? :read, SimpleAdmin::Entity %>
                       <li>
                         <%= link_to admin_system_entities_path do %>
