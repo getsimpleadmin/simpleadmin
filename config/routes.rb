@@ -17,6 +17,8 @@ Rails.application.routes.draw do
         resources :settings, only: [:index, :update]
 
         resources :users
+        resources :user_roles
+
         resources :profiles, only: [:edit, :update]
 
         resources :entities

@@ -6,10 +6,16 @@ module SimpleAdmin
                polymorphic: true,
                optional: true
 
+    has_many :user_permissions
+
     validates :resource_type,
               inclusion: { in: Rolify.resource_types },
               allow_nil: true
 
     scopify
+
+    def self.names
+      pluck(:name)
+    end
   end
 end
