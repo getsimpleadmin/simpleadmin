@@ -1,4 +1,4 @@
-class CreateSimpleAdminCoreDataMigration < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminCoreDataMigration < ActiveRecord::Migration[5.0]
   def change
     SimpleAdmin::EntityFieldType.create(name: :boolean, template: 'simple_admin/fields/boolean')
     SimpleAdmin::EntityFieldType.create(name: :number,  template: 'simple_admin/fields/number')

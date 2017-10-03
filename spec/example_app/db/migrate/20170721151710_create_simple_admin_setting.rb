@@ -1,4 +1,4 @@
-class CreateSimpleAdminSetting < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminSetting < ActiveRecord::Migration[5.0]
   def change
     create_table :simple_admin_settings do |t|
       t.string :name

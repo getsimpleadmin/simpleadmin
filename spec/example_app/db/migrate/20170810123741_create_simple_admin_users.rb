@@ -1,4 +1,4 @@
-class CreateSimpleAdminUsers < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :simple_admin_users do |t|
       t.string :email,              null: false, default: ''
