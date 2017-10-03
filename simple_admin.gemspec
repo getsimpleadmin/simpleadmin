@@ -9,21 +9,12 @@ Gem::Specification.new do |spec|
   spec.name          = 'simple_admin'
   spec.version       = SimpleAdmin::VERSION
   spec.authors       = ['Dmitriy Strukov']
-  spec.email         = ['dmitriy.strukov@outlook.com']
+  spec.email         = ['dmitiry_strukov2011@mail.ru']
 
   spec.summary       = 'Simple Admin'
   spec.description   = 'Simple Admin'
   spec.homepage      = 'http://simpleadmin.com'
   spec.license       = 'MIT'
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise 'RubyGems 2.0 or newer is required to protect against ' \
-      'public gem pushes.'
-  end
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
