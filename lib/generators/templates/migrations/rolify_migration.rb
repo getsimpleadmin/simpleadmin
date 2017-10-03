@@ -1,4 +1,4 @@
-class CreateSimpleAdminRolifyMigration < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminRolifyMigration < ActiveRecord::Migration[5.0]
   def change
     create_table(:simple_admin_roles) do |t|
       t.string :name
