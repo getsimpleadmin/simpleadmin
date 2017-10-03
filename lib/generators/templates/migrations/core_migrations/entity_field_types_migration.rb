@@ -1,4 +1,4 @@
-class CreateSimpleAdminEntityFieldTypes < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminEntityFieldTypes < ActiveRecord::Migration[5.0]
   def change
     create_table :simple_admin_entity_field_types do |t|
       t.string :name

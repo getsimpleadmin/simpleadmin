@@ -1,4 +1,4 @@
-class CreateSimpleAdminUserPermissions < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminUserPermissions < ActiveRecord::Migration[5.0]
   def change
     create_table :simple_admin_user_permissions do |t|
       t.string :action

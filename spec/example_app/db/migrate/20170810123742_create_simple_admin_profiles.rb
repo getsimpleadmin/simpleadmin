@@ -1,4 +1,4 @@
-class CreateSimpleAdminProfiles < ActiveRecord::Migration[5.1]
+class CreateSimpleAdminProfiles < ActiveRecord::Migration[5.0]
   def change
     create_table :simple_admin_profiles do |t|
       t.integer :user_id, null: false
