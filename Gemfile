@@ -3,12 +3,14 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in simple_admin.gemspec
 gemspec
 
-gem 'rdoc'
+gem 'rails', '~> 5.0.0'
 
 gem 'carrierwave'
 gem 'devise'
 gem 'faker'
 gem 'mini_magick'
+
+gem 'rdoc'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery-tags-input'
