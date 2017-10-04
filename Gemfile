@@ -5,12 +5,9 @@ gemspec
 
 gem 'rails', '~> 5.0.0'
 
-gem 'carrierwave'
-gem 'devise'
-gem 'faker'
-gem 'mini_magick'
-
 gem 'rdoc'
+gem 'carrierwave'
+gem 'mini_magick'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery-tags-input'
@@ -19,12 +16,12 @@ end
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'rspec-rails'
 end
 
 group :test do
   gem 'pg'
-
+  gem 'faker'
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
   gem 'sprockets-rails', require: 'sprockets/railtie'

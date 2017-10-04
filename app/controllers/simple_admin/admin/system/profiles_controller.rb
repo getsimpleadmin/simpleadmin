@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class ProfilesController < BaseController
+      class ProfilesController < ApplicationController
         def edit; end
 
         def update

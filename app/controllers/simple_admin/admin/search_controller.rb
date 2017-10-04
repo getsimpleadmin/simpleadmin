@@ -1,6 +1,6 @@
 module SimpleAdmin
   module Admin
-    class SearchController < BaseController
+    class SearchController < ApplicationController
       PER_PAGE = 10
 
       before_action :initialize_fields_entities!
