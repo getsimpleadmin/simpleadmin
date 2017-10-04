@@ -1,6 +1,6 @@
 module SimpleAdmin
   module Admin
-    class PostsController < BaseController
+    class PostsController < ApplicationController
       include ResourceController::DynamicFields
       include ResourceController::Crudify
 

@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class UsersController < BaseController
+      class UsersController < ApplicationController
         include ResourceController::Crudify
 
         def update
