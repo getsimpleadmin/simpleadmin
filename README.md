@@ -33,6 +33,7 @@ Default admin credentials:
 ```
 
 ### Devise integration
+Simple Admin also supports devise gem, it's can simply integrated with the following code.
 
 ```ruby
   # config/routes.rb
@@ -55,7 +56,7 @@ Default admin credentials:
   end
 ```
 
-Remove current_user and authenticate_user! methods
+Remove current_user and authenticate_user! methods with `raise NotImplemented` error and keep the following.
 
 ```ruby
   # app/controllers/simple_admin/admin/application_controller.rb
