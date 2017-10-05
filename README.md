@@ -14,19 +14,11 @@ Add it to your Gemfile:
 gem 'simple_admin', git: 'https://github.com/dmitriy-strukov/simple_admin.git'
 ```
 
-Simple Admin also required the following gems:
-
-```ruby
-gem 'mini_magick'
-gem 'carrierwave'
-```
-
-The following generators will create devise, rolify initializers, core migration and devise route for SimpleAdmin::User.  
+The following generators will create rolify initializer and core migrations.  
 
 ```ruby
 rails generate simple_admin:install
 rails generate simple_admin:migration
-rails generate simple_admin:routes
 
 rails db:migrate
 ```
@@ -38,4 +30,49 @@ Default admin credentials:
 ```ruby
   login:    admin@example.com
   password: example
+```
+
+### Devise integration
+
+```ruby
+  # config/routes.rb
+
+  Rails.application.routes.draw do
+    devise_for :users, class_name: 'SimpleAdmin::User'
+  end
+```
+
+```ruby
+  # app/models/simple_admin/user.rb
+
+  module SimpleAdmin
+    class User < Base
+      devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+      ...
+    end
+  end
+```
+
+Remove current_user and authenticate_user! methods
+
+```ruby
+  # app/controllers/simple_admin/admin/application_controller.rb
+
+  module SimpleAdmin
+    module Admin
+      class ApplicationController < ActionController::Base
+        layout 'simple_admin'
+
+        before_action :authenticate_user!
+
+        private
+
+          def current_ability
+            SimpleAdmin::Ability.new(current_user)
+          end
+      end
+    end
+  end
 ```
