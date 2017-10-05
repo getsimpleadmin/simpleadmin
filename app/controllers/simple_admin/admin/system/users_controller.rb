@@ -1,18 +1,8 @@
 module SimpleAdmin
   module Admin
     module System
-      class UsersController < BaseController
+      class UsersController < ApplicationController
         include ResourceController::Crudify
-
-        def update
-          @resource = model_klass.find(params[:id])
-
-          if update_resource_by_password(@resource)
-            redirect_to after_update_path, notice: t('.success')
-          else
-            render :edit
-          end
-        end
 
         def create
           @resource =
@@ -50,23 +40,6 @@ module SimpleAdmin
           def resource_params
             params.require(:simple_admin_user).permit(:email, :password, :password_confirmation,
                                                       profile_attributes: %i[first_name last_name])
-          end
-
-          def update_resource_by_password(resource)
-            if password_change?
-              resource.update(resource_params)
-            else
-              resource.update_without_password(resource_params)
-            end
-          end
-
-          def password_change?
-            case params[:password_change]
-            when 'true'
-              true
-            when 'false'
-              false
-            end
           end
       end
     end

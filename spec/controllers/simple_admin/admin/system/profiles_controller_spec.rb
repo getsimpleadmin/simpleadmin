@@ -3,7 +3,9 @@ require 'spec_helper'
 RSpec.describe SimpleAdmin::Admin::System::ProfilesController, type: :controller do
   let(:user) { create :user, :with_role, user_role: :admin }
 
-  before { sign_in user }
+  before do
+    sign_in user
+  end
 
   describe '#edit' do
     let(:params) do

@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class UserRolesController < BaseController
+      class UserRolesController < ApplicationController
         include ResourceController::Crudify
 
         def model_klass

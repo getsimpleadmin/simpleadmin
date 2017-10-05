@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class EntityFieldsController < BaseController
+      class EntityFieldsController < ApplicationController
         def create
           @entity_field = SimpleAdmin::EntityField.new(entity_field_params)
           @entity_field.save
