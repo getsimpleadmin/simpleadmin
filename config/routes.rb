@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
         resources :users
         resources :user_roles
+        resources :user_permissions, only: [:create, :update, :destroy]
 
         resources :profiles, only: [:edit, :update]
 

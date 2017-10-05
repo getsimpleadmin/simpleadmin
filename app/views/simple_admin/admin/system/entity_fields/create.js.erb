@@ -1,12 +1,12 @@
-<% if @entity_field.errors.present? %>
+<% if @resource.errors.present? %>
   $.notify(
     'Something went wrong!',
     'error',
     { autoHideDelay: 3000, position: 'right' }
   );
 <% else %>
-  var formContent = "<%= j render template: 'simple_admin/admin/system/entities/entity_fields/edit', locals: { entity_field: @entity_field } %>";
-  var fieldPresentation = '<%= @entity_field.presentation %>';
+  var formContent = "<%= j render template: 'simple_admin/admin/system/entities/entity_fields/edit', locals: { entity_field: @resource } %>";
+  var fieldPresentation = '<%= @resource.presentation %>';
 
   if(fieldPresentation == 'collection') {
     $('#index-fields .content').remove();
