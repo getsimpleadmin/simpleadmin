@@ -19,7 +19,7 @@ module SimpleAdmin
 
       def build!
         unless SimpleAdmin::Admin.const_defined?(controller_name)
-          Admin.const_set(controller_name, Class.new(SimpleAdmin::Admin::BaseController))
+          Admin.const_set(controller_name, Class.new(SimpleAdmin::Admin::ApplicationController))
         end
       end
 
