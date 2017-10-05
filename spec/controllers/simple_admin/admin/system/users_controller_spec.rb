@@ -17,9 +17,11 @@ RSpec.describe SimpleAdmin::Admin::System::UsersController, type: :controller do
   let(:resource_params) do
     {
       id: resource.id,
-      simple_admin_user: { email: resource_attributes[:value], password: '123456', password_confirmation: '123456' }
+      simple_admin_user: { email: resource_attributes[:value] }
     }
   end
+
+  before { allow_any_instance_of(SimpleAdmin::User).to receive(:update_without_password).and_return(double) }
 
   it_behaves_like :controller_crud
 end

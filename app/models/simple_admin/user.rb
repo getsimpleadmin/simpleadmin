@@ -2,9 +2,6 @@ module SimpleAdmin
   class User < Base
     rolify role_cname: 'SimpleAdmin::Role'
 
-    devise :database_authenticatable, :registerable,
-           :recoverable, :rememberable, :trackable, :validatable
-
     has_one :profile, dependent: :destroy
 
     has_many :posts

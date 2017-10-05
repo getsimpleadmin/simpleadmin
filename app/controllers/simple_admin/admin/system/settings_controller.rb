@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class SettingsController < BaseController
+      class SettingsController < ApplicationController
         def index
           @setting_site_url = SimpleAdmin::Setting.site_url
         end

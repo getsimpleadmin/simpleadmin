@@ -1,7 +1,9 @@
 shared_examples :controller_crud do
   let(:user) { create :user, :with_role, user_role: :admin }
 
-  before { sign_in user }
+  before do
+    sign_in user
+  end
 
   describe '#index' do
     subject { get :index }
