@@ -1,0 +1,9 @@
+<div class="row" data-permission-id="<%= permission.to_param %>">
+  <div class="col-md-12">
+      <div class="block">
+          <div class="block-content block-content-narrow">
+            <%= render 'simple_admin/admin/system/user_roles/user_permissions/form', resource: permission.role, form_resource: permission, form_url: admin_system_user_permission_path(permission) %>
+          </div>
+      </div>
+  </div>
+</div>
