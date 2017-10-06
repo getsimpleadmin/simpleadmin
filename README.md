@@ -1,8 +1,8 @@
 # SimpleAdmin
 
-[![Build Status](https://travis-ci.org/dmitriy-strukov/simple_admin.svg?branch=master)](https://travis-ci.org/dmitriy-strukov/simple_admin)
-[![Code Climate](https://codeclimate.com/github/dmitriy-strukov/simple_admin/badges/gpa.svg)](https://codeclimate.com/github/dmitriy-strukov/simple_admin)
-[![Inline docs](http://inch-ci.org/github/dmitriy-strukov/simple_admin.svg)](http://inch-ci.org/github/dmitriy-strukov/simple_admin)
+[![Build Status](https://travis-ci.org/evil-raccoon/simple_admin.svg?branch=master)](https://travis-ci.org/evil-raccoon/simple_admin)
+[![Code Climate](https://codeclimate.com/github/evil-raccoon/simple_admin/badges/gpa.svg)](https://codeclimate.com/github/evil-raccoon/simple_admin)
+[![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
 
 Simple Admin is a Ruby on Rails framework for creating admin dashboards in an instant.
 
@@ -11,7 +11,7 @@ Simple Admin supports only Rails 5.1.3.
 Add it to your Gemfile:
 
 ```ruby
-gem 'simple_admin', git: 'https://github.com/dmitriy-strukov/simple_admin.git'
+gem 'simple_admin', git: 'https://github.com/evil-raccoon/simple_admin.git'
 ```
 
 The following generators will create rolify initializer and core migrations.  
