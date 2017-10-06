@@ -11,7 +11,7 @@ module SimpleAdmin
         private
 
           def resource_params
-            params.require(:simple_admin_user_permission).permit(:action, :action_modificator, :model_klass_name, :role)
+            params.require(:simple_admin_user_permission).permit(:action, :action_modificator, :model_klass_name, :role_id)
           end
       end
     end

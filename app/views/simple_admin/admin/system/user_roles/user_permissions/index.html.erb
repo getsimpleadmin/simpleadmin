@@ -4,7 +4,7 @@
         <div class="block-header">
             <h3 class="block-title">User Permissions</h3>
         </div>
-          <div class="block-content block-content-narrow">
+          <div class="block-content block-content-narrow" id="permissions-list">
             <% if @resource.user_permissions.present? %>
               <% @resource.user_permissions.each do |permission| %>
                  <% next unless permission.persisted? %>
