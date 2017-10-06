@@ -13,6 +13,8 @@ module SimpleAdmin
     autoload :ControllerBuilder, 'simple_admin/resource_controller/controller_builder'
 
     autoload :Crudify, 'simple_admin/resource_controller/crudify'
+    autoload :CrudifyDynamicResource, 'simple_admin/resource_controller/crudify_dynamic_resource'
+
     autoload :DynamicFields, 'simple_admin/resource_controller/dynamic_fields'
   end
 
