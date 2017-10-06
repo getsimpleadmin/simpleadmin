@@ -2,6 +2,8 @@ AllCops:
   Exclude:
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
+    - 'spec/example_app/**/*'
+    - 'lib/generators/**/*'
     - 'tmp/**/*'
     - 'bin/*'
     - 'spec/support'
