@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :entity_field, class: SimpleAdmin::EntityField do
     name { :id }
-    presentation { :index }
+    presentation { :collection }
   end
 end
