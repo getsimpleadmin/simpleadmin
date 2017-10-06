@@ -1,6 +1,25 @@
 module SimpleAdmin
   module ResourceController
     module CrudifyDynamicResource
+      # Concern that include methods for remote actions
+      #
+      # @example
+      #   class PostsController
+      #     include SimpleAdmin::ResourceController::CrudifyDynamicResource
+      #
+      #     def model_klass
+      #       Post
+      #     end
+      #
+      #     private
+      #
+      #       def resource_params
+      #         params.require(:simple_admin_post).permit(:title, :description)
+      #       end
+      #   end
+      #
+      # @since 0.1.1
+
       extend ActiveSupport::Concern
 
       included do

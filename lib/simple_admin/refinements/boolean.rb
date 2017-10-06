@@ -2,7 +2,7 @@ module SimpleAdmin
   module Refinements
     module Boolean
       # Module with refinements for Boolean classes
-      # @since 0.2.0
+      # @since 0.1.1
 
       refine TrueClass do
         # Refinement for TrueClass, add humanize method

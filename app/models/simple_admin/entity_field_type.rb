@@ -17,7 +17,7 @@ module SimpleAdmin
       #   SimpleAdmin::EntityField.create_string_field(name: :title, entity: entity, presentation: :collection)
       #   SimpleAdmin::EntityField.create_number_field(name: :id, entity: entity, presentation: :collection)
       #
-      # @since 0.2.0
+      # @since 0.1.1
       def build_helper_methods!
         pluck(:name).each do |field_type_name|
           SimpleAdmin::EntityField.define_singleton_method("create_#{field_type_name}_field") do |params|
