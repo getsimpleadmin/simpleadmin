@@ -3,7 +3,7 @@ module SimpleAdmin
     class ActionsBuilder
       # Build CRUD actions for controller
       #
-      # @since 0.2.0
+      # @since 0.1.1
 
       def self.initialize_actions!(controller_klass, model_name)
         controller_klass.class_eval do

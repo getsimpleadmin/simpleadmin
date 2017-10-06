@@ -10,7 +10,7 @@ module SimpleAdmin
       #
       #    ...
       #  end
-      # @since 0.2.0
+      # @since 0.1.1
 
       extend ActiveSupport::Concern
 
@@ -19,7 +19,7 @@ module SimpleAdmin
 
         # Receives entity and entity fields by model class and field_presentation
         #
-        # @since 0.2.0
+        # @since 0.1.1
         def initialize_fields_entities!
           @entity = SimpleAdmin::Entity.find_by(model_klass_name: model_klass.to_s)
           @entity_fields = @entity.entity_fields.where(presentation: field_presentation)

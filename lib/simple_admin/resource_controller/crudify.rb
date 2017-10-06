@@ -2,7 +2,8 @@ module SimpleAdmin
   module ResourceController
     module Crudify
       # Concern that include all CRUD methods
-      # @example PostsController with ResourceCrud concern
+      #
+      # @example
       #  class PostsController
       #    include SimpleAdmin::ResourceController::Crudify
       #
@@ -25,11 +26,11 @@ module SimpleAdmin
       #    private
       #
       #    def resource_params
-      #      params.require(:simple_admin_entity).permit(:model_klass_name, :model_plural_name)
+      #      params.require(:simple_admin_post).permit(:title, :description)
       #    end
       #  end
       #
-      # @since 0.2.0
+      # @since 0.1.1
 
       extend ActiveSupport::Concern
 
