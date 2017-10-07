@@ -1,5 +1,10 @@
 en:
   simple_admin:
+    table:
+      actions: Actions
+    actions:
+      confirm: Are you sure?
+      logout: Log out
     resource:
       index:
         title: '%{resource_name}'
