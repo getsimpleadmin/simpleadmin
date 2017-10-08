@@ -7,6 +7,7 @@ module SimpleAdmin
 
       def copy_initializer
         template 'initializers/rolify.rb.erb', 'config/initializers/rolify.rb'
+        template 'initializers/simple_admin.rb.erb', 'config/initializers/simple_admin.rb'
       end
 
       def create_application_controller

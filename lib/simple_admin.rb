@@ -24,6 +24,7 @@ module SimpleAdmin
   end
 
   autoload :Search, 'simple_admin/search'
+  autoload :Menu, 'simple_admin/menu'
 
   class << self
     def setup_controller!(resource_name, model_klass_name)
