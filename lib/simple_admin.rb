@@ -24,6 +24,7 @@ module SimpleAdmin
   end
 
   autoload :Search, 'simple_admin/search'
+  autoload :DataSourceVerifier, 'simple_admin/data_source_verifier'
 
   class << self
     def setup_controller!(resource_name, model_klass_name)

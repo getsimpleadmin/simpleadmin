@@ -14,10 +14,7 @@ require 'rails-assets-jquery-tags-input'
 module SimpleAdmin
   class Engine < Rails::Engine
     initializer 'simple_admin.precompile', group: :all do |app|
-      app.config.assets.precompile += [
-        'simple_admin/application.css',
-        'simple_admin/application.js'
-      ]
+      app.config.assets.precompile += %w(simple_admin/application.css simple_admin/application.js)
     end
   end
 end
