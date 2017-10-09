@@ -26,8 +26,10 @@
                               </thead>
                               <tbody>
                                 <tr role="row" class="odd">
-                                    <td class="font-w600"><%= @setting_site_url.label %></td>
-                                    <td class="hidden-xs"><%= best_in_place @setting_site_url, :value, url: admin_system_setting_path(@setting_site_url) %></td>
+                                    <% if @setting_site_url.present? %>
+                                      <td class="font-w600"><%= @setting_site_url.label %></td>
+                                      <td class="hidden-xs"><%= best_in_place @setting_site_url, :value, url: admin_system_setting_path(@setting_site_url) %></td>
+                                    <% end %>
                                 </tr>
                               </tbody>
                           </table>
