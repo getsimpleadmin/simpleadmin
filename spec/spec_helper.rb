@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] = "test"
 
 require 'bundler/setup'
 require 'simplecov'
+require 'codecov'
 
 require 'action_controller'
 require 'active_record'
@@ -20,6 +21,7 @@ Dir[root.join("spec/support/**/*.rb")].each { |file| require file }
 Dir[root.join("spec/factories/**/*.rb")].each { |file| require file }
 
 SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 Capybara::Screenshot.autosave_on_failure = true
 
