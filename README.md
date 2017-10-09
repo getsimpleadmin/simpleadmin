@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/evil-raccoon/simple_admin.svg?branch=master)](https://travis-ci.org/evil-raccoon/simple_admin)
 [![Code Climate](https://codeclimate.com/github/evil-raccoon/simple_admin/badges/gpa.svg)](https://codeclimate.com/github/evil-raccoon/simple_admin)
+[![codecov](https://codecov.io/gh/evil-raccoon/simple_admin/branch/master/graph/badge.svg)](https://codecov.io/gh/evil-raccoon/simple_admin)
 [![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
 
 Simple Admin is a Ruby on Rails framework for creating admin dashboards in an instant.
