@@ -7,6 +7,11 @@ module SimpleAdmin
     has_many :posts
     has_many :comments
 
+    has_one :users_simple_admin_role
+    has_one :role, through: :users_simple_admin_role
+
+    has_many :permissions, through: :role
+
     accepts_nested_attributes_for :profile, update_only: true
     delegate :avatar, :first_name, :last_name, to: :profile, allow_nil: true
 
@@ -14,15 +19,6 @@ module SimpleAdmin
 
     def full_name
       "#{first_name} #{last_name}"
-    end
-
-    # TODO: HARDCODE
-    def role
-      roles.first
-    end
-
-    def permissions
-      SimpleAdmin::UserPermission.joins(:role).where(simple_admin_roles: { name: role.name })
     end
 
     private
