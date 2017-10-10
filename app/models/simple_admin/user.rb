@@ -10,7 +10,9 @@ module SimpleAdmin
     has_one :users_simple_admin_role
     has_one :role, through: :users_simple_admin_role
 
-    has_many :permissions, through: :role
+    has_many :user_permissions, through: :role
+
+    alias_method :permissions, :user_permissions
 
     accepts_nested_attributes_for :profile, update_only: true
     delegate :avatar, :first_name, :last_name, to: :profile, allow_nil: true
