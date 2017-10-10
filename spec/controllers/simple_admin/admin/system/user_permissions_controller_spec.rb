@@ -4,6 +4,8 @@ RSpec.describe SimpleAdmin::Admin::System::UserPermissionsController, type: :con
   let(:role) { SimpleAdmin::Role.find_by(name: :admin) }
   let(:resource) { create :user_permission, role: role }
 
+  before { SimpleAdmin::UserPermission.delete_all }
+
   let(:resource_attributes) do
     {
       name: :action,
