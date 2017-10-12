@@ -79,14 +79,6 @@ Remove current_user and authenticate_user! methods with `raise NotImplemented` e
   end
 ```
 
-## Contributing
-
-1. Fork it ( https://github.com/evil-raccoon/simple_admin/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
 ## Dependencies
 
 We try to minimize the use of third-party libraries, but Simple Admin built with the following open source projects:
@@ -99,6 +91,16 @@ Tool                  | Description
 
 [Kaminari]: https://github.com/kaminari/kaminari
 [Rolify]: https://github.com/RolifyCommunity/rolify
+
+## Contributing
+
+1. Fork it ( https://github.com/evil-raccoon/simple_admin/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+
 [CanCanCan]: https://github.com/CanCanCommunity/cancancan
 
 ## Copyright
