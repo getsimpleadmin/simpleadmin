@@ -78,3 +78,17 @@ Remove current_user and authenticate_user! methods with `raise NotImplemented` e
     end
   end
 ```
+
+## Dependencies
+
+We try to minimize the use of third-party libraries, but Simple Admin built with the following open source projects:
+
+Tool                  | Description
+--------------------- | -----------
+[Kaminari]            | Paginator for Ruby webapps
+[Rolify]              | Role management library with resource scoping
+[CanCanCan]           | The authorization Gem for Ruby on Rails.
+
+[Kaminari]: https://github.com/kaminari/kaminari
+[Rolify]: https://github.com/RolifyCommunity/rolify
+[CanCanCan]: https://github.com/CanCanCommunity/cancancan
