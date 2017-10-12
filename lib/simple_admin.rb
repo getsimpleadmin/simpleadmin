@@ -21,6 +21,7 @@ module SimpleAdmin
   module Helpers
     autoload :UrlHelper, 'simple_admin/helpers/url_helper'
     autoload :BooleanHelper, 'simple_admin/helpers/boolean_helper'
+    autoload :ModelSerializationHelper, 'simple_admin/helpers/model_serialization_helper'
   end
 
   autoload :Search, 'simple_admin/search'

@@ -26,7 +26,7 @@ Style/Encoding:
 Style/Documentation:
   Enabled: false
 
-Style/SpaceAroundEqualsInParameterDefault:
+Layout/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
 
 Style/ParallelAssignment:
@@ -49,8 +49,9 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 25
 
-Style/IndentationConsistency:
-  Enabled: false
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: normal
 
 Style/ClassAndModuleChildren:
   Enabled: false
