@@ -23,19 +23,60 @@ module SimpleAdmin
   end
 
   class MenuItem
-    attr_accessor :title, :route
+    attr_accessor :label, :route, :icon
 
     def initialize(&block)
       instance_eval &block
+      after_initialize
     end
 
-    def title(&block)
-      self.title = block.call
+    def label(&block)
+      if block_given?
+        self.label = yield
+      else
+        self.instance_variable_get(:@label)
+      end
     end
 
     def route(&block)
-      self.route = block.call
-      Menu.instance.items << self
+      if block_given?
+        self.route = block
+      else
+        self.instance_variable_get(:@route)
+      end
+    end
+
+    def icon(&block)
+      if block_given?
+        self.icon = yield
+      else
+        self.instance_variable_get(:@icon)
+      end
+    end
+
+    def set_route(__routing_mapper__)
+      __routing_mapper__.public_send(route.call.method_name,
+                                     route.call.resource_name,
+                                     route.call.params)
+    end
+
+    def method_missing(method_name, *args, &block)
+      MenuRoute.new(method_name, *args)
+    end
+
+    private
+
+      def after_initialize
+        Menu.instance.items << self
+      end
+  end
+
+  class MenuRoute
+    attr_accessor :method_name, :resource_name, :params
+
+    def initialize(method_name, *args)
+      @method_name = method_name
+      @resource_name, @params = *args
     end
   end
 end
