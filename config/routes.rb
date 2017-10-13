@@ -14,10 +14,10 @@ Rails.application.routes.draw do
       end
 
       namespace :system do
-        resources :settings, only: [:index, :update]
+        SimpleAdmin::Menu.items.each do |menu_item|
+          menu_item.set_route(self)
+        end
 
-        resources :users
-        resources :user_roles
         resources :user_permissions, only: [:create, :update, :destroy]
 
         resources :profiles, only: [:edit, :update]

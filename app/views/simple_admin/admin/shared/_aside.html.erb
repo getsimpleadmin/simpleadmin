@@ -17,26 +17,14 @@
                       <span class="sidebar-mini-hide">System</span>
                     </li>
 
-                    <li>
-                      <%= link_to admin_system_settings_path do %>
-                        <i class="si si-settings"></i>
-                        <span class="sidebar-mini-hide">Settings</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_system_users_path do %>
-                        <i class="si si-users"></i>
-                        <span class="sidebar-mini-hide">Users</span>
-                      <% end %>
-                    </li>
-
-                    <li>
-                      <%= link_to admin_system_user_roles_path do %>
-                        <i class="si si-user-follow"></i>
-                        <span class="sidebar-mini-hide">User Roles</span>
-                      <% end %>
-                    </li>
+                    <% SimpleAdmin::Menu.items.each do |menu_item| %>
+                      <li>
+                        <%= link_to public_send("admin_system_#{menu_item.route.call.resource_name}_path") do %>
+                          <i class="si <%= menu_item.icon %>"></i>
+                          <span class="sidebar-mini-hide"><%= menu_item.label %></span>
+                        <% end %>
+                      </li>
+                    <% end %>
 
                     <% if can? :read, SimpleAdmin::Entity %>
                       <li>
