@@ -1,11 +1,22 @@
 SimpleAdmin::Menu.configure do
   menu_item do
-    title { 'Test' }
-    route { 'Test' }
+    label { 'Settings' }
+    icon  { 'si-settings' }
+
+    route { resources :settings, only: [:index, :update] }
   end
 
   menu_item do
-    title { 'Another' }
-    route { 'Another' }
+    label { 'Users' }
+    icon  { 'si-users' }
+
+    route { resources :users }
+  end
+
+  menu_item do
+    label { 'User Roles' }
+    icon  { 'si-user-follow' }
+
+    route { resources :user_roles }
   end
 end

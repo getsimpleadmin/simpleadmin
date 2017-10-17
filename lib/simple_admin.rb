@@ -23,19 +23,17 @@ module SimpleAdmin
     autoload :BooleanHelper, 'simple_admin/helpers/boolean_helper'
   end
 
-  autoload :Search, 'simple_admin/search'
+  module Menu
+    autoload :Item, 'simple_admin/menu/item'
+    autoload :Route, 'simple_admin/menu/route'
+  end
+
   autoload :Menu, 'simple_admin/menu'
+  autoload :Config, 'simple_admin/config'
+
+  autoload :Search, 'simple_admin/search'
 
   class << self
-    def setup_controller!(resource_name, model_klass_name)
-      controller_builder = SimpleAdmin::ResourceController::ControllerBuilder.new(resource_name)
-      controller_builder.build!
 
-      SimpleAdmin::ResourceController::ActionsBuilder.initialize_actions!(controller_builder.controller_klass, model_klass_name)
-    end
-
-    def core_path
-      Gem.loaded_specs['simple_admin'].full_gem_path
-    end
   end
 end
