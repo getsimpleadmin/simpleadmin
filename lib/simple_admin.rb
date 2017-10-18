@@ -29,6 +29,7 @@ module SimpleAdmin
   end
 
   autoload :MenuDsl, 'simple_admin/menu_dsl'
+  autoload :RoutesMounter, 'simple_admin/routes_mounter'
   autoload :Config, 'simple_admin/config'
 
   class << self
@@ -64,6 +65,19 @@ module SimpleAdmin
     autoload :Search, 'simple_admin/search'
 
   class << self
+    def mount_entities!(routing_mapper)
+      SimpleAdmin::Entity.resource_attributes.each do |resource_name, model_klass_name|
+        routing_mapper.resources(resource_name)
 
+        controller_builder = SimpleAdmin::ResourceController::ControllerBuilder.new(resource_name)
+        controller_builder.build!
+
+        SimpleAdmin::ResourceController::ActionsBuilder.initialize_actions!(controller_builder.controller_klass, model_klass_name)
+      end
+    end
+
+    def mount_system_routes!(routing_mapper)
+      SimpleAdmin::RoutesMounter.mount_system_routes!(routing_mapper)
+    end
   end
 end
