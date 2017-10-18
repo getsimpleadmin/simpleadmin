@@ -71,7 +71,7 @@ module SimpleAdmin
       end
 
       def template_exists?(template_path)
-        !Dir.glob(template_path).empty? || !Dir.glob("#{SimpleAdmin.core_path}/#{template_path}").empty?
+        !Dir.glob(template_path).empty? || !Dir.glob("#{core_path}/#{template_path}").empty?
       end
 
       def core_path

@@ -5,10 +5,12 @@ Rails.application.routes.draw do
 
       get :search, to: 'search#index'
 
-      # TODO: Entities routes
+      if ActiveRecord::Base.connection.table_exists?(:simple_admin_entities)
+        SimpleAdmin.mount_entities!(self)
+      end
 
       namespace :system do
-        # TODO: System routes
+        SimpleAdmin.mount_system_routes!(self)
 
         resources :user_permissions, only: [:create, :update, :destroy]
         resources :profiles, only: [:edit, :update]
