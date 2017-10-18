@@ -35,6 +35,10 @@ module SimpleAdmin
 
     private
 
+      def initialize_helper_methods!
+        self.class.build_helper_methods!
+      end
+
       def view_templates_presence
         validate_collection_template!
         validate_form_template!
@@ -67,11 +71,11 @@ module SimpleAdmin
       end
 
       def template_exists?(template_path)
-        !Dir.glob(template_path).empty? || !Dir.glob("#{SimpleAdmin.core_path}/#{template_path}").empty?
+        !Dir.glob(template_path).empty? || !Dir.glob("#{core_path}/#{template_path}").empty?
       end
 
-      def initialize_helper_methods!
-        self.class.build_helper_methods!
+      def core_path
+        Gem.loaded_specs['simple_admin'].full_gem_path
       end
   end
 end

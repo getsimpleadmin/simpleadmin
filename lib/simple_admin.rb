@@ -23,18 +23,31 @@ module SimpleAdmin
     autoload :BooleanHelper, 'simple_admin/helpers/boolean_helper'
   end
 
+  module Menu
+    autoload :Item, 'simple_admin/menu/item'
+    autoload :Route, 'simple_admin/menu/route'
+  end
+
+  autoload :MenuDsl, 'simple_admin/menu_dsl'
+  autoload :RoutesMounter, 'simple_admin/routes_mounter'
+  autoload :Config, 'simple_admin/config'
+
   autoload :Search, 'simple_admin/search'
 
   class << self
-    def setup_controller!(resource_name, model_klass_name)
-      controller_builder = SimpleAdmin::ResourceController::ControllerBuilder.new(resource_name)
-      controller_builder.build!
+    def mount_entities!(routing_mapper)
+      SimpleAdmin::Entity.resource_attributes.each do |resource_name, model_klass_name|
+        routing_mapper.resources(resource_name)
 
-      SimpleAdmin::ResourceController::ActionsBuilder.initialize_actions!(controller_builder.controller_klass, model_klass_name)
+        controller_builder = SimpleAdmin::ResourceController::ControllerBuilder.new(resource_name)
+        controller_builder.build!
+
+        SimpleAdmin::ResourceController::ActionsBuilder.initialize_actions!(controller_builder.controller_klass, model_klass_name)
+      end
     end
 
-    def core_path
-      Gem.loaded_specs['simple_admin'].full_gem_path
+    def mount_system_routes!(routing_mapper)
+      SimpleAdmin::RoutesMounter.mount_system_routes!(routing_mapper)
     end
   end
 end

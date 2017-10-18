@@ -6,20 +6,13 @@ Rails.application.routes.draw do
       get :search, to: 'search#index'
 
       if ActiveRecord::Base.connection.table_exists?(:simple_admin_entities)
-        SimpleAdmin::Entity.resource_attributes.each do |resource_name, model_klass_name|
-          resources resource_name
-
-          SimpleAdmin.setup_controller!(resource_name, model_klass_name)
-        end
+        SimpleAdmin.mount_entities!(self)
       end
 
       namespace :system do
-        resources :settings, only: [:index, :update]
+        SimpleAdmin.mount_system_routes!(self)
 
-        resources :users
-        resources :user_roles
         resources :user_permissions, only: [:create, :update, :destroy]
-
         resources :profiles, only: [:edit, :update]
 
         resources :entities

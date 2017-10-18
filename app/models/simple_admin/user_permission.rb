@@ -15,9 +15,7 @@ module SimpleAdmin
     private
 
       def record_uniqueness
-        if already_exists?
-          errors.add(:record, 'already exists')
-        end
+        errors.add(:record, 'already exists') if already_exists?
       end
 
       def already_exists?

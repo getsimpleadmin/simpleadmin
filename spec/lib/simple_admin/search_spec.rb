@@ -1,5 +1,4 @@
 require 'spec_helper'
-
 require 'simple_admin/search'
 
 RSpec.describe SimpleAdmin::Search do
