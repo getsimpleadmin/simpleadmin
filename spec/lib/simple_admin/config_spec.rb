@@ -19,18 +19,18 @@ RSpec.describe SimpleAdmin::Config do
   end
 
   describe '.menu' do
-      before do
-        described_class.setup do |config|
-          config.menu.configure do
-            item do
-              label { :example }
-              icon  { :example }
+    before do
+      described_class.setup do |config|
+        config.menu.configure do
+          item do
+            label { :example }
+            icon  { :example }
 
-              route { :example }
-            end
+            route { :example }
           end
         end
       end
+    end
 
       subject(:menu_items) { described_class.menu_items }
 

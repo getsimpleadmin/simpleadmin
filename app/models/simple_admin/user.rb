@@ -12,7 +12,7 @@ module SimpleAdmin
 
     has_many :user_permissions, through: :role
 
-    alias_method :permissions, :user_permissions
+    alias permissions user_permissions
 
     accepts_nested_attributes_for :profile, update_only: true
     delegate :avatar, :first_name, :last_name, to: :profile, allow_nil: true

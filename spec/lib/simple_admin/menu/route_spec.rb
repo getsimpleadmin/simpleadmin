@@ -7,7 +7,7 @@ RSpec.describe SimpleAdmin::Menu::Route do
 
   let(:params) do
     {
-      only: [:index, :update]
+      only: %i[index update]
     }
   end
 

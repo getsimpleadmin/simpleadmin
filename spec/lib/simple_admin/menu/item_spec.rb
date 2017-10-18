@@ -3,7 +3,7 @@ require 'simple_admin/menu/item'
 
 RSpec.describe SimpleAdmin::Menu::Item do
   let(:item_block) do
-    Proc.new do
+    proc do
       label { :example }
       icon  { :example }
 

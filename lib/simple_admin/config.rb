@@ -7,9 +7,9 @@ module SimpleAdmin
     attr_accessor :per_page, :menu_items
 
     class << self
-      def setup(&block)
-        instance.menu_items  = []
-        
+      def setup
+        instance.menu_items = []
+
         yield(instance)
       end
 

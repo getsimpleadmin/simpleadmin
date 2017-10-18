@@ -5,10 +5,10 @@ FactoryGirl.define do
 
     params do
       {
-        only: [:index, :update]
+        only: %i[index update]
       }
     end
 
-    initialize_with { new(method_name, *[resource_name, params]) }
+    initialize_with { new(method_name, resource_name, params) }
   end
 end
