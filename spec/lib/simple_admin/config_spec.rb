@@ -19,27 +19,25 @@ RSpec.describe SimpleAdmin::Config do
   end
 
   describe '.menu' do
-      let(:label) { :example }
-      let(:icon)  { :example }
-
-      let(:route) { double }
-
       before do
         described_class.setup do |config|
           config.menu.configure do
-            menu_item do
-              label { label }
-              icon  { icon }
+            item do
+              label { :example }
+              icon  { :example }
 
-              route { route }
+              route { :example }
             end
           end
         end
       end
 
-      subject { described_class.menu.items }
+      subject(:menu_items) { described_class.menu_items }
 
       it 'return menu items' do
+        expect(menu_items.first.label).to eq :example
+        expect(menu_items.first.icon).to eq :example
+        expect(menu_items.first.route).to eq :example
       end
   end
 end

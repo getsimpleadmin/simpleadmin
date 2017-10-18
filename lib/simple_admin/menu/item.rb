@@ -5,36 +5,21 @@ module SimpleAdmin
 
       def initialize(&block)
         instance_eval &block
-        # Storage.instance.items << self
+        after_initialize_actions
       end
 
       def label
-        self.label = yield
+        @label || self.label = yield
       end
 
       def route
-        self.route = yield
+        @route || self.route = yield
       end
 
       def icon
-        self.icon = yield
+        @icon || self.icon = yield
       end
-      #
-      # def route(&block)
-      #   if block_given?
-      #     self.route = block
-      #   else
-      #     self.instance_variable_get(:@route)
-      #   end
-      # end
-      #
-      # def icon(&block)
-      #   if block_given?
-      #     self.icon = yield
-      #   else
-      #     self.instance_variable_get(:@icon)
-      #   end
-      # end
+
       #
       # def set_route(__routing_mapper__)
       #   __routing_mapper__.public_send(route.call.method_name,
@@ -45,6 +30,12 @@ module SimpleAdmin
       # def method_missing(method_name, *args)
       #   Route.new(method_name, *args)
       # end
+
+      private
+
+        def after_initialize_actions
+          SimpleAdmin::Config.menu_items << self
+        end
     end
   end
 end
