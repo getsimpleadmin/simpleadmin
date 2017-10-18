@@ -3,11 +3,11 @@ gemspec
 
 gem 'rails', '~> 5.0.0'
 
-gem 'rdoc', require: false
 gem 'pry',  require: false
+gem 'rdoc', require: false
 
-gem 'pg'
 gem 'faker'
+gem 'pg'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery-tags-input'
@@ -15,17 +15,16 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
-
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'rails-controller-testing'
-  gem 'sprockets-rails', require: 'sprockets/railtie'
-  gem 'shoulda-matchers'
   gem 'capybara-screenshot'
   gem 'capybara-webkit'
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'sprockets-rails', require: 'sprockets/railtie'
 end
