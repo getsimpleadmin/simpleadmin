@@ -1,5 +1,5 @@
 module SimpleAdmin
-  module Menu
+  module MenuDsl
     extend self
 
     def configure(&block)
@@ -7,8 +7,7 @@ module SimpleAdmin
     end
 
     def item(&block)
-      binding.pry
-      Item.new(&block)
+      Menu::Item.new(&block)
     end
   end
 end

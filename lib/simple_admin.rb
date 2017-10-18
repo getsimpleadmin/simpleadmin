@@ -28,7 +28,7 @@ module SimpleAdmin
     autoload :Route, 'simple_admin/menu/route'
   end
 
-  autoload :Menu, 'simple_admin/menu'
+  autoload :MenuDsl, 'simple_admin/menu_dsl'
   autoload :Config, 'simple_admin/config'
 
   autoload :Search, 'simple_admin/search'
