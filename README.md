@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/evil-raccoon/simple_admin.svg?branch=master)](https://travis-ci.org/evil-raccoon/simple_admin)
 [![Code Climate](https://codeclimate.com/github/evil-raccoon/simple_admin/badges/gpa.svg)](https://codeclimate.com/github/evil-raccoon/simple_admin)
+[![codecov](https://codecov.io/gh/evil-raccoon/simple_admin/branch/master/graph/badge.svg)](https://codecov.io/gh/evil-raccoon/simple_admin)
 [![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
 
 Simple Admin is a Ruby on Rails framework for creating admin dashboards in an instant.
@@ -77,3 +78,33 @@ Remove current_user and authenticate_user! methods with `raise NotImplemented` e
     end
   end
 ```
+
+## Dependencies
+
+We try to minimize the use of third-party libraries, but Simple Admin built with the following open source projects:
+
+Tool                  | Description
+--------------------- | -----------
+[Kaminari]            | Paginator for Ruby webapps
+[Rolify]              | Role management library with resource scoping
+[CanCanCan]           | The authorization Gem for Ruby on Rails.
+
+[Kaminari]: https://github.com/kaminari/kaminari
+[Rolify]: https://github.com/RolifyCommunity/rolify
+
+## Contributing
+
+1. Fork it ( https://github.com/evil-raccoon/simple_admin/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+
+[CanCanCan]: https://github.com/CanCanCommunity/cancancan
+
+## Copyright
+
+Released under MIT License.
+
+Copyright © 2017 Dmitriy Strukov.

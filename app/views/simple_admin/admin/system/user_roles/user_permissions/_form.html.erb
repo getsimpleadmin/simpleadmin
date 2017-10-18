@@ -3,7 +3,7 @@
       <label class="col-xs-12" for="example-text-input">Action</label>
 
       <div class="col-sm-9">
-        <%= f.text_field :action, class: 'form-control' %>
+        <%= f.select :action, [:can, :cannot], class: 'form-control' %>
       </div>
   </div>
 
@@ -11,12 +11,12 @@
       <label class="col-xs-12" for="example-text-input">Action Modificator</label>
 
       <div class="col-sm-9">
-        <%= f.text_field :action_modificator, class: 'form-control' %>
+        <%= f.select :action_modificator, [:manage, :read, :update, :destroy], class: 'form-control' %>
       </div>
   </div>
 
   <div class="form-group">
-      <label class="col-xs-12" for="example-text-input">Model Class</label>
+      <label class="col-xs-12" for="example-text-input">Model Class (or <i>all</i> alias)</label>
 
       <div class="col-sm-9">
         <%= f.text_field :model_klass_name, class: 'form-control' %>

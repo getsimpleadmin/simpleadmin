@@ -13,13 +13,11 @@ module SimpleAdmin
     validate :name_presentation_uniqueness, on: :create
 
     scope :latest, -> { order(created_at: :asc) }
+    scope :labels, -> { latest.pluck(:label) }
+
     scope :search_indexable_columns, -> { collection.where(search_indexable: true).pluck(:name) }
 
     before_create :set_label_default_value!
-
-    def self.labels
-      latest.pluck(:label)
-    end
 
     def id_field?
       name == 'id'

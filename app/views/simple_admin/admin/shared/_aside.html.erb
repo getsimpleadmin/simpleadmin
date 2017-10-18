@@ -11,7 +11,15 @@
             </div>
             <div class="side-content side-content-full">
                 <ul class="nav-main">
-                    <%= render 'simple_admin/admin/shared/dynamic_resources' %>
+                  <% SimpleAdmin::Entity.enabled.each do |entity| %>
+                    <li>
+                      <%= link_to resource_link(entity.model_klass.new, :index) do %>
+                        <i class="si si-docs"></i>
+                        <span class="sidebar-mini-hide"><%= entity.label %></span>
+                      <% end %>
+                    </li>
+                  <% end %>
+
 
                     <li class="nav-main-heading">
                       <span class="sidebar-mini-hide">System</span>
