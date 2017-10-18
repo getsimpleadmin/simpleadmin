@@ -25,11 +25,14 @@
                       <span class="sidebar-mini-hide">System</span>
                     </li>
 
-                    <% SimpleAdmin::Menu.items.each do |menu_item| %>
+                    <% SimpleAdmin::Config.menu_items.each do |menu_item| %>
                       <li>
-                        <%= link_to public_send("admin_system_#{menu_item.route.call.resource_name}_path") do %>
+                        <%= link_to menu_item.route.resource_index_path do %>
                           <i class="si <%= menu_item.icon %>"></i>
-                          <span class="sidebar-mini-hide"><%= menu_item.label %></span>
+
+                          <span class="sidebar-mini-hide">
+                            <%= menu_item.label %>
+                          </span>
                         <% end %>
                       </li>
                     <% end %>
