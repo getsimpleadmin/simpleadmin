@@ -103,7 +103,7 @@ module SimpleAdmin
           end
 
           def per_page
-            SimpleAdmin::PER_PAGE
+            SimpleAdmin::Config.per_page
           end
       end
     end

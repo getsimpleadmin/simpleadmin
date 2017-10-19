@@ -2,8 +2,6 @@ require 'simple_admin/version'
 require 'simple_admin/engine'
 
 module SimpleAdmin
-  PER_PAGE = 10
-
   module Refinements
     autoload :Boolean, 'simple_admin/refinements/boolean'
   end
