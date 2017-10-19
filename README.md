@@ -5,11 +5,10 @@
 [![codecov](https://codecov.io/gh/evil-raccoon/simple_admin/branch/master/graph/badge.svg)](https://codecov.io/gh/evil-raccoon/simple_admin)
 [![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
 
-Simple Admin is a Ruby on Rails framework for creating admin dashboards in an instant.
+A framework for creating admin dashboards in an instant.
 
 ## Getting started
-Simple Admin supports only Rails 5.1.3.
-Add it to your Gemfile:
+Add SimpleAdmin to your Gemfile and run bundle:
 
 ```ruby
 gem 'simple_admin', git: 'https://github.com/evil-raccoon/simple_admin.git'
