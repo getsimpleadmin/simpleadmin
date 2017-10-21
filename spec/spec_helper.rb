@@ -12,7 +12,6 @@ require File.expand_path("../../spec/example_app/config/environment", __FILE__)
 
 require 'active_support/all'
 require 'rspec/rails'
-require 'pry'
 require 'capybara-screenshot/rspec'
 
 root = Pathname.new(Dir.pwd)
