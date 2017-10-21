@@ -1,24 +1,26 @@
-SimpleAdmin::Menu.configure do
+SimpleAdmin::Config.setup do |config|
   config.per_page = 10
-  
-  menu_item do
-    label { 'Settings' }
-    icon  { 'si-settings' }
 
-    route { resources :settings, only: [:index, :update] }
-  end
+  config.menu.configure do
+    item do
+      label { 'Settings' }
+      icon  { 'si-settings' }
 
-  menu_item do
-    label { 'Users' }
-    icon  { 'si-users' }
+      route { resources :settings, only: [:index, :update] }
+    end
 
-    route { resources :users }
-  end
+    item do
+      label { 'Users' }
+      icon  { 'si-users' }
 
-  menu_item do
-    label { 'User Roles' }
-    icon  { 'si-user-follow' }
+      route { resources :users }
+    end
 
-    route { resources :user_roles }
+    item do
+      label { 'User Roles' }
+      icon  { 'si-user-follow' }
+
+      route { resources :user_roles }
+    end
   end
 end
