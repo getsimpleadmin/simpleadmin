@@ -6,7 +6,7 @@ module SimpleAdmin
       menu_system_routes.each do |route|
         routing_mapper.public_send(route.method_name,
                                    route.resource_name,
-                                   route.params)
+                                   route.params || {})
       end
     end
 
