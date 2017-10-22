@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :role, class: SimpleAdmin::Role do
     name { :admin }
   end
