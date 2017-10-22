@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :entity_field, class: SimpleAdmin::EntityField do
     name { :id }
     presentation { :collection }
