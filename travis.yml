@@ -1,5 +1,0 @@
-rvm:
-  - 2.4.1
-language: ruby
-addons:
-  postgresql: 9.6.5

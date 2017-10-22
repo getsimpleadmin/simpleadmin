@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user_permission, class: SimpleAdmin::UserPermission do
     action { :can }
     action_modificator { :manage }

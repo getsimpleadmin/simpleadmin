@@ -1,8 +1,11 @@
 ENV["RAILS_ENV"] = "test"
 
 require 'bundler/setup'
-require 'simplecov'
-require 'codecov'
+
+if ENV["COVERAGE"] == "true"
+  require 'simplecov'
+  require 'codecov'
+end
 
 require 'action_controller'
 require 'active_record'
@@ -12,7 +15,6 @@ require File.expand_path("../../spec/example_app/config/environment", __FILE__)
 
 require 'active_support/all'
 require 'rspec/rails'
-require 'pry'
 require 'capybara-screenshot/rspec'
 
 root = Pathname.new(Dir.pwd)
@@ -20,8 +22,10 @@ root = Pathname.new(Dir.pwd)
 Dir[root.join("spec/support/**/*.rb")].each { |file| require file }
 Dir[root.join("spec/factories/**/*.rb")].each { |file| require file }
 
-SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+if ENV["COVERAGE"] == "true"
+  SimpleCov.start
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 Capybara::Screenshot.autosave_on_failure = true
 

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :menu_route, class: SimpleAdmin::Menu::Route do
     method_name   { :resources }
     resource_name { :settings }

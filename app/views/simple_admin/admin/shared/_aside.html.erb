@@ -27,7 +27,7 @@
 
                     <% SimpleAdmin::Config.menu_items.each do |menu_item| %>
                       <li>
-                        <%= link_to menu_item.route.resource_index_path do %>
+                        <%= link_to resource_index_path(menu_item.route.resource_name) do %>
                           <i class="si <%= menu_item.icon %>"></i>
 
                           <span class="sidebar-mini-hide">
