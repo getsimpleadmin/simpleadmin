@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gemspec
 
 gem 'rails', '~> 5.0.0'
@@ -9,10 +10,8 @@ gem 'rdoc', require: false
 gem 'faker'
 gem 'pg'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery-tags-input'
-  gem 'rails-assets-notifyjs'
-end
+gem 'rails-assets-jquery-tags-input', source: 'https://rails-assets.org'
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'factory_bot_rails'
