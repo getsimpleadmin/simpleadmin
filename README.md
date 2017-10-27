@@ -5,10 +5,13 @@
 [![codecov](https://codecov.io/gh/evil-raccoon/simple_admin/branch/master/graph/badge.svg)](https://codecov.io/gh/evil-raccoon/simple_admin)
 [![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
 
-A framework for creating admin dashboards in an instant.
+A framework for creating admin dashboards in an instant. Try the demo.
+[Try the demo][demo].
 
 ## Getting started
 Add SimpleAdmin to your Gemfile and run bundle:
+
+![simple_admin](https://i.imgur.com/s1fGVRq.png)
 
 ```ruby
 gem 'simple_admin', git: 'https://github.com/evil-raccoon/simple_admin.git'
@@ -107,3 +110,5 @@ Tool                  | Description
 Released under MIT License.
 
 Copyright © 2017 Dmitriy Strukov.
+
+[demo]: https://simpleadmin.herokuapp.com
