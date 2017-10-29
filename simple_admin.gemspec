@@ -46,5 +46,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails-assets-notifyjs'
   spec.add_dependency 'rails-assets-jquery-tags-input'
   spec.add_dependency 'bootstrap-sass'
-  spec.add_dependency 'best_in_place'
 end

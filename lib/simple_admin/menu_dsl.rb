@@ -8,10 +8,10 @@ module SimpleAdmin
     #  SimpleAdmin::Config.setup do |config|
     #    config.menu.configure do
     #      item do
-    #        label { 'Settings' }
-    #        icon  { 'si-settings' }
+    #        label { 'Users' }
+    #        icon  { 'si-users' }
     #
-    #        route { resources :settings, only: [:index, :update] }
+    #        route { resources :users }
     #      end
     #    end
     #  end

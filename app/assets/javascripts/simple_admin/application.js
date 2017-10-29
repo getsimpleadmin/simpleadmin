@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require best_in_place
 //= require notifyjs
 //= require jquery-tags-input
 //= require jquery-ui/widgets/tabs
