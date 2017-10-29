@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class UsersController < ApplicationController
+      class UsersController < SimpleAdmin::Admin::ApplicationController
         include ResourceController::Crudify
 
         def create

@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class EntitiesController < ApplicationController
+      class EntitiesController < SimpleAdmin::Admin::ApplicationController
         include ResourceController::Crudify
 
         authorize_resource class: SimpleAdmin::Entity

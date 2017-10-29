@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class UserPermissionsController < ApplicationController
+      class UserPermissionsController < SimpleAdmin::Admin::ApplicationController
         include ResourceController::CrudifyDynamicResource
 
         def model_klass

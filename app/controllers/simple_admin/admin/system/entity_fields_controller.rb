@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Admin
     module System
-      class EntityFieldsController < ApplicationController
+      class EntityFieldsController < SimpleAdmin::Admin::ApplicationController
         include ResourceController::CrudifyDynamicResource
 
         def model_klass

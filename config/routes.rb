@@ -13,7 +13,6 @@ Rails.application.routes.draw do
         SimpleAdmin.mount_system_routes!(self)
 
         resources :user_permissions, only: [:create, :update, :destroy]
-        resources :profiles, only: [:edit, :update]
 
         resources :entities
         resources :entity_field_types
