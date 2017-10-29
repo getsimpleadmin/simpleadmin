@@ -15,7 +15,7 @@ RSpec.describe SimpleAdmin::RoutesMounter do
     subject { described_class.mount_system_routes!(routing_mapper) }
 
     it 'return mounted routes' do
-      expect(routing_mapper).to receive(:public_send).with(:resources, :settings, { only: %i[index update] })
+      expect(routing_mapper).to receive(:public_send).with(:resources, :settings, only: %i[index update])
       subject
     end
 
