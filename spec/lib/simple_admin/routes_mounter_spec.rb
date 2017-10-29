@@ -15,7 +15,7 @@ RSpec.describe SimpleAdmin::RoutesMounter do
     subject { described_class.mount_system_routes!(routing_mapper) }
 
     it 'return mounted routes' do
-      expect(routing_mapper).to receive(:public_send).with(:resources, :settings, only: %i[index update])
+      expect(routing_mapper).to receive(:public_send).with(:resources, :users, only: %i[index edit])
       subject
     end
 
@@ -23,7 +23,7 @@ RSpec.describe SimpleAdmin::RoutesMounter do
       let(:menu_route) { build :menu_route, params: nil }
 
       it 'replace params with empty hash' do
-        expect(routing_mapper).to receive(:public_send).with(:resources, :settings, {})
+        expect(routing_mapper).to receive(:public_send).with(:resources, :users, {})
         subject
       end
     end

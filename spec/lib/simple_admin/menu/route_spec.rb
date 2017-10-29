@@ -3,11 +3,11 @@ require 'simple_admin/menu/route'
 
 RSpec.describe SimpleAdmin::Menu::Route do
   let(:method_name)   { :resources }
-  let(:resource_name) { :settings }
+  let(:resource_name) { :users }
 
   let(:params) do
     {
-      only: %i[index update]
+      only: %i[index edit]
     }
   end
 

@@ -24,8 +24,6 @@ module SimpleAdmin
         migration_template 'migrations/core_migrations/entity_field_settings_migration.rb',
                            'db/migrate/create_simple_admin_entity_field_settings.rb'
 
-        migration_template 'migrations/core_migrations/settings_migration.rb', 'db/migrate/create_simple_admin_settings.rb'
-
         migration_template 'migrations/core_data_migration.rb', 'db/migrate/create_simple_admin_core_data_migration.rb'
       end
     end

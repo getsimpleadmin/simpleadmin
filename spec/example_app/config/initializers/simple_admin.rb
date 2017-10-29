@@ -3,13 +3,6 @@ SimpleAdmin::Config.setup do |config|
 
   config.menu.configure do
     item do
-      label { 'Settings' }
-      icon  { 'si-settings' }
-
-      route { resources :settings, only: [:index, :update] }
-    end
-
-    item do
       label { 'Users' }
       icon  { 'si-users' }
 
