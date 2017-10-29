@@ -7,6 +7,8 @@ if ENV["COVERAGE"] == "true"
   require 'codecov'
 end
 
+require 'pry'
+
 require 'action_controller'
 require 'active_record'
 require 'action_controller/railtie'

@@ -33,6 +33,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'actionview'
   spec.add_development_dependency 'activerecord'
 
+  spec.add_development_dependency 'pry'
+
   spec.add_dependency 'kaminari'
   spec.add_dependency 'rolify'
   spec.add_dependency 'cancancan'
