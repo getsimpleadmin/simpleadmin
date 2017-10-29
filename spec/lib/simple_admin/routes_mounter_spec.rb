@@ -27,5 +27,13 @@ RSpec.describe SimpleAdmin::RoutesMounter do
         subject
       end
     end
+
+    context 'when menu_system_routes empty' do
+      before do
+        allow(described_class).to receive(:menu_system_routes).and_return(nil)
+      end
+
+      it { expect(subject).to eq nil }
+    end
   end
 end
