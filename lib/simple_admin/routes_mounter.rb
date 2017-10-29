@@ -3,6 +3,8 @@ module SimpleAdmin
     extend self
 
     def mount_system_routes!(routing_mapper)
+      return if menu_system_routes.blank?
+
       menu_system_routes.each do |route|
         routing_mapper.public_send(route.method_name,
                                    route.resource_name,
@@ -13,7 +15,7 @@ module SimpleAdmin
     private
 
       def menu_system_routes
-        Config.menu_items.map(&:route)
+        Config.menu_items&.map(&:route)
       end
   end
 end
