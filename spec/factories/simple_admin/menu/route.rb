@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :menu_route, class: SimpleAdmin::Menu::Route do
     method_name   { :resources }
-    resource_name { :settings }
+    resource_name { :users }
 
     params do
       {
-        only: %i[index update]
+        only: %i[index edit]
       }
     end
 
