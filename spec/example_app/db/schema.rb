@@ -79,15 +79,6 @@ ActiveRecord::Schema.define(version: 20170810123746) do
     t.index ["resource_type", "resource_id"], name: "index_simple_admin_roles_on_resource_type_and_resource_id", using: :btree
   end
 
-  create_table "simple_admin_settings", force: :cascade do |t|
-    t.string   "name"
-    t.string   "value"
-    t.string   "presentation"
-    t.integer  "sort_order"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "simple_admin_user_permissions", force: :cascade do |t|
     t.string   "action"
     t.string   "action_modificator"
@@ -98,18 +89,10 @@ ActiveRecord::Schema.define(version: 20170810123746) do
   end
 
   create_table "simple_admin_users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "email",              default: "", null: false
+    t.string   "encrypted_password", default: "", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "simple_admin_users_simple_admin_roles", id: false, force: :cascade do |t|
