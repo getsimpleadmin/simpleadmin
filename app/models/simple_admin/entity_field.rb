@@ -17,7 +17,7 @@ module SimpleAdmin
 
     scope :search_indexable_columns, -> { collection.where(search_indexable: true).pluck(:name) }
 
-    before_create :set_label_default_value!
+    before_save :label_default_value!
 
     def id_field?
       name == 'id'
@@ -65,7 +65,7 @@ module SimpleAdmin
 
     private
 
-      def set_label_default_value!
+      def label_default_value!
         return if id_field? || label.present?
         self.label = name.camelize
       end
