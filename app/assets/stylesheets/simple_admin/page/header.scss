@@ -207,9 +207,9 @@
     z-index: 10;
     -webkit-transition: all .15s ease-out;
     transition: all .15s ease-out;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0)
+    -webkit-transform: translateY(-24px);
+    -ms-transform: translateY(-24px);
+    transform: translateY(-24px)
 }
 
 .form-material.floating>.form-control[disabled]+label,
