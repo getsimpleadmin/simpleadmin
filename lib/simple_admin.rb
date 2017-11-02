@@ -30,36 +30,6 @@ module SimpleAdmin
   require 'simple_admin/routes_mounter'
   require 'simple_admin/config'
 
-  class << self
-    def setup!
-      ApplicationRecord.class_eval { include SimpleAdmin::ApplicationRecordExt }
-
-      TrueClass.class_eval  { include SimpleAdmin::TrueExt }
-      FalseClass.class_eval { include SimpleAdmin::FalseExt }
-    end
-
-    def core_controllers
-      [
-        Admin::System::EntitiesController,
-        Admin::System::EntityFieldTypesController,
-        Admin::System::LanguagesController,
-        Admin::System::SettingsController,
-        Admin::EntityFieldsController,
-        # Admin::GuidesController,
-        Admin::DashboardController
-      ]
-    end
-
-    def core_models
-      {
-        SimpleAdmin::Post => :posts,
-        SimpleAdmin::Category => :categories
-      }
-    def setup_controller!(resource_name, model_klass_name)
-      controller_builder = SimpleAdmin::ResourceController::ControllerBuilder.new(resource_name)
-      controller_builder.build!
-    end
-
   require 'simple_admin/search'
 
   class << self

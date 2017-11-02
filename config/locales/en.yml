@@ -1,5 +1,8 @@
 en:
   simple_admin:
+    form_fields:
+      empty: '* That page empty, because you need to define form fields'
+      create: Create Entity Fields
     table:
       actions: Actions
     actions:

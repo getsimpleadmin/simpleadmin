@@ -3,9 +3,17 @@
     <%= render entity_field.template_path, field: entity_field, f: f %>
   <% end %>
 
+  <% if entity_fields.latest.present? %>
     <div class="form-group">
         <div class="col-xs-12">
             <%= f.submit class: 'btn btn-sm btn-primary' %>
         </div>
     </div>
+  <% else %>
+    <i><%= t('simple_admin.form_fields.empty') %></i>
+
+    <p>
+      <%= link_to t('simple_admin.form_fields.create'), edit_admin_system_entity_path(entity) %>
+    </p>
+  <% end %>
 <% end %>
