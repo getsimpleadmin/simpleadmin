@@ -1887,16 +1887,26 @@ form {
 
 .signin__title {
   margin: 0;
-  padding-bottom: 27px;
   color: #000;
+  padding-bottom: 8px;
   font-weight: 400;
   font-size: 22px;
   line-height: 25px;
-  border-bottom: 1px solid #D4D7D9;
 }
 
 .signin__form {
   margin-top: 30px;
+}
+
+.signin__error {
+  color: #FF8181;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  padding-top: 11px;
+}
+.signin__input--error {
+  border-color: #FF8181;
 }
 
 .signin__input {
@@ -1960,6 +1970,26 @@ form {
   /*form errors fields*/
   /*modal*/
   /*notify*/
+}
+
+.signin__message-container {
+  position: absolute;
+  width: 275px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.signin__message-container p {
+  color: #BFC5C7;
+  font-weight: 400;
+  text-align: center;
+  font-size: 22px;
+  line-height: 24px;
 }
 
 .table {
