@@ -30,7 +30,6 @@ RSpec.describe 'simple_admin/admin/collection/edit.html.erb', type: :view do
     assign(:resource, resource)
   end
 
-
   it_behaves_like :crud_view_form
 
   it 'render labels' do

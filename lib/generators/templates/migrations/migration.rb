@@ -116,20 +116,20 @@ module Migrations
     end
 
     add_index :friendly_id_slugs, :sluggable_id
-    add_index :friendly_id_slugs, [:slug, :sluggable_type]
-    add_index :friendly_id_slugs, [:slug, :sluggable_type, :scope], unique: true
+    add_index :friendly_id_slugs, %i[slug sluggable_type]
+    add_index :friendly_id_slugs, %i[slug sluggable_type scope], unique: true
     add_index :friendly_id_slugs, :sluggable_type
 
     add_index :simple_admin_users, :reset_password_token, unique: true
   end
 end
 
-if Rails::VERSION::STRING.to_i < 5
-  CreateSimpleAdminMigrations = Class.new(ActiveRecord::Migration) do
-    include Migrations
-  end
-else
-  CreateSimpleAdminMigrations = Class.new(ActiveRecord::Migration[5.1]) do
-    include Migrations
-  end
-end
+CreateSimpleAdminMigrations = if Rails::VERSION::STRING.to_i < 5
+                                Class.new(ActiveRecord::Migration) do
+                                  include Migrations
+                                end
+                              else
+                                Class.new(ActiveRecord::Migration[5.1]) do
+                                  include Migrations
+                                end
+                              end

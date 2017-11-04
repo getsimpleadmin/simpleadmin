@@ -4,7 +4,7 @@ module SimpleAdmin
     self.table_name_prefix = 'simple_admin_'
 
     def self.create_with_translation(translation_data, *attributes)
-      resource_instance = self.new(*attributes)
+      resource_instance = new(*attributes)
 
       translation_data.each do |language_code, values|
         I18n.locale = language_code

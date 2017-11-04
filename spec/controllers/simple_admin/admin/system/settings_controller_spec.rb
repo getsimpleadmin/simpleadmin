@@ -10,7 +10,7 @@ RSpec.describe SimpleAdmin::Admin::System::SettingsController, type: :controller
 
     subject { get :index }
 
-     it { is_expected.to have_http_status(200) }
+    it { is_expected.to have_http_status(200) }
   end
 
   describe '#update_batch' do

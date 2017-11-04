@@ -4,7 +4,7 @@ RSpec.describe 'simple_admin/admin/system/languages/index.html.erb', type: :view
   let(:resources) { create_list :language, 1 }
   let(:resource_title) { I18n.t('simple_admin.admin.system.languages.index.title') }
 
-  let(:resource_attributes) { [:id, :name, :code] }
+  let(:resource_attributes) { %i[id name code] }
 
   it_behaves_like :crud_view_collection
 end

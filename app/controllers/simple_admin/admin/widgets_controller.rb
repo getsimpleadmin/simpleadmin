@@ -56,7 +56,7 @@ module SimpleAdmin
 
       def initialize_widget!
         concern_name = @widget.widget_type.name.camelize
-        concern_namespace = "SimpleAdmin::Widgets"
+        concern_namespace = 'SimpleAdmin::Widgets'
 
         self.class.include "#{concern_namespace}::#{concern_name}".constantize
       end
