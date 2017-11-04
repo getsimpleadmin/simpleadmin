@@ -1,8 +1,24 @@
-<section class="item-page">
-  <header class="item-page__header">
-      <h3 class="item-page__title"><%= t('.title') %></h3>
-  </header>
-  <h5 class="item-page__description"><%= @resource.name %></h5>
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+              Edit Field Type
+            </h1>
+        </div>
+    </div>
+</div>
 
-  <%= render 'simple_admin/admin/system/entity_field_types/form', resource: @resource, form_url: admin_system_entity_field_type_path(@resource, current_locale) %>
-</section>
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="block">
+          <div class="block-header">
+              <h3 class="block-title"><%= "#{@resource.name} field" %></h3>
+          </div>
+            <div class="block-content block-content-narrow">
+              <%= render 'form', resource: @resource, form_url: admin_system_entity_field_type_path(@resource) %>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

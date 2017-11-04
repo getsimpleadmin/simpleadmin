@@ -1,23 +1,35 @@
-<div class="item-page__content">
-  <%= form_for resource, url: form_url do |f| %>
-    <section class="field">
-        <div class="field__title">Имя Модели</div>
-        <div class="field__content">
-            <div class="select__wrapper">
-                <%= f.select :model_klass_name, ApplicationRecord.descendants.map { |model| [model.name, model.name] }, {}, { class: 'select' } %>
-            </div>
+<%= form_for resource, url: form_url, html: { class: 'form-horizontal' } do |f| %>
+    <div class="form-group">
+        <label class="col-xs-12" for="example-text-input">Model Class Name</label>
+        <div class="col-sm-9">
+            <%= f.select :model_klass_name, ApplicationRecord.descendants.map { |model| [model.name, model.name] }, {}, { class: 'form-control' } %>
         </div>
-    </section>
+    </div>
 
-    <section class="field">
-      <div class="field__title"></div>
-      <div class="field__content">
-        <%= f.submit value: 'Сохранить', class: 'button button--wide item-page__button' %>
-      </div>
-    </section>
-  <% end %>
+    <div class="form-group">
+        <label class="col-xs-12" for="example-text-input">Model Plural Name</label>
+        <div class="col-sm-9">
+            <%= f.text_field :model_plural_name, class: 'form-control' %>
+        </div>
+    </div>
 
-  <% if resource.persisted? %>
-    <%= render 'simple_admin/admin/system/entities/entity_field_form', entity: resource %>
-  <% end %>
-</div>
+    <div class="form-group">
+        <label class="col-xs-12" for="example-text-input">Label</label>
+        <div class="col-sm-9">
+            <%= f.text_field :label, class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-12" for="example-text-input">Status</label>
+        <div class="col-sm-9">
+            <%= f.check_box :status, class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            <%= f.submit class: 'btn btn-sm btn-primary' %>
+        </div>
+    </div>
+<% end %>

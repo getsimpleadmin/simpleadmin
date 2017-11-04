@@ -5,22 +5,21 @@ gemspec
 
 gem 'devise'
 gem 'faker'
-gem 'friendly_id', '~> 5.1.0'
 gem 'carrierwave'
 gem 'mini_magick'
 
-gem 'jquery-rails'
-
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'globalize', git: 'https://github.com/globalize/globalize'
-  gem 'pg'
-  gem 'pry-rails'
-  gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'pry-rails'
 end
 
 group :test do
+  gem 'pg'
+
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
+  gem 'sprockets-rails', require: 'sprockets/railtie'
+
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'capybara-webkit'

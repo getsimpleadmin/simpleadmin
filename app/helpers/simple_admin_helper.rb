@@ -1,74 +1,27 @@
 module SimpleAdminHelper
-  def resource_link(resource, method, prefix=nil, namespace=nil)
-    resource_klass = resource.class
+  def resource_link(resource, method, namespace=:admin)
+    singular_name = resource.class.model_name.element
+    plural_name = singular_name.pluralize
 
-    plural_name =
-      if defined?(resource_klass.plural_name)
-        resource_klass.plural_name
-      else
-        resource.model_name.plural
-      end
-
-    singular_name =
-      if defined?(resource_klass.singular_name)
-        resource_klass.singular_name
-      else
-        resource.model_name.singular_route_key
-      end
+    postfix = :path
 
     case method
-    when :index
-      resource_name = plural_name
     when :new
-      resource_name = singular_name
-      prefix = :new
+      resource_path = "#{method}_#{namespace}_#{singular_name}_#{postfix}"
     when :create
-      resource_name = plural_name
+      resource_path = "#{namespace}_#{plural_name}_#{postfix}"
     when :edit
-      resource_name = singular_name
-      prefix = :edit
+      resource_path = "#{method}_#{namespace}_#{singular_name}_#{postfix}"
     when :update
-      resource_name = singular_name
+      resource_path = "#{namespace}_#{singular_name}_#{postfix}"
     when :destroy
-      resource_name = singular_name
+      resource_path = "#{namespace}_#{singular_name}_#{postfix}"
     end
 
-    resource_path = "#{namespace}_#{resource_name}_path"
-    resource_path = "#{prefix}_#{resource_path}" if prefix.present?
-
-    public_send(resource_path, resource, current_locale)
+    public_send(resource_path, resource)
   end
 
-  def resource_collection_title(entity)
-    "simple_admin.admin.#{entity.model_plural_name}.index.title"
-  end
-
-  def resource_select_enum_collection(entity, field_name)
-    entity.model_klass_name.constantize.public_send(field_name.pluralize).keys
-  end
-
-  def resource_collection_link(entity, current_locale)
-    public_send("admin_#{entity.model_plural_name}_path", current_locale)
-  end
-
-  def resource_active_link(resource_link)
-    url_for == resource_link ? 'nav-group__open' : ''
-  end
-
-  def resource_system_active_link
-    /system/.match?(url_for) ? 'nav-group__open' : ''
-  end
-
-  def str_to_method(string)
-    # TODO: Eval not recommended to use, think about another way
-    eval(string)
-  end
-
-  def render_widget(widget_name, widget_types, edit_path)
-    widget_type = widget_types.find do |widget_type_tmp|
-      widget_type_tmp.name == widget_name.to_s
-    end
-
-    render 'simple_admin/admin/widgets/widget_list', widget_type: widget_type, edit_path: edit_path
+  def render_plugin_actions(plugin)
+    render "simple_admin/plugins/#{plugin.name}/actions", plugin: plugin
   end
 end

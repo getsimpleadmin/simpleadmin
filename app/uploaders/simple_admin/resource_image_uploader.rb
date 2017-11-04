@@ -1,7 +1,7 @@
 module SimpleAdmin
   class ResourceImageUploader < BaseUploader
-    version :thumb do
-      process resize_and_pad: [254, 254]
+    version :collection_thumb do
+      process resize_and_pad: [46, 46]
     end
   end
 end

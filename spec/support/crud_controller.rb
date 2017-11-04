@@ -1,9 +1,7 @@
-shared_examples :crud_testing do
-  let(:flash_message) { "#{controller.params[:controller].gsub("\/", '.')}.#{controller.params[:action]}.success" }
+shared_examples :controller_crud do
+  let(:user) { create :user, :with_role, user_role: :admin }
 
-  before do
-    allow(controller).to receive(:authenticate_user!).and_return(true)
-  end
+  before { sign_in user }
 
   describe '#index' do
     subject { get :index }
@@ -27,10 +25,9 @@ shared_examples :crud_testing do
     subject { patch :update, params: resource_params }
 
     it 'update resource' do
-      expect(subject).to redirect_to resource_path
+      expect(subject).to redirect_to after_update_path
       expect(assigns(:resource)).to eq resource
 
-      expect(flash[:notice]).to eq I18n.t(flash_message)
       expect(resource.reload.public_send(resource_attributes[:name])).to eq resource_attributes[:value]
     end
   end
@@ -40,9 +37,8 @@ shared_examples :crud_testing do
 
     it 'create resource' do
       expect { subject }.to change { resource.class.count }.by(1)
-      expect(flash[:notice]).to eq I18n.t(flash_message)
 
-      expect(subject).to redirect_to resource_path
+      expect(subject).to redirect_to after_create_path
     end
   end
 
@@ -57,9 +53,8 @@ shared_examples :crud_testing do
 
     it 'delete resource' do
       expect { subject }.to change { resource.class.count }.by(-1)
-      expect(flash[:notice]).to eq I18n.t(flash_message)
 
-      expect(subject).to redirect_to resource_path
+      expect(subject).to redirect_to after_destroy_path
     end
   end
 end

@@ -1,12 +1,10 @@
 require 'simple_admin/version'
+require 'simple_admin/engine'
 
 module SimpleAdmin
-  autoload :ResourceActions, 'simple_admin/resource_actions'
-  autoload :ResourceController, 'simple_admin/resource_controller'
-
-  autoload :ApplicationRecordExt, 'simple_admin/extensions/application_record_ext'
-  autoload :TrueExt, 'simple_admin/extensions/boolean/true_ext'
-  autoload :FalseExt, 'simple_admin/extensions/boolean/false_ext'
+  module Refinements
+    autoload :Boolean, 'simple_admin/refinements/boolean'
+  end
 
   class << self
     def setup!
@@ -36,5 +34,3 @@ module SimpleAdmin
     end
   end
 end
-
-require 'simple_admin/engine'
