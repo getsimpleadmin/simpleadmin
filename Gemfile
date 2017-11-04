@@ -6,6 +6,8 @@ gemspec
 gem 'devise'
 gem 'faker'
 gem 'friendly_id', '~> 5.1.0'
+gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'jquery-rails'
 

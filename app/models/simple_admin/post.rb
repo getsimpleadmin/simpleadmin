@@ -4,6 +4,8 @@ module SimpleAdmin
 
     has_many :categories
 
+    mount_uploader :image, ResourceImageUploader
+
     def self.plural_name
       :posts
     end

@@ -44,4 +44,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'devise'
   spec.add_dependency 'friendly_id'
+
+  spec.add_dependency 'carrierwave'
+  spec.add_dependency 'mini_magick'
 end
