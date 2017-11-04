@@ -635,6 +635,20 @@ input {
   /*form errors fields*/
   /*modal*/
   /*notify*/
+
+select::-ms-expand {
+  display: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
+form {
+  margin: 0
 }
 
 .aside {
@@ -837,6 +851,30 @@ input {
   /*form errors fields*/
   /*modal*/
   /*notify*/
+
+.button {
+  height: 50px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 50px;
+  letter-spacing: 0.03em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #26bfb3;
+  padding-right: 37px;
+  padding-left: 37px;
+}
+
+.button--second-color.button {
+  background-color: #292c33;
+}
+
+.button--wide.button {
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .checkbox:first-child {
@@ -929,6 +967,43 @@ input {
   /*form errors fields*/
   /*modal*/
   /*notify*/
+
+.field {
+  display: block;
+  width: 100%;
+  font-size: 0;
+}
+
+.field:not(:first-child) {
+  margin-top: 30px;
+}
+
+.field__title {
+  vertical-align: top;
+  display: inline-block;
+  width: 240px;
+  padding-top: 15px;
+  padding-right: 20px;
+  color: #858a8c;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .03em;
+}
+
+.field__content {
+  vertical-align: top;
+  display: inline-block;
+  width: -webkit-calc(100% - 240px);
+  width: -moz-calc(100% - 240px);
+  width: calc(100% - 240px);
+}
+
+.form__field--error {
+  background-color: #faf6f5 !important;
+  border-color: #cc3314 !important;
 }
 
 .header {
@@ -1808,6 +1883,16 @@ input {
   text-align: center;
   font-size: 22px;
   line-height: 24px;
+}
+
+.signin__title {
+  margin: 0;
+  padding-bottom: 27px;
+  color: #000;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+  border-bottom: 1px solid #D4D7D9;
 }
 
 .signin__form {
