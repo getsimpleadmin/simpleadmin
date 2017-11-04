@@ -109,6 +109,6 @@ Tool                  | Description
 
 Released under MIT License.
 
-Copyright © 2017 Dmitriy Strukov.
+Copyright © 2017 Evil Raccoon.
 
 [demo]: https://simpleadmin.herokuapp.com
