@@ -3,32 +3,32 @@ require 'simple_admin/engine'
 
 module SimpleAdmin
   module Refinements
-    autoload :Boolean, 'simple_admin/refinements/boolean'
+    require 'simple_admin/refinements/boolean'
   end
 
   module ResourceController
-    autoload :ActionsBuilder, 'simple_admin/resource_controller/actions_builder'
-    autoload :ControllerBuilder, 'simple_admin/resource_controller/controller_builder'
+    require 'simple_admin/resource_controller/actions_builder'
+    require 'simple_admin/resource_controller/controller_builder'
 
-    autoload :Crudify, 'simple_admin/resource_controller/crudify'
-    autoload :CrudifyDynamicResource, 'simple_admin/resource_controller/crudify_dynamic_resource'
+    require 'simple_admin/resource_controller/crudify'
+    require 'simple_admin/resource_controller/crudify_dynamic_resource'
 
-    autoload :DynamicFields, 'simple_admin/resource_controller/dynamic_fields'
+    require 'simple_admin/resource_controller/dynamic_fields'
   end
 
   module Helpers
-    autoload :UrlHelper, 'simple_admin/helpers/url_helper'
-    autoload :BooleanHelper, 'simple_admin/helpers/boolean_helper'
+    require 'simple_admin/helpers/url_helper'
+    require 'simple_admin/helpers/boolean_helper'
   end
 
   module Menu
-    autoload :Item, 'simple_admin/menu/item'
-    autoload :Route, 'simple_admin/menu/route'
+    require 'simple_admin/menu/item'
+    require 'simple_admin/menu/route'
   end
 
-  autoload :MenuDsl, 'simple_admin/menu_dsl'
-  autoload :RoutesMounter, 'simple_admin/routes_mounter'
-  autoload :Config, 'simple_admin/config'
+  require 'simple_admin/menu_dsl'
+  require 'simple_admin/routes_mounter'
+  require 'simple_admin/config'
 
   class << self
     def setup!
@@ -60,7 +60,7 @@ module SimpleAdmin
       controller_builder.build!
     end
 
-    autoload :Search, 'simple_admin/search'
+  require 'simple_admin/search'
 
   class << self
     def mount_entities!(routing_mapper)
