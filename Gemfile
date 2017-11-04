@@ -3,16 +3,13 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in simple_admin.gemspec
 gemspec
 
-gem 'pg'
-
 gem 'faker'
-gem 'globalize', '~> 5.0.0'
-
 gem 'devise'
 
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'pg'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'rails-controller-testing'

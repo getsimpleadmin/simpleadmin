@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users, class_name: 'SimpleAdmin::User'
-  
   scope module: 'simple_admin' do
     namespace :admin do
       root 'dashboard#index'
