@@ -1,0 +1,11 @@
+<tbody class="table__body">
+    <% resources.each do |resource| %>
+      <tr class="table__row">
+        <% entity_fields.each do |entity_field| %>
+          <%= render entity_field.template_path, field: entity_field, resource: resource %>
+        <% end %>
+
+        <%= render 'simple_admin/admin/shared/collection_actions', resource: resource, namespace: namespace %>
+      </tr>
+    <% end %>
+</tbody>
