@@ -1,0 +1,22 @@
+<h5 class="item-page__description">Создать поле</h5>
+
+<%= form_for entity.entity_fields.build, url: admin_entity_fields_path(current_locale), remote: true do |f| %>
+  <%= render 'admin/system/entities/entity_field_attributes', entity: entity, f: f %>
+
+  <section class="field">
+    <div class="field__title"></div>
+    <div class="field__content">
+      <%= f.submit value: 'Создать', class: 'button button--wide item-page__button' %>
+    </div>
+  </section>
+<% end %>
+
+<h5 class="item-page__description"></h5>
+
+<div class="entity-field-list">
+  <% entity.entity_fields.each do |entity_field| %>
+    <% next if entity_field.id.blank? %>
+
+    <%= render 'admin/entity_fields/form', entity_field: entity_field, entity: entity %>
+  <% end %>
+</div>

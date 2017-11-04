@@ -1,8 +1,0 @@
-<section class="item-page">
-  <header class="item-page__header">
-      <h3 class="item-page__title">Редактировать Язык</h3>
-  </header>
-  <h5 class="item-page__description"><%= @resource.name %></h5>
-
-  <%= render 'admin/languages/form', resource: @resource, form_url: admin_language_path(@resource, locale: I18n.locale) %>
-</section>

@@ -1,0 +1,12 @@
+<div class="item-page__content">
+  <%= form_for resource, url: form_url do |f| %>
+    <%= render resource.presentation, f: f, label: resource.label %>
+
+    <section class="field">
+      <div class="field__title"></div>
+      <div class="field__content">
+        <%= f.submit value: 'Обновить', class: 'button button--wide item-page__button' %>
+      </div>
+    </section>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<section class="item-page">
+  <header class="item-page__header">
+      <h3 class="item-page__title">Настройки</h3>
+  </header>
+
+  <% @settings.each do |setting| %>
+    <%= render 'admin/system/settings/form', resource: setting, form_url: admin_system_setting_path(setting, current_locale) %>
+  <% end %>
+</section>

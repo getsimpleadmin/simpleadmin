@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721161721) do
+ActiveRecord::Schema.define(version: 20170724141511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(version: 20170721161721) do
   end
 
   create_table "simple_admin_entities", force: :cascade do |t|
-    t.string "name"
+    t.string "model_klass_name"
+    t.string "model_plural_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +41,15 @@ ActiveRecord::Schema.define(version: 20170721161721) do
     t.string "name"
     t.string "template"
     t.boolean "inbuilt", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "simple_admin_entity_fields", force: :cascade do |t|
+    t.string "name"
+    t.integer "entity_field_type_id", null: false
+    t.integer "entity_id", null: false
+    t.integer "display"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170721161721) do
     t.string "name"
     t.string "value"
     t.string "label"
+    t.string "presentation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

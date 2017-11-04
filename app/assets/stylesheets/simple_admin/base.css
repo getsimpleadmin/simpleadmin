@@ -589,6 +589,18 @@ input {
   border: 0;
   background-color: transparent;
 }
+
+select::-ms-expand {
+  display: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
 :root {
   /*commons styles: fonts*/
   /*container*/
