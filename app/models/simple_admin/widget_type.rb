@@ -1,11 +1,13 @@
 module SimpleAdmin
-  class Widget < Base
+  class WidgetType < Base
     extend FriendlyId
-
-    translates :label
 
     friendly_id :name, use: :slugged
 
-    belongs_to :widget
+    has_many :widgets
+
+    def enabled?
+      status
+    end
   end
 end

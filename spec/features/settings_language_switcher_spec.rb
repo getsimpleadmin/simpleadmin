@@ -16,7 +16,7 @@ RSpec.describe 'Default language switcher in settings', type: :feature, js: true
 
   let!(:setting_language) { SimpleAdmin::Setting.find_or_create_by(name: :default_language, label: 'Язык по умолчанию',
                                                                 value: :ru, presentation: 'simple_admin/fields/settings/select_form') }
-  let!(:setting_staging_url) { SimpleAdmin::Setting.find_or_create_by(name: :site_url_staging, label: 'Адрес сайта (staging)',
+  let!(:setting_staging_url) { SimpleAdmin::Setting.find_or_create_by(name: :site_url, label: 'Адрес сайта (staging)',
                                     value: 'http://staging.warrobots.net/', presentation: 'simple_admin/fields/settings/string_form') }
   let!(:setting_production_url) { SimpleAdmin::Setting.find_or_create_by(name: :site_url_production, label: 'Адрес сайта (production)',
                                         value: 'http://faq.wwr.mobi/hc/ru', presentation: 'simple_admin/fields/settings/string_form') }

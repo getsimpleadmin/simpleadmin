@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
         namespace :widgets do
           scope :featured do
+            get 'autocomplete' => 'feature_items#autocomplete'
+            
             resources :feature_items, except: :show
           end
         end

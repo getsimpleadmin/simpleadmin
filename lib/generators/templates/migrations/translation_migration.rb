@@ -7,6 +7,7 @@ module Migrations
         SimpleAdmin::EntityField.create_translation_table! label: :string
 
         SimpleAdmin::Widget.create_translation_table! label: :string
+        SimpleAdmin::Setting.create_translation_table! label: :string
       end
 
       dir.down do
@@ -15,6 +16,7 @@ module Migrations
         SimpleAdmin::EntityField.drop_translation_table!
 
         SimpleAdmin::Widget.drop_translation_table!
+        SimpleAdmin::Setting.drop_translation_table!
       end
     end
   end
