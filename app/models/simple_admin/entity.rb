@@ -39,7 +39,7 @@ module SimpleAdmin
 
       def label_default_value!
         return if label.present?
-        self.label = model_klass.model_name.human
+        self.label = model_klass.model_name.human.pluralize
       end
 
       def create_default_fields!
