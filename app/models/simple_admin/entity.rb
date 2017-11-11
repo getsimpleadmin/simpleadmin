@@ -10,6 +10,7 @@ module SimpleAdmin
 
     validates :model_klass_name, presence: true
 
+    before_save :label_default_value!
     after_create :create_default_fields!
 
     after_save :reload_routes! unless Rails.env.test?
@@ -34,6 +35,11 @@ module SimpleAdmin
 
       def reload_routes!
         Rails.application.routes_reloader.reload!
+      end
+
+      def label_default_value!
+        return if label.present?
+        self.label = model_klass.model_name.human
       end
 
       def create_default_fields!
