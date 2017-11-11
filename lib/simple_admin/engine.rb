@@ -4,8 +4,6 @@ require 'sass-rails'
 require 'bootstrap-sass'
 require 'coffee-rails'
 require 'kaminari'
-require 'rolify'
-require 'cancancan'
 
 require 'rails-assets-notifyjs'
 require 'rails-assets-jquery-tags-input'

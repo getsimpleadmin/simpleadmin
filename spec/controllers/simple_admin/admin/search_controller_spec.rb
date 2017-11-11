@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe SimpleAdmin::Admin::SearchController, type: :controller do
-  let(:user) { create :user, :with_role, user_role: :admin }
+  let(:user) { create :user }
 
   before do
     sign_in user
@@ -27,8 +27,10 @@ RSpec.describe SimpleAdmin::Admin::SearchController, type: :controller do
       before do
         post_entity = SimpleAdmin::Entity.create(model_klass_name: Post.to_s, label: 'Posts', status: true)
 
-        SimpleAdmin::EntityField.create_string_field(name: :title, entity: post_entity, sort_order: 1, presentation: :collection, search_indexable: true)
-        SimpleAdmin::EntityField.create_string_field(name: :description, entity: post_entity, sort_order: 2, presentation: :collection)
+        SimpleAdmin::EntityField.create_string_field(name: :title, entity: post_entity, sort_order: 1,
+                                                     presentation: :collection, search_indexable: true)
+        SimpleAdmin::EntityField.create_string_field(name: :description, entity: post_entity,
+                                                     sort_order: 2, presentation: :collection)
       end
 
       it 'return resources' do

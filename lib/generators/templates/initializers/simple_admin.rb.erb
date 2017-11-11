@@ -8,12 +8,5 @@ SimpleAdmin::Config.setup do |config|
 
       route { resources :users }
     end
-
-    item do
-      label { 'User Roles' }
-      icon  { 'si-user-follow' }
-
-      route { resources :user_roles }
-    end
   end
 end

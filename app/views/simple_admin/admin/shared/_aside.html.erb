@@ -37,23 +37,19 @@
                       </li>
                     <% end %>
 
-                    <% if can? :read, SimpleAdmin::Entity %>
-                      <li>
-                        <%= link_to admin_system_entities_path do %>
-                          <i class="si si-docs"></i>
-                          <span class="sidebar-mini-hide">Entities</span>
-                        <% end %>
-                      </li>
-                    <% end %>
+                    <li>
+                      <%= link_to admin_system_entities_path do %>
+                        <i class="si si-docs"></i>
+                        <span class="sidebar-mini-hide">Entities</span>
+                      <% end %>
+                    </li>
 
-                    <% if can? :read, SimpleAdmin::EntityFieldType %>
-                      <li>
-                        <%= link_to admin_system_entity_field_types_path do %>
-                          <i class="si si-drawer"></i>
-                          <span class="sidebar-mini-hide">Field Types</span>
-                        <% end %>
-                      </li>
-                    <% end %>
+                    <li>
+                      <%= link_to admin_system_entity_field_types_path do %>
+                        <i class="si si-drawer"></i>
+                        <span class="sidebar-mini-hide">Field Types</span>
+                      <% end %>
+                    </li>
 
                 </ul>
             </div>

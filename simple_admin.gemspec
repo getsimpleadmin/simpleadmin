@@ -34,13 +34,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'codecov'
-  
   spec.add_development_dependency 'pry'
 
   spec.add_dependency 'kaminari'
-  spec.add_dependency 'rolify'
-  spec.add_dependency 'cancancan'
-
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'jquery-ui-rails'
   spec.add_dependency 'coffee-rails'

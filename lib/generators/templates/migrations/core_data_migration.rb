@@ -11,19 +11,7 @@ class CreateSimpleAdminCoreDataMigration < ActiveRecord::Migration[5.0]
     FactoryBot.create(:entity_field_type, name: :tags,     template: 'simple_admin/fields/tags')
     FactoryBot.create(:entity_field_type, name: :relation, template: 'simple_admin/fields/relation')
 
-    admin  = FactoryBot.create(:user, email: 'admin@example.com',  password: :example)
-    editor = FactoryBot.create(:user, email: 'editor@example.com', password: :example)
-
-    admin.add_role(:admin)
-    editor.add_role(:editor)
-
-    admin_role  = SimpleAdmin::Role.find_by(name: :admin)
-    editor_role = SimpleAdmin::Role.find_by(name: :editor)
-
-    FactoryBot.create(:user_permission, action: :can, action_modificator: :manage, model_klass_name: :all, role: admin_role)
-    FactoryBot.create(:user_permission, action: :can, action_modificator: :manage, model_klass_name: :all, role: editor_role)
-    FactoryBot.create(:user_permission, action: :cannot, action_modificator: :manage, model_klass_name: SimpleAdmin::Entity.to_s, role: editor_role)
-    FactoryBot.create(:user_permission, action: :cannot, action_modificator: :manage,  model_klass_name: impleAdmin::EntityFieldType.to_s, role: editor_role)
+    FactoryBot.create(:user, email: 'admin@example.com',  password: :example)
 
     # @NOTE System entities
     user_entity = FactoryBot.create(model_klass_name: SimpleAdmin::User.to_s, inbuilt: true)

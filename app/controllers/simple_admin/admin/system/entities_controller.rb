@@ -4,8 +4,6 @@ module SimpleAdmin
       class EntitiesController < SimpleAdmin::Admin::ApplicationController
         include ResourceController::Crudify
 
-        authorize_resource class: SimpleAdmin::Entity
-
         before_action :reload_models!, only: %i[new edit]
 
         def model_klass

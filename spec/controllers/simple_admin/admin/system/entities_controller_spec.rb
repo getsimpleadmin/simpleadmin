@@ -5,7 +5,7 @@ RSpec.describe SimpleAdmin::Admin::System::EntitiesController, type: :controller
   let(:resources) { create_list :entity, 1 }
 
   let(:after_create_path)  { edit_admin_system_entity_path(resource.class.last) }
-  let(:after_update_path)  { admin_system_entities_path  }
+  let(:after_update_path)  { admin_system_entities_path }
   let(:after_destroy_path) { admin_system_entities_path }
 
   let(:resource_attributes) do

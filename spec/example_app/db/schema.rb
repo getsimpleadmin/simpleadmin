@@ -70,36 +70,10 @@ ActiveRecord::Schema.define(version: 20170810123746) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "simple_admin_roles", force: :cascade do |t|
-    t.string   "name"
-    t.string   "resource_type"
-    t.integer  "resource_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["resource_type", "resource_id"], name: "index_simple_admin_roles_on_resource_type_and_resource_id", using: :btree
-  end
-
-  create_table "simple_admin_user_permissions", force: :cascade do |t|
-    t.string   "action"
-    t.string   "action_modificator"
-    t.string   "model_klass_name"
-    t.integer  "role_id",            null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
   create_table "simple_admin_users", force: :cascade do |t|
     t.string   "email",              default: "", null: false
     t.string   "encrypted_password", default: "", null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
-
-  create_table "simple_admin_users_simple_admin_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
-    t.index ["role_id"], name: "index_simple_admin_users_simple_admin_roles_on_role_id", using: :btree
-    t.index ["user_id"], name: "index_simple_admin_users_simple_admin_roles_on_user_id", using: :btree
-  end
-
 end

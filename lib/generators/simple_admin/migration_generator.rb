@@ -11,10 +11,6 @@ module SimpleAdmin
         migration_template 'migrations/core_migrations/users_migration.rb', 'db/migrate/create_simple_admin_users.rb'
         migration_template 'migrations/core_migrations/profiles_migration.rb', 'db/migrate/create_simple_admin_profiles.rb'
 
-        migration_template 'migrations/rolify_migration.rb', 'db/migrate/create_simple_admin_rolify_migration.rb'
-        migration_template 'migrations/core_migrations/user_permissions_migration.rb',
-                           'db/migrate/create_simple_admin_user_permissions.rb'
-
         migration_template 'migrations/core_migrations/entities_migration.rb', 'db/migrate/create_simple_admin_entities.rb'
 
         migration_template 'migrations/core_migrations/entity_fields_migration.rb',
