@@ -17,7 +17,6 @@ require File.expand_path("../../spec/example_app/config/environment", __FILE__)
 
 require 'active_support/all'
 require 'rspec/rails'
-require 'capybara-screenshot/rspec'
 
 root = Pathname.new(Dir.pwd)
 
@@ -28,8 +27,6 @@ if ENV["COVERAGE"] == "true"
   SimpleCov.start
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
-
-Capybara::Screenshot.autosave_on_failure = true
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -47,11 +44,7 @@ RSpec.configure do |config|
     SimpleAdmin::EntityFieldType.create(name: :string, template: 'simple_admin/fields/string')
   end
 
-  config.include(Shoulda::Matchers::ActiveModel,  type: :model)
-  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
-
   config.include ControllerAuthenticate, type: :controller
-  config.include FeatureHelpers, type: :feature
 end
 
 ActiveRecord::Migration.maintain_test_schema!

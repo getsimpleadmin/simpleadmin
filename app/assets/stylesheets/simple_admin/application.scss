@@ -1,50 +1,56 @@
-@charset 'utf-8';
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_admin/global/reset
+ *= require simple_admin/global/fonts
+ *= require simple_admin/global/simple-line-icons
+ *= require simple_admin/global/fontawesome-icons
+ *= require simple_admin/global/table
+ *= require simple_admin/global/buttons
+ *= require simple_admin/global/tags
 
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+ *= require simple_admin/page/aside
+ *= require simple_admin/page/header
+ *= require simple_admin/page/main-container
+ *= require simple_admin/page/sign_in
 
-@import 'jquery-tags-input';
+ *= require simple_admin/tabs
 
-@import 'simple_admin/global/reset';
-@import 'simple_admin/global/fonts';
-@import 'simple_admin/global/simple-line-icons';
-@import 'simple_admin/global/fontawesome-icons';
-@import 'simple_admin/global/table';
-@import 'simple_admin/global/buttons';
-@import 'simple_admin/global/tags';
+ *= require simple_admin/global/notify
+ *= require simple_admin/global/errors
+ *= require simple_admin/global/jquery.dataTables
+ */
 
-@import 'simple_admin/page/aside';
-@import 'simple_admin/page/header';
-@import 'simple_admin/page/main-container';
-@import 'simple_admin/page/sign_in';
+ #page-container {
+   margin: 0 auto;
+   width: 100%;
+   min-width: 320px;
+   background-color: #2c343f;
+ }
 
-@import 'simple_admin/tabs';
-@import 'simple_admin/global/notify';
-@import 'simple_admin/global/errors';
+ @media screen and (min-width: 992px) {
+   #page-container.sidebar-l.sidebar-o {
+     padding-left: 230px;
+   }
 
-@import 'simple_admin/global/jquery.dataTables';
+   #page-container.sidebar-r.sidebar-o {
+     padding-right: 230px;
+   }
 
-#page-container {
-  margin: 0 auto;
-  width: 100%;
-  min-width: 320px;
-  background-color: #2c343f;
-}
+   #page-container.sidebar-l.sidebar-o.sidebar-mini {
+     padding-left: 60px;
+   }
 
-@media screen and (min-width: 992px) {
-  #page-container.sidebar-l.sidebar-o {
-    padding-left: 230px;
-  }
-
-  #page-container.sidebar-r.sidebar-o {
-    padding-right: 230px;
-  }
-
-  #page-container.sidebar-l.sidebar-o.sidebar-mini {
-    padding-left: 60px;
-  }
-
-  #page-container.sidebar-r.sidebar-o.sidebar-mini {
-    padding-right: 60px;
-  }
-}
+   #page-container.sidebar-r.sidebar-o.sidebar-mini {
+     padding-right: 60px;
+   }
+ }

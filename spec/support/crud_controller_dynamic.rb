@@ -1,5 +1,5 @@
 shared_examples :controller_dynamic_crud do
-  let(:user) { create :user }
+  let(:user) { double }
 
   before do
     sign_in user

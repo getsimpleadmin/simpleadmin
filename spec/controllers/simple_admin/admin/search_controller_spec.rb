@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe SimpleAdmin::Admin::SearchController, type: :controller do
-  let(:user) { create :user }
+  let(:user) { double }
 
   before do
     sign_in user
@@ -15,7 +15,7 @@ RSpec.describe SimpleAdmin::Admin::SearchController, type: :controller do
     it { expect { subject }.to raise_error(ActiveRecord::RecordNotFound) }
 
     context 'when posts searching' do
-      let!(:post) { create :post, title: 'Hello world!', user: user }
+      let!(:post) { create :post, title: 'Hello world!' }
 
       let(:params) do
         {

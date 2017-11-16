@@ -21,15 +21,7 @@ module SimpleAdmin
     require 'simple_admin/helpers/boolean_helper'
   end
 
-  module Menu
-    require 'simple_admin/menu/item'
-    require 'simple_admin/menu/route'
-  end
-
-  require 'simple_admin/menu_dsl'
-  require 'simple_admin/routes_mounter'
   require 'simple_admin/config'
-
   require 'simple_admin/search'
 
   class << self
@@ -42,10 +34,6 @@ module SimpleAdmin
 
         SimpleAdmin::ResourceController::ActionsBuilder.initialize_actions!(controller_builder.controller_klass, model_klass_name)
       end
-    end
-
-    def mount_system_routes!(routing_mapper)
-      SimpleAdmin::RoutesMounter.mount_system_routes!(routing_mapper)
     end
   end
 end

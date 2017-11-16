@@ -4,26 +4,16 @@ module SimpleAdmin
   class Config
     include Singleton
 
-    attr_accessor :per_page, :menu_items
+    attr_accessor :per_page
 
     class << self
       def setup
-        instance.menu_items = []
-
         yield(instance)
       end
 
       def per_page
         instance.per_page
       end
-
-      def menu_items
-        instance.menu_items
-      end
-    end
-
-    def menu
-      SimpleAdmin::MenuDsl
     end
   end
 end

@@ -11,7 +11,7 @@ RSpec.describe SimpleAdmin::Admin::System::EntitiesController, type: :controller
   let(:resource_attributes) do
     {
       name: :model_klass_name,
-      value: 'SimpleAdmin::User'
+      value: 'Post'
     }
   end
 

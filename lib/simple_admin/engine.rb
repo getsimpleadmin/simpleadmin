@@ -1,12 +1,4 @@
-require 'jquery-rails'
-require 'jquery-ui-rails'
-require 'sass-rails'
-require 'bootstrap-sass'
-require 'coffee-rails'
 require 'kaminari'
-
-require 'rails-assets-notifyjs'
-require 'rails-assets-jquery-tags-input'
 
 module SimpleAdmin
   class Engine < Rails::Engine

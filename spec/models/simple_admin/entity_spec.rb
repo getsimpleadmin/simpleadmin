@@ -2,13 +2,13 @@ require 'spec_helper'
 
 RSpec.describe SimpleAdmin::Entity, type: :model do
   describe '#label_default_value!' do
-    let(:entity) { build :entity, model_klass_name: 'SimpleAdmin::User' }
+    let(:entity) { build :entity, model_klass_name: 'Post' }
 
      subject { entity.save }
 
      it 'return label default value' do
        subject
-       expect(entity.label).to eq 'Users'
+       expect(entity.label).to eq 'Posts'
      end
   end
 

@@ -5,11 +5,11 @@ RSpec.describe SimpleAdmin::Helpers::UrlHelper do
   include Rails.application.routes.url_helpers
   include SimpleAdmin::Helpers::UrlHelper
 
-  let(:user) { create :user }
+  let(:user) { double }
 
   describe '#resource_link' do
-    let(:resource_builded) { build :post,  user: user }
-    let(:resource_created) { create :post, user: user }
+    let(:resource_builded) { build :post  }
+    let(:resource_created) { create :post }
 
     it 'return resource paths' do
       expect(resource_link(resource_builded, :new)).to eq '/admin/posts/new'

@@ -25,18 +25,6 @@
                       <span class="sidebar-mini-hide">System</span>
                     </li>
 
-                    <% SimpleAdmin::Config.menu_items.each do |menu_item| %>
-                      <li>
-                        <%= link_to resource_index_path(menu_item.route.resource_name) do %>
-                          <i class="si <%= menu_item.icon %>"></i>
-
-                          <span class="sidebar-mini-hide">
-                            <%= menu_item.label %>
-                          </span>
-                        <% end %>
-                      </li>
-                    <% end %>
-
                     <li>
                       <%= link_to admin_system_entities_path do %>
                         <i class="si si-docs"></i>
