@@ -24,6 +24,7 @@
  *= require simple_admin/page/sign_in
 
  *= require simple_admin/tabs
+ *= require simple_admin/bootstrap
 
  *= require simple_admin/global/notify
  *= require simple_admin/global/errors
