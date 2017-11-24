@@ -12,14 +12,10 @@ module SimpleAdmin
 
       private
 
-        def authenticate_user!
-          # TODO: Add authentication logic here
-          raise NotImplementedError
-        end
-
-        def current_ability
-          SimpleAdmin::Ability.new(current_user)
-        end
+      def authenticate_user!
+        # TODO: Add authentication logic here
+        raise NotImplementedError
+      end
     end
   end
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'simple_admin/admin/resource/index.html.erb', type: :view do
-  let(:user) { create :user }
+  let(:user) { double }
 
   let(:entity) { create :entity }
   let(:posts)  { create_list :post, 5, user: user }

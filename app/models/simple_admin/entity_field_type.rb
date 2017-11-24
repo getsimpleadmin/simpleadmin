@@ -65,9 +65,7 @@ module SimpleAdmin
             "app/views/#{template}/_form.*"
           end
 
-        unless template_exists?(form_template_path)
-          errors.add(:base, 'Form template missing')
-        end
+        errors.add(:base, 'Form template missing') unless template_exists?(form_template_path)
       end
 
       def template_exists?(template_path)

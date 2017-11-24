@@ -1,5 +1,5 @@
 shared_examples :controller_crud do
-  let(:user) { create :user, :with_role, user_role: :admin }
+  let(:user) { double }
 
   before do
     sign_in user

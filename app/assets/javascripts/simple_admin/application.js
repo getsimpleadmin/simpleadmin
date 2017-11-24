@@ -12,7 +12,17 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require notifyjs
-//= require jquery-tags-input
 //= require jquery-ui/widgets/tabs
-//= require simple_admin/core
+
+$(document).ready(function() {
+  if (!!$('#tabs').length) {
+    $('#tabs').tabs();
+  }
+
+  if (!!$('#tags').length) {
+    $('#tags').tagsInput({
+      width: '100%',
+      height: '36px'
+    });
+  }
+});

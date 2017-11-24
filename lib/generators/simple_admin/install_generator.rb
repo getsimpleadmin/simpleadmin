@@ -6,7 +6,6 @@ module SimpleAdmin
       source_root File.expand_path('../../templates', __FILE__)
 
       def copy_initializer
-        template 'initializers/rolify.rb.erb', 'config/initializers/rolify.rb'
         template 'initializers/simple_admin.rb.erb', 'config/initializers/simple_admin.rb'
       end
 

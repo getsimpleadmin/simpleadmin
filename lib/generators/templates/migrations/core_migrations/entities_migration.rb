@@ -5,7 +5,8 @@ class CreateSimpleAdminEntities < ActiveRecord::Migration[5.0]
       t.string :model_plural_name
       t.string :label
 
-      t.boolean :status, default: true
+      t.boolean :status,  default: true
+      t.boolean :inbuilt, default: false
 
       t.timestamps null: false
     end

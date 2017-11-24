@@ -6,14 +6,8 @@ ruby '2.4.1'
 
 gem 'rails', '~> 5.0.0'
 
-gem 'pry',  require: false
-gem 'rdoc', require: false
-
-gem 'faker'
 gem 'pg'
-
-gem 'rails-assets-jquery-tags-input', source: 'https://rails-assets.org'
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+gem 'rdoc', require: false
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -21,11 +15,13 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara-screenshot'
-  gem 'capybara-webkit'
-  gem 'database_cleaner'
-  gem 'rails-controller-testing'
-  gem 'shoulda-matchers'
+  gem 'codecov',   require: false
   gem 'simplecov', require: false
+
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'rails-controller-testing'
   gem 'sprockets-rails', require: 'sprockets/railtie'
+
+  gem 'pry'
 end

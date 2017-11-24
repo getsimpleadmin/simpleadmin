@@ -25,35 +25,19 @@
                       <span class="sidebar-mini-hide">System</span>
                     </li>
 
-                    <% SimpleAdmin::Config.menu_items.each do |menu_item| %>
-                      <li>
-                        <%= link_to resource_index_path(menu_item.route.resource_name) do %>
-                          <i class="si <%= menu_item.icon %>"></i>
+                    <li>
+                      <%= link_to admin_system_entities_path do %>
+                        <i class="si si-docs"></i>
+                        <span class="sidebar-mini-hide">Entities</span>
+                      <% end %>
+                    </li>
 
-                          <span class="sidebar-mini-hide">
-                            <%= menu_item.label %>
-                          </span>
-                        <% end %>
-                      </li>
-                    <% end %>
-
-                    <% if can? :read, SimpleAdmin::Entity %>
-                      <li>
-                        <%= link_to admin_system_entities_path do %>
-                          <i class="si si-docs"></i>
-                          <span class="sidebar-mini-hide">Entities</span>
-                        <% end %>
-                      </li>
-                    <% end %>
-
-                    <% if can? :read, SimpleAdmin::EntityFieldType %>
-                      <li>
-                        <%= link_to admin_system_entity_field_types_path do %>
-                          <i class="si si-drawer"></i>
-                          <span class="sidebar-mini-hide">Field Types</span>
-                        <% end %>
-                      </li>
-                    <% end %>
+                    <li>
+                      <%= link_to admin_system_entity_field_types_path do %>
+                        <i class="si si-drawer"></i>
+                        <span class="sidebar-mini-hide">Field Types</span>
+                      <% end %>
+                    </li>
 
                 </ul>
             </div>

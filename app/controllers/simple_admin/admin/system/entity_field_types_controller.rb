@@ -4,8 +4,6 @@ module SimpleAdmin
       class EntityFieldTypesController < SimpleAdmin::Admin::ApplicationController
         include ResourceController::Crudify
 
-        authorize_resource class: SimpleAdmin::Entity
-
         def model_klass
           SimpleAdmin::EntityFieldType
         end

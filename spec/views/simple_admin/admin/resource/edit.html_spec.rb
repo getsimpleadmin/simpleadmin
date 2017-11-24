@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 RSpec.describe 'simple_admin/admin/resource/edit.html.erb', type: :view do
-  let(:user) { create :user }
+  let(:user) { double }
 
   let(:entity) { create :entity }
-  let(:resource) { create :post, user: user }
+  let(:resource) { create :post }
 
   before do
     assign(:entity, entity)

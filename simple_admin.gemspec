@@ -32,20 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'actionview'
   spec.add_development_dependency 'activerecord'
 
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'codecov'
-  
-  spec.add_development_dependency 'pry'
-
   spec.add_dependency 'kaminari'
-  spec.add_dependency 'rolify'
-  spec.add_dependency 'cancancan'
-
-  spec.add_dependency 'jquery-rails'
   spec.add_dependency 'jquery-ui-rails'
-  spec.add_dependency 'coffee-rails'
-  spec.add_dependency 'sass-rails'
-  spec.add_dependency 'rails-assets-notifyjs'
-  spec.add_dependency 'rails-assets-jquery-tags-input'
   spec.add_dependency 'bootstrap-sass'
 end

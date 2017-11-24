@@ -16,7 +16,8 @@ RSpec.describe SimpleAdmin::Admin::System::EntityFieldsController, type: :contro
   let(:resource_params) do
     {
       id: resource.id,
-      simple_admin_entity_field: { name: resource_attributes[:value], entity_id: entity.id, entity_field_type_id: entity_field_type.id }
+      simple_admin_entity_field: { name: resource_attributes[:value], entity_id: entity.id,
+                                   entity_field_type_id: entity_field_type.id }
     }
   end
 

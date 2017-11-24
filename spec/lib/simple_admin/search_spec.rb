@@ -2,8 +2,8 @@ require 'spec_helper'
 require 'simple_admin/search'
 
 RSpec.describe SimpleAdmin::Search do
-  let(:user) { create :user }
-  let!(:resource) { create :post, title: 'Hello world!', user: user }
+  let(:user) { double }
+  let!(:resource) { create :post, title: 'Hello world!' }
 
   let(:search_query) { 'Hello' }
   let(:resource_klass) { Post }
