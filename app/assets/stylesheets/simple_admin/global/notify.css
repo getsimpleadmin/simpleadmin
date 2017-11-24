@@ -1,9 +1,0 @@
-.notifyjs-corner {
-  span {
-    display: block;
-  }
-
-  span::first-letter {
-    text-transform: uppercase;
-  }
-}

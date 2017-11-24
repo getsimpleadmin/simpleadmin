@@ -1,9 +1,5 @@
 <% if @resource.errors.present? %>
-  $.notify(
-    'Something went wrong!',
-    'error',
-    { autoHideDelay: 3000, position: 'right' }
-  );
+
 <% else %>
   var formContent = "<%= j render template: 'simple_admin/admin/system/entities/entity_fields/edit', locals: { entity_field: @resource } %>";
   var fieldPresentation = '<%= @resource.presentation %>';
@@ -19,10 +15,4 @@
     $('#form-fields').append(formContent);
     $( "#tabs" ).tabs( "option", "active", 1);
   }
-
-  $.notify(
-    fieldPresentation + ' field successfully created!',
-    'success',
-    { autoHideDelay: 3000, position: 'right' }
-  );
 <% end %>

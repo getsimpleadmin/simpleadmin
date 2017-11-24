@@ -10,4 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require simple_admin/core
+//= require rails-ujs
+//= require jquery
+//= require jquery-ui/widgets/tabs
+
+$(document).ready(function() {
+  if (!!$('#tabs').length) {
+    $('#tabs').tabs();
+  }
+
+  if (!!$('#tags').length) {
+    $('#tags').tagsInput({
+      width: '100%',
+      height: '36px'
+    });
+  }
+});

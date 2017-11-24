@@ -1,5 +1,8 @@
 require 'kaminari'
 
+require 'bootstrap-sass'
+require 'jquery-ui-rails'
+
 module SimpleAdmin
   class Engine < Rails::Engine
     initializer 'simple_admin.precompile', group: :all do |app|

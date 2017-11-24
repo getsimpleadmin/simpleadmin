@@ -33,4 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'activerecord'
 
   spec.add_dependency 'kaminari'
+  spec.add_dependency 'jquery-ui-rails'
+  spec.add_dependency 'bootstrap-sass'
 end
