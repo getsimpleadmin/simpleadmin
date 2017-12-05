@@ -35,6 +35,9 @@ Style/ParallelAssignment:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/GuardClause:
+  Enabled: false
+
 Metrics/ModuleLength:
   Exclude:
     - "**/*_spec.rb"
@@ -48,6 +51,15 @@ Metrics/LineLength:
 
 Metrics/MethodLength:
   Max: 25
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/BlockLength:
+  Max: 75
 
 Style/IndentationConsistency:
   Enabled: false
