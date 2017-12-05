@@ -15,10 +15,6 @@ module SimpleAdmin
           # TODO Add authentication logic here
           raise NotImplementedError
         end
-
-        def current_ability
-          SimpleAdmin::Ability.new(current_user)
-        end
     end
   end
 end
