@@ -1,13 +1,5 @@
 <header id="header-navbar" class="content-mini content-mini-full">
-  <ul class="nav-header pull-left">
-    <% if entity.present? %>
-      <%= render 'simple_admin/admin/shared/components/search', resource_klass: entity.model_klass %>
-    <% end %>
-  </ul>
 
-  <ul class="nav-header pull-right">
-    <li>
-      <% #link_to t('simple_admin.actions.logout'), destroy_user_session_path, method: :delete %>
-    </li>
-  </ul>
+  <%= render 'simple_admin/admin/shared/components/search', resource_klass: entity.model_klass %>
+  <%= render 'simple_admin/admin/shared/components/logout' %>
 </header>
