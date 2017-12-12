@@ -27,9 +27,9 @@ rails db:migrate
 
 Restart your server, and visit [http://localhost:3000/admin/system/entities](http://localhost:3000/admin/system/entities) for authentication.
 
-### Devise integration
+### Authentication
 
-Remove current_user and authenticate_user! methods with `raise NotImplemented` error and keep the following.
+Simple admin is very flexible solution, so you can use any gems for that purposes, all you need is just create `app/controllers/simple_admin/admin/application_controller.rb` and remove current_user and authenticate_user! methods with `raise NotImplemented` error and keep the following.
 
 ```ruby
   # app/controllers/simple_admin/admin/application_controller.rb
@@ -39,7 +39,7 @@ Remove current_user and authenticate_user! methods with `raise NotImplemented` e
       class ApplicationController < ActionController::Base
         layout 'simple_admin'
 
-        before_action :authenticate_user!
+        # use here you authentication before action  
       end
     end
   end
