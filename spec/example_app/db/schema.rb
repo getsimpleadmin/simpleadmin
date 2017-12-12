@@ -24,11 +24,10 @@ ActiveRecord::Schema.define(version: 20170810123746) do
 
   create_table "simple_admin_entities", force: :cascade do |t|
     t.string   "model_klass_name"
-    t.string   "model_plural_name"
     t.string   "label"
-    t.boolean  "status",            default: true
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.boolean  "status",           default: true
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "simple_admin_entity_field_settings", force: :cascade do |t|

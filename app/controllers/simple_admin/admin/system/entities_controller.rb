@@ -4,6 +4,8 @@ module SimpleAdmin
       class EntitiesController < SimpleAdmin::Admin::ApplicationController
         include ResourceController::Crudify
 
+        before_action :reload_models!, only: %i[new edit]
+
         def model_klass
           SimpleAdmin::Entity
         end
@@ -24,6 +26,10 @@ module SimpleAdmin
 
           def resource_params
             params.require(:simple_admin_entity).permit(:model_klass_name, :label, :status)
+          end
+
+          def reload_models!
+            Rails.application.eager_load!
           end
       end
     end
