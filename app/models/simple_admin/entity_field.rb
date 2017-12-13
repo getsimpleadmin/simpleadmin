@@ -42,7 +42,7 @@ module SimpleAdmin
     #
     # @return [ActiveRecord Class]
     #
-    # @since 0.1.1
+    # @since 0.1.0
     def association_klass
       model_instance = entity.model_klass.new
       association_name = name.remove('_id')
@@ -54,7 +54,7 @@ module SimpleAdmin
     #
     # @return [String]
     #
-    # @since 0.1.1
+    # @since 0.1.0
     def template_path
       "#{entity_field_type.template}/#{presentation}"
     end

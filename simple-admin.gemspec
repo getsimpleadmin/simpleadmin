@@ -6,14 +6,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'simple_admin/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'simple_admin'
+  spec.name          = 'simple-admin'
   spec.version       = SimpleAdmin::VERSION
   spec.authors       = ['Dmitriy Strukov']
   spec.email         = ['dmitiry_strukov2011@mail.ru']
 
-  spec.summary       = 'Simple Admin'
-  spec.description   = 'Simple Admin'
-  spec.homepage      = 'http://simpleadmin.com'
+  spec.summary       = 'simple-admin'
+  spec.description   = 'simple-admin'
+  spec.homepage      = 'https://github.com/evil-raccoon/simple_admin'
   spec.license       = 'MIT'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|

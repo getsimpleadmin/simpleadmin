@@ -17,7 +17,7 @@ module SimpleAdmin
       #   SimpleAdmin::EntityField.create_string_field(name: :title, entity: entity, presentation: :collection)
       #   SimpleAdmin::EntityField.create_number_field(name: :id, entity: entity, presentation: :collection)
       #
-      # @since 0.1.1
+      # @since 0.1.0
       def build_helper_methods!
         pluck(:name).each do |field_type_name|
           SimpleAdmin::EntityField.define_singleton_method("create_#{field_type_name}_field") do |params|
@@ -73,7 +73,7 @@ module SimpleAdmin
       end
 
       def core_path
-        Gem.loaded_specs['simple_admin'].full_gem_path
+        Gem.loaded_specs['simple-admin'].full_gem_path
       end
   end
 end
