@@ -13,7 +13,7 @@ Add SimpleAdmin to your Gemfile and run bundle:
 ![simple_admin](https://i.imgur.com/s1fGVRq.png)
 
 ```ruby
-gem 'simple_admin', git: 'https://github.com/evil-raccoon/simple_admin.git'
+gem 'simple-admin'
 ```
 
 The following generators will create rolify initializer and core migrations.  
