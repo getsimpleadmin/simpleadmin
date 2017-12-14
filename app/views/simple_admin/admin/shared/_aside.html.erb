@@ -22,20 +22,20 @@
 
 
                     <li class="nav-main-heading">
-                      <span class="sidebar-mini-hide">System</span>
+                      <span class="sidebar-mini-hide"><%= t('simple_admin.system') %></span>
                     </li>
 
                     <li>
                       <%= link_to admin_system_entities_path do %>
                         <i class="si si-docs"></i>
-                        <span class="sidebar-mini-hide">Entities</span>
+                        <span class="sidebar-mini-hide"><%= t('activerecord.models.simple_admin/entity.many') %></span>
                       <% end %>
                     </li>
 
                     <li>
                       <%= link_to admin_system_entity_field_types_path do %>
                         <i class="si si-drawer"></i>
-                        <span class="sidebar-mini-hide">Field Types</span>
+                        <span class="sidebar-mini-hide"><%= t('activerecord.models.simple_admin/entity_field_type.many') %></span>
                       <% end %>
                     </li>
 

@@ -1,5 +1,14 @@
 en:
+  activerecord:
+    models:
+      simple_admin/entity:
+        one: Entity
+        many: Entities
+      simple_admin/entity_field_type:
+        one: Field Type
+        many: Field Types
   simple_admin:
+    system: System
     form_fields:
       empty: '* That page empty, because you need to define form fields'
       create: Create Entity Fields
