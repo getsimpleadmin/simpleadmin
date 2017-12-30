@@ -4,67 +4,39 @@ module SimpleAdmin
   module Generators
     class ModelEntitiesGenerator < Rails::Generators::NamedBase
       source_root File.expand_path('../../templates', __FILE__)
-      class_option :fields, type: :hash, default: nil, required: false, aliases: '-f'
-
-      FIELD_TYPES_MATCH = { integer: :number,
-                            decimal: :number,
-                            date: :string,
-                            datetime: :string }.freeze
 
       EXCLUSION_FIELDS = /\bid\b|created_at|updated_at/
 
-      desc 'rails g simple_admin:model_entities Model --fields=id:number title:string body:text'
-      def handle_entity
-        @fields = options[:fields] || model_columns
-        if SimpleAdmin::Entity.exists?(model_klass_name: name)
-          update_entity
-        else
-          create_entity
+      desc 'rails g simple_admin:model_entities Model'
+
+      def generate
+        entity = SimpleAdmin::Entity.find_or_create_by(model_klass_name: name)
+
+        model_columns.each do |name, type|
+          entity_field_type = SimpleAdmin::EntityFieldType.find_by!(name: fetch_field_type(type))
+
+          entity.entity_fields.create(name: name, entity_field_type_id: entity_field_type.id, presentation: :collection)
+          entity.entity_fields.create(name: name, entity_field_type_id: entity_field_type.id, presentation: :form)
         end
-      rescue StandardError => e
-        abort("Something went wrong: #{e.message}")
       end
 
       private
 
-      def create_entity
-        entity = SimpleAdmin::Entity.create(model_klass_name: name, label: name.pluralize)
-        @fields.each_with_index do |(name, type), i|
-          SimpleAdmin::EntityField.send(:"create_#{rename(type)}_field",
-                                        name: name,
-                                        entity: entity,
-                                        sort_order: i + 1,
-                                        presentation: :collection)
+        def fetch_field_type(type)
+          field_types = I18n.t('simple_admin.field_types_match')
+          field_types[type] || type
         end
-      end
 
-      def update_entity
-        entity = SimpleAdmin::Entity.find_by(model_klass_name: name)
-        SimpleAdmin::EntityFieldType.build_helper_methods!
-
-        @fields.each do |name, type|
-          next if SimpleAdmin::EntityField.exists?(entity: entity, name: name)
-          SimpleAdmin::EntityField.send(:"create_#{rename(type)}_field",
-                                        name: name,
-                                        entity: entity,
-                                        presentation: :collection)
+        def model_columns
+          model_klass.columns.each_with_object({}) do |column, hash|
+            next if column.name.match?(EXCLUSION_FIELDS)
+            hash[column.name] = column.type
+          end
         end
-      end
 
-      def model_columns
-        model_name.columns.map do |c|
-          next if c.name.match EXCLUSION_FIELDS
-          [c.name, c.type]
-        end.compact.to_h
-      end
-
-      def model_name
-        name.constantize
-      end
-
-      def rename(type)
-        FIELD_TYPES_MATCH[type] || type
-      end
+        def model_klass
+          name.constantize
+        end
     end
   end
 end

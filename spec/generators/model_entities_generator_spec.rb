@@ -3,52 +3,22 @@ require 'rails/generators'
 require 'generators/simple_admin/model_entities_generator'
 
 RSpec.describe SimpleAdmin::Generators::ModelEntitiesGenerator, type: :generator do
-  describe 'simple_admin:model_entities create new entity' do
-    let(:name) { ['Post'] }
+  let(:instance) { described_class.new(args) }
 
-    context 'without option fields' do
-      subject { described_class.new(name).handle_entity }
+  describe '#generate' do
+    let(:entity) { SimpleAdmin::Entity.find_by(model_klass_name: name) }
 
-      it 'creates entity and entity field' do
-        expect { subject }.to change { SimpleAdmin::Entity.count }.by(1)
-                                  .and change { SimpleAdmin::EntityField.count }.by(3)
-      end
-    end
+    let(:name) { 'Post' }
+    let(:args) { [name] }
 
-    context 'with option fields' do
-      let(:options) { { fields: { title: 'string', description: 'string', created_at: 'string' } } }
-      subject { described_class.new(name, options).handle_entity }
+    subject { instance.generate }
 
-      it 'creates entity and entity field' do
-        expect { subject }.to change { SimpleAdmin::Entity.count }.by(1)
-                                  .and change { SimpleAdmin::EntityField.count }.by(4)
-      end
-    end
-  end
+    it 'create entity and entity fields' do
+      expect { subject }.to change { SimpleAdmin::Entity.count }.by(1)
+                                .and change { SimpleAdmin::EntityField.count }.by(5)
 
-  describe 'simple_admin:model_entities update entity' do
-    let!(:entity) { create(:entity) }
-    let(:name) { ['Post'] }
-
-    context 'without option fields' do
-      subject { described_class.new(name).handle_entity }
-
-      it 'doesnt create new entity' do
-        expect { subject }.not_to change { SimpleAdmin::Entity.count }
-      end
-    end
-
-    context 'with option fields' do
-      let(:options) { { fields: { created_at: 'string' } } }
-      subject { described_class.new(name, options).handle_entity }
-
-      it 'doesnt create new entity' do
-        expect { subject }.not_to change { SimpleAdmin::Entity.count }
-      end
-
-      it 'creates one new field' do
-        expect { subject }.to change { SimpleAdmin::EntityField.count }.by(1)
-      end
+      expect(entity.entity_fields.collection.pluck(:name)).to eq ['id', 'title', 'description']
+      expect(entity.entity_fields.form.pluck(:name)).to eq ['title', 'description']
     end
   end
 end

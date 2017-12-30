@@ -8,6 +8,11 @@ en:
         one: Field Type
         many: Field Types
   simple_admin:
+    field_types_match:
+      integer:  :number
+      decimal:  :number
+      date:     :string
+      datetime: :string
     system: System
     form_fields:
       empty: '* That page empty, because you need to define form fields'
