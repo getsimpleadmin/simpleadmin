@@ -57,6 +57,14 @@ After that create next partial:
   </ul>
 ```
 
+## Customization
+You have two different ways to customize admin panel entities and fields, first way it's to use built in generator, it automatically create all fields for form and collection pages (excepting timestamps and id). All you need is run next command:
+
+```ruby
+  rails generate simple_admin:model_entities Post
+```
+Next way is to create entity in administrative panel and fields for it, you can do it on the entities page (http://localhost:3000/admin/system/entities).
+
 ## Dependencies
 
 We try to minimize the use of third-party libraries, but Simple Admin built with the following open source projects:
