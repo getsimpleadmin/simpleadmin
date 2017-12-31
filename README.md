@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/evil-raccoon/simple_admin/branch/master/graph/badge.svg)](https://codecov.io/gh/evil-raccoon/simple_admin)
 [![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
 
-A framework for creating admin dashboards in an instant. Try the demo.
+A framework for creating admin dashboards in an instant.
 [Try the demo][demo].
 
 ## Getting started
