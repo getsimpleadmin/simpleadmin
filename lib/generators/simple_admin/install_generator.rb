@@ -16,13 +16,6 @@ module SimpleAdmin
         )
       end
 
-      def create_user_model
-        copy_file(
-          'user.rb',
-          'app/models/simple_admin/user.rb'
-        )
-      end
-
       def create_views
         if defined?(Devise)
           create_devise_views!
