@@ -1,7 +1,7 @@
 # SimpleAdmin
 A framework for creating admin dashboards in an instant.
 
-## v0.1.0-alpha - 2018-01-02
+## v0.1.1-alpha - 2018-01-02
 
 ### Added
 - [Marina Belova] Entity and fields generator. This is useful for large models with many fields quantity.
