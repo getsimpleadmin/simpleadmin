@@ -1,0 +1,16 @@
+# SimpleAdmin
+A framework for creating admin dashboards in an instant.
+
+## v0.1.0-alpha - 2017-12-06
+### Added
+- [Dmitriy Strukov] Allow to manage a fields for entities
+
+- [Dmitriy Strukov] Introduced built in resources in admin panel
+- [Dmitriy Strukov] Introduced `rails g simple_admin:install` generator
+- [Dmitriy Strukov] Introduced `rails g simple_admin:migration` generator
+
+- [Dmitriy Strukov] Introduced `SimpleAdmin::ResourceController::ControllerBuilder` runtime controller builder
+- [Dmitriy Strukov] Introduced `SimpleAdmin::Search` for dynamically searching by selected fields
+- [Dmitriy Strukov] Introduced `SimpleAdmin::ResourceController::Crudify` as CRUD for standard controller
+- [Dmitriy Strukov] Introduced `SimpleAdmin::ResourceController::CrudifyDynamicResource` as CRUD for controller with dynamic actions
+
