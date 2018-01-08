@@ -1,9 +1,19 @@
 # SimpleAdmin
 A framework for creating admin dashboards in an instant.
 
+## v0.1.2-alpha - 2018-01-07
+
+### Changed
+- [Dmitriy Strukov] Remove user model template in the initialize generator
+
+### Fixed
+- [Dmitriy Strukov] Remove `rails-ujs` and move tabs logic to another file 
+- [Dmitriy Strukov] Number field form template
+
 ## v0.1.1-alpha - 2018-01-02
 
 ### Added
+- [Dmitriy Strukov] Create Issue template
 - [Marina Belova] Entity and fields generator. This is useful for large models with many fields quantity.
 
 ### Changed
