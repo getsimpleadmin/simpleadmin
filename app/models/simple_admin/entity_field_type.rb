@@ -52,9 +52,7 @@ module SimpleAdmin
             "app/views/#{template}/_collection.*"
           end
 
-        unless template_exists?(collection_template_path)
-          errors.add(:base, 'Collection template missing')
-        end
+        errors.add(:base, 'Collection template missing') unless template_exists?(collection_template_path)
       end
 
       def validate_form_template!

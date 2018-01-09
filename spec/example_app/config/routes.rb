@@ -4,4 +4,6 @@ Rails.application.routes.draw do
       resources :posts
     end
   end
+
+  mount_simple_admin
 end
