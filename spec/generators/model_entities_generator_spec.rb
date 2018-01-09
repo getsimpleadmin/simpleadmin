@@ -15,10 +15,10 @@ RSpec.describe SimpleAdmin::Generators::ModelEntitiesGenerator, type: :generator
 
     it 'create entity and entity fields' do
       expect { subject }.to change { SimpleAdmin::Entity.count }.by(1)
-                                .and change { SimpleAdmin::EntityField.count }.by(5)
+                                                                .and change { SimpleAdmin::EntityField.count }.by(5)
 
-      expect(entity.entity_fields.collection.pluck(:name)).to eq ['id', 'title', 'description']
-      expect(entity.entity_fields.form.pluck(:name)).to eq ['title', 'description']
+      expect(entity.entity_fields.collection.pluck(:name)).to eq %w[id title description]
+      expect(entity.entity_fields.form.pluck(:name)).to eq %w[title description]
     end
   end
 end
