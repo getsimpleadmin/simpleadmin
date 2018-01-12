@@ -9,7 +9,7 @@ module SimpleAdmin
       #  => controller_builder.controller_klass
       #  => SimpleAdmin::Admin::ArticlesController
       #
-      # @since 0.1.0
+      # @since 0.1.0-alpha
 
       attr_reader :controller_name
 

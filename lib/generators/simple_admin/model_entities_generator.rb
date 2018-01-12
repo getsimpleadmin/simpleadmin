@@ -3,6 +3,13 @@ require 'rails/generators/base'
 module SimpleAdmin
   module Generators
     class ModelEntitiesGenerator < Rails::Generators::NamedBase
+      # Generate SimpleAdmin::Entity by transmitted model
+      #
+      # @example
+      #   rails generate simple_admin:model_entities Post
+      #
+      # @since 0.1.2-alpha
+
       source_root File.expand_path('../../templates', __FILE__)
 
       EXCLUSION_FIELDS = /\bid\b|created_at|updated_at/

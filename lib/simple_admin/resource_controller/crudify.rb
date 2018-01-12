@@ -30,7 +30,7 @@ module SimpleAdmin
       #    end
       #  end
       #
-      # @since 0.1.0
+      # @since 0.1.0-alpha
 
       extend ActiveSupport::Concern
 

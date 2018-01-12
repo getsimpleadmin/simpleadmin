@@ -1,5 +1,17 @@
 module ActionDispatch::Routing
   class Mapper
+    # Contain built-in routes
+    #
+    # @example
+    #
+    #   # config/routes.rb
+    #
+    #   Rails.application.routes.draw do
+    #     mount_for_simple_admin
+    #   end
+    #
+    # @since 0.1.2-alpha
+
     def mount_for_simple_admin
       scope module: :simple_admin do
         namespace :admin do
