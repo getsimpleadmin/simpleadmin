@@ -1,7 +1,6 @@
-require 'kaminari'
-
 require 'bootstrap-sass'
 require 'jquery-ui-rails'
+require 'kaminari'
 
 require 'simple_admin/routes'
 

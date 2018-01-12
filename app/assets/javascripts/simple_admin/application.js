@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/widgets/tabs
-//= require simple_admin/core
+//= require simple_admin/components/notification
+//= require simple_admin/components/tabs
+//= require simple_admin/components/tags
