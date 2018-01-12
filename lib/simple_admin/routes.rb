@@ -15,7 +15,7 @@ module ActionDispatch::Routing
     def mount_for_simple_admin
       scope module: :simple_admin do
         namespace :admin do
-          root 'system/users#index'
+          root 'system/entities#index'
 
           get :search, to: 'search#index'
 
