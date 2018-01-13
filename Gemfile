@@ -6,7 +6,7 @@ ruby '2.4.1'
 
 gem 'rails', '~> 5.0.0'
 
-gem 'pg'
+gem 'pg', '~> 0.18'
 gem 'rdoc', require: false
 
 group :development, :test do
