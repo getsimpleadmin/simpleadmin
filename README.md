@@ -57,6 +57,40 @@ After that create next partial:
   </ul>
 ```
 
+### Devise integration
+Simple Admin supports devise, you need to add into the Gemfile `gem 'devise'` and run `rails generate simple_admin:install`. This will create view templates for authentication and registration, after that you need to create layout:
+
+```ruby
+# app/views/layouts/devise.html.erb
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exampleapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'simple_admin/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'simple_admin/application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+```
+
+And add the layout to `application.rb`:
+
+```ruby
+module Exampleapp
+  class Application < Rails::Application
+    config.to_prepare do
+      Devise::SessionsController.layout 'devise'
+    end
+  end
+end
+```
+
 ## Customization
 You have two different ways to customize admin panel entities and fields, first way it's to use built in generator, it automatically create all fields for form and collection pages (excepting timestamps and id). All you need is run next command:
 
