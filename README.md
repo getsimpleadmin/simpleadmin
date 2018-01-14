@@ -25,7 +25,16 @@ rails generate simple_admin:migration
 rails db:migrate
 ```
 
-Restart your server, and visit [http://localhost:3000/admin/system/entities](http://localhost:3000/admin/system/entities) for authentication.
+After that, you need to mount simple admin built-in routes:
+
+```ruby
+  # config/routes.rb
+  Rails.application.routes.draw do
+    mount_for_simple_admin
+  end
+```
+
+Restart your server, and visit [http://localhost:3000/admin/system/entities](http://localhost:3000/admin/).
 
 ### Authentication
 
