@@ -1,6 +1,17 @@
 # SimpleAdmin
 A framework for creating admin dashboards in an instant.
 
+## v0.2.0-alpha - 2018-01-14
+
+### Added
+- [Dmitriy Strukov] Add mounter for routes `mount_for_simple_admin`
+- [Dmitriy Strukov] Add documentation for fields generator
+- [Dmitriy Strukov] Add Devise integration documentation
+
+### Fixed
+- [Dmitriy Strukov] Changed old endpoint for root
+- [Dmitriy Strukov] Remove unused helper method 
+
 ## v0.1.2-alpha - 2018-01-07
 
 ### Changed
