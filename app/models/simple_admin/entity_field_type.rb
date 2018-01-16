@@ -52,7 +52,7 @@ module SimpleAdmin
             "app/views/#{template}/_collection.*"
           end
 
-        errors.add(:base, 'Collection template missing') unless template_exists?(collection_template_path)
+        errors.add(:base, 'Collection template is missing') unless template_exists?(collection_template_path)
       end
 
       def validate_form_template!
@@ -63,7 +63,7 @@ module SimpleAdmin
             "app/views/#{template}/_form.*"
           end
 
-        errors.add(:base, 'Form template missing') unless template_exists?(form_template_path)
+        errors.add(:base, 'Form template is missing') unless template_exists?(form_template_path)
       end
 
       def template_exists?(template_path)
