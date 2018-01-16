@@ -15,7 +15,7 @@ en:
       datetime: :string
     system: System
     form_fields:
-      empty: '* That page empty, because you need to define form fields'
+      empty: '* This page is empty, because you need to define form fields'
       create: Create Entity Fields
     table:
       actions: Actions

@@ -25,7 +25,7 @@ RSpec.describe SimpleAdmin::EntityFieldType, type: :model do
 
       it 'return error' do
         expect(subject).to eq false
-        expect(entity_field_type.errors.messages[:base]).to eq ['Form template missing']
+        expect(entity_field_type.errors.messages[:base]).to eq ['Form template is missing']
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe SimpleAdmin::EntityFieldType, type: :model do
 
       it 'return error' do
         expect(subject).to eq false
-        expect(entity_field_type.errors.messages[:base]).to eq ['Collection template missing']
+        expect(entity_field_type.errors.messages[:base]).to eq ['Collection template is missing']
       end
     end
   end
