@@ -8,15 +8,16 @@ A framework for creating admin dashboards in an instant.
 [Try the demo][demo].
 
 ## Getting started
-Add SimpleAdmin to your Gemfile and run bundle:
 
 ![simple_admin](https://i.imgur.com/s1fGVRq.png)
+
+Add SimpleAdmin to your Gemfile and run bundle:
 
 ```ruby
 gem 'simple-admin'
 ```
 
-The following generators will create rolify initializer and core migrations.  
+The following generators will create initializer and core migrations.  
 
 ```ruby
 rails generate simple_admin:install
