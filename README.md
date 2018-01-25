@@ -17,7 +17,7 @@ Add SimpleAdmin to your Gemfile and run bundle:
 gem 'simple-admin'
 ```
 
-The following generators will create initializer and core migrations.  
+The following generators will create an initializer and core migrations.  
 
 ```ruby
 rails generate simple_admin:install
@@ -29,48 +29,49 @@ rails db:migrate
 After that, you need to mount simple admin built-in routes:
 
 ```ruby
-  # config/routes.rb
-  Rails.application.routes.draw do
-    mount_for_simple_admin
-  end
+# config/routes.rb
+Rails.application.routes.draw do
+  mount_for_simple_admin
+end
 ```
 
 Restart your server, and visit [http://localhost:3000/admin/system/entities](http://localhost:3000/admin/).
 
 ### Authentication
 
-Simple admin is very flexible solution, so you can use any gems for that purposes, all you need is just create `app/controllers/simple_admin/admin/application_controller.rb` and remove current_user and authenticate_user! methods with `raise NotImplemented` error and keep the following.
+Simple admin is very flexible solution, so you can use any gem for authentication purposes, all you need to do is create `app/controllers/simple_admin/admin/application_controller.rb` and remove `current_user` and `authenticate_user!` methods with `raise NotImplemented` error and keep the following:
 
 ```ruby
-  # app/controllers/simple_admin/admin/application_controller.rb
+# app/controllers/simple_admin/admin/application_controller.rb
 
-  module SimpleAdmin
-    module Admin
-      class ApplicationController < ActionController::Base
-        layout 'simple_admin'
+module SimpleAdmin
+  module Admin
+    class ApplicationController < ActionController::Base
+      layout 'simple_admin'
 
-        # use here you authentication before action  
-      end
+      # use here you authentication before action  
     end
   end
+end
 ```
 
-After that create next partial:
+After that, create the following partial:
 
-```ruby
-  # app/views/simple_admin/admin/shared/components/_logout.html.erb
+```erb
+# app/views/simple_admin/admin/shared/components/_logout.html.erb
   
-  <ul class="nav-header pull-right">
-    <li>
-      <%= link_to t('simple_admin.actions.logout'), destroy_user_session_path, method: :delete %>
-    </li>
-  </ul>
+<ul class="nav-header pull-right">
+  <li>
+    <%= link_to t('simple_admin.actions.logout'), destroy_user_session_path, method: :delete %>
+  </li>
+</ul>
 ```
 
 ### Devise integration
-Simple Admin supports devise, you need to add into the Gemfile `gem 'devise'` and run `rails generate simple_admin:install`. This will create view templates for authentication and registration, after that you need to create layout:
 
-```ruby
+Simple Admin supports Devise. You need to add `gem 'devise'` to the Gemfile and run `rails generate simple_admin:install`. This will create view templates for authentication and registration, after that you need to create a layout:
+
+```erb
 # app/views/layouts/devise.html.erb
 
 <!DOCTYPE html>
@@ -102,16 +103,18 @@ end
 ```
 
 ## Customization
-You have two different ways to customize admin panel entities and fields, first way it's to use built in generator, it automatically create all fields for form and collection pages (excepting timestamps and id). All you need is run next command:
 
-```ruby
-  rails generate simple_admin:model_entities Post
+You have two different ways to customize admin panel entities and fields, the first way is to use the built-in generator, it automatically creates all fields for form and collection pages (excepting timestamps and id). All you need is to run the following command:
+
+```bash
+rails generate simple_admin:model_entities Post
 ```
-Next way is to create entity in administrative panel and fields for it, you can do it on the entities page (http://localhost:3000/admin/system/entities).
+
+The other way is to create an entity and fields for it in the administrative panel, you can do it on the entities page (http://localhost:3000/admin/system/entities).
 
 ## Dependencies
 
-We try to minimize the use of third-party libraries, but Simple Admin built with the following open source projects:
+We try to minimize the use of third-party libraries, but Simple Admin was built using the following open source projects:
 
 Tool                  | Description
 --------------------- | -----------
@@ -127,13 +130,12 @@ Tool                  | Description
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-
 [CanCanCan]: https://github.com/CanCanCommunity/cancancan
 
 ## Copyright
 
 Released under MIT License.
 
-Copyright © 2017 Evil Raccoon.
+Copyright © 2018 Evil Raccoon.
 
 [demo]: https://simpleadmin.herokuapp.com
