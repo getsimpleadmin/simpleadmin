@@ -1,4 +1,0 @@
-files:
-  excluded:
-    - lib/generators/**/*.rb
-    - app/**/*.rb

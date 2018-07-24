@@ -1,8 +1,0 @@
-<section class="field">
-    <div class="field__title"><%= field.label %></div>
-    <div class="field__content">
-        <div class="select__wrapper">
-            <%= f.select field.name, str_to_method(field.entity_field_setting.select_field.value), {}, { class: 'select' } %>
-        </div>
-    </div>
-</section>

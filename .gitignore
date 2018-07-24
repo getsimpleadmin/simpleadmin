@@ -5,11 +5,6 @@
 /coverage/
 /doc/
 /pkg/
-/spec/reports/
-/spec/example_app/log
-/spec/example_app/log/*
-/spec/example_app/public/*
-/spec/example_app/tmp
 /tmp/
 
 # rspec failure tracking

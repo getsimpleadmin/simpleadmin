@@ -1,5 +1,0 @@
-<% if field.id_field? %>
-    <td class="text-center"><%= resource.public_send(field.name) %></td>
-<% else %>
-    <td><%= resource.public_send(field.name) %></td>
-<% end %>

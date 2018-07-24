@@ -1,6 +1,0 @@
-<div class="form-group">
-    <label class="col-xs-12" for="example-text-input"><%= field.label %></label>
-    <div class="col-sm-9">
-        <%= f.select field.name, field.association_klass.all.collect { |record| [record.public_send(field.entity_field_setting.value), record.id] }, {}, { class: 'form-control' } %>
-    </div>
-</div>
