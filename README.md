@@ -1,39 +1,49 @@
-# Simpleadmin
+# SimpleAdmin
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simpleadmin`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/evil-raccoon/simple-admin.svg?branch=master)](https://travis-ci.org/evil-raccoon/simple-admin)
+[![codecov](https://codecov.io/gh/evil-raccoon/simple_admin/branch/master/graph/badge.svg)](https://codecov.io/gh/evil-raccoon/simple_admin)
+[![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
 
-TODO: Delete this and the text above, and describe your gem
+https://getsimpleadmin.com
 
-## Installation
+A small API library to connect your application with SimpleAdmin service and create admin dashboards in an instant.
 
-Add this line to your application's Gemfile:
+## Getting started
+
+![simple_admin](https://i.imgur.com/s1fGVRq.png)
+
+Add SimpleAdmin to your Gemfile and run bundle:
 
 ```ruby
-gem 'simpleadmin'
+gem 'simple-admin'
 ```
 
-And then execute:
+After that, you need to mount simple admin built-in routes:
 
-    $ bundle
+```ruby
+# config/routes.rb
+Rails.application.routes.draw do
+  mount_for_simple_admin
+end
+```
 
-Or install it yourself as:
+Create initializer, add your secret key and restart server
 
-    $ gem install simpleadmin
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+# config/initializers/simpleadmin.rb
+ENV['SIMPLE_ADMIN_SECRET_KEY'] = 'SECRET_KEY'
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simpleadmin. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+1. Fork it ( https://github.com/evil-raccoon/simple_admin/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
 
-## Code of Conduct
+## Copyright
 
-Everyone interacting in the Simpleadmin project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/simpleadmin/blob/master/CODE_OF_CONDUCT.md).
+Released under MIT License.
+
+Copyright © 2018 Evil Raccoon.
