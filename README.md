@@ -1,16 +1,10 @@
 # SimpleAdmin
 
-[![Build Status](https://travis-ci.org/evil-raccoon/simple-admin.svg?branch=master)](https://travis-ci.org/evil-raccoon/simple-admin)
-[![codecov](https://codecov.io/gh/evil-raccoon/simple_admin/branch/master/graph/badge.svg)](https://codecov.io/gh/evil-raccoon/simple_admin)
-[![Inline docs](http://inch-ci.org/github/evil-raccoon/simple_admin.svg)](http://inch-ci.org/github/evil-raccoon/simple_admin)
-
-https://getsimpleadmin.com
-
-A small API library to connect your application with SimpleAdmin service and create admin dashboards in an instant.
+API library to connect your application with SimpleAdmin service and create admin dashboards in an instant. [Try the demo][demo]
 
 ## Getting started
 
-![simple_admin](https://i.imgur.com/s1fGVRq.png)
+![simple_admin](https://image.ibb.co/mTjOpe/simpleadmin_preview.png)
 
 Add SimpleAdmin to your Gemfile and run bundle:
 
@@ -46,4 +40,6 @@ ENV['SIMPLE_ADMIN_SECRET_KEY'] = 'SECRET_KEY'
 
 Released under MIT License.
 
-Copyright © 2018 Evil Raccoon.
+Copyright © 2018 SimpleAdmin.
+
+[demo]: https://getsimpleadmin.com/en/demo/admin/resources?model_klass_name=Post
