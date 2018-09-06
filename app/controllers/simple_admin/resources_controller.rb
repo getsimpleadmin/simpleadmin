@@ -8,7 +8,7 @@ module SimpleAdmin
       page     = params[:page].to_i if params[:page].present?
       total    = model_klass.count
 
-      resources = model_klass.limit(per_page)
+      resources = model_klass.order(id: :asc).limit(per_page)
 
       if params[:query].present?
         search_result = search(params[:query], model_klass, params[:model_attributes])
