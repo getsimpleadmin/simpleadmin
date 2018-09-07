@@ -30,6 +30,12 @@ And then run:
 ```ruby
 bundle install
 ```
+**NOTE**: If you want to test your local project you'll needing to install [ngrok][ngrok] and run following command:
+```ruby
+./ngrok http 3000
+```
+
+Copy your forwarding URL and use it when you will be creating a project (column url).
 
 ## Configuration
 
@@ -58,3 +64,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/getsim
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 [demo]: https://getsimpleadmin.com/en/demo/admin/resources?model_klass_name=Post
+[ngrok]: https://ngrok.com/
