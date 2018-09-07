@@ -1,8 +1,21 @@
+[![Gem Version](https://badge.fury.io/rb/simpleadmin.svg)](https://rubygems.org/gems/simpleadmin)
+[![Gitter](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/simpleadmin-rails/Lobby)
+
+
 # SimpleAdmin
 
-API library to connect your application with SimpleAdmin service and create admin dashboards in an instant. [Try the demo][demo]
+SimpleAdmin allows you to create a personalized administrative panel for your business and edit it without special knowledge in programming and works with any stack, because you are not tied to a specific programming language.
 
-## Getting started
+This is small API library to connect your application with SimpleAdmin service. 
+
+[Example Application][demo]
+
+## Requirements
+
+- Ruby ~> 2.3;
+- Rails ~> 5.0;
+
+## Installation
 
 ![simple_admin](https://image.ibb.co/mTjOpe/simpleadmin_preview.png)
 
@@ -30,16 +43,10 @@ ENV['SIMPLE_ADMIN_SECRET_KEY'] = 'SECRET_KEY'
 
 ## Contributing
 
-1. Fork it ( https://github.com/evil-raccoon/simple_admin/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Bug reports and pull requests are welcome on GitHub at https://github.com/getsimpleadmin/simpleadmin.
 
-## Copyright
+## License
 
-Released under MIT License.
-
-Copyright © 2018 SimpleAdmin.
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 [demo]: https://getsimpleadmin.com/en/demo/admin/resources?model_klass_name=Post
