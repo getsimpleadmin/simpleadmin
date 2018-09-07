@@ -19,13 +19,21 @@ This is small API library to connect your application with SimpleAdmin service.
 
 ![simple_admin](https://image.ibb.co/mTjOpe/simpleadmin_preview.png)
 
-Add SimpleAdmin to your Gemfile and run bundle:
+Add SimpleAdmin to your application's Gemfile:
 
 ```ruby
 gem 'simpleadmin'
 ```
 
-After that, you need to mount simple admin built-in routes:
+And then run:
+
+```ruby
+bundle install
+```
+
+## Configuration
+
+Add method `mount_simpleadmin` to your routes file to mount simpleadmin built-in routes:
 
 ```ruby
 # config/routes.rb
