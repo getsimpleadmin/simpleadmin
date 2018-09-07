@@ -32,7 +32,7 @@ bundle install
 ```
 **NOTE**: If you want to test your local project you'll needing to install [ngrok][ngrok] and run following command:
 ```ruby
-ngrok http 3000
+./ngrok http 3000
 ```
 
 Copy your forwarding URL and use it when you will be creating a project (column url).
