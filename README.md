@@ -35,7 +35,7 @@ bundle install
 ./ngrok http 3000
 ```
 
-Copy your forwarding URL and use it when you will be creating a project (column url).
+Copy your Forwadding URL (http://exampleapp.ngrok.io) and use it when you will be creating a project (column url).
 
 ## Configuration
 
