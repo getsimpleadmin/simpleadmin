@@ -2,7 +2,7 @@ module SimpleAdmin
   class ResourcesController < BaseController
     def index
       model_klass  = params[:model_klass_name].constantize
-      model_fields = params[:model_fields]
+      model_fields = params[:model_fields].map { |field_attributes| field_attributes[:field_name] }
 
       per_page = params[:per_page].to_i
       page     = params[:page].to_i if params[:page].present?
@@ -45,7 +45,7 @@ module SimpleAdmin
 
     def show
       model_klass = params[:model_klass_name].constantize
-      model_fields = params[:model_fields]
+      model_fields = params[:model_fields].map { |model_field| model_field['field_name'] }
 
       resource = model_klass.find(params[:id]).attributes.slice(*model_fields)
 

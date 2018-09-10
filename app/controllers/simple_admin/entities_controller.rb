@@ -3,8 +3,17 @@ module SimpleAdmin
     before_action :load_models
 
     def index
+      models = []
+
+      ApplicationRecord.descendants.each do |model|
+        models << {
+          name:    model.name,
+          columns: model.columns.map { |column| { name: column.name, type: column.sql_type.parameterize.underscore } }
+        }
+      end
+
       render json: {
-        entities_names: ApplicationRecord.descendants.map { |model| model.name }
+        models: models
       }
     end
 
