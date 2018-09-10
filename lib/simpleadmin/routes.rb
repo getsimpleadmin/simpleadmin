@@ -17,7 +17,7 @@ module ActionDispatch::Routing
         resources :entities,  only: [:index, :show]
         resources :resources
 
-        post 'verify_key' => 'credentials#verify_key'
+        get 'version', to: 'versions#show'
       end
     end
   end
