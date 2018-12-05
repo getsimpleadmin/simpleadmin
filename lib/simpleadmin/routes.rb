@@ -15,6 +15,8 @@ module ActionDispatch::Routing
     def mount_simpleadmin
       namespace :simple_admin do
         resources :entities,  only: [:index, :show]
+        resources :entity_field_type_actions, only: :create
+
         resources :resources
 
         get 'version', to: 'versions#show'
