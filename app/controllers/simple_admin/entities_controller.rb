@@ -22,7 +22,8 @@ module SimpleAdmin
 
       render json: {
         name: resource_klass.name,
-        column_names: resource_klass.column_names
+        column_names: resource_klass.column_names,
+        columns: resource_klass.columns.map { |column| { name: column.name, type: column.sql_type.parameterize.underscore } }
       }
     end
 
