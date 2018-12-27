@@ -1,6 +1,4 @@
 [![Gem Version](https://badge.fury.io/rb/simpleadmin.svg)](https://rubygems.org/gems/simpleadmin)
-[![Gitter](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/simpleadmin-rails/Lobby)
-
 
 # SimpleAdmin
 
@@ -17,7 +15,7 @@ This is small API library to connect your application with SimpleAdmin service.
 
 ## Installation
 
-![simple_admin](https://image.ibb.co/mTjOpe/simpleadmin_preview.png)
+![simple_admin](https://getsimpleadmin.com/assets/browser-60e23472a81b90d1de2caf52e02b982cba4d1db4215626352476670deed9dd25.png)
 
 Add SimpleAdmin to your application's Gemfile:
 
