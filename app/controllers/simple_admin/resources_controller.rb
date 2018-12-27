@@ -1,50 +1,16 @@
 module SimpleAdmin
   class ResourcesController < BaseController
     def index
-      model_klass  = params[:model_klass_name].constantize
-      model_fields = params[:model_fields].map { |field_attributes| field_attributes[:field_name] }
-
-      per_page = params[:per_page].to_i
-      page     = params[:page].to_i if params[:page].present?
-      total    = model_klass.count
-
-      resources = model_klass.limit(per_page)
-
-      if params[:query].present?
-        search_result = search(params[:query], model_klass, params[:model_attributes])
-
-        resources = search_result[:resources]
-        total     = search_result[:total]
-      end
-
-      resources = resources.offset((per_page * page) - per_page) if page.present?
-
-      if params[:sort].present?
-        resources = resources.order(params[:sort][:column_name] => params[:sort][:order])
-      else
-        resources = resources.order(id: :asc)
-      end
-
-      resources = resources.map do |resource|
-        _resource = {}
-
-        resource.attributes.each do |attribute_name, attribute_value|
-          next unless model_fields.include?(attribute_name)
-
-          _resource[attribute_name] = attribute_value
-        end
-
-        _resource
-      end
+      resource_service = ResourcesService.new(params[:model_klass_name], params[:model_fields])
+                                         .index_action(params[:per_page], params[:page], params[:sort], params[:query], params[:model_attributes])
 
       render json: {
-        resources: resources,
-        total:     total
+        resources: resource_service.resources,
+        total: resource_service.total
       }
     end
 
     def show
-      model_klass = params[:model_klass_name].constantize
       model_fields = params[:model_fields].map { |model_field| model_field['field_name'] }
 
       resource = model_klass.find(params[:id]).attributes.slice(*model_fields)
@@ -53,8 +19,6 @@ module SimpleAdmin
     end
 
     def create
-      model_klass = params[:model_klass_name].constantize
-
       resource = model_klass.new(resource_params)
 
       if resource.save
@@ -65,7 +29,6 @@ module SimpleAdmin
     end
 
     def update
-      model_klass = params[:model_klass_name].constantize
       resource = model_klass.find(params[:id])
 
       if resource.update(resource_params)
@@ -76,7 +39,6 @@ module SimpleAdmin
     end
 
     def destroy
-      model_klass = params[:model_klass_name].constantize
       resource = model_klass.find(params[:id])
 
       resource.destroy
@@ -84,16 +46,8 @@ module SimpleAdmin
 
     private
 
-      def search(search_query, model_klass, model_attributes)
-        return [] if model_attributes.empty?
-
-        query = model_attributes.map { |model_attribute| "#{model_attribute} LIKE ?" }.join(' OR ')
-        query_arguments = model_attributes.map { "%#{search_query}%" }
-
-        {
-          resources: model_klass.where(query, *query_arguments),
-          total:     model_klass.where(query, *query_arguments).count
-        }
+      def model_klass
+        params[:model_klass_name].constantize
       end
 
       def resource_params

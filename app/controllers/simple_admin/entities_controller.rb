@@ -7,7 +7,7 @@ module SimpleAdmin
 
       ApplicationRecord.descendants.each do |model|
         models << {
-          name:    model.name,
+          name: model.name,
           columns: model.columns.map { |column| { name: column.name, type: column.sql_type.parameterize.underscore } }
         }
       end
