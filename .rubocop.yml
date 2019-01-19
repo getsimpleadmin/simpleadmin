@@ -1,0 +1,74 @@
+AllCops:
+  Exclude:
+    - 'spec/fixtures/**/*'
+    - 'bin/*'
+    - 'spec/support'
+    - 'spec/factories'
+    - 'spec/fixtures'
+    - 'spec/support/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+  TargetRubyVersion: 2.5.1
+  DisplayCopNames: true
+
+Style/Encoding:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/LineLength:
+  Max: 160
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/AbcSize:
+  Max: 80
+
+Metrics/BlockLength:
+  Max: 100
+
+Metrics/PerceivedComplexity:
+  Max: 20
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/ParameterLists:
+  Max: 10
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  Enabled: false
+
+Style/AccessModifierDeclarations:
+  Enabled: false
+
+Layout/AlignHash:
+  Enabled: false
+
+Layout/IndentHash:
+  Enabled: false
