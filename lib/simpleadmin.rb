@@ -1,7 +1,7 @@
 require 'simpleadmin/version'
 require 'simpleadmin/engine'
 
-require 'rails/application'
+require 'simpleadmin/application'
 
 module Simpleadmin
 end
