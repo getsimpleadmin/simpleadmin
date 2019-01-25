@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/getsimpleadmin/simpleadmin.svg?branch=master)](http://travis-ci.org/getsimpleadmin/simpleadmin) [![codecov.io](https://codecov.io/github/getsimpleadmin/simpleadmin/coverage.svg?branch=master)](https://codecov.io/github/getsimpleadmin/simpleadmin?branch=master)[![Gem Version](https://badge.fury.io/rb/simpleadmin.svg)](https://rubygems.org/gems/simpleadmin)[![Maintainability](https://api.codeclimate.com/v1/badges/ca0015b11992514879c5/maintainability)](https://codeclimate.com/github/getsimpleadmin/simpleadmin/maintainability)
+[![Build Status](https://secure.travis-ci.org/getsimpleadmin/simpleadmin-rails.svg?branch=master)](http://travis-ci.org/getsimpleadmin/simpleadmin-rails) [![codecov.io](https://codecov.io/github/getsimpleadmin/simpleadmin-rails/coverage.svg?branch=master)](https://codecov.io/github/getsimpleadmin/simpleadmin-rails?branch=master)[![Gem Version](https://badge.fury.io/rb/simpleadmin.svg)](https://rubygems.org/gems/simpleadmin)[![Maintainability](https://api.codeclimate.com/v1/badges/ca0015b11992514879c5/maintainability)](https://codeclimate.com/github/getsimpleadmin/simpleadmin-rails/maintainability)
 
 # [SimpleAdmin](http://getsimpleadmin.com)
 
@@ -6,7 +6,7 @@ SimpleAdmin is a service for people with no special skills that enables a simple
 
 You do not need to waste your time on development and technical support. The Simple Admin team will help you pay focus on the key thing – your Product.
 
-This is small API library to connect your application with SimpleAdmin service. 
+This is small API library to connect your application with SimpleAdmin service.
 
 [Example Application][demo]
 
