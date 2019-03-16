@@ -53,6 +53,10 @@ Create initializer, add your secret key and restart server
 ```ruby
 # config/initializers/simpleadmin.rb
 ENV['SIMPLE_ADMIN_SECRET_KEY'] = 'SECRET_KEY'
+
+Simpleadmin::Config.setup do |config|
+  config.api_test_mode = true # If you want to disable secret key verification
+end
 ```
 
 ## Contributing
