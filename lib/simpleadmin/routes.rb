@@ -5,6 +5,10 @@ module ActionDispatch::Routing
         namespace :v1 do
           resources :entities, only: %i[index show]
           resources :resources
+
+          namespace :widgets do
+            resources :resource_quantity, only: :show
+          end
         end
       end
     end

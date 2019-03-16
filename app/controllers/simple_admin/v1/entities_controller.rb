@@ -1,6 +1,6 @@
 module SimpleAdmin
   module V1
-    class EntitiesController < BaseController
+    class EntitiesController < SimpleAdmin::V1::BaseController
       before_action :load_models!
 
       def index
