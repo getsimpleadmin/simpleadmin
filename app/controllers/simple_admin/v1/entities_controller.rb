@@ -4,7 +4,7 @@ module SimpleAdmin
       before_action :load_models!
 
       def index
-        render json: { models: SimpleAdmin::Abstractions::Model.list }
+        render json: SimpleAdmin::Abstractions::Model.list
       end
 
       def show

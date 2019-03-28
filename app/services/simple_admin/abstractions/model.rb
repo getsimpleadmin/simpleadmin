@@ -2,7 +2,7 @@ module SimpleAdmin
   module Abstractions
     class Model
       def self.list
-        ApplicationRecord.descendants.map do |model|
+        models = ApplicationRecord.descendants.map do |model|
           name = model.name
           columns = model.columns.map do |column|
             {
@@ -13,6 +13,8 @@ module SimpleAdmin
 
           { name: name, columns: columns }
         end
+
+        { models: models }
       end
 
       def self.attributes_by_model_klass(model_klass_name)

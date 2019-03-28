@@ -65,12 +65,16 @@ module SimpleAdmin
 
       private
 
+        def resource_params
+          params.require(:resource).permit!
+        end
+
         def model_klass
           SimpleAdmin::Abstractions::Model.find_by_name(params[:model_klass_name])
         end
 
-        def resource_params
-          params.require(:resource).permit!
+        def load_models!
+          Rails.application.load_models!
         end
     end
   end
