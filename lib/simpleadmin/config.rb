@@ -10,7 +10,11 @@ module Simpleadmin
       @api_test_mode || API_TEST_MODE
     end
 
-    attr_writer :api_test_mode
+    def excluded_models
+      @excluded_models || []
+    end
+
+    attr_writer :api_test_mode, :excluded_models
 
     def self.setup
       yield(instance)

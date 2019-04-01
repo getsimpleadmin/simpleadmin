@@ -1,6 +1,8 @@
 module SimpleAdmin
   module V1
     class ResourcesController < SimpleAdmin::V1::BaseController
+      before_action :handle_model_klass!
+
       def index
         per_page = params[:per_page].to_i
         page     = params[:page].to_i if params[:page].present?
@@ -26,7 +28,13 @@ module SimpleAdmin
           end
 
         render json: {
-          resources: resources.pluck(*params[:model_fields]).map { |resource| params[:model_fields].zip(resource).to_h },
+          resources:  resources.pluck(*params[:model_fields]).map do |resource|
+                        if resource.instance_of?(Array)
+                          params[:model_fields].zip(resource).to_h
+                        else
+                          params[:model_fields].zip([resource]).to_h
+                        end
+                      end,
           total: total
         }
       end
@@ -71,6 +79,10 @@ module SimpleAdmin
 
         def model_klass
           SimpleAdmin::Abstractions::Model.find_by_name(params[:model_klass_name])
+        end
+
+        def handle_model_klass!
+          render json: {}, status: 406 if model_klass.nil?
         end
 
         def load_models!

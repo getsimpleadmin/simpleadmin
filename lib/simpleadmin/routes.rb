@@ -8,6 +8,7 @@ module ActionDispatch::Routing
 
           namespace :widgets do
             resources :resource_quantity, only: :show
+            resources :week_statistic,    only: :show
           end
         end
       end

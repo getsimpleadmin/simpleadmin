@@ -2,7 +2,7 @@ module SimpleAdmin
   module Abstractions
     class Model
       def self.list
-        models = ApplicationRecord.descendants.map do |model|
+        models = allowed_models.map do |model|
           name = model.name
           columns = model.columns.map do |column|
             {
@@ -33,12 +33,8 @@ module SimpleAdmin
       def self.find_by_name(name)
         model_klass = name.safe_constantize
 
-        if ApplicationRecord.descendants.include?(model_klass)
+        if allowed_models.include?(model_klass)
           model_klass
-        elsif model_klass.nil?
-          raise ArgumentError
-        else
-          raise SecurityError
         end
       end
 
@@ -52,6 +48,11 @@ module SimpleAdmin
           resources: model_klass.where(query, *query_arguments),
           total: model_klass.where(query, *query_arguments).count
         )
+      end
+
+
+      def self.allowed_models
+        ApplicationRecord.descendants.reject { |model| Simpleadmin::Config.instance.excluded_models.include?(model) }
       end
     end
   end
