@@ -8,6 +8,7 @@ AllCops:
     - 'spec/support/*'
     - 'spec/spec_helper.rb'
     - 'spec/rails_helper.rb'
+    - 'db/**/*'
   TargetRubyVersion: 2.5.1
   DisplayCopNames: true
 

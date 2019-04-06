@@ -1,7 +1,7 @@
 module SimpleAdmin
   module Abstractions
-    class Model
-      def self.list
+    module Model
+      def list
         models = allowed_models.map do |model|
           name = model.name
           columns = model.columns.map do |column|
@@ -17,7 +17,9 @@ module SimpleAdmin
         { models: models }
       end
 
-      def self.attributes_by_model_klass(model_klass_name)
+      module_function :list
+
+      def attributes_by_model_klass(model_klass_name)
         model_klass = model_klass_name.safe_constantize
 
         return if model_klass.nil?
@@ -30,15 +32,17 @@ module SimpleAdmin
         }
       end
 
-      def self.find_by_name(name)
+      module_function :attributes_by_model_klass
+
+      def find_by_name(name)
         model_klass = name.safe_constantize
 
-        if allowed_models.include?(model_klass)
-          model_klass
-        end
+        model_klass if allowed_models.include?(model_klass)
       end
 
-      def self.search(search_query, model_klass, model_attributes)
+      module_function :find_by_name
+
+      def search(search_query, model_klass, model_attributes)
         return [] if model_attributes.empty?
 
         query = model_attributes.map { |model_attribute| "#{model_attribute} LIKE ?" }.join(' OR ')
@@ -50,10 +54,13 @@ module SimpleAdmin
         )
       end
 
+      module_function :search
 
-      def self.allowed_models
+      def allowed_models
         ApplicationRecord.descendants.reject { |model| Simpleadmin::Config.instance.excluded_models.include?(model) }
       end
+
+      module_function :allowed_models
     end
   end
 end
