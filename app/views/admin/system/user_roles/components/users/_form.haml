@@ -1,0 +1,25 @@
+= form_for form_resource, url: form_url, remote: true do |f|
+  .form-group.row
+    %label.col-12
+      Email *
+    .col-md-9
+      = f.email_field :email, placeholder: 'johndoe@example.com', required: true, class: 'form-control'
+
+  .form-group.row
+    %label.col-12
+      Password *
+    .col-md-9
+      = f.text_field :password, placeholder: 'Minimum 6 characters', minlength: 6, required: true, class: 'form-control'
+
+  .form-group.row
+    %label.col-12
+      Password Confirmation *
+    .col-md-9
+      = f.text_field :password_confirmation, placeholder: 'Type password again', minlength: 6, required: true, class: 'form-control'
+
+
+  = f.hidden_field :user_role_id, value: resource.id
+
+  .form-group.row
+    .col-12
+      = f.submit button, class: 'btn btn-primary'

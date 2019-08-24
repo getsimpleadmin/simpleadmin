@@ -1,0 +1,12 @@
+%li{ 'data-id' => user.id }
+  .block
+    .block-header.block-header-default
+      %h3.block-title
+        = user.email
+
+      .block-options
+        = link_to new_admin_user_session_path(@project), target: '_blank' do
+          %i.fa.fa-link
+        
+        = link_to admin_system_user_path(@project, user, user_role_id: user.user_role), method: :delete, remote: true, data: { confirm: 'Are you sure?' } do
+          %i.fa.fa-trash

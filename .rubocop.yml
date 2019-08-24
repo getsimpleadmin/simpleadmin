@@ -1,0 +1,36 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'config/application.rb'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+  TargetRubyVersion: 2.6.3
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Max: 35
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 115
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false

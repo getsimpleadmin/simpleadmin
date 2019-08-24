@@ -1,0 +1,8 @@
+.content
+  .col-md-8
+    .block
+      .block-header.block-header-default
+        %h3.block-title
+          = t('admin.user_roles.form.create.title')
+      .block-content
+        = render 'form', resource: @resource, form_url: admin_system_user_roles_path, button: 'Create Role'

@@ -1,0 +1,13 @@
+{
+    "character varying": "string",
+    "bigint": "number",
+    "integer": "number",
+    "INTEGER": "number",
+    "numeric": "number",
+    "UUID": "number",
+    "STRING": "string",
+    "text": "text",
+    "BOOLEAN": "boolean",
+    "timestamp_without_time_zone": "date",
+    "DATE": "date"
+}

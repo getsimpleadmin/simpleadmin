@@ -1,0 +1,6 @@
+%li.page-item
+  = link_to url, remote: remote, class: 'page-link' do
+    %span{"aria-hidden" => "true"}
+      %i.fa.fa-angle-double-left
+    %span.sr-only
+      = t('views.pagination.first').html_safe

@@ -1,0 +1,47 @@
+#sidebar {
+    background: #b96c55;
+}
+
+.nav-main a {
+    color: #fff;
+}
+
+.nav-main .nav-main-heading {
+    color: #fff;
+    opacity: 1;
+}
+
+.nav-main a.active > i, .nav-main a:focus > i, .nav-main a:hover > i {
+    color: #fff;
+}
+
+a:hover.link-effect::before {
+    background: #fff;
+}
+
+.btn-dual-secondary {
+    color: #fff;
+    background: #b96c55;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #e67c5d;
+    border-color: #e67c5d;
+}
+
+.badge-primary, .css-switch.css-control-primary .css-control-input:checked ~ .css-control-indicator {
+    background-color: #e67c5d;   
+}
+
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+    color: #fff;
+    background-color: #e67c5d;
+    border-color: #e67c5d;
+}
+
+.btn-dual-secondary.focus, .btn-dual-secondary:focus, .btn-dual-secondary:hover {
+    color: #fff;
+    background-color: #e67c5d;
+    border-color: #e67c5d;
+}

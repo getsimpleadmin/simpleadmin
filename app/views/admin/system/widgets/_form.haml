@@ -1,0 +1,48 @@
+= form_for resource, url: form_url do |f|
+  .form-group.row
+    %label.col-12
+      = t('admin.widgets.form.name.label')
+    .col-md-9
+      = f.text_field :name, required: true, class: 'form-control'
+
+  .form-group.row
+    %label.col-12
+      = t('admin.widgets.form.icon.label')
+    .col-md-9
+      = f.text_field :icon, readonly: true, class: 'form-control icon-picker'
+
+  .form-group.row
+    %label.col-12
+      = t('admin.widgets.form.widget_category_id.label')
+    .col-md-9
+      = f.select :widget_category_id, SimpleAdmin::WidgetCategory.all.map { |ft| [ft.label, ft.id] }, {}, { class: 'form-control' }
+
+  .form-group.row
+    %label.col-12
+      = t('admin.widgets.form.entity_id.label')
+    .col-md-9
+      = f.select :entity_id, @project.entities.enabled.map { |ft| [ft.model_klass_name, ft.id] }, {}, { class: 'form-control' }
+
+  .form-group.row
+    %label.col-12
+      = t('admin.widgets.form.sort_order.label')
+    .col-md-9
+      = f.number_field :sort_order, value: @project.widgets.count, class: 'form-control'
+
+  .form-group.row
+    %label.col-12
+      = t('admin.widgets.form.width.label')
+    .col-md-9
+      = f.select :width, [['100%', 'col-12'], ['50%', 'col-6'], ['33.3%', 'col-4'], ['25%', 'col-3']], { selected: 'col-6' }, { class: 'form-control' }
+
+  .form-group.row
+    %label.col-12
+      = t('admin.widgets.form.status.label')
+    .col-md-9
+      %label.css-control.css-control-sm.css-control-primary.css-switch
+        = f.check_box :status, class: 'css-control-input'
+        %span.css-control-indicator
+
+  .form-group.row
+    .col-12
+      = f.submit class: 'btn btn-primary'

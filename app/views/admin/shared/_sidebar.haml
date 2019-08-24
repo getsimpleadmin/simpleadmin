@@ -1,0 +1,82 @@
+%nav#sidebar{ 'data-target' => 'admin.sidebarMenu' }
+  .sidebar-content
+    .content-header.content-header-fullrow.px-15
+      .content-header-section.sidebar-mini-visible-b
+        %span.content-header-item.font-w700.font-size-xl.float-left.animated.fadeIn
+          %span.text-dual-primary-dark c
+          %span.text-primary btoggleMobileMenu
+      
+      .content-header-section.text-center.align-parent.sidebar-mini-hidden
+        %button.btn.btn-circle.btn-dual-secondary.d-lg-none.align-v-r{ 'data-action' => 'click->admin#toggleMobileMenu' }
+          %i.fa.fa-times.text-white
+        .content-header-item
+          = link_to admin_dashboard_index_path, class: 'link-effect font-w700' do
+            %span.font-size-xl.text-dual-primary-dark
+              = @project.name
+
+    .content-side.content-side-full
+      %ul.nav-main
+        %li
+          = link_to admin_dashboard_index_path do
+            %i.fa.fa-dashboard
+            %span.sidebar-mini-hide
+              = t('admin.menu.system.dashboard')
+
+        - if current_user.present?
+          - if @project.entities.enabled.any?
+            %li.nav-main-heading
+              %span.sidebar-mini-visible UI
+              %span.sidebar-mini-hidden
+                = t('admin.menu.system.resources')
+
+          - @project.entities.enabled.each do |entity|
+            %li
+              = link_to admin_resources_path(resource_id: entity.model_klass_name) do
+                %i{ class: entity.icon }
+                %span.sidebar-mini-hide
+                  = entity.label
+
+          %li.nav-main-heading
+            %span.sidebar-mini-visible UI
+            %span.sidebar-mini-hidden
+              = t('admin.menu.system.title')
+
+          - @project.project_menu_items.latest.each do |project_menu_item|
+            - next unless project_menu_item.persisted?
+            %li
+              = link_to public_send(project_menu_item.path) do
+                %i{ class: "si #{project_menu_item.icon}" }
+                %span.sidebar-mini-hide
+                  = t(project_menu_item.locale)
+
+        - elsif current_admin_user.present?
+          - if @project.entities.enabled.any? && current_admin_user.can_view?(@project.entities.enabled.pluck(:model_klass_name))
+            %li.nav-main-heading
+              %span.sidebar-mini-visible UI
+              %span.sidebar-mini-hidden
+                = t('admin.menu.system.resources')
+
+          - @project.entities.enabled.each do |entity|
+            - if current_admin_user.can_view?(entity.model_klass_name)
+              %li
+                = link_to admin_resources_path(resource_id: entity.model_klass_name) do
+                  %i{ class: entity.icon }
+                  %span.sidebar-mini-hide
+                    = entity.label
+
+          - if current_admin_user.can_view?(@project.project_menu_items.pluck(:model_klass_name))
+            %li.nav-main-heading
+              %span.sidebar-mini-visible UI
+              %span.sidebar-mini-hidden
+                = t('admin.menu.system.title')
+            
+            - @project.project_menu_items.latest.each do |project_menu_item|
+              - next unless project_menu_item.persisted?
+              
+              - if current_admin_user.can_view?(project_menu_item.model_klass_name)
+                %li
+                  = link_to public_send(project_menu_item.path) do
+                    %i{ class: "si #{project_menu_item.icon}" }
+                    %span.sidebar-mini-hide
+                      = t(project_menu_item.locale)
+

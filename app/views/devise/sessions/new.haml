@@ -1,0 +1,29 @@
+.content.clearfix.bkg-gradient-royal-garden
+  .section-block.replicable-content.window-height.bkg-heavy-rain-gradient
+    .row.flex.v-align-middle
+      .column.width-6.offset-3
+        .signup-box.box.rounded.xlarge.bkg-white
+          %h3.center
+            = t('sign_in.title')
+
+          .login-form-container
+            = form_for(User.new, as: :user, url: session_path(:user)) do |f|
+              .row
+                .column.width-12
+                  .field-wrapper
+                    %label.color-charcoal
+                      = t('sign_in.form.email.label')
+                    = f.email_field :email, placeholder: t('sign_in.form.email.placeholder'), required: true, class: 'form-username form-element rounded medium'
+                
+                .column.width-12
+                  .field-wrapper
+                    %label.color-charcoal
+                      = t('sign_in.form.password.label')
+                    = f.password_field :password, placeholder: t('sign_in.form.password.placeholder'), required: true, minlength: 6, class: 'form-password form-element rounded medium'
+
+                .column.width-12
+                  = f.submit t('sign_in.form.submit'), class: 'form-submit button rounded medium bkg-blue bkg-hover-blue color-white color-hover-white mb-0'
+
+                  %p.text-small.mt-20
+                    = t('forgot_password.label')
+                    = link_to t('forgot_password.submit'), new_user_password_path

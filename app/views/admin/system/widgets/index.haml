@@ -1,0 +1,57 @@
+.content
+  %h2.content-heading
+    = t('admin.widgets.title')
+
+  - if can?(:create, SimpleAdmin::Widget)
+    .text-right.actions
+      = link_to t('admin.widgets.new'), new_admin_system_widget_path, class: 'btn btn-primary min-width-125'
+
+  .block
+    .block-content
+      - if @resources.any?
+        .table-responsive
+          %table.table.table-vcenter.table-simpleadmin
+            %thead
+              %tr
+                - t('admin.widgets.actions').each do |action_name|
+                  %th
+                    = action_name
+
+                - if can?(:edit, SimpleAdmin::Widget) || can?(:destroy, SimpleAdmin::Widget)
+                  %th.text-center{style: "width: 100px;"}
+                    = t('admin.actions')
+            %tbody
+              - @resources.each do |resource|
+                %tr
+                  %td.text-center
+                    = resource.name
+                  %td
+                    = resource.widget_category.label
+                  %td
+                    = resource.entity.model_klass_name
+                  %td
+                    - if resource.enabled?
+                      %span.badge.badge-primary
+                        = t("admin.status.#{resource.status}")
+                    - else
+                      %span.badge.badge-danger
+                        = t("admin.status.#{resource.status}")
+                  %td
+                    = resource.sort_order
+
+                  %td
+                    = { 'col-12' => '100%', 'col-6' => '50%', 'col-4' => '33.3%', 'col-3' => '25%' }[resource.width]
+
+                  - if can?(:edit, SimpleAdmin::Widget) || can?(:destroy, SimpleAdmin::Widget)
+                    %td.text-center
+                      .btn-group
+                        = link_to edit_admin_system_widget_path(@project, resource), class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                          %i.fa.fa-pencil
+                        = link_to admin_system_widget_path(@project, resource), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                          %i.fa.fa-times
+
+      - else
+        %p 
+          You have not added a widget yet,
+          = link_to 'click here', new_admin_system_widget_path
+          to fix it.

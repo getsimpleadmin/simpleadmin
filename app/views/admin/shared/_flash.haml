@@ -1,0 +1,6 @@
+- flash.each do |name, message|
+  %div{ id: 'flashMessage', class: "alert alert-primary alert-dismissable flash-#{name}", 'data-target' => "#{controller_name}.flashMessage" }
+    %button.close{ 'data-action' => "click->#{controller_name}#hideFlashMessage" }
+      %span ×
+    %p.mb-0
+      = message

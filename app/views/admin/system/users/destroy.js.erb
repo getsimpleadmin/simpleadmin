@@ -1,0 +1,19 @@
+var resourceId = "<%= @resource.to_param %>";
+
+document.getElementById('employees-list').querySelectorAll('li[data-id="' + resourceId + '"]')[0].remove();
+
+<% if @resource.user_role.users.blank? %>
+  document.getElementById('employees-list').insertAdjacentHTML('beforeend',
+    "<%= j render 'admin/shared/not_found', id: 'not-found-employees', text: 'You are not yet added employees' %>"
+  );
+<% end %>
+
+successMessage = document.getElementById('flashMessage');
+
+if (successMessage) {
+  successMessage.remove();
+}
+
+document.body.insertAdjacentHTML('beforeend',
+  "<%= j render partial: 'admin/shared/flash', locals: { flash: { notice: 'Employee Deleted' } } %>"
+);

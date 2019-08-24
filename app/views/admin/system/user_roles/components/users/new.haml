@@ -1,0 +1,6 @@
+.col-md-8
+  .block
+    .block-header.block-header-default
+      %h3.block-title Add Employee
+    .block-content
+      = render 'admin/system/user_roles/components/users/form', resource: resource, form_resource: resource.users.build, form_url: admin_system_users_path(user_role_id: resource), button: 'Create Employee'

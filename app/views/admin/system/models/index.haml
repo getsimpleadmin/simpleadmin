@@ -1,0 +1,49 @@
+.content
+  %h2.content-heading
+    = t('admin.models.title')
+
+  - if can?(:create, SimpleAdmin::Entity)
+    .text-right.actions
+      = link_to t('admin.models.new'), new_admin_system_model_path, class: 'btn btn-primary min-width-125'
+
+  .block
+    .block-content
+      - if @resources.any?  
+        .table-responsive
+          %table.table.table-vcenter.table-simpleadmin
+            %thead
+              %tr
+                - t('admin.models.actions').each do |action_name|
+                  %th
+                    = action_name
+                - if can?(:edit, SimpleAdmin::Entity) || can?(:destroy, SimpleAdmin::Entity)
+                  %th.text-center{ style: 'width: 100px;' }
+                    = t('admin.actions')
+            %tbody
+              - @resources.each do |resource|
+                %tr
+                  %td.text-center
+                    = link_to resource.model_klass_name, edit_admin_system_model_path(@project, resource)
+                  %td
+                    = resource.label
+                  %td
+                    - if resource.enabled?
+                      %span.badge.badge-primary
+                        = t("admin.status.#{resource.status}")
+                    - else
+                      %span.badge.badge-danger
+                        = t("admin.status.#{resource.status}")
+
+                  - if can?(:edit, SimpleAdmin::Entity) || can?(:destroy, SimpleAdmin::Entity)
+                    %td.text-center
+                      .btn-group
+                        = link_to edit_admin_system_model_path(@project, resource), class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                          %i.fa.fa-pencil
+                        = link_to admin_system_model_path(@project, resource), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                          %i.fa.fa-times
+
+      - else
+        %p 
+          You have not added a model yet,
+          = link_to 'click here', new_admin_system_model_path
+          to fix it.

@@ -1,0 +1,9 @@
+successMessage = document.getElementById('flashMessage');
+
+if (successMessage) {
+  successMessage.remove();
+}
+
+document.body.insertAdjacentHTML('beforeend', 
+  "<%= j render partial: 'admin/shared/flash', locals: { flash: { notice: 'Field Updated' } } %>"
+);

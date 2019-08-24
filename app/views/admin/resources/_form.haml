@@ -1,0 +1,7 @@
+= form_for resource, url: form_url, method: form_method do |f|
+  - entity_fields.latest.each do |entity_field|
+    = render entity_field.template_path, field: entity_field, f: f
+
+  .form-group.row
+    .col-12
+      = f.submit button, class: 'btn btn-primary'

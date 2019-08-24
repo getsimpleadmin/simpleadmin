@@ -1,0 +1,26 @@
+.col-md-8
+  .block
+    %ul.nav.nav-tabs.nav-tabs-block.js-tabs-enabled
+      %li.nav-item
+        %a#nav-item-collection{ class: 'nav-link active', 'data-action' => 'click->admin#switchTab', 'data-tab' => 'collection' } Collection
+      %li.nav-item
+        %a#nav-item-form{ class: 'nav-link', 'data-action' => 'click->admin#switchTab', 'data-tab' => 'form' } Form
+     
+    .block-content.tab-content
+      #tab-collection-fields{ 'data-target' => 'admin.collectionTab', class: 'tab-pane active' }
+        .row.js-draggable-items
+          %ul#collection-items.col-md-12.draggable-column{ 'data-url' => "/#{@project.slug}/admin/system/entity_fields/", 'data-urlParam' => "?entity_id=#{resource.to_param}", 'data-resourceName' => 'simple_admin_entity_field' }
+            - if resource.entity_fields.collection.latest.any?              
+              - resource.entity_fields.collection.latest.each do |entity_field|
+                = render template: 'admin/system/models/components/entity_fields/edit', locals: { project_entity_fields: project_entity_fields, entity_field: entity_field, dataTarget: 'admin.collectionFields' }
+            - else
+              = render 'admin/shared/not_found', id: 'not-found-collection', text: 'Collection Fields Not Found'
+
+      #tab-form-fields{ 'data-target' => 'admin.formTab', class: 'tab-pane' }
+        .row.js-draggable-items
+          %ul#form-items.col-md-12.draggable-column{ 'data-url' => "/#{@project.slug}/admin/system/entity_fields/", 'data-urlParam' => "?entity_id=#{resource.to_param}", 'data-resourceName' => 'simple_admin_entity_field' }            
+            - if resource.entity_fields.form.latest.any?
+              - resource.entity_fields.form.latest.each do |entity_field|
+                = render template: 'admin/system/models/components/entity_fields/edit', locals: { project_entity_fields: project_entity_fields, entity_field: entity_field, dataTarget: 'admin.formFields' }
+            - else
+              = render 'admin/shared/not_found', id: 'not-found-form', text: 'Form Fields Not Found'

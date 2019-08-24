@@ -1,0 +1,32 @@
+%header#page-header
+  .content-header
+    .content-header-section
+      %button.mobile-menu-button.btn.btn-circle.btn-dual-secondary{ 'data-action' => 'click->admin#toggleMobileMenu' }
+        %i.fa.fa-navicon
+
+    .content-header-section
+      .btn-group
+        %button#page-header-user-dropdown.btn.btn-rounded.btn-dual-secondary{ 'data-action' => 'click->admin#toggleDropdownMenu' }
+          %i.fa.fa-user.d-sm-none
+          %span.d-none.d-sm-inline-block
+            - if current_user.present?
+              = current_user.email
+            - elsif current_admin_user.present?
+              = current_admin_user.email
+          %i.fa.fa-angle-down.ml-5
+
+      .dropdown-menu.dropdown-menu-right.min-width-200{ 'data-target' => 'admin.dropdownMenu' }
+        - if current_user.present?
+          = link_to admin_account_settings_path, class: 'dropdown-item' do
+            %i.si.si-wrench.mr-5
+            = t('admin.menu.header.settings')
+          .dropdown-divider
+
+          = link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do
+            %i.si.si-logout.mr-5
+            = t('admin.menu.header.sign_out')
+
+        - elsif current_admin_user.present?
+          = link_to destroy_admin_user_session_path, method: :delete, class: 'dropdown-item' do
+            %i.si.si-logout.mr-5
+            = t('admin.menu.header.sign_out')

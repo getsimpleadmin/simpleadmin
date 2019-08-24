@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %title
+      - if @project.page_title.present?
+        = @project.page_title
+      - else
+        = t('title')
+
+    %meta{ content: 'width=device-width, initial-scale=1.0, shrink-to-fit=no', name: 'viewport' }
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    %link{ href: 'https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700', rel: 'stylesheet' }
+
+    - if @project.favicon.present?
+      = favicon_link_tag @project.favicon.url
+    - else
+      = favicon_link_tag 'favicon.ico'
+
+    = stylesheet_link_tag 'admin', media: 'all'
+    = stylesheet_link_tag @project.style_path
+
+    = javascript_include_tag 'admin'
+    = javascript_pack_tag    'application'
+
+    - if enable_analytic?
+      :javascript
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+          heap.load("1940933467");
+
+  %body{ 'data-controller' => 'admin' }
+    = render 'admin/shared/flash', controller_name: :admin
+
+    #page-container.sidebar-o.enable-page-overlay.side-scroll.page-header-modern.main-content-boxed
+      = render 'admin/shared/sidebar'
+      = render 'admin/shared/header'
+
+      %main#main-container
+        = yield

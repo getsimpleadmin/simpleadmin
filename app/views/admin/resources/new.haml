@@ -1,0 +1,9 @@
+.content
+  .col-md-8
+    .block
+      .block-header.block-header-default
+        %h3.block-title
+          = t('admin.resources.new', resource_name: params[:resource_id].capitalize.singularize)
+
+      .block-content
+        = render 'form', resource: @resource, entity: @entity, entity_fields: @entity_fields, form_url: admin_resources_path, form_method: :post, button: t('admin.resources.create', resource_name: params[:resource_id].capitalize.singularize)

@@ -1,0 +1,14 @@
+.col-md-8
+  .block
+    .block-header.block-header-default
+      %h3.block-title Permissions
+
+    .block-content.tab-content
+      #btabs-static-home.tab-pane.active
+        .row.js-draggable-items
+          %ul#collection-items.col-md-12.draggable-column{ 'data-url' => "/#{@project.slug}/admin/system/user_role_abilities/", 'data-urlParam' => "?user_role_id=#{resource.to_param}", 'data-resourceName' => 'simple_admin_user_role_ability' }
+            - if resource.user_role_abilities.latest.any?
+              - resource.user_role_abilities.latest.each do |user_role_ability|
+                = render template: 'admin/system/user_roles/components/user_role_abilities/edit', locals: { resource: @resource, user_role_ability: user_role_ability }
+            - else
+              = render 'admin/shared/not_found', id: 'not-found-collection', text: 'Permissions not found'

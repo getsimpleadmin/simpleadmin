@@ -1,0 +1,49 @@
+.content
+  .col-md-8
+    .block
+      .block-header.block-header-default
+        %h3.block-title
+          = t('admin.settings.title')
+      .block-content
+        = simple_form_for @project, url: admin_account_setting_path(@project, @project) do |f|
+          .form-group.row
+            %label.col-12
+              = t('admin.settings.form.name.label')
+            .col-md-9
+              = f.text_field :name, placeholder: t('admin.settings.form.name.placeholder'), required: true, class: 'form-control'
+              = f.full_error :name
+
+          .form-group.row
+            %label.col-12
+              = t('admin.settings.form.page_title.label')
+            .col-md-9
+              = f.text_field :page_title, placeholder: t('admin.settings.form.page_title.placeholder'), required: true, class: 'form-control'
+              = f.full_error :page_title
+
+          .form-group.row
+            %label.col-12
+              = t('admin.settings.form.favicon.label')
+            .col-md-9
+              .custom-file
+                = f.file_field :favicon, class: 'custom-file-input'
+                .custom-file-label
+                  = t('admin.settings.form.favicon.placeholder')
+
+                = f.full_error :favicon
+
+          = f.hidden_field :style, value: @project.style, 'data-target' => 'admin.styleInput'
+
+          .form-group.row.color-style
+            %label.col-12
+              = t('admin.settings.form.style.label')
+            .col-md-9
+              - Project.styles.keys.each do |style|
+                .col-1.mb-5
+                  %a{ class: "text-theme-#{style} #{@project.style == style ? 'color-palette-active' : ''}", 'data-target' => 'admin.iconStyle' }
+                    %i.fa.fa-2x.fa-circle{ 'data-style' => style, 'data-action' => 'click->admin#selectStyle' }
+
+          .form-group.row
+            .col-12
+              = f.submit t('admin.settings.form.submit'), class: 'btn btn-primary'
+              = link_to t('admin.settings.form.clear_cache'), admin_account_settings_clear_redis_cache_index_path, method: :post, class: 'btn btn-danger', data: { confirm: 'Are you sure?' }
+

@@ -1,0 +1,17 @@
+- if entity_field.sortable?
+  - if params[:sort].present?
+    = link_to admin_resources_path(project, model_klass_name: entity.model_klass_name, sort: { order: sort_order(params[:sort][:order]), column_name: entity_field.name }), class: 'sortable-column' do
+      = entity_field.label
+      
+      - if params[:sort][:order] == 'asc'
+        %i.fa.fa-angle-up
+      - else
+        %i.fa.fa-angle-down
+  
+  - else
+    = link_to admin_resources_path(project, model_klass_name: entity.model_klass_name, sort: { order: :desc, column_name: entity_field.name }), class: 'sortable-column' do
+      = entity_field.label
+      %i.fa.fa-angle-down
+
+- else
+  = entity_field.label

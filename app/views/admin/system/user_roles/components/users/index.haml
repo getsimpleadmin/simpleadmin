@@ -1,0 +1,15 @@
+.col-md-8
+  .block
+    .block-header.block-header-default
+      %h3.block-title Employees
+
+    .block-content.tab-content
+      #btabs-static-home.tab-pane.active
+        .row
+          %ul#employees-list.col-md-12{ 'data-url' => "/#{@project.slug}/admin/system/users/", 'data-urlParam' => "?user_role_id=#{resource.to_param}", 'data-resourceName' => 'simple_admin_user' }
+            - if resource.users.order(id: :asc).any?
+              - resource.users.order(id: :asc).each do |user|
+                - next unless user.persisted?
+                = render template: 'admin/system/user_roles/components/users/edit', locals: { resource: @resource, user: user }
+            - else
+              = render 'admin/shared/not_found', id: 'not-found-employees', text: "You are didn't add any employee yet"

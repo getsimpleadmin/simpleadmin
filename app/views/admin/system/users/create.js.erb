@@ -1,0 +1,34 @@
+<% if @resource.valid? %>
+  var employeesList = document.getElementById('employees-list');
+  var notFoundMessage = document.getElementById('not-found-employees');
+
+  employeesList.insertAdjacentHTML('beforeend',
+    "<%= j render template: 'admin/system/user_roles/components/users/edit', locals: { resource: @resource.user_role, user: @resource } %>"
+  );
+
+  if (notFoundMessage) {
+    notFoundMessage.remove();
+  }
+
+  successMessage = document.getElementById('flashMessage');
+
+  if (successMessage) {
+    successMessage.remove();
+  }
+
+  document.body.insertAdjacentHTML('beforeend', 
+    "<%= j render partial: 'admin/shared/flash', locals: { flash: { success: 'Employee Created' } } %>"
+  );
+
+<% else %>
+  errorMessage = document.getElementById('flashMessage');
+
+  if (errorMessage) {
+    errorMessage.remove();
+  }
+
+  document.body.insertAdjacentHTML('beforeend',
+    "<%= j render partial: 'admin/shared/flash', locals: { flash: { error: @resource.errors.full_messages.first } } %>"
+  );
+<% end %>
+

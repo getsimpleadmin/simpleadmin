@@ -1,0 +1,46 @@
+.content
+  %h2.content-heading Employees & Permissions
+
+  .text-right.actions
+    = link_to 'Add Role', new_admin_system_user_role_path, class: 'btn btn-primary min-width-125'
+
+  .block
+    .block-content
+      - if @resources.any?
+        .table-responsive
+          %table.table.table-vcenter.table-simpleadmin
+            %thead
+              %tr
+                - t('admin.user_roles.actions').each do |action_name|
+                  %th
+                    = action_name
+
+                %th.text-center
+                  = t('admin.actions')
+            %tbody
+              - @resources.each do |resource|
+                %tr
+                  %td.text-center
+                    = link_to resource.name, edit_admin_system_user_role_path(@project, resource)
+
+                  %td
+                    - if resource.user_role_abilities.any?
+                      = resource.user_role_abilities.pluck(:resource_name, :action_name).map { |resource_name, action_name| ProjectMenuItem.model_klass_names.to_h.key(resource_name).present? ? "#{ProjectMenuItem.model_klass_names.to_h.key(resource_name)} (#{action_name})" : "#{resource_name} (#{action_name})" }.join(', ')
+                    - else
+                      Permissions not found
+                  
+                  %td
+                    = resource.users.count
+
+                  %td.text-center
+                    .btn-group
+                      = link_to edit_admin_system_user_role_path(@project, resource), class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                        %i.fa.fa-pencil
+                      = link_to admin_system_user_role_path(@project, resource), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                        %i.fa.fa-times
+
+      - else
+        %p 
+          You have not added employees yet,
+          = link_to 'click here', new_admin_system_user_role_path
+          to fix it.

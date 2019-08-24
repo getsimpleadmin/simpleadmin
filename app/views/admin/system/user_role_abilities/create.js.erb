@@ -1,0 +1,33 @@
+<% if @resource.valid? %>
+  var collectionItems = document.getElementById('collection-items');
+  var notFoundMessage = document.getElementById('not-found-collection');
+
+  collectionItems.insertAdjacentHTML('beforeend',
+    "<%= j render template: 'admin/system/user_roles/components/user_role_abilities/edit', locals: { resource: @resource.user_role, user_role_ability: @resource } %>"
+  );
+
+  if (notFoundMessage) {
+    notFoundMessage.remove();
+  }
+
+  successMessage = document.getElementById('flashMessage');
+
+  if (successMessage) {
+    successMessage.remove();
+  }
+
+  document.body.insertAdjacentHTML('beforeend',
+    "<%= j render partial: 'admin/shared/flash', locals: { flash: { success: 'Permission Created' } } %>"
+  );
+<% else %>
+  errorMessage = document.getElementById('flashMessage');
+
+  if (errorMessage) {
+    errorMessage.remove();
+  }
+
+  document.body.insertAdjacentHTML('beforeend',
+    "<%= j render partial: 'admin/shared/flash', locals: { flash: { error: @resource.errors.full_messages.first } } %>"
+  );
+<% end %>
+

@@ -1,0 +1,62 @@
+<% if @resource.valid? %>
+  var collectionItems = document.getElementById('collection-items'),
+      formItems = document.getElementById('form-items');
+  
+  <% if @resource.collection? %>
+    <% dataTarget = 'admin.collectionFields' %>
+  <% elsif @resource.form? %>
+    <% dataTarget = 'admin.formFields' %>
+  <% end %>
+
+  var templateContent = "<%= j render template: 'admin/system/models/components/entity_fields/edit', locals: { project_entity_fields: @project_connector.send_request(:table, {}, @resource.entity.model_klass_name), entity_field: @resource, dataTarget: dataTarget } %>";
+
+  <% if @resource.collection? %>
+    document.getElementById('nav-item-collection').classList.add('active');
+    document.getElementById('nav-item-form').classList.remove('active')
+
+    document.getElementById('tab-collection-fields').classList.add('active');
+    document.getElementById('tab-form-fields').classList.remove('active');
+
+    var notFoundCollection = document.getElementById('not-found-collection');
+
+    collectionItems.insertAdjacentHTML('beforeend', templateContent);
+
+    if (notFoundCollection != undefined) {
+      notFoundCollection.remove();
+    }
+  <% elsif @resource.form? %>
+    document.getElementById('nav-item-collection').classList.remove('active');
+    document.getElementById('nav-item-form').classList.add('active')
+
+    document.getElementById('tab-collection-fields').classList.remove('active');
+    document.getElementById('tab-form-fields').classList.add('active');
+
+    var notFoundForm = document.getElementById('not-found-form');
+
+    formItems.insertAdjacentHTML('beforeend', templateContent);
+
+    if (notFoundForm != undefined) {
+      notFoundForm.remove();
+    }
+  <% end %>
+
+  var successMessage = document.getElementById('flashMessage');
+
+  if (successMessage) {
+    successMessage.remove();
+  }
+
+  document.body.insertAdjacentHTML('beforeend', 
+    "<%= j render partial: 'admin/shared/flash', locals: { flash: { success: 'Field Created' } } %>"
+  );
+<% else %>
+  errorMessage = document.getElementById('flashMessage');
+
+  if (errorMessage) {
+    errorMessage.remove();
+  }
+
+  document.body.insertAdjacentHTML('beforeend',
+    "<%= j render partial: 'admin/shared/flash', locals: { flash: { error: @resource.errors.full_messages.first } } %>" 
+  );
+<% end %>

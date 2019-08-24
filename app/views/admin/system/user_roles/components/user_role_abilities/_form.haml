@@ -1,0 +1,18 @@
+= form_for form_resource, url: form_url, remote: true do |f|
+  .form-group.row
+    %label.col-12
+      = t('admin.user_role_abilities.form.action_name.label')
+    .col-md-9
+      = f.select :action_name, SimpleAdmin::UserRoleAbility.action_names.keys, {}, { class: 'form-control' }
+
+  .form-group.row
+    %label.col-12
+      = t('admin.user_role_abilities.form.resource_name.label')
+    .col-md-9
+      = f.select :resource_name, ProjectMenuItem.model_klass_names + @project.entities.pluck(:model_klass_name), {}, { class: 'form-control' }
+
+  = f.hidden_field :user_role_id, value: resource.id
+
+  .form-group.row
+    .col-12
+      = f.submit button, class: 'btn btn-primary'

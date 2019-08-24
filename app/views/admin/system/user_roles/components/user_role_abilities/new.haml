@@ -1,0 +1,7 @@
+.col-md-8
+  .block
+    .block-header.block-header-default
+      %h3.block-title
+        = t('admin.user_role_abilities.form.create.title')
+    .block-content
+      = render 'admin/system/user_roles/components/user_role_abilities/form', resource: resource, form_resource: resource.user_role_abilities.build, form_url: admin_system_user_role_abilities_path(user_role_id: resource), button: 'Create Permission'
