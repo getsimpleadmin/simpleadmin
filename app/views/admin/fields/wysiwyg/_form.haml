@@ -1,0 +1,9 @@
+= f.hidden_field field.name
+
+.form-group.row
+  %label.col-12
+    = field.label
+  .col-md-9
+    #wysiwygEditor{ 'data-fieldName' => field.name }
+      - if @resource.public_send(field.name).present?
+        = @resource.public_send(field.name).html_safe

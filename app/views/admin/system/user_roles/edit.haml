@@ -1,0 +1,15 @@
+.content
+  .col-md-8
+    .block
+      .block-header.block-header-default
+        %h3.block-title
+          = t('admin.user_roles.form.edit.title')
+      .block-content
+        = render 'form', resource: @resource, form_url: admin_system_user_role_path(@project, @resource), button: 'Update Role'
+
+  = render template: 'admin/system/user_roles/components/users/new', locals: { resource: @resource }
+  = render template: 'admin/system/user_roles/components/users/index', locals: { resource: @resource }
+
+  = render template: 'admin/system/user_roles/components/user_role_abilities/new',   locals: { resource: @resource }
+  = render template: 'admin/system/user_roles/components/user_role_abilities/index', locals: { resource: @resource }
+  

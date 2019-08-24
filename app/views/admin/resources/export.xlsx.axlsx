@@ -1,0 +1,33 @@
+# frozen_string_literal: true
+
+wb = xlsx_package.workbook
+
+header = wb.styles.add_style(alignment: { horizontal: :center, vertical: :center, wrap_text: true },
+                             border: { style: :thin, color: '000000' }, bg_color: 'DADADA')
+align_left = wb.styles.add_style(alignment: { horizontal: :left }, border: { style: :thin, color: '000000' })
+
+headers = []
+
+wb.add_worksheet(name: @entity.label) do |sheet|
+  @entity_fields.latest.each do |entity_field|
+    headers << entity_field.name
+  end
+
+  sheet.add_row headers, style: header
+
+  content = []
+
+  @resources.each do |resource|
+    @entity_fields.latest.each do |entity_field|
+      content << if entity_field.entity_field_type.name == 'date'
+                   resource[entity_field.name].to_time.strftime('%d-%m-%Y %H:%M')
+                 else
+                   resource[entity_field.name.to_s]
+                 end
+    end
+
+    sheet.add_row content, style: align_left
+
+    content = []
+  end
+end

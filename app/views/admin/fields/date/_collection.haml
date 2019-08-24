@@ -1,0 +1,3 @@
+%td
+  - if resource[field.name].present?
+    = resource[field.name].to_time.strftime('%d-%m-%Y %H:%M')

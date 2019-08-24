@@ -1,0 +1,26 @@
+var resourceId = "<%= @resource.to_param %>";
+
+var collectionItems = document.getElementById('collection-items'),
+    formItems = document.getElementById('form-items');
+
+document.querySelectorAll('li[data-id="' + resourceId + '"]')[0].remove();
+
+<% if @resource.collection? && @resource.entity.entity_fields.collection.latest.blank? %>
+  collectionItems.insertAdjacentHTML('beforeend',
+    "<%= j render 'admin/shared/not_found', id: 'not-found-collection', text: 'Collection Fields Not Found' %>"
+  );
+<% elsif @resource.form? && @resource.entity.entity_fields.form.latest.blank? %>
+  formItems.insertAdjacentHTML('beforeend',
+    "<%= j render 'admin/shared/not_found', id: 'not-found-form', text: 'Form Fields Not Found' %>"
+  );
+<% end %>
+
+successMessage = document.getElementById('flashMessage');
+
+if (successMessage) {
+  successMessage.remove();
+}
+
+var messageContent = "<%= j render partial: 'admin/shared/flash', locals: { flash: { notice: 'Field Deleted' } } %>";
+
+document.body.insertAdjacentHTML('beforeend', messageContent);

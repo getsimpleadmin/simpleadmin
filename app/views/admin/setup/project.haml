@@ -1,0 +1,45 @@
+.bg-body-dark.bg-orange
+  .row.mx-0.justify-content-center
+    .hero-static.col-lg-6.col-xl-4
+      .content.content-full.overflow-hidden
+        .py-30.text-center
+
+        = simple_form_for current_user.project, url: admin_setup_step_path(params[:id]), html: { novalidate: false } do |f|
+          .block.block-themed.block-rounded.block-shadow
+            .block-header.bg-gd-orange
+              %h3.block-title
+                = t('admin.setup.project.title')
+            
+            .block-content
+              .form-group.row
+                .col-12
+                  %label
+                    = t('admin.setup.project.form.name.label')
+
+                  = f.text_field :name, placeholder: t('admin.setup.project.form.name.placeholder'), required: true, class: 'form-control'
+                  = f.full_error :name
+
+              .form-group.row
+                .col-12
+                  %label
+                    = t('admin.setup.project.form.secret_key.label')
+                  
+                  = f.password_field :secret_key, value: f.object.secret_key, placeholder: t('admin.setup.project.form.secret_key.placeholder'), required: true, class: 'form-control'
+                  = f.full_error :secret_key
+
+              .form-group.row
+                .col-12
+                  %label.text-left
+                    = t('admin.setup.project.form.url.label')
+                  
+                  %div
+                    = f.select :url_scheme, ['http://', 'https://'], {}, { class: 'form-control col-3 fa-pull-left' }
+                    
+                    = f.text_field :url_domain, placeholder: t('admin.setup.project.form.url.placeholder'), required: true, class: 'form-control col-9 fa-pull-left'
+                    = f.full_error :url_domain
+
+              .form-group.row.mb-0
+                .col-sm-12.text-sm-right.push
+                  %button.btn.btn-alt-orange{ type: 'submit' }
+                    %i.si.si-login.mr-10
+                    = t('admin.setup.project.form.submit')

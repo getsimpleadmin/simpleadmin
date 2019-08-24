@@ -1,0 +1,9 @@
+%div{ class: widget.width }
+  .block
+    .block-header.bg-primary-lighter
+      %h3.block-title
+        = link_to widget.name, edit_admin_system_widget_path(@project, widget)
+
+    .block-content
+      .pull-all.pt-30
+        %canvas.canvas.js-chartjs-dashboard-lines.chartjs-render-monitor.chart{ 'data-chart-dataset' => widget_response(widget.entity.model_klass_name, :week_statistic), 'data-chart-days' => week_days }

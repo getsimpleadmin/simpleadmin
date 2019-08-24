@@ -1,0 +1,9 @@
+.row
+  .col-sm-12.col-md-4
+    = form_for admin_resources_path, url: admin_resources_path, method: :get, html: { id: 'searchForm', class: 'search-form' } do |f|
+      = f.hidden_field :model_klass_name, name: :model_klass_name, value: entity.model_klass_name
+      
+      .form-group
+        = f.text_field :query, name: :query, placeholder: "Search within #{total} #{entity.label}", value: params[:query], class: 'form-control'
+        %i.fa.fa-search{ onclick: "document.getElementById('searchForm').submit()" }
+        

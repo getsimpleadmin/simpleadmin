@@ -1,0 +1,9 @@
+%div{ class: widget.width }
+  .block.text-center
+    .block-content.ribbon.ribbon-bookmark.ribbon-crystal.ribbon-left.bg-gd-dusk
+      .ribbon-box
+        = widget_response(widget.entity.model_klass_name, :quantity)
+      %p.mt-5
+        %i{ class: "#{widget.icon} fa-3x text-white-op" }
+      %p.font-w600.text-white
+        = link_to widget.name, edit_admin_system_widget_path(@project, widget), class: 'text-white'

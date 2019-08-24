@@ -1,0 +1,19 @@
+var resourceId = "<%= @resource.id %>";
+
+document.getElementById('collection-items').querySelectorAll('li[data-id="' + resourceId + '"]')[0].remove();
+
+<% if @resource.user_role.user_role_abilities.blank? %>
+  document.getElementById('collection-items').insertAdjacentHTML('beforeend',
+    "<%= j render 'admin/shared/not_found', id: 'not-found-collection', text: t('admin.role_abilities_not_found') %>"
+  );
+<% end %>
+
+successMessage = document.getElementById('flashMessage');
+
+if (successMessage) {
+  successMessage.remove();
+}
+
+document.body.insertAdjacentHTML('beforeend',
+  "<%= j render partial: 'admin/shared/flash', locals: { flash: { notice: 'Permission Deleted' } } %>"
+);

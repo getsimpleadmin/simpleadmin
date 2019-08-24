@@ -1,0 +1,69 @@
+= render 'admin/resources/components/modal_import'
+
+.content
+  .text-right.actions
+    - if can?(:create, :resource) && @entity.entity_fields.form.any?
+      = link_to t('admin.resources.new', resource_name: params[:resource_id].capitalize.singularize), new_admin_resource_path(resource_id: @entity.model_klass_name), class: 'btn btn-primary min-width-125'
+
+    .btn-group
+      %button#page-action-dropdown.btn.btn-primary.dropdown-toggle{ 'data-action' => 'click->admin#toggleActionDropdownMenu' }  Actions
+      
+      .dropdown-menu{ 'data-target' => 'admin.actionDropdownMenu' }
+        = link_to 'Delete Selected', admin_resources_batch_destroy_path(resource_id: params[:resource_id], id: 'batch_action'), method: :delete, 'data-action' => 'click->admin#resourcesBatchDestroy', class: 'dropdown-item', id: 'batchDelete'
+      
+        = link_to admin_resources_export_index_path(@project, params[:resource_id], export_total: @resources.total_count), class: 'dropdown-item' do
+          Export XLSX
+
+        %a.dropdown-item{ 'data-action' => 'click->admin#showImportModal' }
+          Import XLSX
+        
+
+  .block
+    .block-header.block-header-default
+      %h3.block-title
+        = @entity.label
+    .block-content.block-content-full
+      .dataTables_wrapper.dt-bootstrap4.no-footer
+        - if @entity.searchable?
+          = render 'admin/resources/components/search', entity: @entity, total: @resources.total_count
+
+        .row
+          .col-sm-12
+            .table-responsive
+              %table.table.table-bordered.table-striped.table-vcenter.js-dataTable-full.dataTable.no-footer
+                %thead
+                  %tr
+                    - if @resources.present? && @resources[0]['id'].present? && can?(:destroy, :resource)
+                      %th
+                    - @entity_fields.each do |entity_field|
+                      %th
+                        = render 'admin/resources/components/sort_order', project: @project, entity: @entity, entity_field: entity_field
+ 
+                    - if @resources.present? && @resources[0]['id'].present? && can?(:edit, :resource) || can?(:destroy, :resource)
+                      %th
+                        = t('admin.actions')
+                %tbody
+                  - @resources.each do |resource|
+                    %tr
+                      - if resource['id'].present? && can?(:destroy, :resource)
+                        %td
+                          %label.css-control.css-control-primary.css-checkbox
+                            %input.css-control-input{ type: :checkbox, name: 'selected_resources[]', value: resource['id'] }
+                            %span.css-control-indicator
+
+                      - @entity_fields.each do |entity_field|
+                        = render entity_field.template_path, field: entity_field, resource: resource
+
+
+                      - if resource['id'].present? && can?(:edit, :resource) && can?(:destroy, :resource)
+                        %td.text-center
+                          .btn-group
+                            - if can?(:edit, :resource) && @entity.entity_fields.form.any?
+                              = link_to edit_admin_resource_path(@project, resource['id'], resource_id: @entity.model_klass_name), class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                                %i.fa.fa-pencil  
+
+                            - if can?(:destroy, :resource) && resource['id'].present?
+                              = link_to admin_resource_path(@project, resource['id'], resource_id: @entity.model_klass_name), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                                %i.fa.fa-times
+
+        = paginate @resources, total_resources: @resources.total_count

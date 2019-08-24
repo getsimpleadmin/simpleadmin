@@ -1,0 +1,35 @@
+= simple_form_for resource, url: form_url do |f|
+  .form-group.row
+    %label.col-12
+      = t('admin.models.form.label.label')
+    .col-md-9
+      = f.text_field :label, placeholder: t('admin.models.form.label.placeholder'), class: 'form-control'
+      = f.error :label
+
+  .form-group.row
+    %label.col-12
+      = t('admin.models.form.model_klass_name.label')
+    .col-md-9
+      - if @project_entities.model_names.present?
+        = f.select :model_klass_name, @project_entities.model_names, {}, { class: 'form-control' }
+      - else
+        = f.select :model_klass_name, [], { include_blank: "Application doesn't have any models" }, { class: 'form-control' }
+
+      = f.error :model_klass_name
+  .form-group.row
+    %label.col-12
+      = t('admin.models.form.icon.label')
+    .col-md-9
+      = f.text_field :icon, readonly: true, class: 'form-control icon-picker'
+
+  .form-group.row
+    %label.col-12
+      = t('admin.models.form.status.label')
+    .col-md-9
+      %label.css-control.css-control-sm.css-control-primary.css-switch
+        = f.check_box :status, class: 'css-control-input'
+        %span.css-control-indicator
+
+  .form-group.row
+    .col-12
+      = f.submit button, class: 'btn btn-primary'

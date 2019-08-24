@@ -1,0 +1,9 @@
+.content
+  .col-md-8
+    .block
+      .block-header.block-header-default
+        %h3.block-title
+          = t('admin.resources.edit', resource_name: params[:resource_id].capitalize.singularize)
+
+      .block-content
+        = render 'form', resource: @resource, entity: @entity, entity_fields: @entity_fields, form_url: admin_resource_path(@project), form_method: :patch, button: t('admin.resources.update', resource_name: params[:resource_id].capitalize.singularize)

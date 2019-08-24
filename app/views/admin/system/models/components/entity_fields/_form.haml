@@ -1,0 +1,56 @@
+= form_for form_resource, url: form_url, remote: true do |f|
+  .form-group.row
+    %label.col-12
+      = t('admin.entity_fields.form.name.label')
+    .col-md-9
+      = f.select :name, project_entity_fields, {}, { class: 'form-control' }
+
+  .form-group.row
+    %label.col-12
+      = t('admin.entity_fields.form.label.label')
+    .col-md-9
+      = f.text_field :label, placeholder: 'Example Label', class: 'form-control'
+
+  .form-group.row
+    %label.col-12
+      = t('admin.entity_fields.form.entity_field_type_id.label')
+    .col-md-9
+      = f.select :entity_field_type_id, SimpleAdmin::EntityFieldType.all.collect { |ft| [ft.name, ft.id] }, {}, { class: 'form-control' }
+
+  .form-group.row
+    %label.col-12
+      = t('admin.entity_fields.form.presentation.label')
+    .col-9
+      %label.css-control.css-control-primary.css-radio
+        = f.radio_button :presentation, 'collection', checked: true, class: 'css-control-input'
+        %span.css-control-indicator
+        Collection
+      %label.css-control.css-control-primary.css-radio
+        = f.radio_button :presentation, 'form', class: 'css-control-input'
+        %span.css-control-indicator
+        Form
+
+  - if form_resource.collection?
+    - unless form_resource.image?
+      .form-group.row
+        %label.col-12
+          = t('admin.entity_fields.form.sorting.label')
+        .col-md-9
+          %label.css-control.css-control-sm.css-control-primary.css-switch
+            = f.check_box :sorting, class: 'css-control-input'
+            %span.css-control-indicator
+
+    - unless form_resource.number? || form_resource.image?
+      .form-group.row
+        %label.col-12
+          = t('admin.entity_fields.form.search_indexable.label')
+        .col-md-9
+          %label.css-control.css-control-sm.css-control-primary.css-switch
+            = f.check_box :search_indexable, class: 'css-control-input'
+            %span.css-control-indicator
+
+  = f.hidden_field :entity_id, value: resource.id
+
+  .form-group.row
+    .col-12
+      = f.submit button, class: 'btn btn-primary', id: 'create-field'

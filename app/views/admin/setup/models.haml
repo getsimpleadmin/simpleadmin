@@ -1,0 +1,35 @@
+.bg-body-dark.bg-orange
+  .row.mx-0.justify-content-center
+    .hero-static.col-lg-6.col-xl-4
+      .content.content-full.overflow-hidden
+        .py-30.text-center
+
+        = form_for current_user.project, url: admin_setup_model_path(current_user.project) do |f|
+          .block.block-themed.block-rounded.block-shadow
+            .block-header.bg-gd-orange
+              %h3.block-title
+                = t('admin.setup.models.title')
+            .block-content
+              %p
+                = t('admin.setup.models.description')
+
+              .model_setup_actions
+                %a{ 'data-action' => 'click->admin_setup#selectAll' }
+                  = t('admin.setup.models.select_all')
+                |
+                %a{ 'data-action' => 'click->admin_setup#unselectAll' }
+                  = t('admin.setup.models.unselect_all')
+
+              .form-group.row
+                .col-12
+                  - @resource.model_names.each do |model_name|
+                    .custom-control.custom-checkbox.mb-5
+                      %input.custom-control-input{ name: "model_values[#{model_name}]", type: :checkbox, id: model_name, 'data-target' => 'admin_setup.modelCheckbox' }
+                      %label.custom-control-label{ for: model_name }
+                        = model_name
+
+              .form-group.row.mb-0
+                .col-sm-12.text-sm-right.push
+                  %button.btn.btn-alt-orange{ type: 'submit' }
+                    %i.si.si-login.mr-10
+                    = t('admin.setup.models.form.submit')

@@ -1,0 +1,19 @@
+.content
+  .row
+    - if @project.widgets.any?
+      - @project.widgets.latest.each do |widget|
+        = render widget.widget_category.template_path, widget: widget
+    - else
+      .col-md-4
+        .block
+          .block-content.block-content-full
+            .py-20.text-center
+              .mb-20
+                %i.si.si-puzzle.fa-4x.text-primary
+              .font-size-h4.font-w600 No widgets
+              .text-muted Your don't have any widgets
+              .pt-20
+                - if can?(:create, SimpleAdmin::Widget)
+                  = link_to new_admin_system_widget_path, class: 'btn btn-rounded btn-alt-primary' do
+                    %i.fa.fa-cog.mr-5
+                    Add Widget

@@ -1,0 +1,10 @@
+= form_for resource, url: form_url do |f|
+  .form-group.row
+    %label.col-12
+      = t('admin.user_roles.form.name.label')
+    .col-md-9
+      = f.text_field :name, required: true, placeholder: 'Manager', class: 'form-control'
+
+  .form-group.row
+    .col-12
+      = f.submit button, class: 'btn btn-primary'

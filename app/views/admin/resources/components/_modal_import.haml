@@ -1,0 +1,21 @@
+#modal-normal.modal.hidden{ 'data-target' => 'admin.importModal' }
+  .modal-dialog
+    = form_for admin_resources_import_index_path, url: admin_resources_import_index_path, html: { class: 'modal-content' } do |f|
+      .block.block-themed.block-transparent.mb-0
+        .block-header.bg-primary-dark
+          %h3.block-title Import Records
+          .block-options
+            %a.btn-block-option{ 'data-action' => 'click->admin#hideImportModal' }
+              %i.si.si-close
+        .block-content
+          .form-group.row
+            %label.col-12 
+              File
+
+            .col-md-9
+              .custom-file
+                = f.file_field :file, name: :file, class: 'custom-file-input'
+                .custom-file-label XLSX File
+
+      .modal-footer
+        = f.submit 'Load', class: 'btn btn-alt-success'

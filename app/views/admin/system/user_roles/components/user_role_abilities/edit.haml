@@ -1,0 +1,15 @@
+%li{ 'data-target' => 'admin.collectionFields', 'data-id' => user_role_ability.id }
+  .block.draggable-item
+    .block-header.block-header-default
+      %h3.block-title{ 'data-action' => 'click->admin#toggleFieldBlock', 'data-id' => user_role_ability.id }
+        - if ProjectMenuItem.model_klass_names.to_h.key(user_role_ability.resource_name).present?
+          = "#{ProjectMenuItem.model_klass_names.to_h.key(user_role_ability.resource_name)} (#{user_role_ability.action_name})"
+        - else
+          = "#{user_role_ability.resource_name} (#{user_role_ability.action_name})"
+      .block-options
+        %i.fa.fa-angle-down
+
+        = link_to admin_system_user_role_ability_path(@project, user_role_ability, user_role_id: user_role_ability.user_role), method: :delete, remote: true, data: { confirm: 'Are you sure?' } do
+          %i.fa.fa-trash
+    .block-content.hidden
+      = render 'admin/system/user_roles/components/user_role_abilities/form', resource: resource, form_resource: user_role_ability, form_url: admin_system_user_role_ability_path(@project, user_role_ability, user_role_id: user_role_ability.user_role), button: 'Update Permission'

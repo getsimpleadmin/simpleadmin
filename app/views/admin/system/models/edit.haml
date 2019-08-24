@@ -1,0 +1,11 @@
+.content
+  .col-md-8
+    .block
+      .block-header.block-header-default
+        %h3.block-title
+          = t('admin.models.form.edit.title')
+      .block-content
+        = render 'form', resource: @resource, form_url: admin_system_model_path(@project, @resource), button: t('admin.models.form.edit.submit')
+
+  = render template: 'admin/system/models/components/entity_fields/new',   locals: { resource: @resource, project_entity_fields: @project_entity_fields }
+  = render template: 'admin/system/models/components/entity_fields/index', locals: { resource: @resource, project_entity_fields: @project_entity_fields }

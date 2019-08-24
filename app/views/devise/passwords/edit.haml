@@ -1,0 +1,28 @@
+.content.clearfix.bkg-gradient-royal-garden
+  .section-block.replicable-content.window-height.bkg-heavy-rain-gradient
+    .row.flex.v-align-middle
+      .column.width-6.offset-3
+        .signup-box.box.rounded.xlarge.bkg-white
+          %h3.center Change your password
+          %p.mb-20.center
+            Enter a new password for your account
+
+          .login-form-container
+            = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+              = f.hidden_field :reset_password_token
+              .row
+                .column.width-12
+                  .field-wrapper
+                    %label.color-charcoal
+                      = t('home_page.sign_in.form.password.label')
+                    = f.password_field :password, autofocus: true, placeholder: t('home_page.sign_in.form.password.placeholder'), required: true, minlength: 6, class: 'form-password form-element rounded medium'
+
+                .column.width-12
+                  .field-wrapper
+                    %label.color-charcoal
+                      New Password
+                    = f.password_field :password_confirmation, autocomplete: :off, placeholder: t('home_page.sign_in.form.password.placeholder'), required: true, minlength: 6, class: 'form-password form-element rounded medium'
+
+
+                .column.width-12
+                  = f.submit 'Change Password', class: 'form-submit button rounded medium bkg-blue bkg-hover-blue color-white color-hover-white mb-0'

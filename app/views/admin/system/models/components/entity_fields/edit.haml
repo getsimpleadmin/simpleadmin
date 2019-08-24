@@ -1,0 +1,12 @@
+%li{ 'data-target' => dataTarget, 'data-id' => entity_field.to_param }
+  .block.draggable-item
+    .block-header.block-header-default
+      %h3.block-title{ 'data-action' => 'click->admin#toggleFieldBlock', 'data-id' => entity_field.to_param }
+        = "#{entity_field.name} (#{entity_field.entity_field_type.name})"
+      .block-options
+        %i.fa.fa-angle-down
+        = link_to admin_system_entity_field_path(@project, entity_field, entity_id: entity_field.entity), method: :delete, remote: true, data: { confirm: 'Are you sure?' } do
+          %i.fa.fa-trash
+    
+    .block-content.hidden
+      = render 'admin/system/models/components/entity_fields/form', resource: entity_field.entity, project_entity_fields: project_entity_fields, form_resource: entity_field, form_url: admin_system_entity_field_path(@project, entity_field, entity_id: entity_field.entity), button: 'Update Field'

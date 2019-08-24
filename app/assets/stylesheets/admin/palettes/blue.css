@@ -1,0 +1,18 @@
+#sidebar {
+  background: #214196;
+}
+
+.nav-main a {
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #214196;
+  border-color: #214196;
+}
+
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+  color: #fff;
+  background-color: #214196;
+  border-color: #214196;
+}

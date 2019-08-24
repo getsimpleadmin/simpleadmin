@@ -1,0 +1,7 @@
+.col-md-8
+  .block
+    .block-header.block-header-default
+      %h3.block-title
+        = t('admin.entity_fields.form.create.title')
+    .block-content
+      = render 'admin/system/models/components/entity_fields/form', resource: resource, project_entity_fields: project_entity_fields, form_resource: resource.entity_fields.build, form_url: admin_system_entity_fields_path(entity_id: resource), button: t('admin.entity_fields.form.create.submit')

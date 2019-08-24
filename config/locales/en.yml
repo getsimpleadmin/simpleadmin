@@ -1,0 +1,194 @@
+en:
+  title: SimpleAdmin | Admin Dashboard Builder | Create Admin Dashboard
+  simple_admin:
+    resource:
+      update:
+        success: '%{resource_name} has been successfully updated!'
+      create:
+        success: '%{resource_name} has been successfully created!'
+      destroy:
+        success: '%{resource_name} has been successfully destroyed!'
+  admin:
+    resources:
+      create: 'Create %{resource_name}'
+      new:  'Add %{resource_name}'
+      edit: 'Edit %{resource_name}'
+      update: 'Update %{resource_name}'
+    warnings:
+      collection_fields: You need to create collection fields first
+      form_fields: You need to create form model fields first
+      widget: To create a widget, you need to have a model
+    menu:
+      header:
+        settings: Settings
+        sign_out: Sign Out
+      system:
+        title: System
+        dashboard: Dashboard
+        resources: Resources
+        models: Models
+        widgets: Widgets
+        user_roles: Employees
+    settings:
+      title: Edit Settings
+      form:
+        name: 'Name *'
+        placeholder: Project Name
+        page_title:
+          label: 'Page Title *'
+          placeholder: Title in the browser toolbar
+        logo:
+          label: Logo
+          placeholder: Choose File
+        favicon:
+          label: Favicon
+          placeholder: Choose File
+        style:
+          label: Color Palette
+        clear_cache: Clear DB Structure Cache
+        submit: Update Settings
+    setup:
+      project:
+        title: "Step 1: Let's connect your application"
+        form:
+          name:
+            label: 'Application Name *'
+            placeholder: Demo Application
+          secret_key:
+            label: 'Secret Key *'
+            placeholder: Long secure password
+          url:
+            label: 'Application URL *'
+            placeholder: 'example.com/simpleadmin'
+          submit: Continue
+      models:
+        title: "We've done it!"
+        description: "Select tables that you want to use and we automatically prepare it for use in the admin dashboard. By the way, it's optional :)"
+        select_all: Select All
+        unselect_all: Unselect All
+        form:
+          submit: "Let's start"
+
+    entity_fields:
+      form:
+        create:
+          title: Add Field
+          submit: Create Field
+        name:
+          label: Name
+        label:
+          label: Label
+        entity_field_type_id:
+          label: Field Type
+        presentation:
+          label: Display on page
+        sorting:
+          label: Sort
+        search_indexable:
+          label: Search indexable
+
+    widgets:
+      title: Widgets
+      new: Add Widget
+      actions:
+        - Name
+        - Category
+        - Model
+        - Status
+        - Sort Order
+        - Width
+      form:
+        edit:
+          title: Edit Widget
+        create:
+          title: Create Widget
+        name:
+          label: 'Name *'
+        widget_category_id:
+          label: Category
+        status:
+          label: Status
+        entity_id:
+          label: Model
+        sort_order:
+          label: Sort Order
+        width:
+          label: Width
+        icon:
+          label: 'Icon (click on the below area to change an icon)'
+    user_roles:
+      title: User Roles
+      new: Add User Role
+      actions:
+        - Name
+        - Permissions
+        - Total Employees
+      form:
+        name:
+          label: 'Name *'
+        edit:
+          title: Edit Role
+        create:
+          title: New Role
+    user_role_abilities:
+      form:
+        action_name:
+          label: Action Name
+        resource_name:
+          label: Model Name
+        create:
+          title: Add Permission
+        edit:
+          title: Edit Role Ability
+
+    models:
+      title: Models
+      new: Add Model
+      form:
+        create:
+          title: Add Model
+          submit: Create Model
+        edit:
+          title: Edit Model
+          submit: Update Model
+        label:
+          label: Label in the menu
+          placeholder: Example Label
+        model_klass_name:
+          label: Name
+        icon:
+          label: 'Icon (click on the below area to change an icon)'
+        status:
+          label: Status
+      actions:
+        - Name
+        - Display in the menu
+        - Status
+
+    actions: Actions
+    status:
+      :true: Enabled
+      :false: Disabled
+
+  sign_in:
+    title: Login to your account
+    form:
+      email:
+        label: 'Email: *'
+        placeholder: Email
+      password:
+        label: 'Password: *'
+        placeholder: Password
+      submit: Sign In
+  forgot_password:
+    title: Forgotten your password?
+    description: "Don't worry, we'll send you a message to help you reset your password."
+    label: 'I forgot my password -'
+    form:
+      email:
+        label: 'Email: *'
+        placeholder: Email
+      submit: Continue
+    notice: Already have an account?
+    notice_button: Click Here
+    submit: Remind me
