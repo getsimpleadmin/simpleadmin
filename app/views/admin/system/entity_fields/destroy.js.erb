@@ -1,7 +1,8 @@
 var resourceId = "<%= @resource.to_param %>";
 
 var collectionItems = document.getElementById('collection-items'),
-    formItems = document.getElementById('form-items');
+    formItems = document.getElementById('form-items'),
+    showItems = document.getElementById('show-items');
 
 document.querySelectorAll('li[data-id="' + resourceId + '"]')[0].remove();
 
@@ -12,6 +13,10 @@ document.querySelectorAll('li[data-id="' + resourceId + '"]')[0].remove();
 <% elsif @resource.form? && @resource.entity.entity_fields.form.latest.blank? %>
   formItems.insertAdjacentHTML('beforeend',
     "<%= j render 'admin/shared/not_found', id: 'not-found-form', text: 'Form Fields Not Found' %>"
+  );
+<% elsif @resource.show? && @resource.entity.entity_fields.show.latest.blank? %>
+  showItems.insertAdjacentHTML('beforeend',
+    "<%= j render 'admin/shared/not_found', id: 'not-found-show', text: 'Show Fields Not Found' %>"
   );
 <% end %>
 
