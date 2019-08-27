@@ -10,6 +10,7 @@ class SimpleAdmin::EntityFieldType < SimpleAdmin::Base
   def view_templates_presence
     validate_collection_template!
     validate_form_template!
+    validate_show_template!
   end
 
   def validate_collection_template!
@@ -22,6 +23,12 @@ class SimpleAdmin::EntityFieldType < SimpleAdmin::Base
     form_template_path = "app/views/#{template}/_form.*"
 
     errors.add(:base, 'Form template is missing') unless template_exists?(form_template_path)
+  end
+
+  def validate_show_template!
+    show_template_path = "app/views/#{template}/_show.*"
+
+    errors.add(:base, 'Show template is missing') unless template_exists?(show_template_path)
   end
 
   def template_exists?(template_path)
