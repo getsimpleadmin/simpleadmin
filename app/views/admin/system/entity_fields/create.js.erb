@@ -1,20 +1,25 @@
 <% if @resource.valid? %>
   var collectionItems = document.getElementById('collection-items'),
-      formItems = document.getElementById('form-items');
-  
+      formItems = document.getElementById('form-items'),
+      showItems = document.getElementById('show-items');
+
   <% if @resource.collection? %>
     <% dataTarget = 'admin.collectionFields' %>
   <% elsif @resource.form? %>
     <% dataTarget = 'admin.formFields' %>
+  <% elsif @resource.show? %>
+    <% dataTarget = 'admin.showFields' %>
   <% end %>
 
   var templateContent = "<%= j render template: 'admin/system/models/components/entity_fields/edit', locals: { project_entity_fields: @project_connector.send_request(:table, {}, @resource.entity.model_klass_name), entity_field: @resource, dataTarget: dataTarget } %>";
 
   <% if @resource.collection? %>
     document.getElementById('nav-item-collection').classList.add('active');
+    document.getElementById('nav-item-show').classList.remove('active');
     document.getElementById('nav-item-form').classList.remove('active')
 
     document.getElementById('tab-collection-fields').classList.add('active');
+    document.getElementById('tab-item-show').classList.remove('active');
     document.getElementById('tab-form-fields').classList.remove('active');
 
     var notFoundCollection = document.getElementById('not-found-collection');
@@ -26,9 +31,11 @@
     }
   <% elsif @resource.form? %>
     document.getElementById('nav-item-collection').classList.remove('active');
+    document.getElementById('nav-item-show').classList.remove('active');
     document.getElementById('nav-item-form').classList.add('active')
 
     document.getElementById('tab-collection-fields').classList.remove('active');
+    document.getElementById('tab-item-show').classList.remove('active');
     document.getElementById('tab-form-fields').classList.add('active');
 
     var notFoundForm = document.getElementById('not-found-form');
@@ -38,6 +45,22 @@
     if (notFoundForm != undefined) {
       notFoundForm.remove();
     }
+  <% elsif @resource.show? %>
+    document.getElementById('nav-item-collection').classList.remove('active');
+    document.getElementById('nav-item-form').classList.remove('active');
+    document.getElementById('nav-item-show').classList.add('active');
+
+    document.getElementById('tab-collection-fields').classList.remove('active');
+    document.getElementById('tab-form-fields').classList.remove('active');
+    document.getElementById('tab-item-show').classList.add('active')
+
+    var notFoundShow = document.getElementById('not-found-show');
+
+    showItems.insertAdjacentHTML('beforeend', templateContent);
+
+    if (notFoundShow != undefined) {
+      notFoundShow.remove();
+    }
   <% end %>
 
   var successMessage = document.getElementById('flashMessage');
@@ -46,7 +69,7 @@
     successMessage.remove();
   }
 
-  document.body.insertAdjacentHTML('beforeend', 
+  document.body.insertAdjacentHTML('beforeend',
     "<%= j render partial: 'admin/shared/flash', locals: { flash: { success: 'Field Created' } } %>"
   );
 <% else %>
@@ -57,6 +80,6 @@
   }
 
   document.body.insertAdjacentHTML('beforeend',
-    "<%= j render partial: 'admin/shared/flash', locals: { flash: { error: @resource.errors.full_messages.first } } %>" 
+    "<%= j render partial: 'admin/shared/flash', locals: { flash: { error: @resource.errors.full_messages.first } } %>"
   );
 <% end %>

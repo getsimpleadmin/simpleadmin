@@ -1,8 +1,8 @@
 import { Controller } from 'stimulus';
 
 export default class extends Controller {
-    static targets = ['collectionFields', 'formFields', 'iconStyle', 'styleInput', 'dropdownMenu', 
-                      'collectionTab', 'formTab', 'flashMessage', 'importModal', 'actionDropdownMenu', 'sidebarMenu']
+    static targets = ['collectionFields', 'formFields', 'showFields', 'iconStyle', 'styleInput', 'dropdownMenu',
+                      'collectionTab', 'formTab', 'showTab', 'flashMessage', 'importModal', 'actionDropdownMenu', 'sidebarMenu']
 
     connect() {
         this.connectWysiwygEditor();
@@ -15,19 +15,19 @@ export default class extends Controller {
     connectWysiwygEditor() {
         var selector = 'wysiwygEditor',
             settings = { theme: 'snow' };
-        
+
         if (!document.getElementById(selector)) {
             return false;
         }
 
         const Quill = require('quill');
-        
+
         var quill = new Quill(`#${selector}`, settings);
 
         document.querySelector('form').onsubmit = function() {
             var textInputId = `simple_admin_resource_${wysiwygEditor.dataset.fieldname}`,
             textInput = document.getElementById(textInputId);
-        
+
             textInput.value = quill.root.innerHTML;
         }
     }
@@ -41,7 +41,7 @@ export default class extends Controller {
 
         require('fontawesome-iconpicker');
         const $ = require('jquery');
-        
+
         var settings = {
             icons: [
                 { title: 'si si-user', searchTerms: ['user'] },
@@ -131,7 +131,8 @@ export default class extends Controller {
 
     connectSortableItems() {
         var collectionItemsSelector = 'collection-items',
-            formItemsSelector = 'form-items';
+            formItemsSelector = 'form-items',
+            showItemsSelector = 'show-items';
 
         if (document.getElementById(collectionItemsSelector)) {
           this.connectSortable(document.getElementById(collectionItemsSelector), this, 'collectionFieldsTargets');
@@ -140,6 +141,11 @@ export default class extends Controller {
         if (document.getElementById(formItemsSelector)) {
           this.connectSortable(document.getElementById(formItemsSelector), this, 'formFieldsTargets');
         }
+
+        if (document.getElementById(showItemsSelector)) {
+          this.connectSortable(document.getElementById(showItemsSelector), this, 'showFieldsTargets');
+        }
+
     }
 
     connectSortable(items, context, contextFieldType) {
@@ -186,20 +192,20 @@ export default class extends Controller {
       this.iconStyleTargets.forEach((iconStyle) => {
         iconStyle.classList.remove('color-palette-active');
       });
-  
+
       event.target.parentElement.classList.add('color-palette-active');
-      
+
       this.styleInputTarget.value = event.target.dataset.style;
     }
 
     showImportModal() {
       this.importModalTarget.classList.remove('hidden');
     }
-  
+
     hideImportModal() {
       this.importModalTarget.classList.add('hidden');
     }
-  
+
     toggleActionDropdownMenu() {
       if (this.actionDropdownMenuTarget.classList.contains('show')) {
         this.actionDropdownMenuTarget.classList.remove('show');
@@ -207,7 +213,7 @@ export default class extends Controller {
         this.actionDropdownMenuTarget.classList.add('show');
       }
     }
-  
+
     toggleMobileMenu() {
       if (this.sidebarMenuTarget.classList.contains('sidebar-mobile-open')) {
         this.sidebarMenuTarget.classList.remove('sidebar-mobile-open');
@@ -226,42 +232,48 @@ export default class extends Controller {
 
     switchTab(event) {
       const tabName = event.target.dataset.tab;
-  
+
       Array.prototype.forEach.call(document.getElementsByClassName('nav-link'), function(item) {
         item.classList.remove('active');
       });
-  
+
       event.target.classList.add('active');
-  
+
       if (tabName == 'form') {
         this.collectionTabTarget.classList.remove('active');
         this.formTabTarget.classList.add('active');
-      } else {
+        this.showTabTarget.classList.remove('active');
+      } else if (tabName == 'collection') {
         this.collectionTabTarget.classList.add('active');
         this.formTabTarget.classList.remove('active');
+        this.showTabTarget.classList.remove('active');
+      } else if (tabName == 'show') {
+        this.collectionTabTarget.classList.remove('active');
+        this.formTabTarget.classList.remove('active');
+        this.showTabTarget.classList.add('active');
       }
     }
 
     toggleFieldBlock(event) {
       var field = this.allFields().find(item => item.dataset.id == event.target.dataset.id);
-  
+
       var blockContent = field.getElementsByClassName('block-content')[0],
           iconElement = field.getElementsByTagName('i')[0];
-  
+
       if (blockContent.classList.contains('hidden')) {
         blockContent.classList.remove('hidden');
-  
+
         iconElement.classList.remove('fa-angle-down');
         iconElement.classList.add('fa-angle-up');
       } else {
         blockContent.classList.add('hidden');
-  
+
         iconElement.classList.remove('fa-angle-up');
         iconElement.classList.add('fa-angle-down');
       }
     }
 
     allFields() {
-      return this.collectionFieldsTargets.concat(this.formFieldsTargets);
+      return this.collectionFieldsTargets.concat(this.formFieldsTargets).concat(this.showFieldsTargets);
     }
 }
