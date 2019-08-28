@@ -7,16 +7,16 @@
 
     .btn-group
       %button#page-action-dropdown.btn.btn-primary.dropdown-toggle{ 'data-action' => 'click->admin#toggleActionDropdownMenu' }  Actions
-      
+
       .dropdown-menu{ 'data-target' => 'admin.actionDropdownMenu' }
         = link_to 'Delete Selected', admin_resources_batch_destroy_path(resource_id: params[:resource_id], id: 'batch_action'), method: :delete, 'data-action' => 'click->admin#resourcesBatchDestroy', class: 'dropdown-item', id: 'batchDelete'
-      
+
         = link_to admin_resources_export_index_path(@project, params[:resource_id], export_total: @resources.total_count), class: 'dropdown-item' do
           Export XLSX
 
         %a.dropdown-item{ 'data-action' => 'click->admin#showImportModal' }
           Import XLSX
-        
+
 
   .block
     .block-header.block-header-default
@@ -38,7 +38,7 @@
                     - @entity_fields.each do |entity_field|
                       %th
                         = render 'admin/resources/components/sort_order', project: @project, entity: @entity, entity_field: entity_field
- 
+                        
                     - if @resources.present? && @resources[0]['id'].present? && can?(:edit, :resource) || can?(:destroy, :resource)
                       %th
                         = t('admin.actions')
@@ -60,7 +60,11 @@
                           .btn-group
                             - if can?(:edit, :resource) && @entity.entity_fields.form.any?
                               = link_to edit_admin_resource_path(@project, resource['id'], resource_id: @entity.model_klass_name), class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
-                                %i.fa.fa-pencil  
+                                %i.fa.fa-pencil
+
+                            - if can?(:show, :resource) && resource['id'].present?
+                              = link_to admin_resource_path(@project, resource['id'], resource_id: @entity.model_klass_name), class: 'btn btn-sm btn-secondary js-tooltip-enabled' do
+                                %i.fa.fa-eye
 
                             - if can?(:destroy, :resource) && resource['id'].present?
                               = link_to admin_resource_path(@project, resource['id'], resource_id: @entity.model_klass_name), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-secondary js-tooltip-enabled' do

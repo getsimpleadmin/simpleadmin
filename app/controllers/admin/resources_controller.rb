@@ -8,6 +8,7 @@ class Admin::ResourcesController < Admin::ApplicationController
 
   before_action :collection_fields_unexist!, only: :index, unless: proc { fields_exists?(:collection) }
   before_action :form_fields_unexist!, only: %i[edit new], unless: proc { fields_exists?(:form) }
+  before_action :show_fields_unexist!, only: :show, unless: proc { fields_exists?(:show) }
 
   def index
     @entity = @project.entities.find_by!(model_klass_name: params[:resource_id])
@@ -22,6 +23,19 @@ class Admin::ResourcesController < Admin::ApplicationController
     end
 
     render template_path(:index)
+  end
+
+  def show
+    @entity = @project.entities.find_by!(model_klass_name: params[:resource_id])
+    @entity_fields = @entity.entity_fields.show.latest
+
+    @resource = ::SimpleAdmin::Resource.new(@entity_fields.pluck(:name))
+    if @entity_fields.present?
+      @resource.mass_assign_params(@project_connector.send_request(:resource,
+                                                                   resource_params, params[:id]))
+    end
+
+    render template_path(:show)
   end
 
   def new
@@ -88,6 +102,10 @@ class Admin::ResourcesController < Admin::ApplicationController
 
   def collection_fields_unexist!
     redirect_to edit_admin_system_model_path(@project, entity), notice: t('admin.warnings.collection_fields')
+  end
+
+  def show_fields_unexist!
+    redirect_to edit_admin_system_model_path(@project, entity), notice: t('admin.warnings.show_fields')
   end
 
   def form_fields_unexist!

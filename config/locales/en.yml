@@ -14,8 +14,10 @@ en:
       new:  'Add %{resource_name}'
       edit: 'Edit %{resource_name}'
       update: 'Update %{resource_name}'
+      show: 'Show %{resource_name}'
     warnings:
       collection_fields: You need to create collection fields first
+      show_fields: You need to create show fields first
       form_fields: You need to create form model fields first
       widget: To create a widget, you need to have a model
     menu:
