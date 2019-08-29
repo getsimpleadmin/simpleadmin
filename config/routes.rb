@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     end
 
     scope '/:resource_id' do
-      resources :resources, except: :show
+      resources :resources
 
       namespace :resources do
         resources :export, only: :index

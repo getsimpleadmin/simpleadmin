@@ -1,0 +1,5 @@
+.form-group.row
+  %label.col-12
+    = field.label
+  .col-md-9
+    = truncate(resource.public_send(field.name), length: 512, escape: false)

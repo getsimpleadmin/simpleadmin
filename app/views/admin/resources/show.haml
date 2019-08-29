@@ -1,0 +1,10 @@
+.content
+  .col-md-8
+    .block
+      .block-header.block-header-default
+        %h3.block-title
+          = t('admin.resources.show', resource_name: params[:resource_id].capitalize.singularize)
+
+      .block-content
+        - @entity_fields.latest.each do |entity_field|
+          = render entity_field.template_path, field: entity_field, resource: @resource

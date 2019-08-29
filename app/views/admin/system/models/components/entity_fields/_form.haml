@@ -29,6 +29,10 @@
         = f.radio_button :presentation, 'form', class: 'css-control-input'
         %span.css-control-indicator
         Form
+      %label.css-control.css-control-primary.css-radio
+        = f.radio_button :presentation, 'show', class: 'css-control-input'
+        %span.css-control-indicator
+        Show
 
   - if form_resource.collection?
     - unless form_resource.image?

@@ -4,7 +4,7 @@ class SimpleAdmin::EntityField < SimpleAdmin::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  enum presentation: %i[collection form]
+  enum presentation: %i[collection form show]
 
   belongs_to :entity, optional: true
   has_one :entity_field_type, primary_key: :entity_field_type_id, foreign_key: :id

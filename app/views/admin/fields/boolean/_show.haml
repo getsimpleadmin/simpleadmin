@@ -1,0 +1,8 @@
+.form-group.row
+  %label.col-12
+    = field.label
+  .col-md-9
+    - if resource.public_send(field.name)
+      Enabled
+    - else
+      Disabled
