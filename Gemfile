@@ -16,7 +16,7 @@ gem 'devise'
 gem 'friendly_id'
 
 gem 'hamlit'
-gem 'kaminari', '1.0.0'
+gem 'kaminari', '1.2.1'
 gem 'nokogiri', '>= 1.10.4'
 
 gem 'webpacker'
