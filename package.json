@@ -7,7 +7,7 @@
     "fontawesome-iconpicker": "^3.2.0",
     "intro.js": "^2.9.3",
     "jquery": "^3.3.1",
-    "quill": "^1.3.6",
+    "quill": "^1.3.7",
     "sortablejs": "^1.8.3",
     "stimulus": "^1.1.1"
   },
